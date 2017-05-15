@@ -1,6 +1,8 @@
 # Witcher3MapViewer
 A companion app for The Witcher 3: Wild Hunt (and DLC)
 
+![Screenshot](/W3MVScreenshot.PNG?raw=true)
+
 The program is designed to help players do (nearly) all side quests during a playthrough of Witcher 3: Wild Hunt. The idea was inspired by the [JustCause2MapViewer](https://github.com/KarboniteKream/JC2MapViewer), which helped people get 100% by showing locations of settlements on a map, and used the savegame file to show only those elements that were undiscovered. However, this app does more.
 
 The left panel shows all available quests. Highlighting an item will show on the map where to go to discover the quest, sometimes with a small bit of info to help you. Now, in **manual mode**, you tell the app which missions are done and your current level, and this will work if you're playing on a console.

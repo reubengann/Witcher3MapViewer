@@ -3,7 +3,7 @@ A companion app for The Witcher 3: Wild Hunt (and DLC)
 
 ![Screenshot](/W3MVScreenshot2.PNG?raw=true)
 
-The program is designed to help players do (nearly) all side quests during a playthrough of Witcher 3: Wild Hunt. The idea was inspired by the [JustCause2MapViewer](https://github.com/KarboniteKream/JC2MapViewer), which helped people get 100% by showing locations of settlements on a map, and used the savegame file to show only those elements that were undiscovered. However, this app does more.
+This is a Windows app designed to help players do (nearly) all side quests during a playthrough of Witcher 3: Wild Hunt. The idea was inspired by the [JustCause2MapViewer](https://github.com/KarboniteKream/JC2MapViewer), which helped people get 100% by showing locations of settlements on a map, and used the savegame file to show only those elements that were undiscovered. However, this app does more.
 
 The left panel shows all available quests. Highlighting an item will show on the map where to go to discover the quest, sometimes with a small bit of info to help you. Now, in **manual mode**, you tell the app which missions are done and your current level, and this will work if you're playing on a console.
 
@@ -17,11 +17,11 @@ The program can list and prompt miniquest events that aren't in the Witcher jour
 
 Note that getting 100% in Witcher 3 is impossible, since certain quests will be unavailable depending on the choices made. The app does try to maximize the number of side quests that are completed.
 
-I have tested the code with version 1.31A of the game, Hearts of Stone and Blood and Wine included. Please update to this version before using. The app does not modify the save game folder in any way. If you don't have the DLC, you can simply defer the quests "Evil's Soft First Touches" and "Envoys, Wineboys" and never be bothered again.
+I tested the app under Windows 10, but it should work in Windows 7 and Windows 8 as well. You will need .NET 4.5. I have tested the code with version 1.31A of the game, Hearts of Stone and Blood and Wine included. Please update to this version before using. The app does not modify the save game folder in any way. If you don't have the DLC, you can simply defer the quests "Evil's Soft First Touches" and "Envoys, Wineboys" and never be bothered again.
 
 ## Usage Instructions
 
-Extract zip to anywhere you want (except the savegame folder itself) and run Witcher3MapViewer.exe. To use automatic mode, click the settings icon in the upper-right and toggle to automatic mode. The program will try to autodetect your save folder, but if that fails click on "choose" and navigate to the folder. If you want the program to stop suggesting a certain quest, right click it and choose "defer". You can turn off certain marker types in the upper left-hand dropdown menu.
+Download [from the releases page](https://github.com/reubengann/Witcher3MapViewer/releases), and choose your platform. Extract zip to anywhere you want (except the savegame folder itself) and run Witcher3MapViewer.exe. To use automatic mode, click the settings icon in the upper-right and toggle to automatic mode. The program will try to autodetect your save folder, but if that fails click on "choose" and navigate to the folder. If you want the program to stop suggesting a certain quest, right click it and choose "defer". You can turn off certain marker types in the upper left-hand dropdown menu.
 
 ## Issues
 

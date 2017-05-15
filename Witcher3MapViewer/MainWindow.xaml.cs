@@ -256,6 +256,9 @@ namespace Witcher3MapViewer
         private void DataSetup()
         {
             appdir = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
+            if(!Directory.Exists(Path.Combine(appdir, "SavedGames")))            
+                Directory.CreateDirectory(Path.Combine(appdir, "SavedGames"));
+            
             Readers.ApplicationSettingsReader Settings = new Readers.ApplicationSettingsReader(appdir, "Settings.xml");
             ConversionLibrary = Settings.ConversionLibrary;
             PathLibrary = Settings.PathLibrary;            
@@ -674,6 +677,9 @@ namespace Witcher3MapViewer
         {
             //Get file listing, find most recent file
             DirectoryInfo directory = new DirectoryInfo(SaveFolder);
+            var VerifyThereAreSomeFiles = directory.GetFiles("*.sav");
+            if (VerifyThereAreSomeFiles == null || VerifyThereAreSomeFiles.Length == 0)
+                return;
             FileInfo myFile = (from f in directory.GetFiles("*.sav")
                                orderby f.LastWriteTime descending
                                select f).First();
@@ -761,6 +767,7 @@ namespace Witcher3MapViewer
 
         private void SettingsButton_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
+            bool wasManual = manualMode;
             var foo = new SettingsDialog();
             foo.ShowDialog();
             SettingsFromConfig();
@@ -769,6 +776,12 @@ namespace Witcher3MapViewer
                 PlayerLevel = 1;
                 _currentQuests.Clear();
                 progressStatus.Reset();
+            }
+            if(wasManual && !manualMode)
+            {
+                GetMostRecentSaveFile();
+                SetUpFilewatcher();
+                SeekNextUndone();
             }
             UpdateQuests();
         }

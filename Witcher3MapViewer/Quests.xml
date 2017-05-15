@@ -1,0 +1,4998 @@
+<quests>
+
+<quest type="main" level="0" world = "WO" id="2">
+<name>Kaer Morhen</name>
+<GUID>C1AA4441-48FF64E8-972B3BB9-250CC191</GUID>
+<reward XP="250"/>
+</quest>
+
+<quest type="main" level="0" world = "WO" id="3">
+<name>Lilac and Gooseberries</name>
+<GUID>768A197C-4630DC8A-735A4BB3-C9535B0B</GUID>
+<available>
+<GUID state="JS_Success">C1AA4441-48FF64E8-972B3BB9-250CC191</GUID>
+</available>
+<reward XP="400"/>
+<objectives>
+<objective id="438">
+<name>Ask travelers about Yennefer</name>
+<GUID>42CE0F47-454E0055-8AC991AD-A09CAFB3</GUID>
+</objective>
+</objectives>
+<subquests>
+<quest type="main" level="3" world = "WO" id="44">
+<name>The Beast of White Orchard</name>
+<GUID>F6086B74-4E68EDFF-D79CE191-13BA33A7</GUID>
+<available>
+<GUID>42CE0F47-454E0055-8AC991AD-A09CAFB3</GUID>
+</available>
+<objectives>
+<objective id="439">
+<name>Ask the herbalist about buckthorn</name>
+<GUID>50E659DB-44831AA8-31BA8EA6-8EB62F91</GUID>
+</objective>
+</objectives>
+<reward XP="500"/>
+</quest>
+<quest type="main" level="2" world = "WO" id="39">
+<name>The Incident at White Orchard</name>
+<GUID>03E485C6-4719EFBD-29B7288E-2145E02E</GUID>
+<available>
+<GUID state="JS_Success">42CE0F47-454E0055-8AC991AD-A09CAFB3</GUID>
+</available>
+<reward XP="300"/>
+</quest>
+</subquests>
+</quest>
+
+<quest type="side" level="0" world = "WO" id="19">
+<name>Missing in Action</name>
+<available>
+<GUID state="JS_Success">42CE0F47-454E0055-8AC991AD-A09CAFB3</GUID>
+</available>
+<discoverprompt>
+<info>! sign over a man talking to a dog</info>
+<XY world="WO" X="476" Y="-106" />
+</discoverprompt>
+<GUID>3B6DBB8A-4E5095A7-8DA31EB3-4F2C4D1F</GUID>
+<reward XP="25"/>
+</quest>
+
+<quest type="side" level="0" world = "WO" id="20">
+<name>A Frying Pan, Spick and Span</name>
+<available>
+<GUID state="JS_Success">42CE0F47-454E0055-8AC991AD-A09CAFB3</GUID>
+</available>
+<discoverprompt>
+<info>! sign over an old woman</info>
+<XY world="WO" X="-107" Y="76" />
+</discoverprompt>
+<GUID>F7C2C616-4FBFA7E7-3A37FBA1-0FB8CFC8</GUID>
+<reward XP="10"/>
+</quest>
+
+<quest type="side" level="1" world = "WO" id="36">
+<name>Precious Cargo</name>
+<available>
+<GUID state="JS_Success">42CE0F47-454E0055-8AC991AD-A09CAFB3</GUID>
+</available>
+<discoverprompt>
+<info>! sign</info>
+<XY world="WO" X="-296" Y="200" />
+</discoverprompt>
+<GUID>377AABFA-4FBCA307-01FA41AE-E39DBD41</GUID>
+<reward XP="10"/>
+</quest>
+
+<quest type="side" level="1" world = "WO" id="37">
+<name>Twisted Firestarter</name>
+<available>
+<GUID state="JS_Success">42CE0F47-454E0055-8AC991AD-A09CAFB3</GUID>
+</available>
+<discoverprompt>
+<info>! sign</info>
+<XY world="WO" X="4" Y="-37" />
+</discoverprompt>
+<GUID>C005330F-4A0D252A-BA6F5CA7-63870497</GUID>
+<reward XP="75"/>
+</quest>
+
+<quest type="contract" level="2" world = "WO" id="38">
+<name>Devil by the Well</name>
+<available>
+<GUID state="JS_Success">42CE0F47-454E0055-8AC991AD-A09CAFB3</GUID>
+</available>
+<discoverprompt>
+<info>Notice board</info>
+<XY world="WO" X="3" Y="-15" />
+</discoverprompt>
+<GUID>ADDBEE45-437F7E6B-286D2E91-190FEF86</GUID>
+<reward XP="110"/>
+</quest>
+
+<quest type="side" level="2" world = "WO" id="42">
+<name>On Death's Bed</name>
+<available>
+<GUID state="JS_Success">50E659DB-44831AA8-31BA8EA6-8EB62F91</GUID>
+</available>
+<discoverprompt>
+<XY world="WO" X="-238" Y="4" />
+<info>Tell herbalist you will help</info>
+</discoverprompt>
+<GUID>DA94CD0C-432B1FF9-8FE93C94-79B4B234</GUID>
+<reward XP="350"/>
+</quest>
+
+<quest type="main" level="2" world = "WO" id="40">
+<name>Imperial Audience</name>
+<available>
+<GUID state="JS_Success">768A197C-4630DC8A-735A4BB3-C9535B0B</GUID>
+</available>
+<GUID>3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+<reward XP="150"/>
+</quest>
+
+<quest type="treasure" level="4" world = "WO" id="54">
+<name>Dirty Funds</name>
+<available>
+<GUID state="JS_Success">C1AA4441-48FF64E8-972B3BB9-250CC191</GUID>
+</available>
+<discoverprompt>
+<info>Hidden treasure marker</info>
+<XY world="WO" X="184" Y="264" />
+</discoverprompt>
+<GUID>6321316F-48125639-75F5A181-D5ECEB4E</GUID>
+<reward XP="0"/>
+</quest>
+
+<quest type="treasure" level="4" world = "WO" id="55">
+<name>Deserter Gold</name>
+<available>
+<GUID state="JS_Success">C1AA4441-48FF64E8-972B3BB9-250CC191</GUID>
+</available>
+<discoverprompt>
+<info>Hidden treasure marker</info>
+<XY world="WO" X="269" Y="333" />
+</discoverprompt>
+<GUID>EE12C78F-46DDAD07-49FD648A-11BD32B3</GUID>
+<reward XP="0"/>
+</quest>
+
+<quest type="treasure" level="4" world = "WO" id="56">
+<name>Temerian Valuables</name>
+<available>
+<GUID state="JS_Success">C1AA4441-48FF64E8-972B3BB9-250CC191</GUID>
+</available>
+<discoverprompt>
+<info>Hidden treasure marker</info>
+<XY world="WO" X="-115" Y="204" />
+</discoverprompt>
+<GUID>753CDADE-4D361932-F7325D82-2DDC8703</GUID>
+<reward XP="0"/>
+</quest>
+
+<quest type="treasure" world="WO" level="6" id="85">
+<name>Scavenger Hunt: Viper School Gear</name>
+<GUID>AA5D86A4-401E4811-7C74B6AC-7A80CBB3</GUID>
+<available>
+<discoverprompt>
+<XY world="WO" X="-35" Y="327" />
+<info>Blow the door open with Aard and loot a corpse inside</info>
+</discoverprompt>
+<GUID state="JS_Success">C1AA4441-48FF64E8-972B3BB9-250CC191</GUID>
+</available>
+</quest>
+
+<!--Velen available after imperial audience 3A6B433B-47EA9285-23D96FB9-9A37E56E-->
+
+<!-- These quests don't depend on anything other than being in Velen-->
+
+<quest type="side" level="0" world = "VE" id="12">
+<name>Gwent: Velen Players</name>
+<available>
+<GUID state="JS_Success">9EFDC32A-48F7E75E-421189B7-97877E0E</GUID>
+</available>
+<discoverprompt>
+<XY world="VE" X="510" Y="544" />
+<info>Notice board</info>
+</discoverprompt>
+<GUID>BECB3BA0-4C293A48-C3C229B6-31A1439A</GUID>
+<objectives>
+<objective id="437">
+<name>Win a unique card from the baron</name>
+<GUID>E8F1C60F-4BBCA2B3-648A5FBD-8DED14E4</GUID>
+<reward XP="25"/>
+</objective>
+<objective id="434">
+<name>Win a unique card from the man in Oreton</name>
+<GUID>C9D31EED-4B205E76-41AB149A-24D03E5A</GUID>
+<reward XP="25"/>
+</objective>
+<objective id="435">
+<name>Win a unique card from the soothsayer</name>
+<GUID>32950D3D-41DEF002-7172AFB4-A8AFFA73</GUID>
+<reward XP="25"/>
+</objective>
+<objective id="436">
+<name>Win a unique card from Haddy of Midcopse</name>
+<GUID>5CAB2539-42419D08-210E4B8F-EDB8000F</GUID>
+<reward XP="25"/>
+</objective>
+</objectives>
+</quest>
+
+<quest type="side" level="0" world = "VE" id="22">
+<name>The Truth is in the Stars</name>
+<available>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+</available>
+<discoverprompt>
+<XY world="VE" X="1877" Y="-192" />
+<info>! sign</info>
+</discoverprompt>
+<GUID>189702C5-4E377991-89B50D81-45F1188E</GUID>
+<reward XP="60"/>
+</quest>
+
+<quest type="side" level="3" world = "VE" id="45">
+<name>Funeral Pyres</name>
+<available>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+</available>
+<discoverprompt>
+<XY world="VE" X="778" Y="558" />
+<info>! sign</info>
+</discoverprompt>
+<GUID>308B9390-4136EF32-638710A3-AD7D32CA</GUID>
+<reward XP="105"/>
+</quest>
+
+<quest type="side" level="4" world = "VE" id="49">
+<name>Hazardous Goods</name>
+<available>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+</available>
+<discoverprompt>
+<XY world="VE" X="1087" Y="147" />
+<info>! sign</info>
+</discoverprompt>
+<GUID>2639D2AF-44738473-145809B6-7DE9D4C1</GUID>
+<reward XP="10"/>
+</quest>
+
+
+<quest type="event" level="3" world = "VE" id="46">
+<name>Deadly Crossing I</name>
+<available>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+</available>
+<discoverprompt>
+<info>! sign</info>
+<XY world="VE" X="-30" Y="-114" />
+</discoverprompt>
+</quest>
+
+<quest type="event" level="3" world = "VE" id="47">
+<name>Deadly Crossing II</name>
+<available>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+</available>
+<discoverprompt>
+<info>! sign (only at night?)</info>
+<XY world="VE" X="794" Y="266" />
+</discoverprompt>
+</quest>
+
+<quest type="event" level="3" world = "VE" id="425">
+<name>Deadly Crossing III</name>
+<available>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+</available>
+<discoverprompt>
+<info>! sign</info>
+<XY world="VE" X="1086" Y="-298" />
+</discoverprompt>
+</quest>
+
+<quest type="event" level="3" world = "VE" id="48">
+<name>Highway Robbery</name>
+<available>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+</available>
+<discoverprompt>
+<info>! sign</info>
+<XY world="VE" X="305" Y="-143" />
+</discoverprompt>
+</quest>
+
+<quest type="event" level="0" world = "VE" id="30">
+<name>Highwayman's Cache</name>
+<available>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+</available>
+<discoverprompt>
+<XY world="VE" X="522" Y="-209" />
+</discoverprompt>
+</quest>
+
+<quest type="event" level="2" world = "VE" id="43">
+<name>Harassing A Troll</name>
+<available>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+</available>
+<discoverprompt>
+<info>! sign</info>
+<XY world="VE" X="146" Y="789" />
+</discoverprompt>
+<reward XP="25" />
+</quest>
+
+<quest type="event" level="4" world = "VE" id="50">
+<name>Man's Best Friend</name>
+<available>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+</available>
+<discoverprompt>
+<XY world="VE" X="641" Y="797" />
+<info>! sign over a dog</info>
+</discoverprompt>
+<reward XP="10" />
+</quest>
+
+<quest type="treasure" level="4" world = "VE" id="51">
+<name>Sunken Treasure</name>
+<available>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+</available>
+<discoverprompt>
+<XY world="VE" X="-458" Y="197" />
+<info>Hidden treasure marker</info>
+</discoverprompt>
+<GUID>B8486EAF-4E34ECCB-69896A96-1E5CB685</GUID>
+<reward XP="0"/>
+</quest>
+
+<quest type="treasure" level="4" world = "VE" id="52">
+<name>An Unfortunate Turn of Events</name>
+<available>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+</available>
+<discoverprompt>
+<XY world="VE" X="1205" Y="334" />
+<info>Hidden treasure marker</info>
+</discoverprompt>
+<GUID>A6F4D060-4EDE551A-B5F03DB3-00DDE3A3</GUID>
+<reward XP="0"/>
+</quest>
+
+<quest type="treasure" level="4" world = "VE" id="53">
+<name>Lost Goods</name>
+<available>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+</available>
+<discoverprompt>
+<XY world="VE" X="1855" Y="572" />
+</discoverprompt>
+<GUID>78081E59-48B2024F-7C64CDBA-8D1E9E15</GUID>
+</quest>
+
+<quest type="treasure" level="4" world = "VE" id="57">
+<name>Queen Zuleyka's Treasure</name>
+<available>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+</available>
+<discoverprompt>
+<info>Hidden treasure marker</info>
+<XY world="VE" X="-601" Y="-27" />
+</discoverprompt>
+<GUID>517B15A4-41AD72F5-DC6272BD-7B229747</GUID>
+</quest>
+
+<quest type="treasure" level="4" world = "VE" id="59">
+<name>Sunken Chest</name>
+<available>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+</available>
+<discoverprompt>
+<info>Hidden treasure marker</info>
+<XY world="VE" X="110" Y="-945" />
+</discoverprompt>
+<GUID>D36D4C2A-4EC28D7A-48B93E8F-B6A0EB42</GUID>
+</quest>
+
+
+
+<quest level="0" type="event" world="VE" id="29">
+<name>Hazardous Goods II</name>
+<available>
+<GUID state="JS_Success">2639D2AF-44738473-145809B6-7DE9D4C1</GUID>
+</available>
+<discoverprompt>
+<XY world="VE" X="1685" Y="-149" />
+</discoverprompt>
+<reward XP="25"/>
+</quest>
+
+<quest type="side" world="VE" level="5" id="68">
+<name>A Dog's Life</name>
+<GUID>9E0FE58C-4C1692EE-AEEDE1AD-9B01FE10</GUID>
+<available>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+</available>
+<discoverprompt>
+<XY world="VE" X="451" Y="-488" />
+</discoverprompt>
+<reward XP="25"/>
+</quest>
+
+<quest type="event" world="VE" level="5" id="70">
+<name>Caravan Attack</name>
+<available>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+</available>
+<discoverprompt>
+<XY world="VE" X="1259" Y="387" />
+</discoverprompt>
+</quest>
+
+<quest type="event" world="VE" level="5" id="427">
+<name>Looters I - Revolting Peasants</name>
+<available>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+</available>
+<discoverprompt>
+<XY world="VE" X="150" Y="509"/>
+</discoverprompt>
+</quest>
+
+<quest type="event" world="VE" level="5" id="428">
+<name>Looters II - Ghoulish Gatherers</name>
+<available>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+</available>
+<discoverprompt>
+<XY world="VE" X="1225" Y="831"/>
+</discoverprompt>
+</quest>
+
+<quest type="event" world="VE" level="5" id="71">
+<name>Looters III - Toderas Bandits</name>
+<available>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+</available>
+<discoverprompt>
+<XY world="VE" X="1732" Y="55"/>
+</discoverprompt>
+</quest>
+
+<quest type="side" world="VE" level="6" id="82">
+<name>The Fall of the House of Reardon</name>
+<GUID>4FF26AE8-45267A85-9103158E-1931163D</GUID>
+<available>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+</available>
+<discoverprompt>
+<info>! sign over crying woman</info>
+<XY world="VE" X="781" Y="52"/>
+</discoverprompt>
+<reward XP="200"/>
+<subquests>
+<quest type="side" world="VE" level="6" id="83">
+<name>Ghost of the Past</name>
+<GUID>4614B8BA-49B427F1-8D5B8F96-AB94FBF6</GUID>
+<available>
+<GUID state="JS_Active">4FF26AE8-45267A85-9103158E-1931163D</GUID>
+</available>
+<discoverprompt>
+<info>Only if Letho is alive</info>
+</discoverprompt>
+<reward XP="125"/>
+</quest>
+</subquests>
+</quest>
+
+<quest type="side" world="VE" level="6" id="84">
+<name>Fools' Gold</name>
+<GUID>5C8108FD-45D9966D-21960981-F9AFBBD2</GUID>
+<available>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+</available>
+<discoverprompt>
+<info>! sign over men roasting a pig</info>
+<XY world="VE" X="1229" Y="76"/>
+</discoverprompt>
+<reward XP="50"/>
+</quest>
+
+<quest type="contract" world="VE" level="7" id="86">
+<name>Patrol Gone Missing</name>
+<GUID>C5583B34-44155D58-82174C98-CE7BE4EF</GUID>
+<available>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+</available>
+<discoverprompt>
+<info>Notice board</info>
+<XY world="VE" X="2387" Y="-1052"/>
+</discoverprompt>
+<reward XP="35"/>
+</quest>
+
+<quest type="side" world="VE" level="7" id="88">
+<name>Lynch Mob</name>
+<GUID>B917E855-4C13AE9D-AB964AA6-9EC295A3</GUID>
+<available>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+</available>
+<discoverprompt>
+<info>! sign</info>
+<XY world="VE" X="-400" Y="150"/>
+</discoverprompt>
+<reward XP="25"/>
+</quest>
+
+<quest type="side" world="VE" level="7" id="89">
+<name>A Greedy God</name>
+<GUID>1026A2E0-4A9338E6-7F4D409D-0C5BE595</GUID>
+<available>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+</available>
+<discoverprompt>
+<info>! sign</info>
+<XY world="VE" X="-70" Y="-394"/>
+</discoverprompt>
+<reward XP="75"/>
+</quest>
+
+<quest type="side" world="VE" level="7" id="93">
+<name>Wild at Heart</name>
+<GUID>15CBFA78-4DA5D1B1-FC623EAD-9F73CE73</GUID>
+<available>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+</available>
+<discoverprompt>
+<info>Notice board</info>
+<XY world="VE" X="930" Y="590"/>
+</discoverprompt>
+<reward XP="150"/>
+</quest>
+
+<quest type="treasure" world="VE" level="7" id="95">
+<name>Hidden from the World</name>
+<GUID>DDF3B2FC-42AA9D43-BF69CF8C-B5C34370</GUID>
+<available>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+</available>
+<discoverprompt>
+<info>Hidden treasure marker</info>
+<XY world="VE" X="1657" Y="285"/>
+</discoverprompt>
+<reward XP="0"/>
+</quest>
+
+<quest type="event" world="VE" level="8" id="100">
+<name>Karmic Justice</name>
+<available>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+</available>
+<discoverprompt>
+<XY world="VE" X="862" Y="1831"/>
+</discoverprompt>
+</quest>
+
+<quest type="event" world="VE" level="9" id="110">
+<name>Face Me if You Dare</name>
+<available>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+</available>
+<discoverprompt>
+<XY world="VE" X="217" Y="-28"/>
+</discoverprompt>
+<reward XP="25"/>
+</quest>
+
+<quest type="treasure" world="VE" level="9" id="113">
+<name>Out of the Frying Pan, Into the Fire</name>
+<GUID>6CA5D2B3-4040584A-6B44E8B6-20B2AC27</GUID>
+<available>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+</available>
+<discoverprompt>
+<info>Hidden treasure marker</info>
+<XY world="VE" X="1408" Y="164"/>
+</discoverprompt>
+</quest>
+
+<quest type="treasure" world="VE" level="9" id="114">
+<name>The Dead Have No Defense</name>
+<GUID>ED406EC1-4CC5DB14-A9ED4497-27262A26</GUID>
+<available>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+</available>
+<discoverprompt>
+<XY world="VE" X="-496" Y="-754"/>
+</discoverprompt>
+</quest>
+
+<quest type="contract" world="VE" level="10" id="115">
+<name>The Merry Widow</name>
+<GUID>34DDEA30-468AE445-77D61A92-31DD03DC</GUID>
+<available>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+</available>
+<discoverprompt>
+<info>Notice board</info>
+<XY world="VE" X="770" Y="63"/>
+</discoverprompt>
+</quest>
+
+<quest type="side" world="VE" level="10" id="119">
+<name>Witcher Wannabe</name>
+<GUID>4D001168-41FF9E8C-6A3CEF92-FDDA678F</GUID>
+<available>
+<GUID state="JS_Success">34DDEA30-468AE445-77D61A92-31DD03DC</GUID>
+</available>
+<discoverprompt>
+<XY world="VE" X="765" Y="74"/>
+<info>Wait at least 5 full days after The Merry Widow, fast travel away and back if necessary.</info>
+</discoverprompt>
+</quest>
+
+<quest type="contract" world="VE" level="10" id="116">
+<name>Jenny o' the Woods</name>
+<GUID>01ED9015-41F7A1C1-3C1F26BB-6E0A3E0B</GUID>
+<available>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+</available>
+<discoverprompt>
+<info>Notice board</info>
+<XY world="VE" X="-366" Y="-244"/>
+</discoverprompt>
+</quest>
+
+<quest type="side" world="VE" level="10" id="118">
+<name>Defender of the Faith</name>
+<GUID>93A95560-416AFF7A-6CFE1FA6-9FD77B9C</GUID>
+<available>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+</available>
+<discoverprompt>
+<info>! sign near a toppled statue</info>
+<XY world="VE" X="-69" Y="154"/>
+</discoverprompt>
+<reward XP="85"/>
+</quest>
+
+<quest type="side" world="VE" level="10" id="120">
+<name>Love's Cruel Snares</name>
+<GUID>2EE12A3D-432BFAF7-0908759A-8DE7890E</GUID>
+<available>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+</available>
+<discoverprompt>
+<XY world="VE" X="-591" Y="-340"/>
+<info>Clear the nearby settlement and the bandit camp on the peninsula to the west.</info>
+</discoverprompt>
+</quest>
+
+<quest type="side" world="VE" level="10" id="121">
+<name>Death By Fire</name>
+<GUID>4FDB3D24-4D7090BF-67EB0B9A-F9492C96</GUID>
+<available>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+</available>
+<discoverprompt>
+<XY world="VE" X="1083" Y="909"/>
+</discoverprompt>
+<reward XP="25"/>
+</quest>
+
+<quest type="side" world="VE" level="11" id="130">
+<name>Fists of Fury: Velen</name>
+<GUID>BD0558AA-4C809220-048AB2BB-453FC15D</GUID>
+<available>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+</available>
+<discoverprompt>
+<XY world="VE" X="770" Y="70"/>
+</discoverprompt>
+</quest>
+
+<quest type="treasure" world="VE" level="11" id="134">
+<name>Scavenger Hunt: Griffin School Gear</name>
+<GUID>50B8D133-4FAA0E7B-B42AF7BE-6B57B0F0</GUID>
+<available>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+</available>
+<discoverprompt>
+<info>Buy map from armorer</info>
+<XY world="VE" X="-392" Y="-231"/>
+</discoverprompt>
+</quest>
+
+<quest type="contract" world="VE" level="12" id="135">
+<name>Swamp Thing</name>
+<GUID>210232CB-4EF519B3-67C847AA-2FA3F75F</GUID>
+<available>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+</available>
+<discoverprompt>
+<XY world="VE" X="1148" Y="-572"/>
+</discoverprompt>
+</quest>
+
+<quest type="side" world="VE" level="12" id="139">
+<name>Blood Ties</name>
+<GUID>BCBB27C8-4FA7E374-3CC1408F-8CD2AC77</GUID>
+<available>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+</available>
+<discoverprompt>
+<XY world="VE" X="2361" Y="-897"/>
+</discoverprompt>
+</quest>
+
+<quest type="treasure" world="VE" level="12" id="154">
+<name>The Things Men Do For Coin...</name>
+<GUID>4CBF2CDE-488F74F6-45D4BFAA-E41558FE</GUID>
+<available>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+</available>
+<discoverprompt>
+<XY world="VE" X="550" Y="984"/>
+</discoverprompt>
+</quest>
+
+<quest type="treasure" world="VE" level="13" id="167">
+<name>Coast of Wrecks</name>
+<GUID>6361033C-4E1B9ACF-83944B87-FF32099D</GUID>
+<available>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+</available>
+<discoverprompt>
+<XY world="VE" X="254" Y="1224"/>
+</discoverprompt>
+</quest>
+
+<quest type="treasure" world="VE" level="15" id="202">
+<name>Don't Play with the Gods</name>
+<GUID>1D6D26EC-454BD469-FEBC1E9A-F246129B</GUID>
+<available>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+</available>
+<discoverprompt>
+<XY world="VE" X="-235" Y="-691"/>
+</discoverprompt>
+</quest>
+
+<quest type="treasure" world="VE" level="18" id="225">
+<name>A Costly Mistake</name>
+<GUID>987A0A55-4A591BD2-64B80897-ECCB7F89</GUID>
+<available>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+</available>
+<discoverprompt>
+<XY world="VE" X="-634" Y="147"/>
+</discoverprompt>
+</quest>
+
+<quest type="treasure" world="VE" level="18" id="226">
+<name>Tough Luck</name>
+<GUID>9D07785D-40177008-757518A2-60A41A1A</GUID>
+<available>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+</available>
+<discoverprompt>
+<XY world="VE" X="1327" Y="492"/>
+</discoverprompt>
+<reward XP="0"/>
+</quest>
+
+<quest type="contract" world="VE" level="20" id="234">
+<name>Mysterious Tracks</name>
+<GUID>FDADCB0D-43B1AC15-D25AF1A3-92360167</GUID>
+<available>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+</available>
+<discoverprompt>
+<XY world="VE" X="773" Y="67"/>
+</discoverprompt>
+<reward XP="450"/>
+</quest>
+
+<quest type="contract" world="VE" level="23" id="250">
+<name>Phantom of the Trade Route</name>
+<GUID>915C91BF-47B869DE-0B9CEDBE-44113A37</GUID>
+<available>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+</available>
+<discoverprompt>
+<XY world="VE" X="1902" Y="-148"/>
+</discoverprompt>
+<reward XP="400"/>
+</quest>
+
+<quest type="contract" world="VE" level="25" id="266">
+<name>The Beast of Honorton</name>
+<GUID>BD40C6D4-4532FB2D-187DEDBF-2C42C6F6</GUID>
+<available>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+</available>
+<discoverprompt>
+<XY world="VE" X="197" Y="-456"/>
+<info>Notice board</info>
+</discoverprompt>
+<setdoneautomatic>
+<GUID state="JS_Success">35CCCB0A-4C518790-D11C34B4-6CDBEA77</GUID>
+</setdoneautomatic>
+</quest>
+
+<quest type="side" world="VE" level="25" id="268">
+<name>Where the Cat and Wolf Play...</name>
+<GUID>35CCCB0A-4C518790-D11C34B4-6CDBEA77</GUID>
+<available>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+</available>
+<discoverprompt>
+<XY world="VE" X="240" Y="-206"/>
+</discoverprompt>
+<reward XP="400"/>
+</quest>
+
+<quest type="side" world="VE" level="25" id="267">
+<name>Take What You Want</name>
+<GUID>7258B2FB-4A41EF24-647735A2-6528FC9F</GUID>
+<available>
+<GUID state="JS_Success">BD40C6D4-4532FB2D-187DEDBF-2C42C6F6</GUID>
+</available>
+<hideif>
+<GUID state="JS_Active">3D38A3BB-43644405-D5D87083-7731411C</GUID>
+</hideif>
+</quest>
+
+<quest type="treasure" world="VE" level="28" id="290">
+<name>A Plea Ignored</name>
+<GUID>33474E9D-43AD427F-47E908A5-EB14398F</GUID>
+<available>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+</available>
+<discoverprompt>
+<XY world="VE" X="-725" Y="-659"/>
+</discoverprompt>
+</quest>
+
+<quest type="contract" world="VE" level="33" id="314">
+<name>Missing Brother</name>
+<GUID>6C4EF31A-4B5F767F-B846D393-85EA4A1C</GUID>
+<available>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+</available>
+<discoverprompt>
+<XY world="VE" X="510" Y="543"/>
+</discoverprompt>
+<reward XP="300"/>
+</quest>
+
+<quest type="contract" world="VE" level="6" id="72">
+<name>Woodland Beast</name>
+<GUID>6AFAFC3C-47D50499-6D21D3A7-0D30C14D</GUID>
+<available>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+</available>
+<discoverprompt>
+<info>Notice board</info>
+<XY world="VE" X="820" Y="964"/>
+</discoverprompt>
+</quest>
+
+<quest type="contract" world="VE" level="22" id="243">
+<name>The Mystery of the Byways Murders</name>
+<GUID>96D759B7-465E24FF-1E756D99-63C57C10</GUID>
+<available>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+</available>
+<discoverprompt>
+<XY world="VE" X="170" Y="-452"/>
+<info>Notice board</info>
+</discoverprompt>
+<reward XP="375"/>
+</quest>
+
+<quest level="5" type="main" world="VE" id="60">
+<name>The Nilfgaardian Connection</name>
+<GUID>3D77BF9D-4F453FF0-66AA658F-A6353227</GUID>
+<available>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+</available>
+<reward XP="100"/>
+<!--<subquests>
+<quest type="main" world="VE" level="0" id="5">
+<name>In Ciri's Footsteps</name>
+<GUID>78F7725E-43AE9EE2-361B119F-28DDF476</GUID>
+<available>
+<GUID state="JS_Active">3D77BF9D-4F453FF0-66AA658F-A6353227</GUID>
+</available>
+</quest>
+</subquests>-->
+</quest>
+
+<quest level="5" type="main" world="VE" id="65">
+<name>Hunting a Witch</name>
+<GUID>19B5B835-494C9ACC-3F41BDB8-72C94684</GUID>
+<available>
+<GUID state="JS_Success">3D77BF9D-4F453FF0-66AA658F-A6353227</GUID>
+</available>
+<reward XP="100"/>
+</quest>
+
+<quest type="main" world="VE" level="6" id="75">
+<name>Wandering in the Dark</name>
+<GUID>9B0CDB84-48EB84A9-D74AE685-1F8EBF16</GUID>
+<available>
+<GUID state="JS_Success">19B5B835-494C9ACC-3F41BDB8-72C94684</GUID>
+</available>
+<reward XP="900"/>
+</quest>
+
+<quest type="side" world="VE" level="6" id="78">
+<name>Magic Lamp</name>
+<GUID>46D709E3-477DBFF9-A58BFE83-2D712006</GUID>
+<available>
+<GUID state="JS_Success">9B0CDB84-48EB84A9-D74AE685-1F8EBF16</GUID>
+</available>
+<reward XP="100"/>
+</quest>
+
+<quest type="side" world="VE" level="6" id="79">
+<name>An Invitation from Keira Metz</name>
+<GUID>287CD23B-4C20FCC1-D52269AD-47670132</GUID>
+<available>
+<GUID state="JS_Success">46D709E3-477DBFF9-A58BFE83-2D712006</GUID>
+</available>
+</quest>
+
+<quest type="side" world="VE" level="6" id="80">
+<name>A Towerful of Mice</name>
+<GUID>38E268CF-431777D8-0A106B87-22F7BA0D</GUID>
+<available>
+<GUID state="JS_Success">287CD23B-4C20FCC1-D52269AD-47670132</GUID>
+</available>
+<reward XP="1350"/>
+</quest>
+
+<quest type="side" world="VE" level="6" id="81">
+<name>A Favor for a Friend</name>
+<GUID>1EE3C260-47DE26F3-7D422FA3-94EE84C7</GUID>
+<available>
+<GUID state="JS_Success">38E268CF-431777D8-0A106B87-22F7BA0D</GUID>
+</available>
+<reward XP="155"/>
+</quest>
+
+<quest type="side" world="VE" level="8" id="99">
+<name>For the Advancement of Learning</name>
+<GUID>3D71D5DD-4002F7DE-F8C5ECBE-13E226D0</GUID>
+<available>
+<GUID state="JS_Success">1EE3C260-47DE26F3-7D422FA3-94EE84C7</GUID>
+</available>
+<reward XP="250"/>
+</quest>
+
+<quest type="main" world="VE" level="6" id="73">
+<name>Bloody Baron</name>
+<GUID>9EFDC32A-48F7E75E-421189B7-97877E0E</GUID>
+<available>
+<GUID state="JS_Success">3D77BF9D-4F453FF0-66AA658F-A6353227</GUID>
+</available>
+<reward XP="250"/>
+<subquests>
+<quest type="main" world="VE" level="5" id="61">
+<name>Ciri's Story: The King of the Wolves</name>
+<GUID>32F85932-44D65DB3-A07704AA-F340C0BC</GUID>
+<available>
+<GUID state="JS_Active">9EFDC32A-48F7E75E-421189B7-97877E0E</GUID>
+</available>
+</quest>
+</subquests>
+</quest>
+
+<quest type="race" world="VE" level="0" id="8">
+<name>Races: Crow's Perch</name>
+<GUID>6E696C48-49E62FEA-947FC48E-AB746137</GUID>
+<available>
+<GUID state="JS_Success">9EFDC32A-48F7E75E-421189B7-97877E0E</GUID>
+</available>
+<discoverprompt>
+<XY world="VE" X="242" Y="137"/>
+</discoverprompt>
+</quest>
+
+<quest type="side" world="VE" level="5" id="69">
+<name>Ciri's Room</name>
+<GUID>74A38073-4CBDFE20-A68A8A9A-0AB18A1C</GUID>
+<available>
+<GUID state="JS_Success">9EFDC32A-48F7E75E-421189B7-97877E0E</GUID>
+</available>
+<discoverprompt>
+<XY world="VE" X="177" Y="180"/>
+</discoverprompt>
+<reward XP="100"/>
+</quest>
+
+<quest type="main" world="VE" level="6" id="74">
+<name>Family Matters</name>
+<GUID>DB024D36-4E9AE35E-FB098D89-C8E7AB0F</GUID>
+<available>
+<GUID state="JS_Success">9EFDC32A-48F7E75E-421189B7-97877E0E</GUID>
+</available>
+
+<subquests>
+<quest type="main" world="VE" level="5" id="63">
+<name>A Princess in Distress</name>
+<GUID>76EBF26B-42EE49CF-D65167A4-00A39FAF</GUID>
+<available>
+<GUID state="JS_Active">DB024D36-4E9AE35E-FB098D89-C8E7AB0F</GUID>
+</available>
+</quest>
+
+<quest type="main" world="VE" level="5" id="64">
+<name>Ciri's Story: The Race</name>
+<GUID>8CBD6C93-4C8182A8-48A9E291-7305DFB6</GUID>
+<available>
+<GUID state="JS_Active">DB024D36-4E9AE35E-FB098D89-C8E7AB0F</GUID>
+</available>
+</quest>
+
+<quest type="main" world="VE" level="5" id="62">
+<name>Ciri's Story: Out of the Shadows</name>
+<GUID>BADE3825-4750A892-33CBE280-5F980C38</GUID>
+<available>
+<GUID state="JS_Active">DB024D36-4E9AE35E-FB098D89-C8E7AB0F</GUID>
+</available>
+</quest>
+
+</subquests>
+</quest>
+
+<quest type="event" world="VE" level="0" id="433">
+<name>Crow's Perch Fight</name>
+<available>
+<GUID state="JS_Success">7E03203E-4D6504E3-165C8693-A93BD13C</GUID>
+</available>
+<discoverprompt>
+<info>Goons harassing people</info>
+<XY world="VE" X="177" Y="86"/>
+</discoverprompt>
+</quest>
+
+
+
+<quest type="main" world="VE" level="6" id="76">
+<name>Ladies of the Wood</name>
+<GUID>EA962976-4E950F34-834FC1BD-461991C7</GUID>
+<available>
+<GUID state="JS_Success">9B0CDB84-48EB84A9-D74AE685-1F8EBF16</GUID>
+</available>
+<subquests>
+
+<quest type="main" world="VE" level="5" id="67">
+<name>The Whispering Hillock</name>
+<GUID>B98F2BEE-409F41CC-3752288B-F5FCEB0C</GUID>
+<available>
+<GUID state="JS_Active">EA962976-4E950F34-834FC1BD-461991C7</GUID>
+</available>
+</quest>
+
+<quest type="main" world="VE" level="5" id="66">
+<name>Ciri's Story: Fleeing the Bog</name>
+<GUID>3325808C-48B20518-E3258F84-F507D3BE</GUID>
+<available>
+<GUID state="JS_Active">EA962976-4E950F34-834FC1BD-461991C7</GUID>
+</available>
+</quest>
+</subquests>
+</quest>
+
+<quest type="side" world="VE" level="7" id="91">
+<name>Forefathers' Eve</name>
+<GUID>D9F8303B-423561FD-9AC34DAC-420419B4</GUID>
+<available>
+<GUID state="JS_Success">76EBF26B-42EE49CF-D65167A4-00A39FAF</GUID>
+</available>
+<discoverprompt>
+<XY world="VE" X="200" Y="152"/>
+<info>Encounter the pellar on the way back to talk to the Baron</info>
+</discoverprompt>
+</quest>
+
+<quest type="side" world="VE" level="9" id="105">
+<name>Last Rites</name>
+<GUID>D637A77D-4F37B7B2-BBD695A6-E1090C08</GUID>
+<available>
+<GUID state="JS_Success">93A95560-416AFF7A-6CFE1FA6-9FD77B9C</GUID>
+</available>
+<discoverprompt>
+<XY world="VE" X="-162" Y="265"/>
+<info>Woman on a bridge at night. Must be done before the end of Family Matters.</info>
+</discoverprompt>
+</quest>
+
+
+
+<quest type="side" world="VE" level="9" id="107">
+<name>Return to Crookback Bog</name>
+<GUID>7E03203E-4D6504E3-165C8693-A93BD13C</GUID>
+<available>
+<GUID state="JS_Success">DB024D36-4E9AE35E-FB098D89-C8E7AB0F</GUID>
+</available>
+</quest>
+
+<quest type="contract" world="VE" level="8" id="96">
+<name>Shrieker</name>
+<GUID>AEDB434D-438C5423-61A7D898-6DC9F894</GUID>
+<available>
+<GUID state="JS_Success">9EFDC32A-48F7E75E-421189B7-97877E0E</GUID>
+</available>
+<discoverprompt>
+<info>Notice board</info>
+<XY world="VE" X="240" Y="136"/>
+</discoverprompt>
+</quest>
+
+<quest type="side" level="7" world = "VE" id="90">
+<name>Thou Shalt Not Pass</name>
+<GUID>37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+<available>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+</available>
+<discoverprompt>
+<info>Try to cross the Pontar bridge</info>
+<XY world="NO" X="1652" Y="879" />
+</discoverprompt>
+<setdoneautomatic>
+<GUID state="JS_Success">33B84675-457F7812-2FB590BE-541D6702</GUID>
+<GUID state="JS_Success">DB024D36-4E9AE35E-FB098D89-C8E7AB0F</GUID>
+</setdoneautomatic>
+<reward XP="75"/>
+<subquests>
+
+<quest type="side" world="VE" level="9" id="106">
+<name>Fake Papers</name>
+<GUID>33B84675-457F7812-2FB590BE-541D6702</GUID>
+<available>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+</available>
+<discoverprompt>
+<XY world="VE" X="865" Y="946"/>
+</discoverprompt>
+</quest>
+
+<quest type="side" world="VE" level="9" id="104">
+<name>Bitter Harvest</name>
+<GUID>8767DF69-4B263640-582710B9-F501FDBA</GUID>
+<available>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+</available>
+</quest>
+
+</subquests>
+</quest>
+
+
+
+<!--Novigrad available after Thou Shalt Not Pass 37881603-4A81EF31-571EBAAC-4304CEE6 or Fake Papers or after Family Matters-->
+
+
+<quest type="event" level="0" world = "VE" id="27">
+<name>At the Mercy of Strangers</name>
+<available>
+<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+</available>
+<discoverprompt>
+<info>! sign</info>
+<XY world="VE" X="388" Y="1272" />
+</discoverprompt>
+</quest>
+
+<quest type="treasure" world="NO" level="18" id="221">
+<name>Scavenger Hunt: Griffin School Gear Upgrade Diagrams - Part 1</name>
+<GUID>AC4B6FA2-4E2B04E9-3AC400A0-239A8199</GUID>
+<available>
+<GUID state="JS_Success">50B8D133-4FAA0E7B-B42AF7BE-6B57B0F0</GUID>
+<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+</available>
+<discoverprompt>
+<XY world="VE" X="-392" Y="-231"/>
+<info>Buy map from armorer</info>
+</discoverprompt>
+</quest>
+
+<quest type="treasure" world="NO" level="18" id="222">
+<name>Scavenger Hunt: Griffin School Gear Upgrade Diagrams - Part 2</name>
+<GUID>8C40CB19-4F5F60EA-90A9F183-598494D7</GUID>
+<available>
+<GUID state="JS_Success">50B8D133-4FAA0E7B-B42AF7BE-6B57B0F0</GUID>
+<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+</available>
+<discoverprompt>
+<XY world="VE" X="-392" Y="-231"/>
+<info>Buy map from armorer</info>
+</discoverprompt>
+</quest>
+
+<quest type="treasure" world="NO" level="17" id="216">
+<name>Scavenger Hunt: Cat School Gear</name>
+<GUID>C513BD36-423276DE-86C4E9B0-42E9A8AB</GUID>
+<available>
+<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+</available>
+<discoverprompt>
+<XY world="VE" X="-196" Y="172"/>
+<info>Buy map from blacksmith</info>
+</discoverprompt>
+</quest>
+
+<quest type="treasure" world="NO" level="23" id="253">
+<name>Scavenger Hunt: Cat School Gear Upgrade Diagrams - Part 1</name>
+<GUID>DFFC24F2-4650EF40-F8679FA6-F3C18F00</GUID>
+<available>
+<GUID state="JS_Success">C513BD36-423276DE-86C4E9B0-42E9A8AB</GUID>
+<GUID state="JS_Success">33B84675-457F7812-2FB590BE-541D6702</GUID>
+</available>
+<discoverprompt>
+<XY world="VE" X="-196" Y="172"/>
+<info>Buy map from blacksmith</info>
+</discoverprompt>
+</quest>
+
+<quest type="treasure" world="NO" level="23" id="254">
+<name>Scavenger Hunt: Cat School Gear Upgrade Diagrams - Part 2</name>
+<GUID>9BCE69B0-4F6F3CE0-B81E98A2-0C0E97F8</GUID>
+<available>
+<GUID state="JS_Success">C513BD36-423276DE-86C4E9B0-42E9A8AB</GUID>
+<GUID state="JS_Success">33B84675-457F7812-2FB590BE-541D6702</GUID>
+</available>
+<discoverprompt>
+<XY world="VE" X="220" Y="137"/>
+<info>Buy map from merchant</info>
+</discoverprompt>
+</quest>
+
+<quest type="treasure" world="NO" level="29" id="293">
+<name>Scavenger Hunt: Cat School Gear Upgrade Diagrams - Part 3</name>
+<GUID>1898B768-4D6FD27D-26BE2C92-0F7883B1</GUID>
+<available>
+<GUID state="JS_Success">DFFC24F2-4650EF40-F8679FA6-F3C18F00</GUID>
+<GUID state="JS_Success">9BCE69B0-4F6F3CE0-B81E98A2-0C0E97F8</GUID>
+<GUID state="JS_Success">33B84675-457F7812-2FB590BE-541D6702</GUID>
+</available>
+<discoverprompt>
+<XY world="VE" X="756" Y="122"/>
+<info>Buy map from blacksmith</info>
+</discoverprompt>
+</quest>
+
+<quest type="main" world="NO" level="16" id="206">
+<name>Destination: Skellige</name>
+<GUID>550442BD-43AF7D49-9E0A09B5-54BCCDCC</GUID>
+<available>
+<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+</available>
+<reward XP="850"/>
+</quest>
+
+<quest type="side" level="0" world = "NO" id="41">
+<name>The Dwarven Document Dilemma</name>
+<available>
+<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+</available>
+<discoverprompt>
+<info>! sign</info>
+<XY world="NO" X="925" Y="1785" />
+</discoverprompt>
+<GUID>4BAE35CF-4152C544-6D1B748C-D68C7B61</GUID>
+<reward XP="25"/>
+</quest>
+
+<quest type="event" level="0" world = "NO" id="32">
+<name>Strumpet In Distress</name>
+<available>
+<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+</available>
+<discoverprompt>
+<XY world="NO" X="409" Y="1673" />
+</discoverprompt>
+<reward XP="10" />
+</quest>
+
+<quest type="event" level="0" world = "NO" id="33">
+<name>Suspicious Shakedown</name>
+<available>
+<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+</available>
+<discoverprompt>
+<XY world="NO" X="746" Y="1768" />
+</discoverprompt>
+</quest>
+
+<quest type="event" level="0" world = "NO" id="34">
+<name>The Flame Of Hatred</name>
+<available>
+<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+</available>
+<discoverprompt>
+<XY world="NO" X="715" Y="1855" />
+</discoverprompt>
+</quest>
+
+<quest type="side" world="NO" level="0" id="13">
+<name>Gwent: Playing Innkeeps</name>
+<GUID>15BA81D3-4E85B6BD-DF83E995-5D7770CE</GUID>
+<available>
+<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+</available>
+<objectives>
+<objective id="442">
+<name>Win Stjepan's unique card</name>
+<GUID>C084F362-455953B1-F3B430AB-50537C1E</GUID>
+<reward XP="25"/>
+</objective>
+<objective id="443">
+<name>Win a unique card from the innkeep at the Inn at the Crossroads</name>
+<GUID>A485F434-4AB069A9-1ED83BA4-3731A154</GUID>
+<reward XP="25"/>
+</objective>
+<objective id="444">
+<name>Win Olivier's unique card</name>
+<GUID>B4F5F531-47D48E0E-7F76F894-DA961406</GUID>
+<reward XP="25"/>
+</objective>
+</objectives>
+</quest>
+
+<quest type="side" world="NO" level="0" id="21">
+<name>Empty Coop</name>
+<GUID>5D8D80D4-47E33A15-8C576FB1-3AC4736F</GUID>
+<available>
+<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+</available>
+<discoverprompt>
+<info>! sign</info>
+<XY world="NO" X="1371" Y="1964"/>
+</discoverprompt>
+<reward XP="35"/>
+</quest>
+
+<quest type="side" world="NO" level="0" id="24">
+<name>Message from an Old Friend</name>
+<GUID>546EC303-469C24B8-809E7286-58C288A0</GUID>
+<available>
+<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+</available>
+<discoverprompt>
+<info>Talk to the bookseller</info>
+<XY world="NO" X="656" Y="1913"/>
+</discoverprompt>
+</quest>
+
+<quest type="event" world="NO" level="0" id="26">
+<name>A Warm Welcome</name>
+<available>
+<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+</available>
+<discoverprompt>
+<XY world="NO" X="1346" Y="1596"/>
+</discoverprompt>
+<reward XP="25"/>
+</quest>
+
+<quest type="event" world="NO" level="0" id="28">
+<name>Drunken Rabble</name>
+<available>
+<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+</available>
+<discoverprompt>
+<XY world="NO" X="550" Y="1839"/>
+</discoverprompt>
+<reward XP="25"/>
+</quest>
+
+<quest type="event" world="NO" level="0" id="31">
+<name>Racists of Novigrad I</name>
+<available>
+<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+</available>
+<discoverprompt>
+<XY world="NO" X="556" Y="1674"/>
+</discoverprompt>
+</quest>
+
+<quest type="event" world="NO" level="7" id="94">
+<name>Racists of Novigrad II</name>
+<available>
+<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+</available>
+<discoverprompt>
+<XY world="NO" X="858" Y="1815"/>
+</discoverprompt>
+</quest>
+
+<quest type="side" world="NO" level="6" id="77">
+<name>Hey, You Wanna Look at My Stuff?</name>
+<GUID>966D9C4F-4058A759-EF437983-146F4BB6</GUID>
+<available>
+<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+</available>
+<discoverprompt>
+<info>Talk to dwarf merchant</info>
+<XY world="NO" X="515" Y="1976"/>
+</discoverprompt>
+</quest>
+
+<quest type="side" world="NO" level="8" id="97">
+<name>Hidden Messages of the Nilfgaardian Kind</name>
+<GUID>A6D42062-41BF578C-D80E12A6-55FEF82D</GUID>
+<available>
+<GUID state="JS_Success">85131BEE-4AF999EC-AD9B0586-FA06CE11</GUID>
+</available>
+<discoverprompt>
+<XY world="NO" X="730" Y="1930"/>
+<info>Oversee some people passing secrets under an arch (does not always trigger)</info>
+</discoverprompt>
+</quest>
+
+<quest type="side" world="NO" level="8" id="98">
+<name>Novigrad Hospitality</name>
+<GUID>894669D1-458497AB-E2FA1CAE-46DFC1D0</GUID>
+<available>
+<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+</available>
+<discoverprompt>
+<info>! sign</info>
+<XY world="NO" X="1019" Y="2439"/>
+</discoverprompt>
+</quest>
+
+<quest type="side" world="NO" level="9" id="103">
+<name>Of Dairy and Darkness</name>
+<GUID>B85F69B4-4563B896-339733A6-9223A984</GUID>
+<available>
+<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+</available>
+<discoverprompt>
+<info>Talk to the merchant</info>
+<XY world="NO" X="680" Y="2016"/>
+</discoverprompt>
+</quest>
+
+<quest type="event" world="NO" level="9" id="111">
+<name>Face Me if You Dare II</name>
+<available>
+<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+</available>
+<discoverprompt>
+<XY world="NO" X="898" Y="1732"/>
+</discoverprompt>
+<reward XP="25"/>
+</quest>
+
+<quest type="event" world="NO" level="9" id="112">
+<name>Face Me if You Dare III</name>
+<available>
+<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+</available>
+<discoverprompt>
+<XY world="NO" X="501" Y="1910"/>
+</discoverprompt>
+<reward XP="50"/>
+</quest>
+
+<quest type="side" world="NO" level="10" id="122">
+<name>Rough Neighborhood</name>
+<GUID>F4928196-42A4EACE-904AC5A4-45C8FF9D</GUID>
+<available>
+<GUID state="JS_Success">43E9C2A8-43DADE8C-FEC51388-977FB3FC</GUID>
+</available>
+<discoverprompt>
+<info>! sign</info>
+<XY world="NO" X="1674" Y="975"/>
+</discoverprompt>
+</quest>
+
+<quest type="event" world="NO" level="10" id="123">
+<name>The Most Truest of Basilisks</name>
+<available>
+<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+</available>
+<discoverprompt>
+<info>! sign</info>
+<XY world="NO" X="1909" Y="1131"/>
+</discoverprompt>
+</quest>
+
+<quest type="side" world="NO" level="11" id="129">
+<name>A Barnful of Trouble</name>
+<GUID>8586A6C6-4EB2533D-38A053BC-89E8CF3B</GUID>
+<available>
+<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+</available>
+<discoverprompt>
+<info>! sign</info>
+<XY world="NO" X="1540" Y="1454"/>
+</discoverprompt>
+</quest>
+
+<quest type="side" world="NO" level="12" id="138">
+<name>Spooked Mare</name>
+<GUID>9C6ECBD4-42140800-325CDBB1-5A64A760</GUID>
+<available>
+<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+</available>
+<discoverprompt>
+<XY world="NO" X="2004" Y="897"/>
+</discoverprompt>
+</quest>
+
+<quest type="side" world="NO" level="12" id="142">
+<name>A Walk on the Waterfront</name>
+<GUID>6EF66A4F-4A74160D-9D1B88BF-4891A5C4</GUID>
+<available>
+<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+</available>
+<discoverprompt>
+<info>! sign</info>
+<XY world="NO" X="492" Y="1710"/>
+</discoverprompt>
+</quest>
+
+<quest type="contract" world="NO" level="13" id="155">
+<name>An Elusive Thief</name>
+<GUID>D713995F-4D748EC3-F8C29892-A5309EB8</GUID>
+<available>
+<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+</available>
+<discoverprompt>
+<info>Notice board</info>
+<XY world="NO" X="670" Y="1903"/>
+</discoverprompt>
+</quest>
+
+<quest type="side" world="NO" level="13" id="157">
+<name>The Volunteer</name>
+<GUID>5AF9BD9A-4EC9C1C1-F1C28FA4-001DD280</GUID>
+<available>
+<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+</available>
+<discoverprompt>
+<info>! sign on a troll</info>
+<XY world="NO" X="1489" Y="1015"/>
+</discoverprompt>
+</quest>
+
+<quest type="side" world="NO" level="13" id="161">
+<name>A Tome Entombed</name>
+<GUID>08C47340-461756C2-B17C5499-33536918</GUID>
+<available>
+<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+</available>
+<discoverprompt>
+<XY world="NO" X="805" Y="1945"/>
+<info>Enter the sewers and find tomb</info>
+</discoverprompt>
+</quest>
+
+<quest type="side" world="NO" level="13" id="162">
+<name>Warehouse of Woe</name>
+<GUID>A1B177A9-451D23B7-58728DB5-7D319E51</GUID>
+<available>
+<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+</available>
+<discoverprompt>
+<XY world="NO" X="311" Y="1706"/>
+</discoverprompt>
+</quest>
+
+<quest type="event" world="NO" level="13" id="163">
+<name>Saving Moritz Diefenthal</name>
+<available>
+<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+</available>
+<discoverprompt>
+<XY world="NO" X="653" Y="1659"/>
+</discoverprompt>
+</quest>
+
+<quest type="event" world="NO" level="13" id="165">
+<name>Strangers in the Night</name>
+<available>
+<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+</available>
+<discoverprompt>
+<XY world="NO" X="1372" Y="1507"/>
+</discoverprompt>
+</quest>
+
+<quest type="event" world="NO" level="14" id="188">
+<name>Never Trust Children</name>
+<available>
+<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+</available>
+<discoverprompt>
+<XY world="NO" X="764" Y="1929"/>
+</discoverprompt>
+</quest>
+
+<quest type="contract" world="NO" level="14" id="173">
+<name>The Apiarian Phantom</name>
+<GUID>256F8A48-4F3E33FD-E11C309D-93EA863F</GUID>
+<available>
+<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+</available>
+<discoverprompt>
+<XY world="NO" X="1121" Y="2379"/>
+</discoverprompt>
+</quest>
+
+<quest type="contract" world="NO" level="15" id="191">
+<name>Deadly Delights</name>
+<GUID>2EE64753-4749CF55-84ECCFA2-AFF34B00</GUID>
+<available>
+<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+</available>
+<discoverprompt>
+<XY world="NO" X="559" Y="1841"/>
+<info>Notice board</info>
+</discoverprompt>
+</quest>
+
+<quest type="side" world="NO" level="15" id="198">
+<name>Little Red</name>
+<GUID>E60EB31F-4ACB13E6-6245ECB4-140153C9</GUID>
+<available>
+<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+</available>
+<discoverprompt>
+<XY world="NO" X="1111" Y="2378"/>
+</discoverprompt>
+</quest>
+
+<quest type="contract" world="NO" level="16" id="204">
+<name>The White Lady</name>
+<GUID>30A9D01A-4F9DC8AF-93BD3E90-040A9450</GUID>
+<available>
+<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+</available>
+<discoverprompt>
+<XY world="NO" X="616" Y="1555"/>
+<info>Notice board</info>
+</discoverprompt>
+</quest>
+
+<quest type="treasure" world="NO" level="18" id="223">
+<name>Blood Gold</name>
+<GUID>B16A5F09-47813DA7-85C24BB8-948B248C</GUID>
+<available>
+<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+</available>
+<discoverprompt>
+<XY world="NO" X="1400" Y="1149"/>
+</discoverprompt>
+<reward XP="0"/>
+</quest>
+
+<quest type="treasure" world="NO" level="20" id="239">
+<name>Battlefield Loot</name>
+<GUID>6272B5A8-450D5CB6-DE9279B4-788C5C7E</GUID>
+<available>
+<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+</available>
+<discoverprompt>
+<XY world="NO" X="1267" Y="1274"/>
+</discoverprompt>
+<reward XP="0"/>
+</quest>
+
+<quest type="event" world="NO" level="20" id="237">
+<name>Witch Hunter Raids</name>
+<available>
+<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+</available>
+<discoverprompt>
+<XY world="NO" X="579" Y="1558"/>
+</discoverprompt>
+</quest>
+
+<quest type="side" world="NO" level="23" id="252">
+<name>Fists of Fury: Novigrad</name>
+<GUID>ADB63834-4EFADC15-0B036E9D-D61D4EDD</GUID>
+<available>
+<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+</available>
+<discoverprompt>
+<XY world="NO" X="669" Y="1904"/>
+<info>Notice board</info>
+</discoverprompt>
+<reward XP="160"/>
+</quest>
+
+<quest type="contract" world="NO" level="24" id="255">
+<name>Doors Slamming Shut</name>
+<GUID>AF164E2C-41CC196D-1AB4BFB6-1DAA9A91</GUID>
+<available>
+<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+</available>
+<discoverprompt>
+<XY world="NO" X="667" Y="1898"/>
+</discoverprompt>
+<reward XP="350"/>
+</quest>
+
+<quest type="side" world="NO" level="24" id="263">
+<name>Of Swords and Dumplings</name>
+<GUID>BCFD66C3-4E55BECB-00975882-A9203CDC</GUID>
+<available>
+<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+</available>
+<discoverprompt>
+<XY world="NO" X="595" Y="1699"/>
+</discoverprompt>
+<reward XP="200"/>
+</quest>
+
+<quest type="contract" world="NO" level="25" id="265">
+<name>Lord of the Wood</name>
+<GUID>31761A49-453910B0-B7EB03A7-BA362A08</GUID>
+<available>
+<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+</available>
+<discoverprompt>
+<XY world="NO" X="870" Y="1507"/>
+</discoverprompt>
+<reward XP="300"/>
+</quest>
+
+<quest type="contract" world="NO" level="26" id="272">
+<name>The Oxenfurt Drunk</name>
+<GUID>43E9C2A8-43DADE8C-FEC51388-977FB3FC</GUID>
+<available>
+<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+</available>
+<discoverprompt>
+<XY world="NO" X="1704" Y="1043"/>
+<info>Notice board</info>
+</discoverprompt>
+<reward XP="400"/>
+</quest>
+
+<quest type="race" world="NO" level="32" id="309">
+<name>Races: Swift as the Western Winds</name>
+<GUID>7A04F9E7-49102A1F-94AAFA85-CAC3157C</GUID>
+<available>
+<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+</available>
+<discoverprompt>
+<XY world="NO" X="2505" Y="2410"/>
+</discoverprompt>
+</quest>
+
+<quest type="side" world="NO" level="32" id="310">
+<name>Without a Trace</name>
+<GUID>F8D62C5E-4563387F-38CAB1AE-2A6D8E1B</GUID>
+<available>
+<GUID state="JS_Success">B554FBE9-41969AB7-7123A48A-258002C0</GUID>
+</available>
+<discoverprompt>
+<XY world="NO" X="2247" Y="2477"/>
+<info>Notice board</info>
+</discoverprompt>
+<reward XP="75"/>
+</quest>
+
+<quest type="side" world="NO" level="32" id="311">
+<name>The Taxman Cometh</name>
+<GUID>7E6E5238-4F4BE640-A7AD1189-B6398F13</GUID>
+<available>
+<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+</available>
+<discoverprompt>
+<XY world="NO" X="1703" Y="1063"/>
+<info>Requires 35000 gold to trigger</info>
+</discoverprompt>
+<reward XP="100"/>
+</quest>
+
+<quest type="side" world="NO" level="32" id="312">
+<name>Enchanting: Start-up Costs</name>
+<GUID>9FC8532C-4082C982-86035EB7-565348C8</GUID>
+<available>
+<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+</available>
+<discoverprompt>
+<XY world="NO" X="2521" Y="2416"/>
+<info>Quest may disappear due to a bug</info>
+</discoverprompt>
+<reward XP="230"/>
+</quest>
+
+<quest type="side" world="NO" level="32" id="431">
+<name>Enchanting: Quality Has Its Price</name>
+<GUID>BACA6F45-42119393-83A37B8B-B475EB03</GUID>
+<available>
+<GUID state="JS_Success">9FC8532C-4082C982-86035EB7-565348C8</GUID>
+<GUID state="JS_Success">33B84675-457F7812-2FB590BE-541D6702</GUID>
+</available>
+</quest>
+
+<quest type="treasure" world="NO" level="32" id="313">
+<name>Dowry</name>
+<GUID>19D6292E-455662A6-537BEC9D-06609599</GUID>
+<available>
+<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+</available>
+<discoverprompt>
+<XY world="NO" X="1536" Y="1187"/>
+</discoverprompt>
+</quest>
+
+<quest type="treasure" world="NO" level="33" id="318">
+<name>Tinker, Hunter, Soldier, Spy</name>
+<GUID>96F7F53A-412C7099-F5BE66B0-227B967D</GUID>
+<available>
+<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+</available>
+<discoverprompt>
+<XY world="NO" X="1551" Y="2392"/>
+</discoverprompt>
+</quest>
+
+<quest type="treasure" world="NO" level="33" id="319">
+<name>From Ofier's Distant Shores</name>
+<GUID>A1FFE752-47824B4F-276EA882-944E443E</GUID>
+<available>
+<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+</available>
+<discoverprompt>
+<XY world="NO" X="2505" Y="2410"/>
+<info>Merchant</info>
+</discoverprompt>
+<reward XP="200"/>
+</quest>
+
+<quest type="contract" world="NO" level="35" id="331">
+<name>The Creature from Oxenfurt Forest</name>
+<GUID>0FD87FDB-405C3D98-3871229B-03B5864B</GUID>
+<available>
+<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+</available>
+<discoverprompt>
+<XY world="NO" X="1701" Y="1040"/>
+<info>Notice board</info>
+</discoverprompt>
+<reward XP="400"/>
+</quest>
+
+<quest type="treasure" world="NO" level="36" id="341">
+<name>The Cursed Chapel</name>
+<GUID>D5D60E68-40E4E8AC-9FADA380-0F2889DC</GUID>
+<available>
+<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+</available>
+<discoverprompt>
+<XY world="NO" X="2489" Y="2512"/>
+</discoverprompt>
+</quest>
+
+<quest type="treasure" world="NO" level="36" id="342">
+<name>The Royal Air Force</name>
+<GUID>55341374-4C989677-B9A42DAE-06229E06</GUID>
+<available>
+<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+<GUID state="JS_Success">33B84675-457F7812-2FB590BE-541D6702</GUID>
+</available>
+<discoverprompt>
+<XY world="NO" X="2196" Y="1601"/>
+</discoverprompt>
+</quest>
+
+<quest type="treasure" world="NO" level="36" id="343">
+<name>The Sword, Famine and Perfidy</name>
+<GUID>4F1D428D-4906FE69-E65FAA9B-2F7D3200</GUID>
+<available>
+<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+<GUID state="JS_Success">33B84675-457F7812-2FB590BE-541D6702</GUID>
+</available>
+<discoverprompt>
+<XY world="NO" X="501" Y="2443"/>
+</discoverprompt>
+</quest>
+
+<quest type="side" world="NO" level="38" id="363">
+<name>The Drakenborg Redemption</name>
+<GUID>665C3401-4B425D8F-70D367AA-EE8FCF0F</GUID>
+<available>
+<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+<GUID state="JS_Success">33B84675-457F7812-2FB590BE-541D6702</GUID>
+</available>
+<discoverprompt>
+<XY world="NO" X="1180" Y="2667"/>
+<info>Hidden treasure marker</info>
+</discoverprompt>
+</quest>
+
+<quest type="treasure" world="NO" level="38" id="365">
+<name>The Secret Life of Count Romilly</name>
+<GUID>4F090ED7-4C07940F-D4B94484-85848FBD</GUID>
+<available>
+<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+<GUID state="JS_Success">33B84675-457F7812-2FB590BE-541D6702</GUID>
+</available>
+<discoverprompt>
+<XY world="NO" X="2727" Y="1702"/>
+</discoverprompt>
+</quest>
+
+<quest type="treasure" world="NO" level="38" id="364">
+<name>A Surprise Inheritance</name>
+<GUID>6F79BD9A-4653FFF3-29511FA8-513857C3</GUID>
+<available>
+<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+<GUID state="JS_Success">33B84675-457F7812-2FB590BE-541D6702</GUID>
+</available>
+<discoverprompt>
+<XY world="NO" X="2449" Y="1499"/>
+</discoverprompt>
+</quest>
+
+<quest type="event" world="NO" level="0" id="430">
+<name>The Price of Passage</name>
+<available>
+<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+<GUID state="JS_Success">33B84675-457F7812-2FB590BE-541D6702</GUID>
+</available>
+<discoverprompt>
+<XY world="NO" X="1681" Y="1037"/>
+<info>During of after the Drunk of Oxenfurt</info>
+</discoverprompt>
+<reward XP="10"/>
+</quest>
+
+<quest type="side" world="NO" level="0" id="14">
+<name>Gwent: Big City Players</name>
+<GUID>40B54F3B-48857011-9EC0B3BC-5A7537E2</GUID>
+<available>
+<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+<GUID state="JS_Success">33B84675-457F7812-2FB590BE-541D6702</GUID>
+</available>
+<discoverprompt>
+<XY world="NO" X="627" Y="1876"/>
+<info>Play a game with Vivaldi</info>
+</discoverprompt>
+</quest>
+
+<quest type="main" world="NO" level="34" id="324">
+<name>Envoys, Wineboys</name>
+<GUID>629E3452-444A67F6-70C1C197-BF6E22EF</GUID>
+<available>
+<GUID state="JS_Success">C5306CA1-4D2C97E4-525EF78E-72552F9E</GUID>
+</available>
+<reward XP="0"/>
+</quest>
+
+<quest type="main" world="NO" level="10" id="117">
+<name>Pyres of Novigrad</name>
+<GUID>A7EA902C-4021DB99-121C2E86-77E6923D</GUID>
+<available>
+<GUID state="JS_Success">3D77BF9D-4F453FF0-66AA658F-A6353227</GUID>
+</available>
+</quest>
+
+<quest type="main" world="NO" level="7" id="87">
+<name>Novigrad Dreaming</name>
+<GUID>D2C182B4-449540BC-CCB326B2-4FD786E7</GUID>
+<available>
+<GUID state="JS_Success">A7EA902C-4021DB99-121C2E86-77E6923D</GUID>
+</available>
+</quest>
+
+<quest type="side" world="NO" level="7" id="92">
+<name>Haunted House</name>
+<GUID>585F4FB7-4CF82BDE-D33BB6AC-8D46DF03</GUID>
+<available>
+<GUID state="JS_Success">D2C182B4-449540BC-CCB326B2-4FD786E7</GUID>
+</available>
+<discoverprompt>
+<info>Notice board</info>
+<XY world="NO" X="671" Y="1902"/>
+</discoverprompt>
+</quest>
+
+<quest type="main" world="NO" level="11" id="125">
+<name>Broken Flowers</name>
+<GUID>85131BEE-4AF999EC-AD9B0586-FA06CE11</GUID>
+<available>
+<GUID state="JS_Success">D2C182B4-449540BC-CCB326B2-4FD786E7</GUID>
+</available>
+<objectives>
+<objective id="446">
+<name>Talk to Rosa</name>
+<GUID>0D26CFA2-45BDB708-D34879A0-91F5F4FF</GUID>
+</objective>
+</objectives>
+</quest>
+
+<quest type="side" world="NO" level="12" id="143">
+<name>Fencing Lessons</name>
+<GUID>DE61D321-4ADCB796-2CF78589-DB63A419</GUID>
+<available>
+<GUID state="JS_Success">0D26CFA2-45BDB708-D34879A0-91F5F4FF</GUID>
+</available>
+<discoverprompt>
+<info>Only if you agreed to teach var Artre</info>
+</discoverprompt>
+</quest>
+
+<quest type="side" world="NO" level="12" id="147">
+<name>A Dangerous Game</name>
+<GUID>4EAA1CA7-48911762-9C84E0B0-2EA2F154</GUID>
+<available>
+<GUID state="JS_Success">C5306CA1-4D2C97E4-525EF78E-72552F9E</GUID>
+</available>
+<discoverprompt>
+<XY world="NO" X="733" Y="1730"/>
+<info>Talk to Zoltan</info>
+</discoverprompt>
+</quest>
+
+<quest type="main" world="NO" level="12" id="136">
+<name>Get Junior</name>
+<GUID>5E9E0041-463E3ECD-C72D1B98-5CF5D6C6</GUID>
+<available>
+<GUID state="JS_Success">85131BEE-4AF999EC-AD9B0586-FA06CE11</GUID>
+</available>
+<subquests>
+
+	<quest type="main" world="NO" level="9" id="109">
+	<name>The Gangs of Novigrad</name>
+	<GUID>61F50930-4F9F98E3-ADF189B3-0F4B59EA</GUID>
+	<available>
+	<GUID state="JS_Active">5E9E0041-463E3ECD-C72D1B98-5CF5D6C6</GUID>
+	</available>
+	</quest>
+	
+	<quest type="main" world="NO" level="9" id="447">
+	<name>Go to the chess club with Roche</name>
+	<GUID>CC7CE9D8-41BA1B67-E8E8D99B-9A42FB5B</GUID>
+	<available>
+	<GUID state="JS_Active">5E9E0041-463E3ECD-C72D1B98-5CF5D6C6</GUID>
+	</available>
+	</quest>
+
+	<quest type="main" world="NO" level="9" id="101">
+	<name>Ciri's Story: Visiting Junior</name>
+	<GUID>DC58A7F2-49D51834-AC99B3A6-6106D4CC</GUID>
+	<available>
+	<GUID state="JS_Active">5E9E0041-463E3ECD-C72D1B98-5CF5D6C6</GUID>
+	</available>
+	</quest>
+
+</subquests>
+</quest>
+
+<quest type="main" world="NO" level="12" id="137">
+	<name>Count Reuven's Treasure</name>
+	<GUID>0292F065-4622C52C-4B7C3492-C7B3FA8E</GUID>
+	<available>
+	<GUID state="JS_Active">5E9E0041-463E3ECD-C72D1B98-5CF5D6C6</GUID>
+	</available>
+	</quest>
+
+<quest type="side" world="NO" level="12" id="145">
+<name>A Matter of Life and Death</name>
+<GUID>DF5C1032-43CFD052-056742B1-5E8C57B0</GUID>
+<available>
+<GUID state="JS_Success">0292F065-4622C52C-4B7C3492-C7B3FA8E</GUID>
+</available>
+<available>
+<GUID state="JS_Success">C5306CA1-4D2C97E4-525EF78E-72552F9E</GUID>
+</available>
+</quest>
+
+<quest type="side" world="NO" level="11" id="131">
+<name>Novigrad, Closed City</name>
+<GUID>364A7C69-447A6558-3BCED280-6A244406</GUID>
+<available>
+<GUID state="JS_Success">DF5C1032-43CFD052-056742B1-5E8C57B0</GUID>
+</available>
+<discoverprompt>
+<XY world="NO" X="612" Y="2094"/>
+<info>Trigger cutscene at city gates to get the letter of safe passage.</info>
+</discoverprompt>
+</quest>
+
+<quest type="side" world="NO" level="11" id="132">
+<name>Novigrad, Closed City II</name>
+<GUID>F341460A-4FEE5F9A-CAC768B0-1BE5A868</GUID>
+<available>
+<GUID state="JS_Success">364A7C69-447A6558-3BCED280-6A244406</GUID>
+</available>
+<discoverprompt>
+<XY world="NO" X="531" Y="1927"/>
+</discoverprompt>
+</quest>
+
+
+
+<quest type="side" world="NO" level="14" id="186">
+<name>A Deadly Plot</name>
+<GUID>0731749C-44453634-88CC2AB1-A7F858D7</GUID>
+<available>
+<GUID state="JS_Success">06950C40-442252DF-03C66981-3FD2B4F3</GUID>
+</available>
+</quest>
+
+<quest type="side" world="NO" level="12" id="148">
+<name>An Eye for an Eye</name>
+<GUID>CB6EA4CB-43AB4C94-F37278B7-68FD10A6</GUID>
+<available>
+<GUID state="JS_Success">CC7CE9D8-41BA1B67-E8E8D99B-9A42FB5B</GUID>
+</available>
+</quest>
+
+<quest type="main" world="NO" level="11" id="127">
+<name>The Play's the Thing</name>
+<GUID>35F76922-4196A59D-0327FC95-7CFF788D</GUID>
+<available>
+<GUID state="JS_Success">5E9E0041-463E3ECD-C72D1B98-5CF5D6C6</GUID>
+</available>
+<available>
+<GUID state="JS_Success">0292F065-4622C52C-4B7C3492-C7B3FA8E</GUID>
+</available>
+</quest>
+
+<quest type="main" world="NO" level="13" id="156">
+<name>A Poet Under Pressure</name>
+<GUID>C5306CA1-4D2C97E4-525EF78E-72552F9E</GUID>
+<available>
+<GUID state="JS_Success">35F76922-4196A59D-0327FC95-7CFF788D</GUID>
+</available>
+
+<subquests>
+	<quest type="main" world="NO" level="11" id="126">
+	<name>Ciri's Story: Breakneck Speed</name>
+	<GUID>12B8D11E-4BF80285-D48C5CAF-A75A0887</GUID>
+	<available>
+	<GUID state="JS_Active">C5306CA1-4D2C97E4-525EF78E-72552F9E</GUID>
+	</available>
+	</quest>
+</subquests>
+
+</quest>
+
+
+
+
+
+<quest type="side" world="NO" level="14" id="180">
+<name>The Nobleman Statuette</name>
+<GUID>6F0D2FFF-481E93D1-CBFEC0BC-57E0EE02</GUID>
+<available>
+<GUID state="JS_Success">4EAA1CA7-48911762-9C84E0B0-2EA2F154</GUID>
+</available>
+<discoverprompt>
+<XY world="NO" X="681" Y="2016"/>
+<info>Merchant. Complete before A Matter of Life or Death.</info>
+</discoverprompt>
+</quest>
+
+<quest type="side" world="NO" level="14" id="179">
+<name>The Soldier Statuette</name>
+<GUID>DD3CF855-448B37B2-48E1C9BF-0E94A5AD</GUID>
+<available>
+<GUID state="JS_Success">4EAA1CA7-48911762-9C84E0B0-2EA2F154</GUID>
+</available>
+<discoverprompt>
+<info>Complete before A Matter of Life or Death.</info>
+</discoverprompt>
+</quest>
+
+<quest type="side" world="NO" level="14" id="185">
+<name>Cabaret</name>
+<GUID>1DBEC8F9-4023BB3B-23EB70A1-52D14101</GUID>
+<available>
+<GUID state="JS_Success">C5306CA1-4D2C97E4-525EF78E-72552F9E</GUID>
+</available>
+</quest>
+
+<quest type="side" world="NO" level="14" id="182">
+<name>Now or Never</name>
+<GUID>06950C40-442252DF-03C66981-3FD2B4F3</GUID>
+<available>
+<GUID state="JS_Success">DF5C1032-43CFD052-056742B1-5E8C57B0</GUID>
+</available>
+</quest>
+
+<quest type="side" world="NO" level="16" id="208">
+<name>Carnal Sins</name>
+<GUID>6EDC27E1-46D57C09-1828A6AE-2E6C46D8</GUID>
+<available>
+<GUID state="JS_Success">1DBEC8F9-4023BB3B-23EB70A1-52D14101</GUID>
+</available>
+</quest>
+
+<quest type="side" world="NO" level="9" id="108">
+<name>Honor Among Thieves</name>
+<GUID>C04F6FD0-44AF95DA-57AEA686-5E47748B</GUID>
+<available>
+<GUID state="JS_Success">61F50930-4F9F98E3-ADF189B3-0F4B59EA</GUID>
+</available>
+<discoverprompt>
+<info>Rescue Rico during Gangs of Novigrad</info>
+</discoverprompt>
+</quest>
+
+<quest type="race" world="NO" level="0" id="9">
+<name>Race: The Great Erasmus Vegelbud Memorial Derby</name>
+<GUID>B3338F99-4362DADA-4BA1F9AD-95F10F44</GUID>
+<available>
+<GUID state="JS_Success">5E9E0041-463E3ECD-C72D1B98-5CF5D6C6</GUID>
+</available>
+<discoverprompt>
+<XY world="NO" X="662" Y="1879"/>
+<info>! symbol on a booth in Hierarch Square</info>
+</discoverprompt>
+</quest>
+
+<quest type="main" world="NO" level="9" id="102">
+<name>A Favor for Radovid</name>
+<GUID>01FCFD79-4DAE6202-792CD396-240BAFD5</GUID>
+<available>
+<GUID state="JS_Success">5E9E0041-463E3ECD-C72D1B98-5CF5D6C6</GUID>
+</available>
+</quest>
+
+<quest type="side" world="NO" level="12" id="146">
+<name>Redania's Most Wanted</name>
+<GUID>9D3E34EB-4DB8F4BA-4B1C649B-7B7BBAA5</GUID>
+<available>
+<GUID state="JS_Success">01FCFD79-4DAE6202-792CD396-240BAFD5</GUID>
+</available>
+</quest>
+
+<quest type="side" world="NO" level="14" id="181">
+<name>Out On Your Arse!</name>
+<GUID>B745D4B1-4A4BD52B-577C2C9E-C98EE7C6</GUID>
+<available>
+<GUID state="JS_Success">2EE64753-4749CF55-84ECCFA2-AFF34B00</GUID>
+</available>
+<discoverprompt>
+<XY world="NO" X="579" Y="1781"/>
+</discoverprompt>
+</quest>
+
+<quest type="main" world="NO" level="32" id="308">
+<name>Evil's Soft First Touches</name>
+<GUID>92B33408-4FCDF297-7F1F0CA4-60ED91A0</GUID>
+<available>
+<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+<GUID state="JS_Success">33B84675-457F7812-2FB590BE-541D6702</GUID>
+</available>
+<reward XP="2200"/>
+</quest>
+
+<quest type="side" world="NO" level="33" id="316">
+<name>Rose on a Red Field</name>
+<GUID>B89DD723-4BD41D61-01BB70B8-849A3C8C</GUID>
+<available>
+<GUID state="JS_Active">92B33408-4FCDF297-7F1F0CA4-60ED91A0</GUID>
+</available>
+<reward XP="500"/>
+</quest>
+
+<quest type="main" world="NO" level="33" id="315">
+<name>Dead Man's Party</name>
+<GUID>78053F6B-498256AE-F9C0229F-B9EF3972</GUID>
+<available>
+<GUID state="JS_Success">92B33408-4FCDF297-7F1F0CA4-60ED91A0</GUID>
+</available>
+<reward XP="1850"/>
+
+<subquests>
+	<quest type="side" world="NO" level="33" id="317">
+	<name>A Midnight Clear</name>
+	<GUID>2C24E325-45BE7C3C-F7BE43BB-75E86569</GUID>
+	<available>
+	<GUID state="JS_Active">78053F6B-498256AE-F9C0229F-B9EF3972</GUID>
+	</available>
+	<reward XP="300"/>
+	</quest>
+</subquests>
+</quest>
+
+<quest type="main" world="NO" level="34" id="320">
+<name>Open Sesame!</name>
+<GUID>B554FBE9-41969AB7-7123A48A-258002C0</GUID>
+<available>
+<GUID state="JS_Success">92B33408-4FCDF297-7F1F0CA4-60ED91A0</GUID>
+</available>
+<reward XP="2000"/>
+<subquests>
+	<quest type="main" world="NO" level="34" id="321">
+	<name>Witcher Seasonings</name>
+	<GUID>FAB56833-458BE73F-620F6FAA-DF6E4E44</GUID>
+	<available>
+	<GUID state="JS_Active">B554FBE9-41969AB7-7123A48A-258002C0</GUID>
+	</available>
+	</quest>
+
+	<quest type="main" world="NO" level="34" id="322">
+	<name>Breaking and Entering</name>
+	<GUID>0B8961C8-4338EB48-B2D635A5-C49FAA38</GUID>
+	<available>
+	<GUID state="JS_Active">B554FBE9-41969AB7-7123A48A-258002C0</GUID>
+	</available>
+	</quest>
+
+	<quest type="main" world="NO" level="34" id="323">
+	<name>The Safecracker</name>
+	<GUID>EF331D09-4AEB4AE9-014B57AE-AF1D753B</GUID>
+	<available>
+	<GUID state="JS_Active">B554FBE9-41969AB7-7123A48A-258002C0</GUID>
+	</available>
+	</quest>
+</subquests>
+</quest>
+
+<quest type="side" world="NO" level="34" id="325">
+<name>Avid Collector</name>
+<GUID>F5516BD5-46AE9935-AF9A25AA-C40D94CE</GUID>
+<available>
+<GUID state="JS_Success">B554FBE9-41969AB7-7123A48A-258002C0</GUID>
+</available>
+<discoverprompt>
+<info>Buy the painting at the auction during Open Sesame</info>
+</discoverprompt>
+<reward XP="100"/>
+</quest>
+
+<quest type="main" world="NO" level="35" id="332">
+<name>Scenes From a Marriage</name>
+<GUID>5F9AB09D-451BD33F-475ABAA4-4B7BF3BF</GUID>
+<available>
+<GUID state="JS_Success">B554FBE9-41969AB7-7123A48A-258002C0</GUID>
+<GUID state="JS_Success">78053F6B-498256AE-F9C0229F-B9EF3972</GUID>
+</available>
+<reward XP="1100"/>
+</quest>
+
+<quest type="main" world="NO" level="38" id="361">
+<name>Whatsoever a Man Soweth</name>
+<GUID>0551620D-437310FC-3A100C91-55645E17</GUID>
+<available>
+<GUID state="JS_Success">5F9AB09D-451BD33F-475ABAA4-4B7BF3BF</GUID>
+</available>
+<reward XP="135"/>
+</quest>
+
+<quest type="treasure" world="NO" level="37" id="355">
+<name>A Dark Legacy</name>
+<GUID>B4A3B282-49F6618F-F2004684-9FDDE92B</GUID>
+<available>
+<GUID state="JS_Success">B554FBE9-41969AB7-7123A48A-258002C0</GUID>
+</available>
+<discoverprompt>
+<info>Buy the bird statue at the auction during Open Sesame</info>
+</discoverprompt>
+</quest>
+
+<quest type="side" world="NO" level="26" id="277">
+<name>High Stakes</name>
+<GUID>025C0756-42EC2876-89F0C39F-39DDB568</GUID>
+<available>
+<GUID state="JS_Success">72BA3A67-4CFD722A-0A378284-F4E41BC2</GUID>
+</available>
+<discoverprompt>
+<XY world="NO" X="675" Y="2109"/>
+<info>! symbol inside the Passiflora.</info>
+</discoverprompt>
+<reward XP="440"/>
+</quest>
+
+<!-- Skellige after Destination Skellige 550442BD-43AF7D49-9E0A09B5-54BCCDCC -->
+
+<quest type="treasure" world="SK" level="26" id="278">
+<name>Scavenger Hunt: Griffin School Gear Upgrade Diagrams - Part 3</name>
+<GUID>C4ED40CA-4C8EFD8A-D5D4F2BB-D9346FC0</GUID>
+<available>
+<GUID state="JS_Success">550442BD-43AF7D49-9E0A09B5-54BCCDCC</GUID>
+<GUID state="JS_Success">AC4B6FA2-4E2B04E9-3AC400A0-239A8199</GUID>
+<GUID state="JS_Success">8C40CB19-4F5F60EA-90A9F183-598494D7</GUID>
+</available>
+<discoverprompt>
+<XY world="VE" X="625" Y="1891"/>
+<info>Buy document from armorer</info>
+</discoverprompt>
+</quest>
+
+<quest type="treasure" world="SK" level="26" id="327">
+<name>Scavenger Hunt: Griffin School Gear Upgrade Diagrams - Part 4</name>
+<GUID>E9C98E64-4EF05D83-3AD112BA-D9A6CE87</GUID>
+<available>
+<GUID state="JS_Success">550442BD-43AF7D49-9E0A09B5-54BCCDCC</GUID>
+<GUID state="JS_Success">C4ED40CA-4C8EFD8A-D5D4F2BB-D9346FC0</GUID>
+</available>
+<discoverprompt>
+<XY world="NO" X="596" Y="1697"/>
+<info>Buy document from Hattori</info>
+</discoverprompt>
+<subquests>
+<quest type="treasure" world="SK" level="26" id="451">
+<name>Get the steel sword</name>
+<GUID>5AB2670E-4E2D7084-69C9EF83-1EB4EB9C</GUID>
+<available>
+<GUID state="JS_Active">E9C98E64-4EF05D83-3AD112BA-D9A6CE87</GUID>
+</available>
+</quest>
+</subquests>
+</quest>
+
+<quest type="treasure" world="SK" level="34" id="328">
+<name>Scavenger Hunt: Cat School Gear Upgrade Diagrams - Part 4</name>
+<GUID>0EAEA2E4-44DFC898-582FAE83-3D5136CD</GUID>
+<available>
+<GUID state="JS_Success">550442BD-43AF7D49-9E0A09B5-54BCCDCC</GUID>
+<GUID state="JS_Success">1898B768-4D6FD27D-26BE2C92-0F7883B1</GUID>
+</available>
+<discoverprompt>
+<XY world="VE" X="756" Y="122"/>
+<info>Buy map from blacksmith</info>
+</discoverprompt>
+</quest>
+
+<quest type="treasure" world="SK" level="20" id="238">
+<name>Scavenger Hunt: Bear School Gear</name>
+<GUID>8B08E62D-4C5B4C9D-487C3FA4-0D791E9F</GUID>
+<available>
+<GUID state="JS_Success">550442BD-43AF7D49-9E0A09B5-54BCCDCC</GUID>
+</available>
+<discoverprompt>
+<XY world="SK" X="636" Y="-804"/>
+<info>Document in a basement</info>
+</discoverprompt>
+</quest>
+
+<quest type="treasure" world="SK" level="16" id="210">
+<name>Scavenger Hunt: Bear School Gear Upgrade Diagrams - Part 1</name>
+<GUID>0F5F5FD9-4DA725BF-67359E85-C699556C</GUID>
+<available>
+<GUID state="JS_Success">8B08E62D-4C5B4C9D-487C3FA4-0D791E9F</GUID>
+</available>
+<discoverprompt>
+<XY world="NO" X="1721" Y="1043"/>
+<info>Buy Ibraham Savi's First Map from armorer</info>
+</discoverprompt>
+</quest>
+
+<quest type="treasure" world="SK" level="12" id="150">
+<name>Scavenger Hunt: Bear School Gear Upgrade Diagrams - Part 2</name>
+<GUID>DD71DEDB-4EF05466-56C61683-9DD9BE20</GUID>
+<available>
+<GUID state="JS_Success">8B08E62D-4C5B4C9D-487C3FA4-0D791E9F</GUID>
+</available>
+<discoverprompt>
+<XY world="SK" X="-143" Y="750"/>
+<info>Buy map from armorer</info>
+</discoverprompt>
+</quest>
+
+<quest type="treasure" world="VE" level="30" id="305">
+<name>Scavenger Hunt: Bear School Gear Upgrade Diagrams - Part 3</name>
+<GUID>72B5DC68-416D1945-E831158A-18CAC397</GUID>
+<available>
+<GUID state="JS_Success">0F5F5FD9-4DA725BF-67359E85-C699556C</GUID>
+<GUID state="JS_Success">DD71DEDB-4EF05466-56C61683-9DD9BE20</GUID>
+</available>
+<discoverprompt>
+<XY world="SK" X="-143" Y="750"/>
+<info>Buy map from armorer</info>
+</discoverprompt>
+</quest>
+
+<quest type="treasure" world="VE" level="34" id="326">
+<name>Scavenger Hunt: Bear School Gear Upgrade Diagrams - Part 4</name>
+<GUID>E08F4FAF-4FA7D935-BAA382A6-99485387</GUID>
+<available>
+<GUID state="JS_Success">72B5DC68-416D1945-E831158A-18CAC397</GUID>
+</available>
+<discoverprompt>
+<XY world="SK" X="-143" Y="750"/>
+<info>Buy map from armorer</info>
+</discoverprompt>
+</quest>
+
+
+<quest type="side" world="SK" level="0" id="16">
+<name>Gwent: Skellige Style</name>
+<GUID>72BA3A67-4CFD722A-0A378284-F4E41BC2</GUID>
+<available>
+<GUID state="JS_Success">E7EB9A3A-47FB160A-471604AD-4323F31E</GUID>
+</available>
+<available>
+<GUID state="JS_Success">52DCBB5B-433C44F6-FC2578A2-49BB8D86</GUID>
+</available>
+<discoverprompt>
+<XY world="SK" X="-37" Y="550"/>
+<info>Notice board</info>
+</discoverprompt>
+<reward XP="125"/>
+</quest>
+
+<quest type="side" world="SK" level="0" id="23">
+<name>Brave Fools Die Young</name>
+<GUID>14094167-45F81AC5-26B12C82-BABD151C</GUID>
+<available>
+<GUID state="JS_Success">550442BD-43AF7D49-9E0A09B5-54BCCDCC</GUID>
+</available>
+<discoverprompt>
+<XY world="SK" X="197" Y="-388"/>
+<info>! sign</info>
+</discoverprompt>
+<reward XP="50"/>
+</quest>
+
+<quest type="event" world="SK" level="0" id="35">
+<name>Worthy of Trust</name>
+<available>
+<GUID state="JS_Success">550442BD-43AF7D49-9E0A09B5-54BCCDCC</GUID>
+</available>
+<discoverprompt>
+<info>! sign</info>
+<XY world="SK" X="-121" Y="545"/>
+</discoverprompt>
+<reward XP="65"/>
+</quest>
+
+<quest type="treasure" world="SK" level="4" id="58">
+<name>Freya Be Praised!</name>
+<GUID>B459A0ED-47E1AE2C-969F32A5-0B9075E6</GUID>
+<available>
+<GUID state="JS_Success">550442BD-43AF7D49-9E0A09B5-54BCCDCC</GUID>
+</available>
+<discoverprompt>
+<info>Hidden treasure marker</info>
+<XY world="SK" X="697" Y="-115"/>
+</discoverprompt>
+<reward XP="0"/>
+</quest>
+
+<quest type="treasure" world="SK" level="10" id="124">
+<name>Not Only Eagles Dare</name>
+<GUID>5DEA555A-4B728A68-074DD092-B089C963</GUID>
+<available>
+<GUID state="JS_Success">550442BD-43AF7D49-9E0A09B5-54BCCDCC</GUID>
+</available>
+<discoverprompt>
+<info>Hidden treasure marker</info>
+<XY world="SK" X="-1471" Y="1261"/>
+</discoverprompt>
+<reward XP="0"/>
+</quest>
+
+<quest type="side" world="NO, SK" level="11" id="133">
+<name>Following the Thread</name>
+<GUID>23EBF49C-4CD2BFB5-A2D8FB94-B27040A6</GUID>
+<available>
+<GUID state="JS_Success">550442BD-43AF7D49-9E0A09B5-54BCCDCC</GUID>
+</available>
+<strict>
+<GUID state="JS_Success">75CE5700-4B1F1BBE-069237AE-6D20CA0F</GUID>
+</strict>
+<strict>
+<GUID state="JS_Success">130A322C-479E4E1C-6C0ED1B4-0180136D</GUID>
+</strict>
+<discoverprompt>
+<XY world="NO" X="667" Y="1898"/>
+<info>Notice board (Monster in the Bits)</info>
+</discoverprompt>
+</quest>
+
+<quest type="side" world="SK" level="12" id="140">
+<name>A Hallowed Horn</name>
+<GUID>E2BB1F49-49E4747D-05D1B892-E554D977</GUID>
+<available>
+<GUID state="JS_Success">550442BD-43AF7D49-9E0A09B5-54BCCDCC</GUID>
+</available>
+<discoverprompt>
+<XY world="SK" X="-212" Y="-1009"/>
+<!--Holmstein-->
+<info>Notice board</info>
+</discoverprompt>
+</quest>
+
+<quest type="side" world="SK" level="12" id="141">
+<name>Flesh for Sale</name>
+<GUID>75CE5700-4B1F1BBE-069237AE-6D20CA0F</GUID>
+<available>
+<GUID state="JS_Success">550442BD-43AF7D49-9E0A09B5-54BCCDCC</GUID>
+</available>
+<hideif>
+<GUID state="JS_Success">23EBF49C-4CD2BFB5-A2D8FB94-B27040A6</GUID>
+</hideif>
+<discoverprompt>
+<XY world="SK" X="2098" Y="-1945"/>
+<info>Before Following the Thread</info>
+</discoverprompt>
+</quest>
+
+<quest type="treasure" world="SK" level="12" id="151">
+<name>Nilfgaardian Treasure</name>
+<GUID>DB5F4199-43E77DB8-6EC10C95-679DA352</GUID>
+<available>
+<GUID state="JS_Success">550442BD-43AF7D49-9E0A09B5-54BCCDCC</GUID>
+</available>
+<discoverprompt>
+<XY world="SK" X="1662" Y="1799"/>
+<info>Hidden treasure marker</info>
+</discoverprompt>
+<reward XP="0"/>
+</quest>
+
+<quest type="treasure" world="SK" level="12" id="152">
+<name>X Marks the Spot</name>
+<GUID>1BE06D7D-4CE755B0-FA87E0B2-570B6DC9</GUID>
+<available>
+<GUID state="JS_Success">550442BD-43AF7D49-9E0A09B5-54BCCDCC</GUID>
+</available>
+<discoverprompt>
+<XY world="SK" X="726" Y="-153"/>
+<info>Loot inside a house</info>
+</discoverprompt>
+<reward XP="0"/>
+</quest>
+
+<quest type="side" world="SK" level="13" id="160">
+<name>Black Pearl</name>
+<GUID>F904638D-49C21839-0A35B380-D7727AA7</GUID>
+<available>
+<GUID state="JS_Success">550442BD-43AF7D49-9E0A09B5-54BCCDCC</GUID>
+</available>
+<discoverprompt>
+<XY world="NO" X="561" Y="1865"/>
+<info>! symbol</info>
+</discoverprompt>
+</quest>
+
+<quest type="side" world="SK" level="13" id="158">
+<name>From a Land Far, Far Away</name>
+<GUID>FA188AD1-40B0EAD7-DE67D89A-1BC39817</GUID>
+<available>
+<GUID state="JS_Success">550442BD-43AF7D49-9E0A09B5-54BCCDCC</GUID>
+</available>
+<discoverprompt>
+<XY world="SK" X="1588" Y="-46"/>
+<info>Found by reading a book</info>
+</discoverprompt>
+</quest>
+
+<quest type="side" world="SK" level="13" id="159">
+<name>Free Spirit</name>
+<GUID>6C500404-4E5B6E05-E920FEAD-0EFE2069</GUID>
+<available>
+<GUID state="JS_Success">E7EB9A3A-47FB160A-471604AD-4323F31E</GUID>
+</available>
+<discoverprompt>
+<XY world="SK" X="257" Y="1479"/>
+</discoverprompt>
+<subquests>
+
+	<quest type="side" world="VE" level="13" id="452">
+	<name>Buy Tristianna and Isador from the Lindenvale merchant</name>
+	<discoverprompt>
+	<XY world="VE" X="784" Y="65"/>
+	</discoverprompt>
+	</quest>
+	
+	<quest type="side" world="VE" level="13" id="453">
+	<name>Buy Religion and Life from the Crow's Perch merchant</name>
+	<discoverprompt>
+	<XY world="VE" X="208" Y="92"/>
+	</discoverprompt>
+	</quest>
+	
+	<quest type="side" world="VE" level="13" id="454">
+	<name>Buy The Cult of Freya from the Priest in Elector's Square </name>
+	<discoverprompt>
+	<XY world="NO" X="486" Y="2188"/>
+	</discoverprompt>
+	</quest>
+	
+	<quest type="side" world="VE" level="13" id="455">
+	<name>Buy The Curious Cases of Virtuous Vegga from the Merchant</name>
+	<discoverprompt>
+	<XY world="NO" X="681" Y="2016"/>
+	</discoverprompt>
+	</quest>
+	
+	<quest type="side" world="VE" level="13" id="456">
+	<name>Buy Change Your Life! from the Loan Shark</name>
+	<discoverprompt>
+	<XY world="NO" X="831" Y="1929"/>
+	</discoverprompt>
+	</quest>
+</subquests>
+</quest>
+
+<quest type="event" world="SK" level="13" id="164">
+<name>Siren's Call</name>
+<available>
+<GUID state="JS_Success">550442BD-43AF7D49-9E0A09B5-54BCCDCC</GUID>
+</available>
+<discoverprompt>
+<XY world="SK" X="-405" Y="-200"/>
+</discoverprompt>
+<reward XP="50"/>
+</quest>
+
+<quest type="event" world="SK" level="13" id="166">
+<name>Woe is Me</name>
+<available>
+<GUID state="JS_Success">550442BD-43AF7D49-9E0A09B5-54BCCDCC</GUID>
+</available>
+<discoverprompt>
+<XY world="SK" X="549" Y="-409"/>
+</discoverprompt>
+</quest>
+
+<quest type="treasure" world="SK" level="13" id="168">
+<name>Family Fortune</name>
+<GUID>17D71DCD-434DB5D3-0B15E1B5-BEBC0897</GUID>
+<available>
+<GUID state="JS_Success">550442BD-43AF7D49-9E0A09B5-54BCCDCC</GUID>
+</available>
+<discoverprompt>
+<XY world="SK" X="612" Y="-829"/>
+<info>Hidden treasure marker inside of a house</info>
+</discoverprompt>
+<reward XP="0"/>
+</quest>
+
+<quest type="treasure" world="SK" level="13" id="169">
+<name>Shortcut</name>
+<GUID>485B407E-42A71E25-DBF39795-2451430F</GUID>
+<available>
+<GUID state="JS_Success">8F37175C-4DFFD952-3F6BC896-95E94AAB</GUID>
+</available>
+<discoverprompt>
+<XY world="SK" X="-1822" Y="-714"/>
+<info>Hidden treasure marker</info>
+</discoverprompt>
+<reward XP="0"/>
+</quest>
+
+<quest type="treasure" world="SK" level="13" id="170">
+<name>Ironsides' Treasure</name>
+<GUID>6E47B277-4316B96E-CCE41183-349E790B</GUID>
+<available>
+<GUID state="JS_Success">550442BD-43AF7D49-9E0A09B5-54BCCDCC</GUID>
+</available>
+<discoverprompt>
+<XY world="SK" X="1554" Y="-1129"/>
+</discoverprompt>
+<reward XP="0"/>
+</quest>
+
+<quest type="treasure" world="SK" level="13" id="171">
+<name>Pearls of the Coast</name>
+<GUID>DEFE57A9-4EBD6DA7-5DE901B8-839877FF</GUID>
+<available>
+<GUID state="JS_Success">550442BD-43AF7D49-9E0A09B5-54BCCDCC</GUID>
+</available>
+<discoverprompt>
+<XY world="SK" X="-756" Y="177"/>
+<info>Hidden treasure marker</info>
+</discoverprompt>
+<reward XP="0"/>
+</quest>
+
+<quest type="treasure" world="SK" level="13" id="172">
+<name>Precious Haul</name>
+<GUID>9EC3E829-46967F66-95A647B3-DFBC639E</GUID>
+<available>
+<GUID state="JS_Success">8F37175C-4DFFD952-3F6BC896-95E94AAB</GUID>
+</available>
+<discoverprompt>
+<XY world="SK" X="-2087" Y="-381"/>
+<info>Hidden treasure marker</info>
+</discoverprompt>
+<reward XP="0"/>
+</quest>
+
+<quest type="side" world="SK" level="14" id="177">
+<name>The Nithing</name>
+<GUID>4EC24D96-4C808232-F09B1DAB-1AFE886D</GUID>
+<available>
+<GUID state="JS_Success">550442BD-43AF7D49-9E0A09B5-54BCCDCC</GUID>
+</available>
+<discoverprompt>
+<XY world="SK" X="150" Y="80"/>
+<info>Notice board</info>
+</discoverprompt>
+</quest>
+
+<quest type="side" world="SK" level="14" id="178">
+<name>The Price of Honor</name>
+<GUID>130A322C-479E4E1C-6C0ED1B4-0180136D</GUID>
+<available>
+<GUID state="JS_Success">550442BD-43AF7D49-9E0A09B5-54BCCDCC</GUID>
+</available>
+<hideif>
+<GUID state="JS_Success">23EBF49C-4CD2BFB5-A2D8FB94-B27040A6</GUID>
+</hideif>
+<discoverprompt>
+<XY world="SK" X="2123" Y="-1932"/>
+</discoverprompt>
+</quest>
+
+<quest type="event" world="SK" level="14" id="187">
+<name>Never Trust Children II</name>
+<available>
+<GUID state="JS_Success">550442BD-43AF7D49-9E0A09B5-54BCCDCC</GUID>
+</available>
+<discoverprompt>
+<XY world="SK" X="-467" Y="-304"/>
+<info>! sign</info>
+</discoverprompt>
+</quest>
+
+<quest type="treasure" world="SK" level="14" id="190">
+<name>Inheritance</name>
+<GUID>B2EDF46A-4EB4F7F8-969B9799-0542D7F5</GUID>
+<available>
+<GUID state="JS_Success">550442BD-43AF7D49-9E0A09B5-54BCCDCC</GUID>
+</available>
+<discoverprompt>
+<XY world="SK" X="312" Y="-212"/>
+<info>Hidden treasure marker</info>
+</discoverprompt>
+</quest>
+
+<quest type="side" world="SK" level="15" id="193">
+<name>The Family Blade</name>
+<GUID>BF18DA51-48A12FC9-7FC49692-3E4593EB</GUID>
+<available>
+<GUID state="JS_Success">550442BD-43AF7D49-9E0A09B5-54BCCDCC</GUID>
+</available>
+<discoverprompt>
+<XY world="SK" X="-46" Y="559"/>
+<info>Notice board</info>
+</discoverprompt>
+</quest>
+
+<quest type="side" world="SK" level="15" id="194">
+<name>A Bard's Beloved</name>
+<GUID>B676E286-4A16EE2C-225EFCBA-3DBA9A70</GUID>
+<available>
+<GUID state="JS_Success">550442BD-43AF7D49-9E0A09B5-54BCCDCC</GUID>
+</available>
+<discoverprompt>
+<XY world="SK" X="834" Y="-328"/>
+<info>Head some ways into the cave to see a ! sign</info>
+</discoverprompt>
+</quest>
+
+<quest type="side" world="SK" level="15" id="195">
+<name>For Fame and Glory</name>
+<GUID>EC3807C4-4EA45263-10A89887-409A5BF8</GUID>
+<available>
+<GUID state="JS_Success">550442BD-43AF7D49-9E0A09B5-54BCCDCC</GUID>
+</available>
+<discoverprompt>
+<XY world="SK" X="2655" Y="78"/>
+<info>! sign</info>
+</discoverprompt>
+</quest>
+
+<quest type="side" world="SK" level="15" id="196">
+<name>Armed Assault</name>
+<GUID>6C38FDC9-4177E884-A93002AD-CCDEBFEC</GUID>
+<available>
+<GUID state="JS_Success">550442BD-43AF7D49-9E0A09B5-54BCCDCC</GUID>
+</available>
+<discoverprompt>
+<XY world="SK" X="273" Y="-43"/>
+<info>Kill men at the door</info>
+</discoverprompt>
+</quest>
+
+<quest type="event" world="SK" level="15" id="201">
+<name>Call of the Wild</name>
+<available>
+<GUID state="JS_Success">550442BD-43AF7D49-9E0A09B5-54BCCDCC</GUID>
+</available>
+<discoverprompt>
+<XY world="SK" X="-530" Y="-322"/>
+<info>Kill a werewolf</info>
+</discoverprompt>
+</quest>
+
+<quest type="event" world="SK" level="16" id="209">
+<name>Farting Trolls</name>
+<available>
+<GUID state="JS_Success">550442BD-43AF7D49-9E0A09B5-54BCCDCC</GUID>
+</available>
+<discoverprompt>
+<XY world="SK" X="-347" Y="-761"/>
+</discoverprompt>
+</quest>
+
+<quest type="event" world="SK" level="17" id="215">
+<name>The Four Faces of Hemdall</name>
+<available>
+<GUID state="JS_Success">550442BD-43AF7D49-9E0A09B5-54BCCDCC</GUID>
+</available>
+<discoverprompt>
+<XY world="SK" X="2015" Y="-1839"/>
+</discoverprompt>
+</quest>
+
+<quest type="event" world="SK" level="25" id="271">
+<name>Yustianna Disturbed</name>
+<available>
+<GUID state="JS_Success">550442BD-43AF7D49-9E0A09B5-54BCCDCC</GUID>
+</available>
+<discoverprompt>
+<XY world="SK" X="662" Y="647"/>
+<info>Cave entrance</info>
+</discoverprompt>
+</quest>
+
+<quest type="contract" world="SK" level="16" id="203">
+<name>Strange Beast</name>
+<GUID>3286D764-498C15B1-0299219A-BDBC6898</GUID>
+<available>
+<GUID state="JS_Success">550442BD-43AF7D49-9E0A09B5-54BCCDCC</GUID>
+</available>
+<discoverprompt>
+<XY world="SK" X="2765" Y="72"/>
+<info>Notice board. Sometimes called Waylaid Transport</info>
+</discoverprompt>
+</quest>
+
+<quest type="side" world="SK" level="16" id="207">
+<name>The Path of Warriors</name>
+<GUID>1EF218C4-4E679658-D6E32086-B61FA550</GUID>
+<available>
+<GUID state="JS_Success">7ECF7633-46381266-A19DDA89-92DB202A</GUID>
+</available>
+<discoverprompt>
+<XY world="SK" X="1499" Y="1912"/>
+</discoverprompt>
+</quest>
+
+<quest type="contract" world="SK" level="17" id="211">
+<name>The Phantom of Eldberg</name>
+<GUID>F8815175-4F992A27-45F5F19C-7706FA95</GUID>
+<available>
+<GUID state="JS_Success">FB952C6E-46B165C3-C41A748A-802EC470</GUID>
+</available>
+<discoverprompt>
+<XY world="SK" X="-615" Y="-283"/>
+<info>Notice board</info>
+</discoverprompt>
+<reward XP="350"/>
+</quest>
+
+<quest type="side" world="SK" level="14" id="184">
+<name>Stranger in a Strange Land</name>
+<GUID>5A628AFB-4D9FAEBD-6C403A9A-066B4AC2</GUID>
+<available>
+<GUID state="JS_Success">F8815175-4F992A27-45F5F19C-7706FA95</GUID>
+</available>
+</quest>
+
+<quest type="side" world="SK" level="14" id="183">
+<name>The Cave of Dreams</name>
+<GUID>C15E1341-4A1D0AF2-BCCA85AD-001C5AEA</GUID>
+<available>
+<GUID state="JS_Success">5A628AFB-4D9FAEBD-6C403A9A-066B4AC2</GUID>
+</available>
+</quest>
+
+<quest type="side" world="SK" level="15" id="197">
+<name>An Unpaid Debt</name>
+<GUID>EE2ACB45-4C52A699-085ECE95-6283C648</GUID>
+<available>
+<GUID state="JS_Success">5A628AFB-4D9FAEBD-6C403A9A-066B4AC2</GUID>
+</available>
+<discoverprompt>
+<XY world="SK" X="-49" Y="627"/>
+<info>Only available if Simun Brambling helped Geralt escape jail</info>
+</discoverprompt>
+</quest>
+
+<quest type="contract" world="SK" level="18" id="217">
+<name>Muire D'yaeblen</name>
+<GUID>8049E060-447F0D7C-967C208B-FF57FACB</GUID>
+<available>
+<GUID state="JS_Success">550442BD-43AF7D49-9E0A09B5-54BCCDCC</GUID>
+</available>
+<discoverprompt>
+<XY world="SK" X="-40" Y="550"/>
+<info>Notice board</info>
+</discoverprompt>
+<reward XP="400"/>
+</quest>
+
+<quest type="side" world="SK" level="18" id="218">
+<name>Crime and Punishment</name>
+<GUID>6425AA34-4C116330-8410788A-C2F64B88</GUID>
+<available>
+<GUID state="JS_Success">550442BD-43AF7D49-9E0A09B5-54BCCDCC</GUID>
+</available>
+<discoverprompt>
+<XY world="SK" X="371" Y="962"/>
+<info>! sign</info>
+</discoverprompt>
+</quest>
+
+<quest type="contract" world="SK" level="19" id="227">
+<name>Here Comes the Groom</name>
+<GUID>4FC8B957-4AD164B1-D50E34A6-2E8118AA</GUID>
+<available>
+<GUID state="JS_Success">550442BD-43AF7D49-9E0A09B5-54BCCDCC</GUID>
+</available>
+<discoverprompt>
+<XY world="SK" X="-1611" Y="1354"/>
+<info>Notice board</info>
+</discoverprompt>
+<reward XP="300"/>
+</quest>
+
+<quest type="side" world="SK" level="19" id="233">
+<name>Iron Maiden</name>
+<GUID>1D9F7929-4152C567-320675A4-7DCB72CE</GUID>
+<available>
+<GUID state="JS_Success">550442BD-43AF7D49-9E0A09B5-54BCCDCC</GUID>
+</available>
+<discoverprompt>
+<XY world="SK" X="1894" Y="-1887"/>
+</discoverprompt>
+<reward XP="25"/>
+</quest>
+
+<quest type="side" world="SK" level="21" id="240">
+<name>Hard Times</name>
+<GUID>4FE8E4CE-44CFD310-521CBCBA-7D583F2B</GUID>
+<available>
+<GUID state="JS_Success">550442BD-43AF7D49-9E0A09B5-54BCCDCC</GUID>
+</available>
+<discoverprompt>
+<XY world="SK" X="518" Y="200"/>
+<info>! sign</info>
+</discoverprompt>
+<reward XP="75"/>
+</quest>
+
+<quest type="contract" world="SK" level="22" id="244">
+<name>In the Heart of the Woods</name>
+<GUID>ADF1F1F0-41C5D27D-3397258A-2893B653</GUID>
+<available>
+<GUID state="JS_Success">550442BD-43AF7D49-9E0A09B5-54BCCDCC</GUID>
+</available>
+<discoverprompt>
+<XY world="SK" X="54" Y="-150"/>
+</discoverprompt>
+<reward XP="75"/>
+</quest>
+
+<quest type="side" world="SK" level="24" id="258">
+<name>Finders Keepers</name>
+<GUID>D79A07AE-46BB8EB1-8E0FB18E-99ADEE44</GUID>
+<available>
+<GUID state="JS_Success">550442BD-43AF7D49-9E0A09B5-54BCCDCC</GUID>
+</available>
+<discoverprompt>
+<XY world="SK" X="950" Y="950"/>
+</discoverprompt>
+<reward XP="175"/>
+</quest>
+
+<quest type="side" world="SK" level="24" id="259">
+<name>Abandoned Sawmill</name>
+<GUID>F9352CB9-4D7CD711-8FA25690-80B11808</GUID>
+<available>
+<GUID state="JS_Success">550442BD-43AF7D49-9E0A09B5-54BCCDCC</GUID>
+</available>
+<discoverprompt>
+<XY world="SK" X="867" Y="159"/>
+</discoverprompt>
+<reward XP="75"/>
+</quest>
+
+<quest type="side" world="SK" level="24" id="260">
+<name>Shock Therapy</name>
+<GUID>FA0CBF21-49A27E9E-B5245DA3-07A23952</GUID>
+<available>
+<GUID state="JS_Success">550442BD-43AF7D49-9E0A09B5-54BCCDCC</GUID>
+</available>
+<discoverprompt>
+<XY world="SK" X="1009" Y="227"/>
+</discoverprompt>
+<reward XP="75"/>
+</quest>
+
+<quest type="side" world="SK" level="24" id="262">
+<name>Practicum in Advanced Alchemy</name>
+<GUID>52DCBB5B-433C44F6-FC2578A2-49BB8D86</GUID>
+<available>
+<GUID state="JS_Success">550442BD-43AF7D49-9E0A09B5-54BCCDCC</GUID>
+</available>
+<discoverprompt>
+<XY world="SK" X="1056" Y="278"/>
+</discoverprompt>
+<reward XP="550"/>
+</quest>
+
+<quest type="side" world="SK" level="25" id="269">
+<name>Peace Disturbed</name>
+<GUID>B9D89677-47CCB257-B4D14398-660645F1</GUID>
+<available>
+<GUID state="JS_Success">550442BD-43AF7D49-9E0A09B5-54BCCDCC</GUID>
+</available>
+<discoverprompt>
+<XY world="SK" X="118" Y="396"/>
+</discoverprompt>
+<reward XP="75"/>
+</quest>
+
+<quest type="side" world="SK" level="25" id="270">
+<name>Taken as a Lass</name>
+<GUID>62611322-4F5B1005-3765EA81-5D229FB0</GUID>
+<available>
+<GUID state="JS_Success">550442BD-43AF7D49-9E0A09B5-54BCCDCC</GUID>
+</available>
+<discoverprompt>
+<XY world="SK" X="1219" Y="-365"/>
+</discoverprompt>
+<reward XP="50"/>
+</quest>
+
+<quest type="side" world="SK" level="26" id="275">
+<name>The Sad Tale of the Grossbart Brothers</name>
+<GUID>89DBDE2F-47F658BB-04CFAE92-9086D946</GUID>
+<available>
+<GUID state="JS_Success">550442BD-43AF7D49-9E0A09B5-54BCCDCC</GUID>
+</available>
+<discoverprompt>
+<XY world="SK" X="649" Y="32"/>
+<info>! sign, Djenge Fett</info>
+</discoverprompt>
+<reward XP="50"/>
+</quest>
+
+<quest type="contract" world="SK" level="27" id="279">
+<name>Missing Miners</name>
+<GUID>A1BE23D7-4EED38B8-A947F1AF-E274F6D4</GUID>
+<available>
+<GUID state="JS_Success">550442BD-43AF7D49-9E0A09B5-54BCCDCC</GUID>
+</available>
+<discoverprompt>
+<XY world="SK" X="649" Y="32"/>
+<info>Notice board</info>
+</discoverprompt>
+<reward XP="300"/>
+</quest>
+
+<quest type="contract" world="SK" level="28" id="282">
+<name>Dragon</name>
+<GUID>AB316D0C-4745B758-A6AAB1B5-9B0C2565</GUID>
+<available>
+<GUID state="JS_Success">550442BD-43AF7D49-9E0A09B5-54BCCDCC</GUID>
+</available>
+<discoverprompt>
+<XY world="SK" X="373" Y="-698"/>
+<info>Notice board</info>
+</discoverprompt>
+</quest>
+
+<quest type="contract" world="SK" level="29" id="291">
+<name>Missing Son</name>
+<GUID>1A0B2EF7-4F0EF39E-A3DC4A82-D9AA9D9B</GUID>
+<available>
+<GUID state="JS_Success">550442BD-43AF7D49-9E0A09B5-54BCCDCC</GUID>
+</available>
+<discoverprompt>
+<XY world="SK" X="163" Y="97"/>
+<info>Notice board</info>
+</discoverprompt>
+<reward XP="400"/>
+</quest>
+
+<quest type="contract" world="SK" level="29" id="292">
+<name>Skellige's Most Wanted</name>
+<GUID>9B223108-41349C4C-B74D1BB2-19A17DD9</GUID>
+<available>
+<GUID state="JS_Success">550442BD-43AF7D49-9E0A09B5-54BCCDCC</GUID>
+</available>
+<discoverprompt>
+<XY world="SK" X="373" Y="-698"/>
+</discoverprompt>
+</quest>
+
+<quest type="side" world="SK" level="30" id="303">
+<name>Fists of Fury: Skellige</name>
+<GUID>14C1A784-40ABFB76-D665B5A2-38D873AD</GUID>
+<available>
+<GUID state="JS_Success">550442BD-43AF7D49-9E0A09B5-54BCCDCC</GUID>
+</available>
+<discoverprompt>
+<XY world="SK" X="-46" Y="559"/>
+<info>Notice board</info>
+</discoverprompt>
+</quest>
+
+<quest type="side" world="SK" level="28" id="128">
+<name>Fists of Fury: Champion of Champions</name>
+<GUID>3B9CD0F0-4CE07724-3F8C88BA-4B34E232</GUID>
+<available>
+<GUID state="JS_Success">14C1A784-40ABFB76-D665B5A2-38D873AD</GUID>
+</available>
+<discoverprompt>
+<XY world="SK" X="-1369" Y="1387"/>
+</discoverprompt>
+<reward XP="50"/>
+</quest>
+
+<quest type="side" world="SK" level="14" id="176">
+<name>Master of the Arena</name>
+<GUID>C8C83587-4D2ACAC0-E41A85B5-A9F1DAE8</GUID>
+<available>
+<GUID state="JS_Active">3B9CD0F0-4CE07724-3F8C88BA-4B34E232</GUID>
+</available>
+<discoverprompt>
+<XY world="SK" X="-1369" Y="1387"/>
+</discoverprompt>
+</quest>
+
+<quest type="side" world="SK" level="30" id="304">
+<name>The Tower Outta Nowheres</name>
+<GUID>7ECF7633-46381266-A19DDA89-92DB202A</GUID>
+<available>
+<GUID state="JS_Success">550442BD-43AF7D49-9E0A09B5-54BCCDCC</GUID>
+</available>
+<discoverprompt>
+<XY world="SK" X="1491" Y="1916"/>
+</discoverprompt>
+<reward XP="200"/>
+</quest>
+
+
+
+<quest type="treasure" world="SK" level="31" id="307">
+<name>Hidden in the Depths</name>
+<GUID>9F5A8B38-428BB234-87BD92BE-5BB0CF08</GUID>
+<available>
+<GUID state="JS_Success">550442BD-43AF7D49-9E0A09B5-54BCCDCC</GUID>
+</available>
+<discoverprompt>
+<XY world="SK" X="1585" Y="-2040"/>
+<info>Hidden treasure marker</info>
+</discoverprompt>
+<reward XP="0"/>
+</quest>
+
+<quest type="treasure" world="SK" level="48" id="413">
+<name>Unlucky's Treasure</name>
+<GUID>822243B0-4DA619C3-E431D581-1C65D586</GUID>
+<available>
+<GUID state="JS_Success">550442BD-43AF7D49-9E0A09B5-54BCCDCC</GUID>
+</available>
+<discoverprompt>
+<XY world="SK" X="233" Y="1572"/>
+<info>Hidden treasure marker</info>
+</discoverprompt>
+<reward XP="0"/>
+</quest>
+
+<quest type="race" world="SK" level="0" id="420">
+<name>The Heroes' Pursuits: Fayrlund</name>
+<GUID>E6D3273C-48408AE2-334D1792-9E1250AA</GUID>
+<available>
+<GUID state="JS_Success">550442BD-43AF7D49-9E0A09B5-54BCCDCC</GUID>
+</available>
+<discoverprompt>
+<XY world="SK" X="2721" Y="65"/>
+<info>! sign</info>
+</discoverprompt>
+</quest>
+
+<quest type="race" world="SK" level="0" id="421">
+<name>The Heroes' Pursuits: Fyresdal</name>
+<GUID>459A8157-4727C1B3-9C3A718F-C271FC41</GUID>
+<available>
+<GUID state="JS_Success">550442BD-43AF7D49-9E0A09B5-54BCCDCC</GUID>
+</available>
+<discoverprompt>
+<XY world="SK" X="2721" Y="65"/>
+<info>! sign</info>
+</discoverprompt>
+</quest>
+
+<quest type="race" world="SK" level="0" id="422">
+<name>The Heroes' Pursuits: Kaer Trolde</name>
+<GUID>A9CAEC8F-4FB88A21-24A21A94-3F615E3C</GUID>
+<available>
+<GUID state="JS_Success">550442BD-43AF7D49-9E0A09B5-54BCCDCC</GUID>
+</available>
+<discoverprompt>
+<XY world="SK" X="2721" Y="65"/>
+<info>! sign</info>
+</discoverprompt>
+</quest>
+
+<quest type="race" world="SK" level="0" id="423">
+<name>The Heroes' Pursuits: For the Goddess' Glory!</name>
+<GUID>020A073B-472AEE70-ABE51B81-90B67F37</GUID>
+<available>
+<GUID state="JS_Success">550442BD-43AF7D49-9E0A09B5-54BCCDCC</GUID>
+</available>
+<discoverprompt>
+<XY world="SK" X="2770" Y="69"/>
+<info>Notice board</info>
+</discoverprompt>
+</quest>
+
+<quest type="main" world="SK" level="16" id="205">
+<name>The King is Dead - Long Live the King</name>
+<GUID>FB952C6E-46B165C3-C41A748A-802EC470</GUID>
+<available>
+<GUID state="JS_Success">550442BD-43AF7D49-9E0A09B5-54BCCDCC</GUID>
+</available>
+<reward XP="950"/>
+</quest>
+
+<quest type="main" world="SK" level="17" id="212">
+<name>Echoes of the Past</name>
+<GUID>E7EB9A3A-47FB160A-471604AD-4323F31E</GUID>
+<available>
+<GUID state="JS_Success">FB952C6E-46B165C3-C41A748A-802EC470</GUID>
+</available>
+<reward XP="30"/>
+</quest>
+
+<quest type="main" world="SK" level="15" id="192">
+<name>Missing Persons</name>
+<GUID>92387564-42BF535E-F56A9393-7895DAC7</GUID>
+<available>
+<GUID state="JS_Success">E7EB9A3A-47FB160A-471604AD-4323F31E</GUID>
+</available>
+</quest>
+
+<quest type="main" world="SK" level="14" id="175">
+<name>Nameless</name>
+<GUID>7F6B63A6-439ECA50-D7D46C9F-263EAC98</GUID>
+<available>
+<GUID state="JS_Success">92387564-42BF535E-F56A9393-7895DAC7</GUID>
+</available>
+</quest>
+
+<quest type="main" world="SK" level="14" id="174">
+<name>The Calm Before the Storm</name>
+<GUID>5C6A7440-4323E4F5-9BAF8D90-D64FD1E2</GUID>
+<available>
+<GUID state="JS_Success">7F6B63A6-439ECA50-D7D46C9F-263EAC98</GUID>
+</available>
+</quest>
+<!-- ends In Ciri's Footsteps -->
+
+<quest type="side" world="SK" level="15" id="200">
+<name>The Last Wish</name>
+<GUID>038C9DE1-49CE76B6-8B594897-DAA76B87</GUID>
+<available>
+<GUID state="JS_Success">5C6A7440-4323E4F5-9BAF8D90-D64FD1E2</GUID>
+</available>
+<reward XP="50"/>
+</quest>
+
+<quest type="side" world="SK" level="15" id="199">
+<name>In Wolf's Clothing</name>
+<GUID>FE437B83-49995725-39F6089A-D2A87C27</GUID>
+<available>
+<GUID state="JS_Success">92387564-42BF535E-F56A9393-7895DAC7</GUID>
+</available>
+<discoverprompt>
+<XY world="SK" X="2765" Y="72"/>
+<info>Notice board</info>
+</discoverprompt>
+</quest>
+
+<quest type="side" world="SK" level="17" id="213">
+<name>The Lord of Undvik</name>
+<GUID>8F37175C-4DFFD952-3F6BC896-95E94AAB</GUID>
+<available>
+<GUID state="JS_Success">FB952C6E-46B165C3-C41A748A-802EC470</GUID>
+</available>
+<reward XP="1300"/>
+</quest>
+
+<quest type="side" world="SK" level="24" id="261">
+<name>Master Armorers</name>
+<GUID>10D429DF-44D89D62-38DC6AA5-D34876F3</GUID>
+<available>
+<GUID state="JS_Success">8F37175C-4DFFD952-3F6BC896-95E94AAB</GUID>
+</available>
+<discoverprompt>
+<info>Get the tools from the cave near Clan Tordarroch Forge</info>
+</discoverprompt>
+<reward XP="40"/>
+</quest>
+
+<quest type="contract" world="VE" level="24" id="256">
+<name>The Griffin from the Highlands</name>
+<GUID>323560BF-4414ECF7-1A9A6CBA-03E51D37</GUID>
+<available>
+<GUID state="JS_Success">8F37175C-4DFFD952-3F6BC896-95E94AAB</GUID>
+</available>
+<discoverprompt>
+<XY world="VE" X="243" Y="139"/>
+<info>Talk to the Crow's Perch armorer, then get the notice from the board nearby.</info>
+</discoverprompt>
+<reward XP="40"/>
+</quest>
+
+<quest type="treasure" world="SK" level="18" id="224">
+<name>Ruins, Hidden Treasure, You Know...</name>
+<GUID>D7B5996B-41481C46-B6A27D97-AA28BF2A</GUID>
+<available>
+<GUID state="JS_Active">8F37175C-4DFFD952-3F6BC896-95E94AAB</GUID>
+</available>
+<discoverprompt>
+<XY world="SK" X="-1663" Y="-724"/>
+<info>Skeleton just left of the town entrance</info>
+</discoverprompt>
+</quest>
+
+<quest type="side" world="SK" level="17" id="214">
+<name>Possession</name>
+<GUID>2BCB0806-47E1068C-4F3234AE-D5F3AC17</GUID>
+<available>
+<GUID state="JS_Success">FB952C6E-46B165C3-C41A748A-802EC470</GUID>
+</available>
+<reward XP="125"/>
+</quest>
+
+<quest type="side" world="SK" level="18" id="219">
+<name>King's Gambit</name>
+<GUID>B5130AE1-468A2171-0B7BD3B0-3FBE5499</GUID>
+<available>
+<GUID state="JS_Success">2BCB0806-47E1068C-4F3234AE-D5F3AC17</GUID>
+<GUID state="JS_Success">8F37175C-4DFFD952-3F6BC896-95E94AAB</GUID>
+</available>
+<discoverprompt>
+<info>Talk to Crach (advance Brothers in Arms)</info>
+</discoverprompt>
+</quest>
+
+<quest type="side" world="SK" level="18" id="220">
+<name>Coronation</name>
+<GUID>9540A12A-49AA6796-7BC8E7BE-848030A4</GUID>
+<available>
+<GUID state="JS_Success">B5130AE1-468A2171-0B7BD3B0-3FBE5499</GUID>
+</available>
+</quest>
+
+<!-- Kaer Morhen after Uma is obtained 9C69ECD5-44A14450-ED8D95BC-C7C2218F
+(In Ciri's Footsteps ending) -->
+
+<quest type="side" world="NO" level="20" id="236">
+<name>A Feast for Crows</name>
+<GUID>5E06A175-429A6042-2F75B895-AA3EE26A</GUID>
+<available>
+<GUID state="JS_Success">9C69ECD5-44A14450-ED8D95BC-C7C2218F</GUID>
+</available>
+<discoverprompt>
+<XY world="NO" X="694" Y="1756"/>
+<info>Unknown when this triggers</info>
+</discoverprompt>
+</quest>
+
+<quest type="side" world="NO" level="0" id="15">
+<name>Gwent: Old Pals</name>
+<GUID>B3C40CBF-4F39BB84-020888A2-7CEF294F</GUID>
+<available>
+<GUID state="JS_Success">5C6A7440-4323E4F5-9BAF8D90-D64FD1E2</GUID>
+</available>
+<discoverprompt>
+<XY world="NO" X="729" Y="1727"/>
+<info>Talk to Zoltan</info>
+</discoverprompt>
+<reward XP="75"/>
+<subquests>
+	<quest type="side" world="NO" level="0" id="17">
+	<name>Gwent: Playing Thaler</name>
+	<GUID>FF0C771B-467F9062-E25167B1-001E4F60</GUID>
+	<available>
+	<GUID state="JS_Active">B3C40CBF-4F39BB84-020888A2-7CEF294F</GUID>
+	</available>
+	</quest>
+</subquests>
+</quest>
+
+<quest type="treasure" world="KM" level="14" id="189">
+<name>Scavenger Hunt: Wolf School Gear</name>
+<GUID>ECDA507B-4902A54F-85D7CAA9-E26BF51C</GUID>
+<available>
+<GUID state="JS_Success">BCFD66C3-4E55BECB-00975882-A9203CDC</GUID>
+</available>
+<discoverprompt>
+<XY world="NO" X="596" Y="1697"/>
+<info>Buy Note 1 from Hattori</info>
+</discoverprompt>
+</quest>
+
+<quest type="treasure" world="KM" level="21" id="241">
+<name>Scavenger Hunt: Wolf School Gear Upgrade Diagrams - Part 1</name>
+<GUID>2B4D53F2-4D13E107-B76B1BBE-46F9BEE2</GUID>
+<available>
+<GUID state="JS_Success">ECDA507B-4902A54F-85D7CAA9-E26BF51C</GUID>
+</available>
+<discoverprompt>
+<XY world="NO" X="596" Y="1697"/>
+<info>Buy Note 1 from Hattori</info>
+</discoverprompt>
+</quest>
+
+<quest type="treasure" world="KM" level="21" id="242">
+<name>Scavenger Hunt: Wolf School Gear Upgrade Diagrams - Part 2</name>
+<GUID>65F92ED7-46364BBF-274F688B-2B9B242B</GUID>
+<available>
+<GUID state="JS_Success">ECDA507B-4902A54F-85D7CAA9-E26BF51C</GUID>
+</available>
+<discoverprompt>
+<XY world="VE" X="756" Y="122"/>
+<info>Buy Note 2 from blacksmith</info>
+</discoverprompt>
+</quest>
+
+<quest type="treasure" world="KM" level="29" id="294">
+<name>Scavenger Hunt: Wolf School Gear Upgrade Diagrams - Part 3</name>
+<GUID>0ACA2DC7-441F17F1-629E568D-1DDC8373</GUID>
+<available>
+<GUID state="JS_Success">65F92ED7-46364BBF-274F688B-2B9B242B</GUID>
+<GUID state="JS_Success">2B4D53F2-4D13E107-B76B1BBE-46F9BEE2</GUID>
+</available>
+<discoverprompt>
+<XY world="SK" X="-143" Y="750"/>
+<info>Buy Note 3 from armorer</info>
+</discoverprompt>
+</quest>
+
+<quest type="treasure" world="KM" level="29" id="295">
+<name>Scavenger Hunt: Wolf School Gear Upgrade Diagrams - Part 4</name>
+<GUID>B5A3EBF1-48584027-035CBD88-C65AE7D1</GUID>
+<available>
+<GUID state="JS_Success">65F92ED7-46364BBF-274F688B-2B9B242B</GUID>
+<GUID state="JS_Success">2B4D53F2-4D13E107-B76B1BBE-46F9BEE2</GUID>
+</available>
+<discoverprompt>
+<XY world="NO" X="624" Y="1893"/>
+<info>Buy Note 4 from armorer</info>
+</discoverprompt>
+</quest>
+
+<quest type="treasure" world="NO" level="34" id="329">
+<name>Scavenger Hunt: Wolf School Gear Upgrade Diagrams - Part 5</name>
+<GUID>C78B90EC-4B01543C-892550A7-3F7CCF23</GUID>
+<available>
+<GUID state="JS_Success">0ACA2DC7-441F17F1-629E568D-1DDC8373</GUID>
+<GUID state="JS_Success">B5A3EBF1-48584027-035CBD88-C65AE7D1</GUID>
+</available>
+<discoverprompt>
+<XY world="NO" X="596" Y="1697"/>
+<info>Buy Note 5 from Hattori</info>
+</discoverprompt>
+</quest>
+
+<quest type="treasure" world="SK" level="34" id="330">
+<name>Scavenger Hunt: Wolf School Gear Upgrade Diagrams - Part 6</name>
+<GUID>08304185-4846664C-6DD759BC-1DE779D6</GUID>
+<available>
+<GUID state="JS_Success">0ACA2DC7-441F17F1-629E568D-1DDC8373</GUID>
+<GUID state="JS_Success">B5A3EBF1-48584027-035CBD88-C65AE7D1</GUID>
+</available>
+<discoverprompt>
+<XY world="SK" X="-143" Y="750"/>
+<info>Buy Note 6 from armorer</info>
+</discoverprompt>
+</quest>
+
+<quest type="event" world="KM" level="12" id="149">
+<name>Trail of Echoes</name>
+<available>
+<GUID state="JS_Success">9C69ECD5-44A14450-ED8D95BC-C7C2218F</GUID>
+</available>
+<discoverprompt>
+<XY world="KM" X="-323" Y="177"/>
+</discoverprompt>
+</quest>
+
+<quest type="side" world="KM" level="23" id="251">
+<name>The Bastion</name>
+<GUID>8A68C2F0-462B76F4-3C4E09BE-397B843A</GUID>
+<available>
+<GUID state="JS_Success">9C69ECD5-44A14450-ED8D95BC-C7C2218F</GUID>
+</available>
+<discoverprompt>
+<XY world="KM" X="-321" Y="-13"/>
+</discoverprompt>
+</quest>
+
+<quest type="side" world="KM" level="26" id="276">
+<name>Monster Slayer</name>
+<GUID>2B2D83B9-47004059-EF60EDB1-C9ABCD36</GUID>
+<available>
+<GUID state="JS_Success">9C69ECD5-44A14450-ED8D95BC-C7C2218F</GUID>
+</available>
+<discoverprompt>
+<XY world="KM" X="94" Y="407"/>
+</discoverprompt>
+<reward XP="120"/>
+</quest>
+
+<quest type="side" world="KM" level="27" id="280">
+<name>Berengar's Blade</name>
+<GUID>39C6B04C-4FF43113-001D1CAC-C6A80DFE</GUID>
+<available>
+<GUID state="JS_Success">9C69ECD5-44A14450-ED8D95BC-C7C2218F</GUID>
+</available>
+<discoverprompt>
+<XY world="KM" X="-63" Y="4"/>
+<info>Cannot be obtained if Tor'haeme schematic is already known</info>
+</discoverprompt>
+</quest>
+
+<quest type="side" world="KM" level="27" id="281">
+<name>Greenhouse Effect</name>
+<GUID>56AFD15A-46F6E197-A83A2785-4F136AAF</GUID>
+<available>
+<GUID state="JS_Success">9C69ECD5-44A14450-ED8D95BC-C7C2218F</GUID>
+</available>
+<discoverprompt>
+<XY world="KM" X="201" Y="-378"/>
+</discoverprompt>
+<reward XP="100"/>
+</quest>
+
+<quest type="side" world="KM" level="30" id="302">
+<name>The Witchers' Forge</name>
+<GUID>73C91830-44938418-08D8CB90-1EFD785E</GUID>
+<available>
+<GUID state="JS_Success">9C69ECD5-44A14450-ED8D95BC-C7C2218F</GUID>
+</available>
+<discoverprompt>
+<XY world="KM" X="59" Y="22"/>
+<info>Get Monstrum papers from a dresser a the bottom of a tower near a chest</info>
+</discoverprompt>
+</quest>
+
+<quest type="main" world="KM" level="19" id="229">
+<name>Ugly Baby</name>
+<GUID>CA9F7D30-404727DE-FA4173B3-C7766A6A</GUID>
+<available>
+<GUID state="JS_Success">9C69ECD5-44A14450-ED8D95BC-C7C2218F</GUID>
+</available>
+<reward XP="125"/>
+
+<subquests>
+	<quest type="main" world="VE" level="19" id="448">
+	<name>Collect Uma from the sergeant</name>
+	<GUID>9C69ECD5-44A14450-ED8D95BC-C7C2218F</GUID>
+	<available>
+	<GUID state="JS_Active">CA9F7D30-404727DE-FA4173B3-C7766A6A</GUID>
+	</available>
+	<reward XP="75"/>
+	</quest>
+
+	<quest type="main" world="KM" level="19" id="231">
+	<name>The Final Trial</name>
+	<GUID>0215B534-4BBD04E9-2F43AEB6-ECFD04CB</GUID>
+	<available>
+	<GUID state="JS_Active">CA9F7D30-404727DE-FA4173B3-C7766A6A</GUID>
+	</available>
+	<reward XP="75"/>
+	</quest>
+
+	<quest type="main" world="KM" level="19" id="228">
+	<name>To Bait a Forktail...</name>
+	<GUID>8580CFDF-4DA521BD-A8AD399F-C68ADF75</GUID>
+	<available>
+	<GUID state="JS_Active">CA9F7D30-404727DE-FA4173B3-C7766A6A</GUID>
+	</available>
+	<reward XP="600"/>
+	</quest>
+
+	<quest type="main" world="KM" level="0" id="4">
+	<name>Disturbance</name>
+	<GUID>0BF1484F-4FAE6703-2880A4B3-C08F7F5C</GUID>
+	<available>
+	<GUID state="JS_Active">CA9F7D30-404727DE-FA4173B3-C7766A6A</GUID>
+	</available>
+	<reward XP="600"/>
+	</quest>
+</subquests>
+</quest>
+
+<quest type="main" world="KM" level="19" id="232">
+<name>No Place Like Home</name>
+<GUID>D51FE71A-4C883779-540303A6-81AA0DE5</GUID>
+<available>
+<GUID state="JS_Success">CA9F7D30-404727DE-FA4173B3-C7766A6A</GUID>
+</available>
+</quest>
+
+<quest type="main" world="KM" level="19" id="230">
+<name>Va Fail, Elaine</name>
+<GUID>F4D14B2F-43C39290-E76256A6-9BB706B9</GUID>
+<available>
+<GUID state="JS_Success">D51FE71A-4C883779-540303A6-81AA0DE5</GUID>
+</available>
+<reward XP="175"/>
+</quest>
+
+<quest type="main" world="NO" level="22" id="245">
+<name>Brothers In Arms: Nilfgaard</name>
+<GUID>F185EE6A-4B8CB3BD-7CBC5388-C75054F9</GUID>
+<available>
+<GUID state="JS_Success">F4D14B2F-43C39290-E76256A6-9BB706B9</GUID>
+</available>
+<reward XP="50"/>
+</quest>
+
+<quest type="main" world="SK" level="22" id="246">
+<name>Brothers In Arms: Skellige</name>
+<GUID>093A3020-4681FF54-A29E6687-2F23D98C</GUID>
+<available>
+<GUID state="JS_Success">F4D14B2F-43C39290-E76256A6-9BB706B9</GUID>
+</available>
+<reward XP="50"/>
+</quest>
+
+<quest type="main" world="VE" level="22" id="247">
+<name>Brothers In Arms: Velen</name>
+<GUID>B1DA9A85-48F97821-B4F3F1A4-157E2161</GUID>
+<available>
+<GUID state="JS_Success">F4D14B2F-43C39290-E76256A6-9BB706B9</GUID>
+</available>
+<reward XP="50"/>
+</quest>
+
+<quest type="main" world="VE" level="22" id="248">
+<name>Brothers In Arms: Novigrad</name>
+<GUID>F461DB29-415D50DD-BE8990A8-EA5BF2B2</GUID>
+<available>
+<GUID state="JS_Success">F4D14B2F-43C39290-E76256A6-9BB706B9</GUID>
+</available>
+<reward XP="50"/>
+</quest>
+
+<quest type="main" world="SK" level="22" id="249">
+<name>The Isle of Mists</name>
+<GUID>1AC2E15C-4BCBB955-BF0697B9-86A21FD1</GUID>
+<available>
+<GUID state="JS_Success">F4D14B2F-43C39290-E76256A6-9BB706B9</GUID>
+</available>
+<reward XP="4200"/>
+</quest>
+
+<quest type="main" world="KM" level="24" id="257">
+<name>The Battle of Kaer Morhen</name>
+<GUID>0B4F80AF-4A65793F-4EA8BF81-8A2A4139</GUID>
+<available>
+<GUID state="JS_Success">1AC2E15C-4BCBB955-BF0697B9-86A21FD1</GUID>
+</available>
+<reward XP="2700"/>
+</quest>
+
+<quest type="main" world="KM" level="20" id="235">
+<name>Blood on the Battlefield</name>
+<GUID>CEC5F8EE-47566BE9-12780AAA-0EE104AD</GUID>
+<available>
+<GUID state="JS_Success">0B4F80AF-4A65793F-4EA8BF81-8A2A4139</GUID>
+</available>
+<reward XP="1000"/>
+</quest>
+
+<quest type="main" world="VE" level="26" id="273">
+<name>Bald Mountain</name>
+<GUID>0C6B1407-41BD2F11-7FD48CA2-DBDB8F77</GUID>
+<available>
+<GUID state="JS_Success">CEC5F8EE-47566BE9-12780AAA-0EE104AD</GUID>
+</available>
+<reward XP="1350"/>
+</quest>
+
+<quest type="side" world="NO" level="12" id="144">
+<name>A Final Kindness</name>
+<GUID>9D537AB1-4D109B54-31CE43A2-604C0F1A</GUID>
+<available>
+<GUID state="JS_Success">0C6B1407-41BD2F11-7FD48CA2-DBDB8F77</GUID>
+</available>
+<available>
+<GUID state="JS_Success">6861CCFD-4F36D35A-2EB811B6-3DF2A6D5</GUID>
+</available>
+<discoverprompt>
+<info>Only triggers if Keira went to Radovid</info>
+</discoverprompt>
+</quest>
+
+<quest type="endgame" world="NO" level="26" id="6">
+<name>Final Preparations</name>
+<GUID>EDCCCDF6-49D327D0-307CDABA-D4DB1F8A</GUID>
+<available>
+<GUID state="JS_Success">0C6B1407-41BD2F11-7FD48CA2-DBDB8F77</GUID>
+</available>
+
+<subquests>
+
+	<quest type="endgame" world="SK" level="26" id="274">
+	<name>Through Time and Space</name>
+	<GUID>6A08DBE7-4175DDD4-548D01BB-21B0CA3E</GUID>
+	<available>
+	<GUID state="JS_Active">EDCCCDF6-49D327D0-307CDABA-D4DB1F8A</GUID>
+	</available>
+	</quest>
+
+	<quest type="endgame" world="NO" level="28" id="288">
+	<name>Payback</name>
+	<GUID>C4C78D01-4FB49E36-60BB90B6-A53ADCF5</GUID>
+	<available>
+	<GUID state="JS_Active">EDCCCDF6-49D327D0-307CDABA-D4DB1F8A</GUID>
+	</available>
+	</quest>
+	
+	<quest type="endgame" world="NO" level="28" id="287">
+	<name>Blindingly Obvious</name>
+	<GUID>9ED9D47A-499AF66A-FE90398D-EBB01FAB</GUID>
+	<available>
+	<GUID state="JS_Active">EDCCCDF6-49D327D0-307CDABA-D4DB1F8A</GUID>
+	</available>
+	</quest>	
+
+	<quest type="endgame" world="SK" level="28" id="289">
+	<name>The Great Escape</name>
+	<GUID>5B858684-4A646E08-258AF3AD-635E235B</GUID>
+	<available>
+	<GUID state="JS_Active">EDCCCDF6-49D327D0-307CDABA-D4DB1F8A</GUID>
+	</available>
+	</quest>
+
+</subquests>
+</quest>
+
+<quest type="side" world="NO" level="30" id="301">
+<name>Reason of State</name>
+<GUID>05511846-450F2A65-E7F695AD-31DF9E94</GUID>
+<available>
+<GUID state="JS_Success">9ED9D47A-499AF66A-FE90398D-EBB01FAB</GUID>
+</available>
+</quest>
+
+<quest type="side" world="NO" level="0" id="25">
+<name>It Takes Three to Tango</name>
+<GUID>044EAE5B-4BE9699C-CE48CCAF-8346C156</GUID>
+<available>
+<GUID state="JS_Success">EDCCCDF6-49D327D0-307CDABA-D4DB1F8A</GUID>
+</available>
+<available>
+<GUID state="JS_Success">65F21AEA-4FA8809D-70BBAC8D-91042BE3</GUID>
+</available>
+<available>
+<GUID state="JS_Success">80CF3D9A-4FE5B625-8BD85997-0F9C2424</GUID>
+</available>
+<discoverprompt>
+<info>Only shows up if you told both Triss and Yennifer that you love them.</info>
+</discoverprompt>
+</quest>
+
+<quest type="endgame" world="SK" level="28" id="285">
+<name>Battle Preparations</name>
+<GUID>3FFACA7E-489A30A5-824E4887-21A507DE</GUID>
+<available>
+<GUID state="JS_Success">EDCCCDF6-49D327D0-307CDABA-D4DB1F8A</GUID>
+</available>
+<subquests>
+
+	<quest type="endgame" world="SK" level="28" id="283">
+	<name>Veni Vidi Vigo</name>
+	<GUID>D8775E1A-40ACF5BB-A66CD9B6-B6C148E4</GUID>
+	<available>
+	<GUID state="JS_Active">3FFACA7E-489A30A5-824E4887-21A507DE</GUID>
+	</available>
+	</quest>
+	
+	<quest type="endgame" world="SK" level="31" id="306">
+	<name>Child of the Elder Blood</name>
+	<GUID>D034287F-4AD3809B-2BB2B68C-C61DD2EC</GUID>
+	<available>
+	<GUID state="JS_Active">3FFACA7E-489A30A5-824E4887-21A507DE</GUID>
+	</available>
+	</quest>
+	
+	<quest type="endgame" world="SK" level="28" id="284">
+	<name>The Sunstone</name>
+	<GUID>6F58796E-4CE99749-002CADA9-BA5BC6EC</GUID>
+	<available>
+	<GUID state="JS_Active">3FFACA7E-489A30A5-824E4887-21A507DE</GUID>
+	</available>
+	</quest>
+
+
+</subquests>
+</quest>
+
+<quest type="main" world="SK" level="28" id="286">
+<name>Skjall's Grave</name>
+<GUID>B95FA3F5-47B7A37B-4A51B4AE-91B84865</GUID>
+<available>
+<GUID state="JS_Success">D034287F-4AD3809B-2BB2B68C-C61DD2EC</GUID>
+</available>
+</quest>
+
+<quest type="endgame" world="SK" level="30" id="296">
+<name>On Thin Ice</name>
+<GUID>1234B258-4A8EF7C7-3E0F979D-8E8331D3</GUID>
+<available>
+<GUID state="JS_Success">3FFACA7E-489A30A5-824E4887-21A507DE</GUID>
+</available>
+</quest>
+
+<quest type="endgame" world="SK" level="30" id="297">
+<name>Tedd Deireadh, the Final Age</name>
+<GUID>5B67DFF5-44818918-50F4ECBA-A4B894EC</GUID>
+<available>
+<GUID state="JS_Success">1234B258-4A8EF7C7-3E0F979D-8E8331D3</GUID>
+</available>
+</quest>
+
+<!--Ciri dies-->
+<quest type="endgame" world="VE" level="30" id="298">
+<name>Something Ends, Something Begins (Ending 1)</name>
+<GUID>8F17E40A-4942D119-96BC5A99-28A6F4D9</GUID>
+<available>
+<GUID state="JS_Success">5B67DFF5-44818918-50F4ECBA-A4B894EC</GUID>
+</available>
+<hideif>
+<GUID state="JS_Active">E8D3E37E-443DA208-F6407683-AA607416</GUID>
+<GUID state="JS_Active">053B2B41-41E1DB6D-D6F4ECA6-94443258</GUID>
+</hideif>
+</quest>
+
+<!--Ciri is emporer-->
+<quest type="endgame" world="VE" level="30" id="299">
+<name>Something Ends, Something Begins (Ending 2)</name>
+<GUID>E8D3E37E-443DA208-F6407683-AA607416</GUID>
+<available>
+<GUID state="JS_Success">5B67DFF5-44818918-50F4ECBA-A4B894EC</GUID>
+</available>
+<hideif>
+<GUID state="JS_Active">8F17E40A-4942D119-96BC5A99-28A6F4D9</GUID>
+<GUID state="JS_Active">053B2B41-41E1DB6D-D6F4ECA6-94443258</GUID>
+</hideif>
+
+<subquests>
+	<quest type="side" world="WO" level="0" id="10">
+	<name>Faithful Friend</name>
+	<GUID>5116D959-43B7A6FC-369B5194-A9F115EC</GUID>
+	<available>
+	<GUID state="JS_Success">5B67DFF5-44818918-50F4ECBA-A4B894EC</GUID>
+	</available>
+	</quest>
+</subquests>
+</quest>
+
+<!--Ciri free -->
+<quest type="endgame" world="VE" level="30" id="300">
+<name>Something Ends, Something Begins (Ending 3)</name>
+<GUID>053B2B41-41E1DB6D-D6F4ECA6-94443258</GUID>
+<available>
+<GUID state="JS_Success">5B67DFF5-44818918-50F4ECBA-A4B894EC</GUID>
+</available>
+<hideif>
+<GUID state="JS_Active">8F17E40A-4942D119-96BC5A99-28A6F4D9</GUID>
+<GUID state="JS_Active">E8D3E37E-443DA208-F6407683-AA607416</GUID>
+</hideif>
+</quest>
+
+<!-- Toussaint after Envoys Wineboys but technically only after Beast of Touissant
+(11D55E15-434FE711-E89E10B8-17BB09E2) -->
+
+<quest type="main" world="TO" level="35" id="333">
+<name>The Beast of Toussaint</name>
+<GUID>11D55E15-434FE711-E89E10B8-17BB09E2</GUID>
+<available>
+<GUID state="JS_Success">629E3452-444A67F6-70C1C197-BF6E22EF</GUID>
+</available>
+<reward XP="3250"/>
+</quest>
+
+<quest type="main" world="TO" level="36" id="336">
+<name>Blood Run</name>
+<GUID>1939E60D-401CDF59-6F4765BB-25BCEEC8</GUID>
+<available>
+<GUID state="JS_Success">11D55E15-434FE711-E89E10B8-17BB09E2</GUID>
+</available>
+<reward XP="1000"/>
+</quest>
+
+<quest type="main" world="TO" level="39" id="366">
+<name>La Cage au Fou</name>
+<GUID>CE23E598-4D3B3C3B-2778AD92-095146A9</GUID>
+<available>
+<GUID state="JS_Success">1939E60D-401CDF59-6F4765BB-25BCEEC8</GUID>
+</available>
+</quest>
+
+<quest type="main" world="TO" level="42" id="387">
+<name>Where Children Toil, Toys Waste Away</name>
+<GUID>B4D11A9C-4DDEB849-23845981-1887E867</GUID>
+<available>
+<GUID state="JS_Success">CE23E598-4D3B3C3B-2778AD92-095146A9</GUID>
+</available>
+<reward XP="1600"/>
+</quest>
+
+<quest type="main" world="TO" level="42" id="388">
+<name>Wine is Sacred</name>
+<GUID>C9D7BC04-43B303DD-7ED3AAA9-9A7378BD</GUID>
+<available>
+<GUID state="JS_Success">B4D11A9C-4DDEB849-23845981-1887E867</GUID>
+</available>
+<reward XP="2550"/>
+</quest>
+
+<quest type="main" world="TO" level="43" id="392">
+<name>The Man from Cintra</name>
+<GUID>6C2340E8-4E58E618-BF93D5A9-E8E5CB29</GUID>
+<available>
+<GUID state="JS_Success">C9D7BC04-43B303DD-7ED3AAA9-9A7378BD</GUID>
+</available>
+<reward XP="1500"/>
+
+<subquests>
+	<quest type="event" world="TO" level="0" id="432">
+	<name>Contract on a Witcher</name>
+	<available>
+	<GUID state="JS_Active">6C2340E8-4E58E618-BF93D5A9-E8E5CB29</GUID>
+	</available>
+	</quest>
+</subquests>
+</quest>
+
+<quest type="main" world="TO" level="47" id="403">
+<name>Capture the Castle</name>
+<GUID>B0E13120-43A56E44-83D0F5A0-EE26759E</GUID>
+<available>
+<GUID state="JS_Success">6C2340E8-4E58E618-BF93D5A9-E8E5CB29</GUID>
+</available>
+</quest>
+
+<quest type="main" world="TO" level="47" id="405">
+<name>The Night of Long Fangs</name>
+<GUID>FF48073D-4F6969E5-F79CD7BE-E217B3AD</GUID>
+<available>
+<GUID state="JS_Success">B0E13120-43A56E44-83D0F5A0-EE26759E</GUID>
+</available>
+</quest>
+
+<quest type="main" world="TO" level="47" id="404">
+<name>Blood Simple</name>
+<GUID>41C2C88E-465E617E-E504A28D-B7557E96</GUID>
+<available>
+<GUID state="JS_Success">FF48073D-4F6969E5-F79CD7BE-E217B3AD</GUID>
+</available>
+<hideif>
+<GUID state="JS_Active">63D033F5-43CFCF48-2658F083-8EDC1A18</GUID>
+</hideif>
+</quest>
+
+<quest type="main" world="TO" level="47" id="406">
+<name>What Lies Unseen</name>
+<GUID>E2F4AA1D-4BDD183B-9DDFD89D-009B34B7</GUID>
+<available>
+<GUID state="JS_Success">FF48073D-4F6969E5-F79CD7BE-E217B3AD</GUID>
+</available>
+<discoverprompt>
+<info>Only available if Geralt chooses not to free Syanna</info>
+</discoverprompt>
+<hideif>
+<GUID state="JS_Active">63D033F5-43CFCF48-2658F083-8EDC1A18</GUID>
+</hideif>
+</quest>
+
+<quest type="main" world="TO" level="47" id="407">
+<name>Beyond Hill and Dale...</name>
+<GUID>E458AAC7-4C80112B-0C1E6694-113E60B1</GUID>
+<available>
+<GUID state="JS_Success">FF48073D-4F6969E5-F79CD7BE-E217B3AD</GUID>
+</available>
+<discoverprompt>
+<info>Only available if Geralt chooses to free Syanna</info>
+</discoverprompt>
+</quest>
+
+<quest type="main" world="TO" level="49" id="415">
+<name>Tesham Mutna</name>
+<GUID>BE9868E4-427C64C0-FEC15FAB-C7077CC2</GUID>
+<available>
+<GUID state="JS_Success">E458AAC7-4C80112B-0C1E6694-113E60B1</GUID>
+<GUID state="JS_Success">E2F4AA1D-4BDD183B-9DDFD89D-009B34B7</GUID>
+</available>
+</quest>
+
+<quest type="main" world="TO" level="49" id="416">
+<name>Pomp and Strange Circumstance</name>
+<GUID>75B389CC-4F5043B3-9CC508A2-88F82183</GUID>
+<available>
+<GUID state="JS_Success">BE9868E4-427C64C0-FEC15FAB-C7077CC2</GUID>
+</available>
+<discoverprompt>
+<info>Only available if Syanna is alive</info>
+</discoverprompt>
+</quest>
+
+<quest type="main" world="TO" level="49" id="417">
+<name>Be It Ever So Humble</name>
+<GUID>C9F4557A-4660507F-1FE53F9D-B6C060BE</GUID>
+<available>
+<GUID state="JS_Success">8F17E40A-4942D119-96BC5A99-28A6F4D9</GUID>
+<GUID state="JS_Success">E8D3E37E-443DA208-F6407683-AA607416</GUID>
+<GUID state="JS_Success">053B2B41-41E1DB6D-D6F4ECA6-94443258</GUID>
+</available>
+<available>
+<GUID state="JS_Success">75B389CC-4F5043B3-9CC508A2-88F82183</GUID>
+<GUID state="JS_Success">FD761CAC-44DF7883-8A45C9AF-50163CDF</GUID>
+</available>
+</quest>
+
+<quest type="main" world="TO" level="49" id="418">
+<name>Burlap is the New Stripe</name>
+<GUID>FD761CAC-44DF7883-8A45C9AF-50163CDF</GUID>
+<available>
+<GUID state="JS_Success">BE9868E4-427C64C0-FEC15FAB-C7077CC2</GUID>
+</available>
+<hideif>
+<GUID state="JS_Active">ECF724D5-4D921D3A-FC11BE9F-14775224</GUID>
+</hideif>
+<discoverprompt>
+<info>Only available if Syanna dies but Anna lives</info>
+</discoverprompt>
+</quest>
+
+<quest type="side" world="TO" level="49" id="419">
+<name>The Perks of Being a Jailbird</name>
+<GUID>A33E591C-44B7960A-B55173AA-7075900C</GUID>
+<available>
+<GUID state="JS_Success">FD761CAC-44DF7883-8A45C9AF-50163CDF</GUID>
+</available>
+</quest>
+
+<quest type="side" world="TO" level="47" id="408">
+<name>Duck, Duck, Goosed!</name>
+<GUID>DDE4E2D1-4CE36315-01E6F38B-0F747611</GUID>
+<available>
+<GUID state="JS_Active">E458AAC7-4C80112B-0C1E6694-113E60B1</GUID>
+</available>
+<discoverprompt>
+<info>Notice board in fairy tale land</info>
+</discoverprompt>
+</quest>
+
+<quest type="side" world="TO" level="42" id="389">
+<name>The Hunger Game</name>
+<GUID>6FF82E52-4816A32D-C7DF37BE-8D5AD8A9</GUID>
+<available>
+<GUID state="JS_Success">CE23E598-4D3B3C3B-2778AD92-095146A9</GUID>
+</available>
+<discoverprompt>
+<info>Visit Marlene after a few days. Only available if you saved her in La Cage au Fou.</info>
+<XY world="TO" X="-111" Y="-824"/>
+</discoverprompt>
+</quest>
+
+<quest type="side" world="TO" level="39" id="367">
+<name>Amidst the Mill's Grist</name>
+<GUID>EADC1606-4B14B400-566DD697-8ADC0F52</GUID>
+<available>
+<GUID state="JS_Success">CE23E598-4D3B3C3B-2778AD92-095146A9</GUID>
+</available>
+<discoverprompt>
+<XY world="TO" X="-147" Y="-904"/>
+<info>Overhear peasants talking</info>
+</discoverprompt>
+</quest>
+
+<quest type="main" world="TO" level="0" id="1">
+<name>No Place Like Home</name>
+<GUID>35E4C812-422459EF-1F816FAC-7E53B70E</GUID>
+<available>
+<GUID state="JS_Success">11D55E15-434FE711-E89E10B8-17BB09E2</GUID>
+</available>
+</quest>
+
+<quest type="side" world="TO" level="35" id="334">
+<name>Turn and Face the Strange</name>
+<GUID>A644CC5F-41D19717-CE2A4398-34879DFB</GUID>
+<available>
+<GUID state="JS_Success">11D55E15-434FE711-E89E10B8-17BB09E2</GUID>
+</available>
+<discoverprompt>
+<XY world="TO" X="-599" Y="-1372"/>
+<info>! sign</info>
+</discoverprompt>
+<reward XP="1000"/>
+</quest>
+
+<quest type="side" world="TO" level="35" id="335">
+<name>The Warble of a Smitten Knight</name>
+<GUID>AD9E547A-40323AEB-87AD21AE-8AE49F72</GUID>
+<available>
+<GUID state="JS_Success">11D55E15-434FE711-E89E10B8-17BB09E2</GUID>
+</available>
+<discoverprompt>
+<XY world="TO" X="-419" Y="-959"/>
+<info>! sign</info>
+</discoverprompt>
+<reward XP="900"/>
+</quest>
+
+<quest type="event" world="TO" level="0" id="429">
+<name>Naughty Feathers</name>
+<available>
+<GUID state="JS_Success">AD9E547A-40323AEB-87AD21AE-8AE49F72</GUID>
+</available>
+<discoverprompt>
+<info>Talk to Guillame after Warble of a Smitten Knight</info>
+<XY world="TO" X="-719" Y="-1118"/>
+</discoverprompt>
+</quest>
+
+<quest type="side" world="TO" level="43" id="396">
+<name>Of Sheers and a Witcher I Sing</name>
+<GUID>0EB811A8-4069F57C-6966DC99-D808B69D</GUID>
+<available>
+<GUID state="JS_Success">AD9E547A-40323AEB-87AD21AE-8AE49F72</GUID>
+</available>
+<discoverprompt>
+<XY world="TO" X="-504" Y="-1528"/>
+<info>! sign</info>
+</discoverprompt>
+</quest>
+
+<quest type="side" world="TO" level="36" id="337">
+<name>Fists of Fury: Toussaint</name>
+<GUID>AF499A50-4016055D-97A4A787-06336148</GUID>
+<available>
+<GUID state="JS_Success">11D55E15-434FE711-E89E10B8-17BB09E2</GUID>
+</available>
+<discoverprompt>
+<XY world="TO" X="-504" Y="-1344"/>
+<info>Notice board</info>
+</discoverprompt>
+</quest>
+
+<quest type="side" world="TO" level="40" id="371">
+<name>Raging Wolf</name>
+<GUID>D3B2B89D-4E35CBA8-70F0B39C-46F2BF82</GUID>
+<available>
+<GUID state="JS_Success">AF499A50-4016055D-97A4A787-06336148</GUID>
+</available>
+</quest>
+
+<quest type="side" world="TO" level="36" id="338">
+<name>Till Death Do You Part</name>
+<GUID>6791BAC0-4EAC8D29-8900EA8D-62CF8490</GUID>
+<available>
+<GUID state="JS_Success">11D55E15-434FE711-E89E10B8-17BB09E2</GUID>
+</available>
+<discoverprompt>
+<XY world="TO" X="-504" Y="-1344"/>
+<info>Notice board</info>
+</discoverprompt>
+</quest>
+
+
+
+<quest type="side" world="TO" level="36" id="339">
+<name>Paperchase</name>
+<GUID>E1815592-4F7DF37A-F3593B9B-52E1F152</GUID>
+<available>
+<GUID state="JS_Success">11D55E15-434FE711-E89E10B8-17BB09E2</GUID>
+</available>
+<discoverprompt>
+<XY world="TO" X="-503" Y="-1420"/>
+<info>! sign</info>
+</discoverprompt>
+</quest>
+
+<quest type="side" world="TO" level="0" id="18">
+<name>Gwent: Never Fear, Skellige's Here</name>
+<GUID>10792209-4257AE39-5B821199-2FFB20EC</GUID>
+<available>
+<GUID state="JS_Success">11D55E15-434FE711-E89E10B8-17BB09E2</GUID>
+</available>
+<discoverprompt>
+<XY world="TO" X="-479" Y="-959"/>
+<info>Play Gwent against blacksmith (or any other player with a Skellige card)</info>
+</discoverprompt>
+</quest>
+
+<quest type="side" world="TO" level="38" id="362">
+<name>Gwent: To Everything - Turn, Turn, Tournament!</name>
+<GUID>DBBF356D-4FFC9CC0-29404AAF-D6208B48</GUID>
+<available>
+<GUID state="JS_Success">10792209-4257AE39-5B821199-2FFB20EC</GUID>
+</available>
+<discoverprompt>
+<XY world="TO" X="-159" Y="-656"/>
+<info>Notice board</info>
+</discoverprompt>
+</quest>
+
+<quest type="side" world="TO" level="36" id="340">
+<name>Goodness, Gracious, Great Balls of Granite!</name>
+<GUID>3C3DC52F-445095B5-89C66893-79E185A1</GUID>
+<available>
+<GUID state="JS_Success">11D55E15-434FE711-E89E10B8-17BB09E2</GUID>
+</available>
+<discoverprompt>
+<XY world="TO" X="-504" Y="-1344"/>
+<info>Notice board</info>
+</discoverprompt>
+<reward XP="140"/>
+</quest>
+
+<quest type="side" world="TO" level="37" id="345">
+<name>Father Knows Worst</name>
+<GUID>E0EB6BB5-492FD420-5E53F4B9-6CC58BB7</GUID>
+<available>
+<GUID state="JS_Success">11D55E15-434FE711-E89E10B8-17BB09E2</GUID>
+</available>
+<discoverprompt>
+<XY world="TO" X="-504" Y="-1344"/>
+<info>Notice board</info>
+</discoverprompt>
+<reward XP="300"/>
+</quest>
+
+<quest type="contract" world="TO" level="38" id="360">
+<name>Bovine Blues</name>
+<GUID>2633D68E-4C40FA82-D17A2A88-0A46D256</GUID>
+<available>
+<GUID state="JS_Success">11D55E15-434FE711-E89E10B8-17BB09E2</GUID>
+</available>
+<discoverprompt>
+<XY world="TO" X="288" Y="-996"/>
+<info>Notice board</info>
+</discoverprompt>
+<reward XP="600"/>
+</quest>
+
+<quest type="side" world="TO" level="40" id="374">
+<name>Big Feet to Fill</name>
+<GUID>B3FF603C-45C1B21D-38366492-788831A1</GUID>
+<available>
+<GUID state="JS_Success">2633D68E-4C40FA82-D17A2A88-0A46D256</GUID>
+</available>
+
+<subquests>
+	<quest type="side" world="TO" level="37" id="346">
+	<name>The First Group</name>
+	<GUID>E28BC846-471FA50A-BAB751BB-03A02397</GUID>
+	<available>
+	<GUID state="JS_Active">B3FF603C-45C1B21D-38366492-788831A1</GUID>
+	</available>
+	<discoverprompt>
+	<XY world="TO" X="-911" Y="-33"/>	
+	</discoverprompt>
+	</quest>
+
+	<quest type="side" world="TO" level="37" id="347">
+	<name>The Second Group</name>
+	<GUID>56B78E64-48A536AB-C4F5B289-52CCB037</GUID>
+	<available>
+	<GUID state="JS_Active">B3FF603C-45C1B21D-38366492-788831A1</GUID>
+	</available>
+	<discoverprompt>
+	<XY world="TO" X="-532" Y="-131"/>	
+	</discoverprompt>	
+	</quest>
+
+	<quest type="side" world="TO" level="37" id="348">
+	<name>The Third Group</name>
+	<GUID>965B131E-402DDC40-09EEBA8F-7687F023</GUID>
+	<available>
+	<GUID state="JS_Active">B3FF603C-45C1B21D-38366492-788831A1</GUID>
+	</available>
+	<discoverprompt>
+	<XY world="TO" X="-715" Y="-193"/>	
+	</discoverprompt>
+	</quest>
+
+	<quest type="side" world="TO" level="37" id="349">
+	<name>The Fourth Group</name>
+	<GUID>85DD2133-4FAB2682-10FD25BE-5D6A56F7</GUID>
+	<available>
+	<GUID state="JS_Active">B3FF603C-45C1B21D-38366492-788831A1</GUID>
+	</available>
+	<discoverprompt>
+	<XY world="TO" X="-242" Y="370"/>	
+	</discoverprompt>
+	</quest>
+
+	<quest type="side" world="TO" level="37" id="350">
+	<name>The Fifth Group</name>
+	<GUID>9804A828-471C1141-9B4FC29D-CA0F6947</GUID>
+	<available>
+	<GUID state="JS_Active">B3FF603C-45C1B21D-38366492-788831A1</GUID>
+	</available>
+	<discoverprompt>
+	<XY world="TO" X="-591" Y="179"/>	
+	</discoverprompt>
+	</quest>
+</subquests>
+</quest>
+
+<quest type="contract" world="TO" level="37" id="344">
+<name>Big Game Hunter</name>
+<GUID>39087354-4BBDC2C0-3D0942B3-0230FD61</GUID>
+<available>
+<GUID state="JS_Success">11D55E15-434FE711-E89E10B8-17BB09E2</GUID>
+</available>
+<discoverprompt>
+<XY world="TO" X="-159" Y="-656"/>
+<info>Notice board (White Wolf wanted)</info>
+</discoverprompt>
+</quest>
+
+<quest type="side" world="TO" level="37" id="351">
+<name>Vintner's Contract: Rivecalme Storehouse</name>
+<GUID>367672BA-41E9AB7F-F339428C-D5D493C0</GUID>
+<available>
+<GUID state="JS_Success">11D55E15-434FE711-E89E10B8-17BB09E2</GUID>
+</available>
+<discoverprompt>
+<XY world="TO" X="-223" Y="-312"/>
+<info>Vintner's contract symbol</info>
+</discoverprompt>
+</quest>
+
+<quest type="side" world="TO" level="37" id="352">
+<name>Wine Wars</name>
+<GUID>B1FF16F6-4223B5D3-0C4F32B8-30F63786</GUID>
+<available>
+<GUID state="JS_Success">11D55E15-434FE711-E89E10B8-17BB09E2</GUID>
+</available>
+<discoverprompt>
+<XY world="TO" X="-159" Y="-656"/>
+<info>Notice board</info>
+</discoverprompt>
+</quest>
+
+<quest type="side" world="TO" level="37" id="353">
+<name>Wine Wars: Coronata</name>
+<GUID>E0AD810B-4517493B-1D1AD1B3-6B79080F</GUID>
+<available>
+<GUID state="JS_Success">642890AD-4F8ECBE6-2756EFA2-F755509A</GUID>
+</available>
+</quest>
+
+<quest type="side" world="TO" level="37" id="354">
+<name>Wine Wars: Vermentino</name>
+<GUID>7A0007EE-4B89DAF9-50D65893-42FE261B</GUID>
+<available>
+<GUID state="JS_Success">642890AD-4F8ECBE6-2756EFA2-F755509A</GUID>
+</available>
+</quest>
+
+<quest type="side" world="TO" level="42" id="390">
+<name>Wine Wars: The Deus in the Machina</name>
+<GUID>060EE78A-4B7A92A4-B4DF28A4-63E01A87</GUID>
+<available>
+<GUID state="JS_Active">E0AD810B-4517493B-1D1AD1B3-6B79080F</GUID>
+<GUID state="JS_Active">7A0007EE-4B89DAF9-50D65893-42FE261B</GUID>
+</available>
+<discoverprompt>
+<XY world="TO" X="-23" Y="99"/>
+</discoverprompt>
+</quest>
+
+<quest type="side" world="TO" level="39" id="368">
+<name>Wine Wars: Belgaard</name>
+<GUID>642890AD-4F8ECBE6-2756EFA2-F755509A</GUID>
+<available>
+<GUID state="JS_Success">060EE78A-4B7A92A4-B4DF28A4-63E01A87</GUID>
+</available>
+<subquests>
+
+	<quest type="side" world="TO" level="40" id="378">
+	<name>Wine Wars: Consorting</name>
+	<GUID>81C1FE3B-4CE1B079-30A756A8-D2402E10</GUID>
+	<available>
+	<GUID state="JS_Success">060EE78A-4B7A92A4-B4DF28A4-63E01A87</GUID>
+	</available>
+	<discoverprompt>
+	<info>Only starts if there are objectives left to complete from Vermentino and Coronado</info>
+	</discoverprompt>
+	</quest>
+
+</subquests>
+</quest>
+
+<quest type="treasure" world="TO" level="37" id="356">
+<name>The Black Widow</name>
+<GUID>77CD5426-43606A2A-026972B5-AB0D947C</GUID>
+<available>
+<GUID state="JS_Success">11D55E15-434FE711-E89E10B8-17BB09E2</GUID>
+</available>
+<discoverprompt>
+<XY world="TO" X="30" Y="-997"/>
+<info>Hidden treasure marker</info>
+</discoverprompt>
+<reward XP="0"/>
+</quest>
+
+<quest type="treasure" world="TO" level="37" id="357">
+<name>Coin Doesn't Stink</name>
+<GUID>EB22AF64-4032D7FA-39971D99-5CEBF58B</GUID>
+<available>
+<GUID state="JS_Success">11D55E15-434FE711-E89E10B8-17BB09E2</GUID>
+</available>
+<discoverprompt>
+<XY world="TO" X="266" Y="5"/>
+<info>Hidden treasure marker</info>
+</discoverprompt>
+<reward XP="0"/>
+</quest>
+
+<quest type="treasure" world="TO" level="37" id="358">
+<name>Don't Take Candy from a Stranger</name>
+<GUID>FB8802DF-417EE465-2073D1BA-15176EF0</GUID>
+<available>
+<GUID state="JS_Success">11D55E15-434FE711-E89E10B8-17BB09E2</GUID>
+</available>
+<discoverprompt>
+<XY world="TO" X="-774" Y="-126"/>
+<info>Hidden treasure marker</info>
+</discoverprompt>
+<reward XP="0"/>
+</quest>
+
+<quest type="treasure" world="TO" level="37" id="359">
+<name>The Last Exploits of Selina's Gang</name>
+<GUID>BA4BC5BD-4B52F387-D2C251B6-6873EAF9</GUID>
+<available>
+<GUID state="JS_Success">11D55E15-434FE711-E89E10B8-17BB09E2</GUID>
+</available>
+<discoverprompt>
+<XY world="TO" X="-478" Y="-1638"/>
+<info>Hidden treasure marker</info>
+</discoverprompt>
+<reward XP="0"/>
+</quest>
+
+<quest type="side" world="TO" level="40" id="369">
+<name>Knight for Hire</name>
+<GUID>AFAD298F-47B94308-D6D65092-02F3FC2E</GUID>
+<available>
+<GUID state="JS_Success">11D55E15-434FE711-E89E10B8-17BB09E2</GUID>
+</available>
+<discoverprompt>
+<XY world="TO" X="-159" Y="-656"/>
+<info>Notice board</info>
+</discoverprompt>
+</quest>
+
+<quest type="side" world="TO" level="40" id="370">
+<name>Vintner's Contract: Dun Tynne Hillside</name>
+<GUID>FD7151A7-442DAC7C-535F9180-0ABA93AA</GUID>
+<available>
+<GUID state="JS_Success">11D55E15-434FE711-E89E10B8-17BB09E2</GUID>
+</available>
+<discoverprompt>
+<XY world="TO" X="203" Y="-140"/>
+<info>Vintner's contract symbol</info>
+</discoverprompt>
+</quest>
+
+<quest type="side" world="TO" level="40" id="377">
+<name>Vintner's Contract: Chuchote Cave</name>
+<GUID>DC82C3FD-4362CA3F-EC7E25BA-72167A40</GUID>
+<available>
+<GUID state="JS_Success">11D55E15-434FE711-E89E10B8-17BB09E2</GUID>
+</available>
+<discoverprompt>
+<XY world="TO" X="-810" Y="-516"/>
+<info>Vintner's contract symbol</info>
+</discoverprompt>
+<reward XP="100"/>
+</quest>
+
+<quest type="side" world="TO" level="43" id="393">
+<name>Vintner's Contract: Cleaning Those Hard-to-Reach Places</name>
+<GUID>4183D8AE-41961F00-363DF8BD-EED3DB5D</GUID>
+<available>
+<GUID state="JS_Success">11D55E15-434FE711-E89E10B8-17BB09E2</GUID>
+</available>
+<discoverprompt>
+<XY world="TO" X="407" Y="-1441"/>
+<info>Vintner's contract symbol</info>
+</discoverprompt>
+<reward XP="100"/>
+</quest>
+
+<quest type="side" world="TO" level="40" id="394">
+<name>Vitner's Contract: Griffin-in-the-Vines</name>
+<GUID>356E6E7D-48DCFC70-D9509998-A0BA22DF</GUID>
+<available>
+<GUID state="JS_Success">11D55E15-434FE711-E89E10B8-17BB09E2</GUID>
+</available>
+<discoverprompt>
+<XY world="TO" X="-1116" Y="-1237"/>
+<info>Vintner's contract symbol. Also called Vintner's Contract: Duchaton Crest?</info>
+</discoverprompt>
+<reward XP="100"/>
+</quest>
+
+<quest type="side" world="TO" level="40" id="372">
+<name>A Knight's Tales</name>
+<GUID>66478BB1-4F4E19BE-BD9C599E-68496A95</GUID>
+<available>
+<GUID state="JS_Success">11D55E15-434FE711-E89E10B8-17BB09E2</GUID>
+</available>
+<discoverprompt>
+<XY world="TO" X="-774" Y="-373"/>
+<info>Notice board</info>
+</discoverprompt>
+</quest>
+
+<quest type="side" world="TO" level="40" id="373">
+<name>Extreme Cosplay</name>
+<GUID>A3B5E68E-4D28EB21-6582B68D-446DA6BA</GUID>
+<available>
+<GUID state="JS_Success">11D55E15-434FE711-E89E10B8-17BB09E2</GUID>
+</available>
+<discoverprompt>
+<XY world="TO" X="299" Y="-1660"/>
+<info>! sign</info>
+</discoverprompt>
+</quest>
+
+<quest type="side" world="TO" level="40" id="375">
+<name>The Words of the Prophets Are Written on Sarcophagi</name>
+<GUID>3D231EB3-445C3C97-0F6411B8-6A511BA6</GUID>
+<available>
+<GUID state="JS_Success">11D55E15-434FE711-E89E10B8-17BB09E2</GUID>
+</available>
+<discoverprompt>
+<XY world="TO" X="-669" Y="72"/>
+<info>Enter Temple and loot a skeleton in the back room</info>
+</discoverprompt>
+</quest>
+
+<quest type="side" world="TO" level="40" id="376">
+<name>Master Master Master Master!</name>
+<GUID>9A723089-40189D47-2BAD8589-4E577B6E</GUID>
+<available>
+<GUID state="JS_Success">11D55E15-434FE711-E89E10B8-17BB09E2</GUID>
+</available>
+<discoverprompt>
+<XY world="TO" X="-504" Y="-1344"/>
+<info>Notice board</info>
+</discoverprompt>
+</quest>
+
+<quest type="treasure" world="TO" level="40" id="379">
+<name>Waiting for Goe and Doh</name>
+<GUID>CB9A683E-401D6D11-8D174DA7-9A673C01</GUID>
+<available>
+<GUID state="JS_Success">11D55E15-434FE711-E89E10B8-17BB09E2</GUID>
+</available>
+<discoverprompt>
+<XY world="TO" X="821" Y="-1297"/>
+<info>Hidden treasure marker</info>
+</discoverprompt>
+<reward XP="0"/>
+</quest>
+
+<quest type="treasure" world="TO" level="40" id="380">
+<name>Applied Escapology</name>
+<GUID>ED6B1D03-4E2CEE82-FB1BA4B3-A1760CE5</GUID>
+<available>
+<GUID state="JS_Success">11D55E15-434FE711-E89E10B8-17BB09E2</GUID>
+</available>
+<discoverprompt>
+<XY world="TO" X="160" Y="-1192"/>
+<info>Hidden treasure marker</info>
+</discoverprompt>
+<reward XP="0"/>
+</quest>
+
+<quest type="treasure" world="TO" level="40" id="381">
+<name>Scavenger Hunt: Grandmaster Manticore Gear</name>
+<GUID>D0589E62-4A43EF34-AF11C692-E0E0D72C</GUID>
+<available>
+<GUID state="JS_Success">11D55E15-434FE711-E89E10B8-17BB09E2</GUID>
+</available>
+<discoverprompt>
+<XY world="TO" X="-451" Y="-1421"/>
+<info>Armorer in Beauclaire</info>
+</discoverprompt>
+<reward XP="0"/>
+</quest>
+
+<quest type="treasure" world="TO" level="40" id="382">
+<name>Scavenger Hunt: Grandmaster Ursine Gear</name>
+<GUID>EB1B7A32-41D6A709-7C9E5DAF-5F11E8DF</GUID>
+<available>
+<GUID state="JS_Success">11D55E15-434FE711-E89E10B8-17BB09E2</GUID>
+</available>
+<discoverprompt>
+<XY world="TO" X="-451" Y="-1421"/>
+<info>Armorer in Beauclaire</info>
+</discoverprompt>
+<reward XP="0"/>
+</quest>
+
+<quest type="treasure" world="TO" level="40" id="383">
+<name>Scavenger Hunt: Grandmaster Feline Gear</name>
+<GUID>8CB2680E-4756DBCF-BDAD608B-EFD91A25</GUID>
+<available>
+<GUID state="JS_Success">11D55E15-434FE711-E89E10B8-17BB09E2</GUID>
+</available>
+<discoverprompt>
+<XY world="TO" X="-451" Y="-1421"/>
+<info>Armorer in Beauclaire</info>
+</discoverprompt>
+<reward XP="0"/>
+</quest>
+
+<quest type="treasure" world="TO" level="40" id="384">
+<name>Scavenger Hunt: Grandmaster Griffin Gear</name>
+<GUID>07034C68-4FED04F6-D0BD7A8D-CF7454BF</GUID>
+<available>
+<GUID state="JS_Success">11D55E15-434FE711-E89E10B8-17BB09E2</GUID>
+</available>
+<discoverprompt>
+<XY world="TO" X="-451" Y="-1421"/>
+<info>Armorer in Beauclaire</info>
+</discoverprompt>
+<reward XP="0"/>
+</quest>
+
+<quest type="treasure" world="TO" level="40" id="385">
+<name>Scavenger Hunt: Grandmaster Wolven Gear</name>
+<GUID>6DBE2D54-4A4E2066-CAC1ABB6-97CB905B</GUID>
+<available>
+<GUID state="JS_Success">11D55E15-434FE711-E89E10B8-17BB09E2</GUID>
+</available>
+<discoverprompt>
+<XY world="TO" X="-451" Y="-1421"/>
+<info>Armorer in Beauclaire</info>
+</discoverprompt>
+<reward XP="0"/>
+</quest>
+
+<quest type="treasure" world="TO" level="40" id="386">
+<name>Around the World in ... Eight Days</name>
+<GUID>D9EF08F9-4F186BC0-4B06C1A4-B64C1CC4</GUID>
+<available>
+<GUID state="JS_Success">11D55E15-434FE711-E89E10B8-17BB09E2</GUID>
+</available>
+<discoverprompt>
+<XY world="TO" X="15" Y="-9"/>
+<info>Hidden treasure marker</info>
+</discoverprompt>
+<reward XP="0"/>
+</quest>
+
+<quest type="treasure" world="TO" level="42" id="391">
+<name>Spoontaneous Profits!</name>
+<GUID>E39845AC-4799DA94-ECDBA6B6-388C7811</GUID>
+<available>
+<GUID state="JS_Success">CE23E598-4D3B3C3B-2778AD92-095146A9</GUID>
+</available>
+<discoverprompt>
+<XY world="TO" X="551" Y="-1830"/>
+<info>Find key during La Cage au Fou</info>
+</discoverprompt>
+</quest>
+
+<quest type="side" world="TO" level="43" id="395">
+<name>A Portrait of the Witcher as an Old Man</name>
+<GUID>BCD96CB1-4EF58B97-51C608B0-AB2EAA3C</GUID>
+<available>
+<GUID state="JS_Success">11D55E15-434FE711-E89E10B8-17BB09E2</GUID>
+</available>
+<discoverprompt>
+<XY world="TO" X="-503" Y="-1396"/>
+<info>! sign</info>
+</discoverprompt>
+</quest>
+
+<quest type="treasure" world="TO" level="43" id="397">
+<name>But Other Than That, How Did You Enjoy the Play?</name>
+<GUID>0BBCBACE-4099237B-24A55B88-77B4A861</GUID>
+<available>
+<GUID state="JS_Success">11D55E15-434FE711-E89E10B8-17BB09E2</GUID>
+</available>
+<discoverprompt>
+<XY world="TO" X="-775" Y="-1674"/>
+<info>Hidden treasure marker</info>
+</discoverprompt>
+<reward XP="0"/>
+</quest>
+
+<quest type="treasure" world="TO" level="43" id="398">
+<name>What Was This About Again?</name>
+<GUID>2FDE6F32-49FC4D56-CEF8619D-23B0704A</GUID>
+<available>
+<GUID state="JS_Success">11D55E15-434FE711-E89E10B8-17BB09E2</GUID>
+</available>
+<discoverprompt>
+<XY world="TO" X="-478" Y="200"/>
+<info>Hidden treasure marker</info>
+</discoverprompt>
+<reward XP="0"/>
+</quest>
+
+<quest type="contract" world="TO" level="44" id="399">
+<name>Equine Phantoms</name>
+<GUID>9876843E-47D51F74-12868095-A0A7D712</GUID>
+<available>
+<GUID state="JS_Success">11D55E15-434FE711-E89E10B8-17BB09E2</GUID>
+</available>
+<discoverprompt>
+<XY world="TO" X="429" Y="-46"/>
+<info>! sign</info>
+</discoverprompt>
+</quest>
+
+<quest type="contract" world="TO" level="45" id="400">
+<name>Feet as Cold as Ice</name>
+<GUID>C9725EB0-42EB7261-0E491ABB-D0BC09B4</GUID>
+<available>
+<GUID state="JS_Success">11D55E15-434FE711-E89E10B8-17BB09E2</GUID>
+</available>
+<discoverprompt>
+<XY world="TO" X="-539" Y="-1494"/>
+<info>! sign</info>
+</discoverprompt>
+</quest>
+
+<quest type="side" world="TO" level="46" id="401">
+<name>Mutual of Beauclair's Wild Kingdom</name>
+<GUID>0AE82268-4FFF5D8D-4A219CB4-11E480F8</GUID>
+<available>
+<GUID state="JS_Success">11D55E15-434FE711-E89E10B8-17BB09E2</GUID>
+</available>
+<discoverprompt>
+<XY world="TO" X="-159" Y="-656"/>
+<info>Notice board</info>
+</discoverprompt>
+</quest>
+
+<quest type="treasure" world="TO" level="46" id="402">
+<name>The Curse of Carnarvon</name>
+<GUID>C651CB60-4D784070-4F8AD0B6-36D4289A</GUID>
+<available>
+<GUID state="JS_Success">11D55E15-434FE711-E89E10B8-17BB09E2</GUID>
+</available>
+<discoverprompt>
+<XY world="TO" X="-852" Y="-181"/>
+<info>Hidden treasure marker</info>
+</discoverprompt>
+</quest>
+
+<quest type="treasure" world="TO" level="47" id="409">
+<name>The Inconstant Gardener</name>
+<GUID>9928729B-4F4B3F0A-501704A5-218F60AC</GUID>
+<available>
+<GUID state="JS_Success">11D55E15-434FE711-E89E10B8-17BB09E2</GUID>
+</available>
+<discoverprompt>
+<XY world="TO" X="-234" Y="-2245"/>
+<info>Hidden treasure marker</info>
+</discoverprompt>
+</quest>
+
+<quest type="treasure" world="TO" level="47" id="410">
+<name>The Toussaint Prison Experiment</name>
+<GUID>00685344-477DFB0F-3993EFA6-355396DD</GUID>
+<available>
+<GUID state="JS_Success">11D55E15-434FE711-E89E10B8-17BB09E2</GUID>
+</available>
+<discoverprompt>
+<XY world="TO" X="-1193" Y="-829"/>
+<info>Hidden treasure marker</info>
+</discoverprompt>
+</quest>
+
+<quest type="treasure" world="TO" level="47" id="411">
+<name>The Suffering of Young Francois</name>
+<GUID>9406114D-40AE7C4A-4EC566BB-8977600E</GUID>
+<available>
+<GUID state="JS_Success">11D55E15-434FE711-E89E10B8-17BB09E2</GUID>
+</available>
+<discoverprompt>
+<XY world="TO" X="-1210" Y="-566"/>
+<info>Hidden treasure marker</info>
+</discoverprompt>
+</quest>
+
+<quest type="contract" world="TO" level="48" id="412">
+<name>The Tufo Monster</name>
+<GUID>32486D3E-469FB6BB-9FB1D18B-88046F5A</GUID>
+<available>
+<GUID state="JS_Success">11D55E15-434FE711-E89E10B8-17BB09E2</GUID>
+</available>
+<discoverprompt>
+<XY world="TO" X="288" Y="-996"/>
+<info>Notice board</info>
+</discoverprompt>
+</quest>
+
+<quest type="treasure" world="TO" level="48" id="414">
+<name>Filibert Always Pays His Debts</name>
+<GUID>D1FB4ECD-4C46CFAF-3FA40BB7-A7D869AF</GUID>
+<available>
+<GUID state="JS_Success">11D55E15-434FE711-E89E10B8-17BB09E2</GUID>
+</available>
+<discoverprompt>
+<XY world="TO" X="717" Y="-1086"/>
+<info>Hidden treasure marker</info>
+</discoverprompt>
+<reward XP="0"/>
+</quest>
+
+<quest type="side" world="TO" level="43" id="424">
+<name>There Can Be Only One</name>
+<GUID>3D002F87-47D1CB1A-4A97849F-293247D7</GUID>
+<available>
+<GUID state="JS_Success">11D55E15-434FE711-E89E10B8-17BB09E2</GUID>
+</available>
+<discoverprompt>
+<XY world="TO" X="-504" Y="-1344"/>
+<info>Notice board</info>
+</discoverprompt>
+<reward XP="300"/>
+</quest>
+
+<outcome id="449">
+<name>Keira goes to Radovid</name>
+<GUID>6861CCFD-4F36D35A-2EB811B6-3DF2A6D5</GUID>
+</outcome>
+
+<outcome id="450">
+<name>Killed Gaetan in Where the Cat and Wolf Play</name>
+<GUID>3D38A3BB-43644405-D5D87083-7731411C</GUID>
+</outcome>
+
+<outcome id="457">
+<name>Went after Syanna</name>
+<GUID>63D033F5-43CFCF48-2658F083-8EDC1A18</GUID>
+</outcome>
+
+<outcome id="458">
+<name>Told Triss you love her</name>
+<GUID>65F21AEA-4FA8809D-70BBAC8D-91042BE3</GUID>
+</outcome>
+
+<outcome id="459">
+<name>Told Yen you love her</name>
+<GUID>80CF3D9A-4FE5B625-8BD85997-0F9C2424</GUID>
+</outcome>
+
+<outcome id="460">
+<name>Syanna lives</name>
+<GUID>ECF724D5-4D921D3A-FC11BE9F-14775224</GUID>
+</outcome>
+
+</quests>

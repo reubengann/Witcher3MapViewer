@@ -1,0 +1,211 @@
+<settings>
+	<worldsettings>
+		<worldsetting name="White Orchard" shortname="WO">
+			<conversion slope="0.000038" xi="60" yi="19.2"/>
+			<tilesource>Maps\WhiteOrchard.mbtiles</tilesource>
+		</worldsetting>
+		<worldsetting name="Velen/Novigrad" shortname="NO">
+			<alias>VE</alias>
+			<conversion slope="0.000114" xi="968.6" yi="706.4"/>
+			<tilesource>Maps\VelenNovigrad.mbtiles</tilesource>
+		</worldsetting>
+		<worldsetting name="Skellige" shortname="SK">
+			<conversion slope="0.000164" xi="209.9" yi="305.7"/>
+			<tilesource>Maps\Skellige.mbtiles</tilesource>
+		</worldsetting>
+		<worldsetting name="Kaer Morhen" shortname="KM">
+			<conversion slope="0.0000568" xi="10.1" yi="244.2"/>
+			<tilesource>Maps\KaerMorhen.mbtiles</tilesource>
+		</worldsetting>
+		<worldsetting name="Toussaint" shortname="TO">
+			<conversion slope="0.0000897" xi="-153.3" yi="-717.7"/>
+			<tilesource>Maps\Toussaint.mbtiles</tilesource>
+		</worldsetting>
+	</worldsettings>
+	<iconsettings>
+		<largeiconpath>MarkerImages</largeiconpath>
+		<smalliconpath>SmallMarkerImages</smalliconpath>
+		<icon>
+			<image>NoticeBoard.png</image>
+			<internalname>NoticeBoard</internalname>
+			<groupname>Notice boards</groupname>
+		</icon>
+		<icon>
+			<image>MonsterNest.png</image>
+			<internalname>MonsterNest</internalname>
+			<groupname>Monster nests</groupname>
+		</icon>
+		<icon>
+			<image>PlaceOfPower.png</image>
+			<internalname>PlaceOfPower</internalname>
+			<groupname>Places of power</groupname>
+		</icon>
+		<icon>
+			<image>RoadSign.png</image>
+			<internalname>RoadSign</internalname>
+			<groupname>Signposts</groupname>
+		</icon>
+		<icon>
+			<image>TreasureHuntMappin.png</image>
+			<internalname>TreasureHuntMappin</internalname>
+			<groupname>Hidden treasure</groupname>
+		</icon>
+		<icon>
+			<image>RescuingTown.png</image>
+			<internalname>RescuingTown</internalname>
+			<groupname>Abandoned settlements</groupname>
+		</icon>
+		<icon>
+			<image>PlayerStash.png</image>
+			<internalname>PlayerStash</internalname>
+			<groupname>Storage containers</groupname>
+		</icon>
+		<icon>
+			<image>SpoilsOfWar.png</image>
+			<internalname>SpoilsOfWar</internalname>
+			<groupname>Lootable battlefields</groupname>
+		</icon>
+		<icon>
+			<image>Herbalist.png</image>
+			<internalname>Herbalist</internalname>
+			<groupname>Herbalists</groupname>
+		</icon>
+		<icon>
+			<image>Race.png</image>
+			<internalname>HorseRace</internalname>
+			<groupname>Races</groupname>
+		</icon>
+		<icon>
+			<image>gwent.png</image>
+			<internalname>GwentPlayer</internalname>
+			<groupname>Gwent Players</groupname>
+		</icon>		
+		<icon>
+			<image>gwentsell.png</image>
+			<internalname>GwentSeller</internalname>
+			<groupname>Gwent Sellers</groupname>
+		</icon>			
+		<icon>
+			<image>Merchant.png</image>
+			<internalname>Merchant</internalname>
+			<groupname>Merchants</groupname>
+		</icon>
+		<icon>
+			<image>Blacksmith.png</image>
+			<internalname>Blacksmith</internalname>
+			<groupname>Blacksmiths</groupname>
+		</icon>
+		<icon>
+			<image>Armorer.png</image>
+			<internalname>Armorer</internalname>
+			<groupname>Armorers</groupname>
+		</icon>
+		<icon>
+			<image>Enchant.png</image>
+			<internalname>Enchant</internalname>
+			<groupname>Enchanter</groupname>
+		</icon>
+		<icon>
+			<image>Hide.png</image>
+			<internalname>Hideout</internalname>
+			<groupname>Hideouts</groupname>
+		</icon>
+		<icon>
+			<image>SignalFire.png</image>
+			<internalname>SignalingStake</internalname>
+			<groupname>Signal fires</groupname>
+		</icon>
+		<icon>
+			<image>KnightErrant.png</image>
+			<internalname>KnightErrant</internalname>
+			<groupname>Knights errant</groupname>
+		</icon>
+		<icon>
+			<image>InfestedVineyard.png</image>
+			<internalname>InfestedVineyard</internalname>
+			<groupname>Infested vineyards</groupname>
+		</icon>
+		<icon>
+			<image>Plegmund.png</image>
+			<internalname>Plegmund</internalname>
+			<groupname>Statue teams</groupname>
+		</icon>
+		<icon>
+			<image>AlchemyTable.png</image>
+			<internalname>AlchemyTable</internalname>
+			<groupname>Alchemy Table</groupname>
+		</icon>
+		<icon>
+			<image>MutagenDismantle.png</image>
+			<internalname>MutagenDismantle</internalname>
+			<groupname>Mutagen dismantle</groupname>
+		</icon>
+		<icon>
+			<image>VintnerContract.png</image>
+			<internalname>WineContract</internalname>
+			<groupname>Vintner's contracts</groupname>
+		</icon>
+		<icon>
+			<image>Bed.png</image>
+			<internalname>Bed</internalname>
+			<groupname>Bed</groupname>
+		</icon>
+		<icon>
+			<image>BanditCampfire.png</image>
+			<internalname>BanditCamp</internalname>
+			<alias>BanditCampfire</alias>
+			<groupname>Bandit camps</groupname>
+		</icon>
+		<icon>
+			<image>BossAndTreasure.png</image>
+			<internalname>BossAndTreasure</internalname>
+			<groupname>Guarded treasure</groupname>
+		</icon>
+		<icon>
+			<image>Contraband.png</image>
+			<internalname>Contraband</internalname>
+			<groupname>Contraband</groupname>
+		</icon>
+		<icon>
+			<image>ArmorRepairTable.png</image>
+			<internalname>ArmorRepairTable</internalname>
+			<groupname>Armor buff</groupname>
+		</icon>
+		<icon>
+			<image>Whetstone.png</image>
+			<internalname>Whetstone</internalname>
+			<groupname>Weapon buff</groupname>
+		</icon>
+		<icon>
+			<image>Entrance.png</image>
+			<internalname>Entrance</internalname>
+			<alias>DungeonCrawl</alias>
+			<groupname>Entrances</groupname>
+		</icon>
+		<icon>
+			<image>Harbor.png</image>
+			<internalname>Harbor</internalname>
+			<groupname>Harbors</groupname>
+		</icon>
+		<icon>
+			<image>MagicLamp.png</image>
+			<internalname>MagicLamp</internalname>
+			<groupname>Magic Lamp</groupname>
+		</icon>
+		<icon>
+			<image>Teleport.png</image>
+			<internalname>Teleport</internalname>
+			<alias>Rift</alias>
+			<groupname>Teleport</groupname>
+		</icon>
+		<icon>
+			<image>SideQuest.png</image>
+			<internalname>SideQuest</internalname>
+			<alias>MonsterQuest</alias>
+			<alias>TreasureQuest</alias>
+			<alias>ChapterQuest</alias>
+			<alias>StoryQuest</alias>
+			<groupname>Quest start</groupname>
+		</icon>
+	</iconsettings>
+</settings>

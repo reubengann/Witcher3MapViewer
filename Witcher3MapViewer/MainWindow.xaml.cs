@@ -22,15 +22,16 @@ namespace Witcher3MapViewer
      *  Gwent window showing random players does not update the treeview
      *  Visibility of info window binding does not appear to work
      * 
-     * TODO:     
+     * TODO:          
+     *  How should session saving work in auto mode?
      *  Gwent window highlight should show on map (this is kind of a lot of work)
      *  Gwent players should be circles around regular mappins?
      *  Is there a way to tell whether a random gwent player has been played? Probably not easy
      *  Add ability for multiple points of discovery
      *  Debug manual mode and switching between modes
-     *  DLC gwent? Not really necessary
-     *  Autosetting appears to be broken
+     *  DLC gwent? Not really necessary     
      *  Save gwent info in manual mode
+     *  De-uglify some of the icons
      *       
     */
 
@@ -39,7 +40,7 @@ namespace Witcher3MapViewer
         private string appdir;
         private Dictionary<string, RealToGameSpaceConversion> ConversionLibrary;
         private Dictionary<string, string> PathLibrary;
-        private string currentLocation;
+        private string currentLocation, circleShownOnLocation;
         MapPinReader mappindata;        
         Dictionary<string, string> ShortNameLookup; //needed because of aliases
         List<string> ShortNames;
@@ -94,6 +95,11 @@ namespace Witcher3MapViewer
             {
                 _worldSelectIndex = value;
                 LoadMap(ShortNames[_worldSelectIndex]);
+                //we don't want to show the current circles on other maps
+                if (currentLocation == circleShownOnLocation && CircleLayer != null)
+                    CircleLayer.Enabled = true;
+                else CircleLayer.Enabled = false;
+                    
                 RaisePropertyChanged("WorldSelectIndex");
             }
         }
@@ -158,26 +164,39 @@ namespace Witcher3MapViewer
 
             int localplayerlevel = 1;
             DataSetup();
-            SettingsFromConfig();
-            LoadQuestData();
-            if (File.Exists(Path.Combine(appdir, "status.dat")))
+            if (manualMode && File.Exists(Path.Combine(appdir, "status.dat")))
             {
                 Readers.GameStatusReader statusreader = new Readers.GameStatusReader(Path.Combine(appdir, "status.dat"));
-                ProcessLastStatus(statusreader.QuestInfo);
-                localplayerlevel = statusreader.PlayerLevel;                
+                if(statusreader.QuestInfo != null && statusreader.QuestInfo.Count != 0)
+                {
+                    MessageBoxResult result =
+                    MessageBox.Show("Load quest info from previous session?", "Load data?", MessageBoxButton.YesNo);
+                    if (result == MessageBoxResult.Yes)
+                    {
+                        ProcessLastStatus(statusreader.QuestInfo);
+                        localplayerlevel = statusreader.PlayerLevel;
+                    }
+                }                
+                
             }
-            _currentQuests = new ObservableCollection<QuestViewModel>();
-            UpdateQuests();
-            _currentQuests.Sort();
             DataContext = this;
             InitializeComponent();
             PlayerLevel = localplayerlevel;
 
+            if (Properties.Settings.Default.FirstRun)
+            {
+                Properties.Settings.Default.FirstRun = false;                
+                var foo = new SettingsDialog();
+                foo.ShowDialog();                
+            }
+            SettingsFromConfig();
+
+            _currentQuests = new ObservableCollection<QuestViewModel>();
             if (!manualMode)
             {
                 if (Directory.Exists(SaveFolder))
                 {
-                    GetMostRecentSaveFile();
+                    GetMostRecentSaveFile(); //automatically calls updatequests
                     SetUpFilewatcher();
                 }
                 else
@@ -191,7 +210,10 @@ namespace Witcher3MapViewer
             else
             {
                 GwentStatusText = "Click to see Gwent cards";
-            }
+                UpdateQuests();
+            }                        
+            _currentQuests.Sort();
+            RaisePropertyChanged("CurrentQuests");
 
             InfoMessage = "";
 
@@ -199,9 +221,9 @@ namespace Witcher3MapViewer
             TimeSpan.FromSeconds(120), System.Windows.Threading.DispatcherPriority.Background,
             new EventHandler(DoAutoSave), Application.Current.Dispatcher);
             autosaveTimer.Start();
-
-
+            
             SeekNextUndone();
+            MyMapControl.Map.Viewport.Resolution = 20000;
         }
 
         private void ProcessLastStatus(List<Quest> lastStatus)
@@ -275,6 +297,7 @@ namespace Witcher3MapViewer
             WorldSelectList = source;
             mappindata = new MapPinReader(Path.Combine(appdir, "MapPins.xml"), Settings.TypeLookup);
             GetGwentCardList();
+            LoadQuestData();
         }
 
         private void GetGwentCardList()
@@ -409,7 +432,7 @@ namespace Witcher3MapViewer
                 };
                 feature.Styles.Add(new LabelStyle
                 {
-                    Text = c.Name,                    
+                    Text = c.Name,
                     ForeColor = Color.White,
                     BackColor = new Brush(Color.Gray),
                     Halo = new Pen(Color.Black, 2),
@@ -453,7 +476,9 @@ namespace Witcher3MapViewer
 
         private void AddCircleAt(Mapsui.Geometries.Point Center)
         {
+            circleShownOnLocation = currentLocation;
             CircleLayer.DataSource = new Mapsui.Providers.MemoryProvider(CurrentConvertor.ToWorldSpace(Center));
+            CircleLayer.Enabled = true;
         }
 
         private void ToggleLayers()
@@ -625,7 +650,11 @@ namespace Witcher3MapViewer
 
             if (selected.DiscoverPrompt == null)
             {
-                if (CircleLayer != null) CircleLayer.Enabled = false;
+                if (CircleLayer != null)
+                {
+                    CircleLayer.Enabled = false;
+                    circleShownOnLocation = null;
+                }
                 if (currentLocation != ShortNameLookup[selected.World])
                 {
                     WorldSelectIndex = ShortNames.IndexOf(ShortNameLookup[selected.World]);
@@ -646,7 +675,11 @@ namespace Witcher3MapViewer
             }
             else
             {
-                if (CircleLayer != null) CircleLayer.Enabled = false;
+                if (CircleLayer != null)
+                {
+                    CircleLayer.Enabled = false;
+                    circleShownOnLocation = null;
+                }
             }
             if (selected.DiscoverPrompt.Info != "")
             {
@@ -767,6 +800,11 @@ namespace Witcher3MapViewer
 
         private void SettingsButton_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
+            ShowSettings();
+        }
+
+        private void ShowSettings()
+        {
             bool wasManual = manualMode;
             var foo = new SettingsDialog();
             foo.ShowDialog();
@@ -777,7 +815,7 @@ namespace Witcher3MapViewer
                 _currentQuests.Clear();
                 progressStatus.Reset();
             }
-            if(wasManual && !manualMode)
+            if (wasManual && !manualMode)
             {
                 GetMostRecentSaveFile();
                 SetUpFilewatcher();

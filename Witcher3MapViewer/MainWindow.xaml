@@ -179,7 +179,13 @@
     </Window.Resources>
     <Grid>
         <wpf1:MapControl Name="MyMapControl" MouseMove="MyMapControl_MouseMove">
-            
+            <wpf1:MapControl.Resources>
+                <Style TargetType="TextBlock">
+                    <Setter Property="TextAlignment" Value="Center"/>
+                    <Setter Property="TextWrapping" Value="Wrap"/>
+                    <Setter Property="MaxWidth" Value="80"/>
+                </Style>
+            </wpf1:MapControl.Resources>
         </wpf1:MapControl>
 
         <Grid>

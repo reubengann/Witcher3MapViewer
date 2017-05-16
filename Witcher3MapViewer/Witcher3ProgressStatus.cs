@@ -143,6 +143,9 @@ namespace Witcher3MapViewer
 
         private void RecheckStatuses()
         {
+            foreach (Quest q in Quests)
+                UpdateQuestStatus(q);
+
             //Check for conditions that may have cropped up that force a quest to be done.            
             foreach (Quest q in Quests)
             {
@@ -151,6 +154,7 @@ namespace Witcher3MapViewer
                     q.Done = true;
                     q.Status = QuestStatusState.Success;
                     Statuses[q.UniqueID] = QuestStatusState.Success;
+                    q.Forced = false;
                 }
             }
 
@@ -159,8 +163,9 @@ namespace Witcher3MapViewer
             {
                 //If using a save game, but the user has forced a quest done, observe that change by overriding the save populating
                 //if (q.Forced)
-                    //Statuses[q.UniqueID] = q.Status;
+                //Statuses[q.UniqueID] = q.Status;
                 GetForcedStatusesFromQuest(q);
+                //UpdateSubQuests(q);
 
                 //Probably a game was started earlier than the current one
                 if (!q.Forced && q.Done && Statuses[q.UniqueID] < QuestStatusState.Success)
@@ -170,6 +175,25 @@ namespace Witcher3MapViewer
                 }
             }
         }
+
+        private void UpdateQuestStatus(Quest q)
+        {
+            if (q.Forced) return;
+            q.Status = Statuses[q.UniqueID];
+            if (q.Status > QuestStatusState.Active)
+                q.Done = true;
+            foreach (Quest sq in q.Subquests)
+                UpdateQuestStatus(sq);
+        }
+
+
+
+        //private void UpdateSubQuests(Quest q)
+        //{
+        //    foreach (Quest sq in q.Subquests)
+        //        if (Statuses[GUIDToUniqueID[sq.GUID.Value]] == QuestStatusState.Success)
+        //            sq.Done = true;
+        //}
 
         private void GetForcedStatusesFromQuest(Quest q)
         {
@@ -248,6 +272,8 @@ namespace Witcher3MapViewer
                 {
                     if (q.QuestType == "race")
                         ThisConditionMet = includeRaces;
+                    if (q.QuestType == "treasure")
+                        ThisConditionMet = includeTreasure;
                     else ThisConditionMet = true;
                 }
                 AllAreMet = AllAreMet && ThisConditionMet;

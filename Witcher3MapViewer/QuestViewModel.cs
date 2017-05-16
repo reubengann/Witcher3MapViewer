@@ -114,7 +114,7 @@ namespace Witcher3MapViewer
             if (_isChecked == true)
             {
                 correspondingQuest.Status = QuestStatusState.Success;
-                correspondingQuest.Forced = true;
+                //correspondingQuest.Forced = true;
             }
             else
             {
@@ -151,10 +151,14 @@ namespace Witcher3MapViewer
 
         public void Recheck()
         {
-            if (IsChecked == true && !correspondingQuest.Done)
-                IsChecked = false;
-            else if (IsChecked == false && correspondingQuest.Done)
-                IsChecked = true;
+            //if(IsChecked == false && correspondingQuest.Status > QuestStatusState.Active)
+
+            //if (IsChecked == true && !correspondingQuest.Done)
+            //    IsChecked = false;
+            //else if (IsChecked == false && correspondingQuest.Done)
+            //    IsChecked = true;
+            IsChecked = correspondingQuest.Done;
+            correspondingQuest.Forced = false;
             foreach (QuestViewModel child in Children)
                 child.Recheck();
         }

@@ -182,8 +182,8 @@
             <wpf1:MapControl.Resources>
                 <Style TargetType="TextBlock">
                     <Setter Property="TextAlignment" Value="Center"/>
-                    <Setter Property="TextWrapping" Value="Wrap"/>
-                    <Setter Property="MaxWidth" Value="80"/>
+                    <!--<Setter Property="TextWrapping" Value="Wrap"/>
+                    <Setter Property="MaxWidth" Value="80"/>-->
                 </Style>
             </wpf1:MapControl.Resources>
         </wpf1:MapControl>

@@ -22,8 +22,7 @@ namespace Witcher3MapViewer
      *  Gwent window showing random players does not update the treeview
      *  Visibility of info window binding does not appear to work
      * 
-     * TODO:          
-     *  How should session saving work in auto mode?
+     * TODO:               
      *  Gwent window highlight should show on map (this is kind of a lot of work)
      *  Gwent players should be circles around regular mappins?
      *  Is there a way to tell whether a random gwent player has been played? Probably not easy
@@ -32,7 +31,7 @@ namespace Witcher3MapViewer
      *  DLC gwent? Not really necessary     
      *  Save gwent info in manual mode
      *  De-uglify some of the icons
-     *       
+     *  Shift SetIfUndone to the viewmodel
     */
 
     public partial class MainWindow : Window, INotifyPropertyChanged
@@ -111,7 +110,6 @@ namespace Witcher3MapViewer
             set
             {
                 _worldSelectList = value;
-
                 RaisePropertyChanged("WorldSelectList");
             }
         }
@@ -432,7 +430,7 @@ namespace Witcher3MapViewer
                 };
                 feature.Styles.Add(new LabelStyle
                 {
-                    Text = c.Name,
+                    Text = BreakLines(c.Name,17),
                     ForeColor = Color.White,
                     BackColor = new Brush(Color.Gray),
                     Halo = new Pen(Color.Black, 2),
@@ -445,6 +443,30 @@ namespace Witcher3MapViewer
             }
             _pointlayer.DataSource = memoryProvider;
             return _pointlayer;
+        }
+
+        private string BreakLines(string tobreak, int desiredmaxchars)
+        {            
+            if (!tobreak.Contains(" ")) return tobreak;
+            string[] words = tobreak.Split(' ');
+            string broken = words[0];
+            int count = broken.Length;
+            for(int i = 1; i < words.Length; i++)
+            {
+                if(count + words[i].Length > desiredmaxchars)
+                {
+                    broken += "\n";
+                    count = 0;
+                }
+                else
+                {
+                    broken += " ";
+                    count++;
+                }
+                broken += words[i];
+                count += words[i].Length;
+            }
+            return broken;
         }
 
         private void AddCircleLayer()
@@ -523,7 +545,7 @@ namespace Witcher3MapViewer
                         Dispatcher.BeginInvoke(new Action(ExecuteSaveChange));
                     });
                 }
-                if (autosave)
+                if (manualMode && autosave)
                     Readers.GameStatusSaver.Save("status.dat", _currentQuests.ToList(), PlayerLevel);
 
                 // Clear all flags
@@ -753,9 +775,12 @@ namespace Witcher3MapViewer
 
         private void TheMainWindow_Closing(object sender, CancelEventArgs e)
         {
-            Readers.GameStatusSaver.Save("status.dat", _currentQuests.ToList(), PlayerLevel);
-            if (activeGwentTrackerWindow != null)
-                activeGwentTrackerWindow.Close();
+            if (manualMode)
+            {
+                Readers.GameStatusSaver.Save("status.dat", _currentQuests.ToList(), PlayerLevel);
+                if (activeGwentTrackerWindow != null)
+                    activeGwentTrackerWindow.Close();
+            }
         }
 
         private void GwentOpenButton_Click(object sender, RoutedEventArgs e)
@@ -908,7 +933,7 @@ namespace Witcher3MapViewer
             InfoMessage = "No undeferred quests found";
         }
 
-        //TODO: shift this to the viewmodel
+        
         private bool SetIfUndone(QuestViewModel qvm, bool actuallyset, bool greedy)
         {
             if (qvm.IsChecked == true || qvm.IsDeferred == true)

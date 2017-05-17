@@ -1151,36 +1151,35 @@
 <setdoneautomatic>
 <GUID state="JS_Success">33B84675-457F7812-2FB590BE-541D6702</GUID>
 <GUID state="JS_Success">DB024D36-4E9AE35E-FB098D89-C8E7AB0F</GUID>
-<GUID state="JS_Success">6AFAFC3C-47D50499-6D21D3A7-0D30C14D</GUID> <!--Woodland Beast if you tell about the Scoiatel-->  
+  <GUID state="JS_Success">6AFAFC3C-47D50499-6D21D3A7-0D30C14D</GUID> <!-- Woodland Beast if you tell about the Scoiatel-->
 </setdoneautomatic>
 <reward XP="75"/>
-<subquests>
 
-<quest type="side" world="VE" level="9" id="106">
-<name>Fake Papers</name>
-<GUID>33B84675-457F7812-2FB590BE-541D6702</GUID>
-<available>
-<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
-</available>
-<discoverprompt>
-<XY world="VE" X="865" Y="946"/>
-</discoverprompt>
 </quest>
 
-<quest type="side" world="VE" level="9" id="104">
-<name>Bitter Harvest</name>
-<GUID>8767DF69-4B263640-582710B9-F501FDBA</GUID>
-<available>
-<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
-</available>
-</quest>
+  <quest type="side" world="VE" level="9" id="106">
+    <name>Fake Papers</name>
+    <GUID>33B84675-457F7812-2FB590BE-541D6702</GUID>
+    <available>
+      <GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+    </available>
+    <discoverprompt>
+      <XY world="VE" X="865" Y="946"/>
+    </discoverprompt>
+    <subquests>
+      <quest type="side" world="VE" level="9" id="104">
+        <name>Bitter Harvest</name>
+        <GUID>8767DF69-4B263640-582710B9-F501FDBA</GUID>
+        <available>
+          <GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+        </available>
+      </quest>
+    </subquests>
+  </quest>
 
-</subquests>
-</quest>
 
 
-
-<!--Novigrad available after Thou Shalt Not Pass 37881603-4A81EF31-571EBAAC-4304CEE6 or Fake Papers or after Family Matters-->
+  <!--Novigrad available after Thou Shalt Not Pass, Fake Papers, Family Matters, or Woodland Beast (if a pass was obtained) -->
 
 
 <quest type="event" level="0" world = "VE" id="27">
@@ -1237,7 +1236,6 @@
 <GUID>DFFC24F2-4650EF40-F8679FA6-F3C18F00</GUID>
 <available>
 <GUID state="JS_Success">C513BD36-423276DE-86C4E9B0-42E9A8AB</GUID>
-<GUID state="JS_Success">33B84675-457F7812-2FB590BE-541D6702</GUID>
 </available>
 <discoverprompt>
 <XY world="VE" X="-196" Y="172"/>
@@ -1250,7 +1248,6 @@
 <GUID>9BCE69B0-4F6F3CE0-B81E98A2-0C0E97F8</GUID>
 <available>
 <GUID state="JS_Success">C513BD36-423276DE-86C4E9B0-42E9A8AB</GUID>
-<GUID state="JS_Success">33B84675-457F7812-2FB590BE-541D6702</GUID>
 </available>
 <discoverprompt>
 <XY world="VE" X="220" Y="137"/>
@@ -1264,7 +1261,6 @@
 <available>
 <GUID state="JS_Success">DFFC24F2-4650EF40-F8679FA6-F3C18F00</GUID>
 <GUID state="JS_Success">9BCE69B0-4F6F3CE0-B81E98A2-0C0E97F8</GUID>
-<GUID state="JS_Success">33B84675-457F7812-2FB590BE-541D6702</GUID>
 </available>
 <discoverprompt>
 <XY world="VE" X="756" Y="122"/>
@@ -1819,7 +1815,6 @@
 <GUID>BACA6F45-42119393-83A37B8B-B475EB03</GUID>
 <available>
 <GUID state="JS_Success">9FC8532C-4082C982-86035EB7-565348C8</GUID>
-<GUID state="JS_Success">33B84675-457F7812-2FB590BE-541D6702</GUID>
 </available>
 </quest>
 
@@ -1887,7 +1882,6 @@
 <GUID>55341374-4C989677-B9A42DAE-06229E06</GUID>
 <available>
 <GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
-<GUID state="JS_Success">33B84675-457F7812-2FB590BE-541D6702</GUID>
 </available>
 <discoverprompt>
 <XY world="NO" X="2196" Y="1601"/>
@@ -1899,7 +1893,6 @@
 <GUID>4F1D428D-4906FE69-E65FAA9B-2F7D3200</GUID>
 <available>
 <GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
-<GUID state="JS_Success">33B84675-457F7812-2FB590BE-541D6702</GUID>
 </available>
 <discoverprompt>
 <XY world="NO" X="501" Y="2443"/>
@@ -1911,7 +1904,6 @@
 <GUID>665C3401-4B425D8F-70D367AA-EE8FCF0F</GUID>
 <available>
 <GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
-<GUID state="JS_Success">33B84675-457F7812-2FB590BE-541D6702</GUID>
 </available>
 <discoverprompt>
 <XY world="NO" X="1180" Y="2667"/>
@@ -1924,7 +1916,6 @@
 <GUID>4F090ED7-4C07940F-D4B94484-85848FBD</GUID>
 <available>
 <GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
-<GUID state="JS_Success">33B84675-457F7812-2FB590BE-541D6702</GUID>
 </available>
 <discoverprompt>
 <XY world="NO" X="2727" Y="1702"/>
@@ -1936,7 +1927,6 @@
 <GUID>6F79BD9A-4653FFF3-29511FA8-513857C3</GUID>
 <available>
 <GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
-<GUID state="JS_Success">33B84675-457F7812-2FB590BE-541D6702</GUID>
 </available>
 <discoverprompt>
 <XY world="NO" X="2449" Y="1499"/>
@@ -1947,7 +1937,6 @@
 <name>The Price of Passage</name>
 <available>
 <GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
-<GUID state="JS_Success">33B84675-457F7812-2FB590BE-541D6702</GUID>
 </available>
 <discoverprompt>
 <XY world="NO" X="1681" Y="1037"/>
@@ -1959,10 +1948,12 @@
 <quest type="side" world="NO" level="0" id="14">
 <name>Gwent: Big City Players</name>
 <GUID>40B54F3B-48857011-9EC0B3BC-5A7537E2</GUID>
-<available>
-<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
-<GUID state="JS_Success">33B84675-457F7812-2FB590BE-541D6702</GUID>
+<available>  
+  <GUID state="JS_Success">85131BEE-4AF999EC-AD9B0586-FA06CE11</GUID>  
 </available>
+  <available>  
+    <GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+  </available>
 <discoverprompt>
 <XY world="NO" X="627" Y="1876"/>
 <info>Play a game with Vivaldi</info>
@@ -2274,7 +2265,6 @@
 <GUID>92B33408-4FCDF297-7F1F0CA4-60ED91A0</GUID>
 <available>
 <GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
-<GUID state="JS_Success">33B84675-457F7812-2FB590BE-541D6702</GUID>
 </available>
 <reward XP="2200"/>
 </quest>

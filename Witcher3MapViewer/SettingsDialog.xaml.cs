@@ -93,7 +93,7 @@ namespace Witcher3MapViewer
 
         private void SaveCloseButton_Click(object sender, RoutedEventArgs e)
         {
-            if (!Directory.Exists(SaveFolder))
+            if (!Directory.Exists(SaveFolder) && !manualMode)
             {
                 MessageBox.Show("Folder does not exist. Please enter a valid path or choose manual mode.");
                 return;

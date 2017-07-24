@@ -4,11 +4,14 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Witcher3MapViewer"
-        xmlns:wpf1="clr-namespace:Mapsui.UI.Wpf;assembly=Mapsui.UI.Wpf"
+        xmlns:wpf1="clr-namespace:Mapsui.UI.Wpf;assembly=Mapsui.UI.Wpf"        
         mc:Ignorable="d"
-        Title="MainWindow" Height="596.813" Width="796.377"
-        Name="TheMainWindow" Closing="TheMainWindow_Closing">
-
+        Title="MainWindow" Height="600" Width="800"
+        Name="TheMainWindow" Closing="TheMainWindow_Closing"
+        >
+    <Window.InputBindings>
+        <KeyBinding Command="Find" Key="F" Modifiers="Ctrl"/>
+    </Window.InputBindings>
     <Window.Resources>
         <ResourceDictionary>
             <Style TargetType="TextBlock">
@@ -174,8 +177,8 @@
                     </EventTrigger>
                 </Style.Triggers>
             </Style>
+            
         </ResourceDictionary>
-
     </Window.Resources>
     <Grid>
         <wpf1:MapControl Name="MyMapControl" MouseMove="MyMapControl_MouseMove">
@@ -280,5 +283,8 @@
                           />
             </Border>
         </Expander>
+        <local:SearchBox2 x:Name="SearchBox" Value="{Binding SearchQuery, Mode=TwoWay}" 
+                          Visibility="{Binding SearchShown, Converter={StaticResource BooleanToVisibilityConverter}}"
+                          Focusable="True"/>
     </Grid>
 </Window>

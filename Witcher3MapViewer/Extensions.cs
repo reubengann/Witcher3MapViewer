@@ -13,5 +13,10 @@ namespace Witcher3MapViewer
             for (int i = 0; i < sorted.Count(); i++)
                 collection.Move(collection.IndexOf(sorted[i]), i);
         }
+
+        public static bool CaseInsensitiveContains(this string text, string value, StringComparison stringComparison = StringComparison.CurrentCultureIgnoreCase)
+        {
+            return text.IndexOf(value, stringComparison) >= 0;
+        }
     }
 }

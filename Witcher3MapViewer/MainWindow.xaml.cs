@@ -9,6 +9,7 @@ using System;
 using System.ComponentModel;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Windows.Input;
 
 namespace Witcher3MapViewer
 {
@@ -114,6 +115,8 @@ namespace Witcher3MapViewer
             }
         }
 
+        
+
         private string _infoMessage;
         public string InfoMessage
         {
@@ -152,6 +155,16 @@ namespace Witcher3MapViewer
                 RaisePropertyChanged("GwentStatusText");
             }
         }
+
+        string _searchQuery = "";
+        public string SearchQuery
+        {
+            get { return _searchQuery;  }
+            set { _searchQuery = value; UpdateSearch(); }
+        }
+
+        bool _searchShown = false;
+        public bool SearchShown { get { return _searchShown; } set { _searchShown = value; RaisePropertyChanged("SearchShown"); } }        
 
         public MainWindow()
         {
@@ -218,11 +231,86 @@ namespace Witcher3MapViewer
             System.Windows.Threading.DispatcherTimer autosaveTimer = new System.Windows.Threading.DispatcherTimer(
             TimeSpan.FromSeconds(120), System.Windows.Threading.DispatcherPriority.Background,
             new EventHandler(DoAutoSave), Application.Current.Dispatcher);
-            autosaveTimer.Start();
-            
+            autosaveTimer.Start();            
+
             SeekNextUndone();
             MyMapControl.Map.Viewport.Resolution = 20000;
+
+            SearchBox.NextItemButton.Click += NextItemButton_Click;
+            SearchBox.PrevItemButton.Click += PrevItemButton_Click;
+            SearchBox.CloseSearchButton.Click += CloseSearchButton_Click;
+            CommandBindings.Add(new CommandBinding(ApplicationCommands.Find, FindExecuted, FindCanExecute));
         }
+
+        private void FindCanExecute(object sender, CanExecuteRoutedEventArgs e)
+        {
+            e.CanExecute = !SearchShown;
+        }
+
+        private void FindExecuted(object sender, ExecutedRoutedEventArgs e)
+        {
+            SearchShown = true;            
+            SearchBox.QueryText.Focus();
+            Keyboard.Focus(SearchBox.QueryText);
+        }
+
+        private void UpdateSearch()
+        {            
+            SearchQuests(SearchQuery, 0, SearchDirection.Forward);
+        }
+
+        private void PrevItemButton_Click(object sender, RoutedEventArgs e)
+        {
+            int start = 0;
+            if(_currentSelection != null)            
+                start = CurrentQuests.IndexOf(_currentSelection);
+
+            SearchQuests(SearchQuery, start, SearchDirection.Backward);
+
+        }
+
+        private void NextItemButton_Click(object sender, RoutedEventArgs e)
+        {
+            int start = 0;
+            if (_currentSelection != null)
+                start = CurrentQuests.IndexOf(_currentSelection);
+
+            SearchQuests(SearchQuery, start, SearchDirection.Forward);
+        }
+
+        private enum SearchDirection { Forward, Backward }
+
+        private void SearchQuests(string query, int start, SearchDirection direction)
+        {
+            if (CurrentQuests == null || CurrentQuests.Count == 0)
+                return;
+            if (query == "") return;
+            int increment = 1;
+            if (direction == SearchDirection.Backward)
+                increment = -1;
+            int current = start + increment;
+            int count = CurrentQuests.Count;
+            while(current != start)
+            {
+                QuestViewModel qvm = CurrentQuests[current];
+                if (qvm.Name.CaseInsensitiveContains(SearchQuery))
+                {
+                    qvm.IsSelected = true;
+                    _currentSelection = qvm;
+                    return;
+                }
+                current += increment;
+                if (current == count)
+                    current = 0;
+                if (current < 0)
+                    current = count - 1;
+            }
+        }
+
+        private void CloseSearchButton_Click(object sender, RoutedEventArgs e)
+        {
+            SearchShown = false;
+        }        
 
         private void ProcessLastStatus(List<Quest> lastStatus)
         {
@@ -263,6 +351,13 @@ namespace Witcher3MapViewer
             _fileSystemWatcher.Created += _fileSystemWatcher_Changed;
             _fileSystemWatcher.Renamed += _fileSystemWatcher_Changed;
             _fileSystemWatcher.EnableRaisingEvents = true;
+        }
+
+        
+
+        private void CanFindNext(object sender, CanExecuteRoutedEventArgs e)
+        {
+            e.CanExecute = true;
         }
 
         private void _fileSystemWatcher_Changed(object sender, FileSystemEventArgs e)
@@ -813,7 +908,7 @@ namespace Witcher3MapViewer
             activeGwentTrackerWindow = null;
             if (RandomPlayersOnMap)
                 ToggleGwentPlayers(false);
-        }
+        }        
 
         private void DeferItem_Click(object sender, RoutedEventArgs e)
         {
@@ -847,6 +942,11 @@ namespace Witcher3MapViewer
                 SeekNextUndone();
             }
             UpdateQuests();
+        }
+
+        private void ShowSearch()
+        {
+            SearchShown = true;
         }
 
         private bool CopyWhenAvailable(string fullPath)

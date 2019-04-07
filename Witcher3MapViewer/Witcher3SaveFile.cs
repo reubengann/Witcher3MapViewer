@@ -1484,10 +1484,20 @@ namespace Witcher3MapViewer
 
         void VerifyTypecodes(BinaryReader f)
         {
-            if (f.ReadInt32() != 64 || f.ReadInt32() != 18 || f.ReadInt32() != 163)
+            if (f.ReadInt32() != 64)
             {
                 throw new InvalidDataException("Typecode failure");
             }
+            int code2 = f.ReadInt32();
+            if(code2 != 18 && code2 != 19)
+            {
+                throw new InvalidDataException("Typecode failure");
+            }
+            if(f.ReadInt32() != 163)
+            {
+                throw new InvalidDataException("Typecode failure");
+            }
+
         }
 
         Witcher3BS FindInHierarchy(string name)

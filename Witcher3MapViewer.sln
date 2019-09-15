@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2000
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Witcher3MapViewer", "Witcher3MapViewer\Witcher3MapViewer.csproj", "{7A608786-5C00-40F7-8F84-846D25871EC8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GwentDiscovery", "GwentDiscovery\GwentDiscovery.csproj", "{F8E5957C-4B09-4ABF-AA3B-2C7CEE53D26B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SaveExtractor", "SaveExtractor\SaveExtractor.csproj", "{E91F3CB6-0CE9-4E4C-8C37-58C9A03042CF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -40,8 +42,23 @@ Global
 		{F8E5957C-4B09-4ABF-AA3B-2C7CEE53D26B}.Release|x64.ActiveCfg = Release|Any CPU
 		{F8E5957C-4B09-4ABF-AA3B-2C7CEE53D26B}.Release|x64.Build.0 = Release|Any CPU
 		{F8E5957C-4B09-4ABF-AA3B-2C7CEE53D26B}.Release|x86.ActiveCfg = Release|x86
+		{E91F3CB6-0CE9-4E4C-8C37-58C9A03042CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E91F3CB6-0CE9-4E4C-8C37-58C9A03042CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E91F3CB6-0CE9-4E4C-8C37-58C9A03042CF}.Debug|x64.ActiveCfg = Debug|x64
+		{E91F3CB6-0CE9-4E4C-8C37-58C9A03042CF}.Debug|x64.Build.0 = Debug|x64
+		{E91F3CB6-0CE9-4E4C-8C37-58C9A03042CF}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{E91F3CB6-0CE9-4E4C-8C37-58C9A03042CF}.Debug|x86.Build.0 = Debug|Any CPU
+		{E91F3CB6-0CE9-4E4C-8C37-58C9A03042CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E91F3CB6-0CE9-4E4C-8C37-58C9A03042CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E91F3CB6-0CE9-4E4C-8C37-58C9A03042CF}.Release|x64.ActiveCfg = Release|Any CPU
+		{E91F3CB6-0CE9-4E4C-8C37-58C9A03042CF}.Release|x64.Build.0 = Release|Any CPU
+		{E91F3CB6-0CE9-4E4C-8C37-58C9A03042CF}.Release|x86.ActiveCfg = Release|Any CPU
+		{E91F3CB6-0CE9-4E4C-8C37-58C9A03042CF}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {21AA2ED8-A2A7-427E-897F-5C2C5AF2F70D}
 	EndGlobalSection
 EndGlobal

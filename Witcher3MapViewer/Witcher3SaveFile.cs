@@ -21,7 +21,7 @@ namespace Witcher3MapViewer
         List<string> SimplePorpHandleTypes = new List<string> {"W3LevelManager", "W3EffectManager", "CEncounterDataManager",
                           "CCharacterStats", "W3AbilityManager", "CBaseGameplayEffect",
                           "CPlayerInput", "WeaponHolster", "W3FactionReputationPoints",
-                          "W3Reputation", "ISpawnTreeSpawnMonitorInitializer" };
+                          "W3Reputation", "ISpawnTreeSpawnMonitorInitializer", "CSSPPL", "CInGameConfigWrapper" };
         List<string> SimpleSetTypes = new List<string> { "STutorialHighlight", "SUITutorial", "STutorialMessage" };
         List<string> SimpleSetsWithSizes = new List<string> { "ErrandDetailsList", "GameTime", "SMonsterNestUpdateDefinition",
             "SAbilityAttributeValue", "SBuffImmunity", "SItemUniqueId", "SGlossaryImageOverride",

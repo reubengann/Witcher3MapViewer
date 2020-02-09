@@ -129,11 +129,15 @@
                 </Setter>
             </Style>
             <HierarchicalDataTemplate x:Key="CheckBoxItemTemplate" ItemsSource="{Binding Children}">
-                <StackPanel Orientation="Horizontal">
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,5" IsEnabled="True">
                     <CheckBox Focusable="False" IsChecked="{Binding IsChecked}" VerticalAlignment="Center"
                               Checked="CheckBox_Checked" Unchecked="CheckBox_Checked"/>
-                    <Image Source="{Binding SmallIconPath}"/>
-                    <TextBlock Text="{Binding Text}"/>
+                    <Image Source="{Binding SmallIconPath}" MinWidth="40" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Image.Effect>
+                            <DropShadowEffect ShadowDepth="1" BlurRadius="0"/>
+                        </Image.Effect>
+                    </Image>
+                    <TextBlock Text="{Binding Text}" VerticalAlignment="Center" HorizontalAlignment="Left"/>
                 </StackPanel>
             </HierarchicalDataTemplate>
             <local:RowColorConvertor x:Key="rowColorConvertor"/>
@@ -275,13 +279,13 @@
                     <TextBlock Foreground="White" Background="Transparent" Text="Toggle markers"/>
                 </Border>
             </Expander.Header>
-            <Border BorderBrush="Black" CornerRadius="8" BorderThickness="1" HorizontalAlignment="Left" Height="150" Margin="10,10,0,0" VerticalAlignment="Top" Width="200">
-                <TreeView x:Name="itemChooser" Height="Auto"
-                          ItemContainerStyle="{StaticResource TreeViewItemStyle}"
-                          ItemsSource="{Binding Markers}"
-                          ItemTemplate="{StaticResource CheckBoxItemTemplate}"
-                          />
-            </Border>
+            <TreeView x:Name="itemChooser"
+                      Margin="10,10,0,10"
+                      HorizontalAlignment="Left"
+                      ItemContainerStyle="{StaticResource TreeViewItemStyle}"
+                      ItemsSource="{Binding Markers}"
+                      ItemTemplate="{StaticResource CheckBoxItemTemplate}" Padding="1,1,10,1"
+                      />
         </Expander>
         <local:SearchBox2 x:Name="SearchBox" Value="{Binding SearchQuery, Mode=TwoWay}" 
                           Visibility="{Binding SearchShown, Converter={StaticResource BooleanToVisibilityConverter}}"

@@ -361,5 +361,15 @@ namespace Witcher3MapViewer
                 }
             }
         }
+
+        public Quest getQuestByCoordinates(int searchX, int searchY)
+        {
+            IEnumerable<Quest> results = Quests.Where(q =>
+                q.DiscoverPrompt != null &&
+                q.DiscoverPrompt.DiscoverPosition != null &&
+                q.DiscoverPrompt.DiscoverPosition.X == searchX &&
+                q.DiscoverPrompt.DiscoverPosition.Y == searchY);
+            return results.Count() <= 0 ? null : results.First();
+        }
     } //end class
 } //end namespace

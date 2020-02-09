@@ -2,6 +2,7 @@
 using SQLite;
 using BruTile;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using Mapsui.Styles;
 using System.IO;
 using System.Threading;
@@ -39,13 +40,15 @@ namespace Witcher3MapViewer
     {
         private string appdir;
         private Dictionary<string, RealToGameSpaceConversion> ConversionLibrary;
+        private Dictionary<string, MarkerViewModel> MarkersPerWorld;
         private Dictionary<string, string> PathLibrary;
         private string currentLocation, circleShownOnLocation;
-        MapPinReader mappindata;        
+        MapPinReader mappindata;
         Dictionary<string, string> ShortNameLookup; //needed because of aliases
         List<string> ShortNames;
         string largeiconpath;
         string smalliconpath;
+        StringDictionary MarkersState;
         Dictionary<string, int> IconCache = new Dictionary<string, int>();
         ManualResetEvent _refreshRequested = new ManualResetEvent(false);
         bool MapChanged = false, QuestChanged = false, SaveChanged = false, autosave = false;
@@ -99,7 +102,7 @@ namespace Witcher3MapViewer
                 if (currentLocation == circleShownOnLocation && CircleLayer != null)
                     CircleLayer.Enabled = true;
                 else CircleLayer.Enabled = false;
-                    
+
                 RaisePropertyChanged("WorldSelectIndex");
             }
         }
@@ -115,7 +118,7 @@ namespace Witcher3MapViewer
             }
         }
 
-        
+
 
         private string _infoMessage;
         public string InfoMessage
@@ -159,12 +162,12 @@ namespace Witcher3MapViewer
         string _searchQuery = "";
         public string SearchQuery
         {
-            get { return _searchQuery;  }
+            get { return _searchQuery; }
             set { _searchQuery = value; UpdateSearch(); }
         }
 
         bool _searchShown = false;
-        public bool SearchShown { get { return _searchShown; } set { _searchShown = value; RaisePropertyChanged("SearchShown"); } }        
+        public bool SearchShown { get { return _searchShown; } set { _searchShown = value; RaisePropertyChanged("SearchShown"); } }
 
         public MainWindow()
         {
@@ -178,7 +181,7 @@ namespace Witcher3MapViewer
             if (manualMode && File.Exists(Path.Combine(appdir, "status.dat")))
             {
                 Readers.GameStatusReader statusreader = new Readers.GameStatusReader(Path.Combine(appdir, "status.dat"));
-                if(statusreader.QuestInfo != null && statusreader.QuestInfo.Count != 0)
+                if (statusreader.QuestInfo != null && statusreader.QuestInfo.Count != 0)
                 {
                     MessageBoxResult result =
                     MessageBox.Show("Load quest info from previous session?", "Load data?", MessageBoxButton.YesNo);
@@ -187,8 +190,8 @@ namespace Witcher3MapViewer
                         ProcessLastStatus(statusreader.QuestInfo);
                         localplayerlevel = statusreader.PlayerLevel;
                     }
-                }                
-                
+                }
+
             }
             DataContext = this;
             InitializeComponent();
@@ -196,9 +199,9 @@ namespace Witcher3MapViewer
 
             if (Properties.Settings.Default.FirstRun)
             {
-                Properties.Settings.Default.FirstRun = false;                
+                Properties.Settings.Default.FirstRun = false;
                 var foo = new SettingsDialog();
-                foo.ShowDialog();                
+                foo.ShowDialog();
             }
             SettingsFromConfig();
 
@@ -222,7 +225,7 @@ namespace Witcher3MapViewer
             {
                 GwentStatusText = "Click to see Gwent cards";
                 UpdateQuests();
-            }                        
+            }
             _currentQuests.Sort();
             RaisePropertyChanged("CurrentQuests");
 
@@ -231,7 +234,7 @@ namespace Witcher3MapViewer
             System.Windows.Threading.DispatcherTimer autosaveTimer = new System.Windows.Threading.DispatcherTimer(
             TimeSpan.FromSeconds(120), System.Windows.Threading.DispatcherPriority.Background,
             new EventHandler(DoAutoSave), Application.Current.Dispatcher);
-            autosaveTimer.Start();            
+            autosaveTimer.Start();
 
             SeekNextUndone();
             MyMapControl.Map.Viewport.Resolution = 20000;
@@ -249,20 +252,20 @@ namespace Witcher3MapViewer
 
         private void FindExecuted(object sender, ExecutedRoutedEventArgs e)
         {
-            SearchShown = true;            
+            SearchShown = true;
             SearchBox.QueryText.Focus();
             Keyboard.Focus(SearchBox.QueryText);
         }
 
         private void UpdateSearch()
-        {            
+        {
             SearchQuests(SearchQuery, 0, SearchDirection.Forward);
         }
 
         private void PrevItemButton_Click(object sender, RoutedEventArgs e)
         {
             int start = 0;
-            if(_currentSelection != null)            
+            if (_currentSelection != null)
                 start = CurrentQuests.IndexOf(_currentSelection);
 
             SearchQuests(SearchQuery, start, SearchDirection.Backward);
@@ -290,7 +293,7 @@ namespace Witcher3MapViewer
                 increment = -1;
             int current = start + increment;
             int count = CurrentQuests.Count;
-            while(current != start)
+            while (current != start)
             {
                 QuestViewModel qvm = CurrentQuests[current];
                 if (qvm.Name.CaseInsensitiveContains(SearchQuery))
@@ -310,7 +313,7 @@ namespace Witcher3MapViewer
         private void CloseSearchButton_Click(object sender, RoutedEventArgs e)
         {
             SearchShown = false;
-        }        
+        }
 
         private void ProcessLastStatus(List<Quest> lastStatus)
         {
@@ -353,7 +356,7 @@ namespace Witcher3MapViewer
             _fileSystemWatcher.EnableRaisingEvents = true;
         }
 
-        
+
 
         private void CanFindNext(object sender, CanExecuteRoutedEventArgs e)
         {
@@ -371,12 +374,13 @@ namespace Witcher3MapViewer
         private void DataSetup()
         {
             appdir = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
-            if(!Directory.Exists(Path.Combine(appdir, "SavedGames")))            
+            if (!Directory.Exists(Path.Combine(appdir, "SavedGames")))
                 Directory.CreateDirectory(Path.Combine(appdir, "SavedGames"));
-            
+
+            MarkersPerWorld = new Dictionary<string, MarkerViewModel>();
             Readers.ApplicationSettingsReader Settings = new Readers.ApplicationSettingsReader(appdir, "Settings.xml");
             ConversionLibrary = Settings.ConversionLibrary;
-            PathLibrary = Settings.PathLibrary;            
+            PathLibrary = Settings.PathLibrary;
             ShortNameLookup = Settings.ShortNameLookup;
             ShortNames = Settings.ShortNames;
             largeiconpath = Settings.largeiconpath;
@@ -420,7 +424,18 @@ namespace Witcher3MapViewer
         private void LoadMap(string location)
         {
             ObservableCollection<MarkerViewModel> tempmarkers = new ObservableCollection<MarkerViewModel>();
-            MarkerViewModel root = MarkerViewModel.CreateRoot(Path.Combine(appdir, smalliconpath));
+
+            MarkerViewModel root;
+            bool worldWasAlreadyLoaded = MarkersPerWorld.ContainsKey(location);
+            if (worldWasAlreadyLoaded)
+            {
+                root = MarkersPerWorld[location];
+            }
+            else
+            {
+                root = MarkerViewModel.CreateRoot(Path.Combine(appdir, smalliconpath));
+                MarkersPerWorld.Add(location, root);
+            }
 
             currentLocation = location;
             CurrentConvertor = ConversionLibrary[location];
@@ -437,13 +452,19 @@ namespace Witcher3MapViewer
             Dictionary<MapPinType, MapPinCollection> worldpindata = mappindata.GetPins(ShortNameLookup[location]);
             foreach (MapPinType pintype in worldpindata.Keys)
             {
-                Mapsui.Layers.MemoryLayer _pointlayer = new Mapsui.Layers.MemoryLayer { Style = null };
-                List<Mapsui.Geometries.Point> _points = new List<Mapsui.Geometries.Point>();
-                string path = Path.Combine(appdir, largeiconpath, pintype.IconFile);
-
                 //I want to do this last
                 if (pintype.InternalName == "RoadSign")
                     continue;
+
+                if (worldWasAlreadyLoaded)
+                {
+                    MyMapControl.Map.Layers.Add(root.FindChild(pintype.InternalName).AssociatedLayer);
+                    continue;
+                }
+
+                Mapsui.Layers.MemoryLayer _pointlayer = new Mapsui.Layers.MemoryLayer { Style = null };
+                List<Mapsui.Geometries.Point> _points = new List<Mapsui.Geometries.Point>();
+                string path = Path.Combine(appdir, largeiconpath, pintype.IconFile);
 
                 //Load the image if needed
                 if (!IconCache.ContainsKey(path))
@@ -457,8 +478,21 @@ namespace Witcher3MapViewer
                     }
                 }
 
-                foreach (MapPin c in worldpindata[pintype].Locations)
-                    _points.Add(CurrentConvertor.ToWorldSpace(c.Location));
+                if (pintype.InternalName.Contains("Quest"))
+                {
+                    foreach (MapPin c in worldpindata[pintype].Locations)
+                    {
+                        //Try to match Pin coords and Quest coords
+                        Quest q = progressStatus.getQuestByCoordinates(Convert.ToInt32(c.Location.X), Convert.ToInt32(c.Location.Y));
+                        //If no matching quest found then still display the Pin
+                        bool questNotDoneOrNotFound = q == null || !q.Done;
+                        if (questNotDoneOrNotFound)
+                            _points.Add(CurrentConvertor.ToWorldSpace(c.Location));
+                    }
+                }
+                else
+                    foreach (MapPin c in worldpindata[pintype].Locations)
+                        _points.Add(CurrentConvertor.ToWorldSpace(c.Location));
 
                 _pointlayer.DataSource = new Mapsui.Providers.MemoryProvider(_points);
 
@@ -472,6 +506,7 @@ namespace Witcher3MapViewer
                 MyMapControl.Map.Layers.Add(_pointlayer);
                 root.AddChild(new MarkerViewModel(pintype, _pointlayer));
             }
+            root.VerifyCheckState();
             AddCircleLayer();
             //Add label layer last so that it's on top
             MyMapControl.Map.Layers.Add(GetLabelLayer(worldpindata));
@@ -521,11 +556,11 @@ namespace Witcher3MapViewer
             {
                 var feature = new Mapsui.Providers.Feature
                 {
-                    Geometry = CurrentConvertor.ToWorldSpace(c.Location),                    
+                    Geometry = CurrentConvertor.ToWorldSpace(c.Location),
                 };
                 feature.Styles.Add(new LabelStyle
                 {
-                    Text = BreakLines(c.Name,17),
+                    Text = BreakLines(c.Name, 17),
                     ForeColor = Color.White,
                     BackColor = new Brush(Color.Gray),
                     Halo = new Pen(Color.Black, 2),
@@ -541,14 +576,14 @@ namespace Witcher3MapViewer
         }
 
         private string BreakLines(string tobreak, int desiredmaxchars)
-        {            
+        {
             if (!tobreak.Contains(" ")) return tobreak;
             string[] words = tobreak.Split(' ');
             string broken = words[0];
             int count = broken.Length;
-            for(int i = 1; i < words.Length; i++)
+            for (int i = 1; i < words.Length; i++)
             {
-                if(count + words[i].Length > desiredmaxchars)
+                if (count + words[i].Length > desiredmaxchars)
                 {
                     broken += "\n";
                     count = 0;
@@ -606,7 +641,7 @@ namespace Witcher3MapViewer
         //Check a marker checkbox
         private void CheckBox_Checked(object sender, RoutedEventArgs e)
         {
-            
+
             MapChanged = true;
             _refreshRequested.Set();
             ThreadPool.QueueUserWorkItem(RefreshIfNecessary);
@@ -908,7 +943,7 @@ namespace Witcher3MapViewer
             activeGwentTrackerWindow = null;
             if (RandomPlayersOnMap)
                 ToggleGwentPlayers(false);
-        }        
+        }
 
         private void DeferItem_Click(object sender, RoutedEventArgs e)
         {
@@ -1033,7 +1068,7 @@ namespace Witcher3MapViewer
             InfoMessage = "No undeferred quests found";
         }
 
-        
+
         private bool SetIfUndone(QuestViewModel qvm, bool actuallyset, bool greedy)
         {
             if (qvm.IsChecked == true || qvm.IsDeferred == true)
@@ -1065,6 +1100,9 @@ namespace Witcher3MapViewer
             showEvents = Properties.Settings.Default.showEvents;
             showRaces = Properties.Settings.Default.showRaces;
             showTreasure = Properties.Settings.Default.showTreasure;
+            MarkersState = Properties.Settings.Default.MarkersState;
+            if (MarkersState == null)
+                Properties.Settings.Default.MarkersState = new StringDictionary();
         }
 
         //periodically save user interventions (or manual mode game data)

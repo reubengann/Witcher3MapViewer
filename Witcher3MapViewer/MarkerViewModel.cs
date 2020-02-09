@@ -3,7 +3,7 @@ using System.ComponentModel;
 
 namespace Witcher3MapViewer
 {
-    public class MarkerViewModel
+    public class MarkerViewModel : INotifyPropertyChanged
     {
         bool? _isChecked = false;
         public List<MarkerViewModel> Children { get; private set; }
@@ -39,6 +39,11 @@ namespace Witcher3MapViewer
             Children = new List<MarkerViewModel>();
             _isChecked = _layer.Enabled;
             _smallIconName = pintype.IconFile;
+            if (Properties.Settings.Default.MarkersState.ContainsKey(Name))
+                _isChecked = _layer.Enabled = bool.Parse(Properties.Settings.Default.MarkersState[Name]);
+            else
+                Properties.Settings.Default.MarkersState.Add(Name, _isChecked.ToString());
+            Properties.Settings.Default.Save();
         }
 
         public bool? IsChecked
@@ -72,10 +77,16 @@ namespace Witcher3MapViewer
             if (updateParent && _parent != null)
                 _parent.VerifyCheckState();
 
+            if (Properties.Settings.Default.MarkersState.ContainsKey(Name))
+                Properties.Settings.Default.MarkersState[Name] = _isChecked.ToString();
+            else
+                Properties.Settings.Default.MarkersState.Add(Name, _isChecked.ToString());
+            Properties.Settings.Default.Save();
+
             OnPropertyChanged("IsChecked");
         }
 
-        void VerifyCheckState()
+        public void VerifyCheckState()
         {
             bool? state = null;
             for (int i = 0; i < Children.Count; ++i)
@@ -122,7 +133,6 @@ namespace Witcher3MapViewer
         {
             MarkerViewModel root = new MarkerViewModel("All", "All Items");
             root._smallIconFolder = iconfolder;
-            root.IsChecked = true;
             return root;
         }
 

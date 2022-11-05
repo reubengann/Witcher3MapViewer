@@ -42,5 +42,12 @@ namespace WitcherMapViewerMark2.Test
             vm.SelectedMap = vm.ListOfMaps[2];
             mockMap.Verify(m => m.LoadMap(MapInfo.TileMapPathMap[vm.ListOfMaps[2]]));
         }
+
+        [Test]
+        public void WhenMapIsLoaded_LoadsMarkers()
+        {
+            vm.LoadInitialMapCommand.Execute(null);
+            mockMap.Verify(m => m.LoadMarkers());
+        }
     }
 }

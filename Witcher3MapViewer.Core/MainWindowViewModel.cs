@@ -33,6 +33,7 @@ namespace Witcher3MapViewer.Core
         private void UpdateMap()
         {
             _map.LoadMap(MapInfo.TileMapPathMap[SelectedMap]);
+            _map.LoadMarkers();
         }
 
         private void LoadInitialMap()

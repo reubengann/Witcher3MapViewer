@@ -2,6 +2,7 @@
 {
     public interface IMap
     {
-        public void LoadMap(string path);
+        void LoadMap(string path);
+        void LoadMarkers();
     }
 }

@@ -4,15 +4,23 @@ namespace Witcher3MapViewer.Core
 {
     public class XMLMarkerProvider : IMarkerProvider
     {
+        private Dictionary<string, List<MarkerSpec>> Items;
+
         public XMLMarkerProvider(Stream s)
         {
+            Items = new Dictionary<string, List<MarkerSpec>>();
             XmlSerializer serializer = new XmlSerializer(typeof(MapPinCollectionDAO));
             MapPinCollectionDAO? readitems = (MapPinCollectionDAO?)serializer.Deserialize(s);
+            if (readitems == null) throw new Exception();
+            foreach (MapPinWorldDAO worldDAO in readitems.Worlds)
+            {
+                Items[worldDAO.Code] = new List<MarkerSpec>();
+            }
         }
 
-        public List<MarkerSpec> GetMarkerSpecs(string worldName)
+        public List<MarkerSpec> GetMarkerSpecs(string worldCode)
         {
-            return new List<MarkerSpec> { MapMarkers.MapMarkerSpec };
+            return Items[worldCode];
         }
     }
 

@@ -6,13 +6,15 @@ namespace WitcherMapViewerMark2.Test
     public class Tests
     {
         Mock<IMap> mockMap;
+        Mock<IMarkerProvider> mockMarkerProvider;
         MainWindowViewModel vm;
 
         [SetUp]
         public void SetUp()
         {
             mockMap = new Mock<IMap>();
-            vm = new MainWindowViewModel(mockMap.Object);
+            mockMarkerProvider = new Mock<IMarkerProvider>();
+            vm = new MainWindowViewModel(mockMap.Object, mockMarkerProvider.Object);
         }
 
         [Test]
@@ -47,7 +49,7 @@ namespace WitcherMapViewerMark2.Test
         public void WhenMapIsLoaded_LoadsMarkers()
         {
             vm.LoadInitialMapCommand.Execute(null);
-            mockMap.Verify(m => m.LoadMarkers(MapMarkers.MapMarkerSpec));
+            mockMap.Verify(m => m.LoadMarkers(It.IsAny<MarkerSpec>()));
         }
     }
 }

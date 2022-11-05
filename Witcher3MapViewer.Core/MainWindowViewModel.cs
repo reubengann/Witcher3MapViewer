@@ -6,10 +6,12 @@ namespace Witcher3MapViewer.Core
     public class MainWindowViewModel : BaseViewModel
     {
         private readonly IMap _map;
+        private readonly IMarkerProvider _markerProvider;
 
-        public MainWindowViewModel(IMap map)
+        public MainWindowViewModel(IMap map, IMarkerProvider markerProvider)
         {
             _map = map;
+            _markerProvider = markerProvider;
         }
 
         public ICommand LoadInitialMapCommand { get => new DelegateCommand(LoadInitialMap); }

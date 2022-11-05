@@ -12,7 +12,8 @@ namespace Witcher3MapViewer.WPF
         {
             MainWindow mainWindow = new MainWindow();
             MapsUIMap mapsUIMap = new MapsUIMap(mainWindow.MapControl);
-            mainWindow.DataContext = new MainWindowViewModel(mapsUIMap);
+            XMLMarkerProvider markerProvider = new XMLMarkerProvider();
+            mainWindow.DataContext = new MainWindowViewModel(mapsUIMap, markerProvider);
             mainWindow.Show();
         }
     }

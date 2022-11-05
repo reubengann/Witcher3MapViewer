@@ -3,7 +3,7 @@ using Witcher3MapViewer.Core;
 
 namespace WitcherMapViewerMark2.Test
 {
-    public class Tests
+    public class MainWindowTests
     {
         Mock<IMap> mockMap;
         Mock<IMarkerProvider> mockMarkerProvider;

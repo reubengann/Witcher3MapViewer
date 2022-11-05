@@ -42,10 +42,65 @@ namespace Witcher3MapViewer.Test
             MemoryStream ms = new MemoryStream(Encoding.UTF8.GetBytes(mock));
             var p = new XMLMapSettingsProvider(ms);
             WorldSetting ws = p.GetWorldSetting("WO");
-            Assert.That(ws.YIntercept, Is.EqualTo(19.2).Within(0.01));
-            Assert.That(ws.XIntercept, Is.EqualTo(60).Within(0.01));
+            Assert.That(ws.YIntercept, Is.EqualTo(19.2).Within(0.000001));
+            Assert.That(ws.XIntercept, Is.EqualTo(60).Within(0.0000001));
             Assert.That(ws.Slope, Is.EqualTo(0.000038).Within(0.0000001));
             Assert.That(ws.TileSource, Is.EqualTo("Maps\\WhiteOrchard.mbtiles"));
+        }
+
+        [Test]
+        public void WhenHasIconSettingsLoadsSomething()
+        {
+            string mock = @"<settings>
+	                            <iconsettings>
+		                            <largeiconpath>MarkerImages</largeiconpath>
+		                            <smalliconpath>SmallMarkerImages</smalliconpath>
+	                            </iconsettings>
+                            </settings>	";
+            MemoryStream ms = new MemoryStream(Encoding.UTF8.GetBytes(mock));
+            var p = new XMLMapSettingsProvider(ms);
+            Assert.That(p.GetIconSettings(), Is.Not.Null);
+        }
+
+        [Test]
+        public void WhenHasIconSettingsHasPathsLoadsThem()
+        {
+            string mock = @"<settings>
+	                            <iconsettings>
+		                            <largeiconpath>MarkerImages</largeiconpath>
+		                            <smalliconpath>SmallMarkerImages</smalliconpath>
+	                            </iconsettings>
+                            </settings>	";
+            MemoryStream ms = new MemoryStream(Encoding.UTF8.GetBytes(mock));
+            var p = new XMLMapSettingsProvider(ms);
+            var result = p.GetIconSettings();
+            Assert.That(result.SmallIconPath, Is.EqualTo("SmallMarkerImages"));
+            Assert.That(result.LargeIconPath, Is.EqualTo("MarkerImages"));
+        }
+
+        [Test]
+        public void WhenHasIconInfosLoadsThem()
+        {
+            string mock = @"<settings>
+	                            <iconsettings>
+		                            <largeiconpath>MarkerImages</largeiconpath>
+		                            <smalliconpath>SmallMarkerImages</smalliconpath>
+		                            <icon>
+			                            <image>NoticeBoard.png</image>
+			                            <internalname>NoticeBoard</internalname>
+			                            <groupname>Notice boards</groupname>
+		                            </icon>
+		                            <icon>
+			                            <image>MonsterNest.png</image>
+			                            <internalname>MonsterNest</internalname>
+			                            <groupname>Monster nests</groupname>
+		                            </icon>
+	                            </iconsettings>
+                            </settings>	";
+            MemoryStream ms = new MemoryStream(Encoding.UTF8.GetBytes(mock));
+            var p = new XMLMapSettingsProvider(ms);
+            var result = p.GetIconSettings();
+            Assert.That(result.IconInfos.Count, Is.EqualTo(2));
         }
     }
 }

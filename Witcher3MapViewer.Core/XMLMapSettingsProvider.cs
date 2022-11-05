@@ -4,31 +4,50 @@ namespace Witcher3MapViewer.Core
 {
     public class XMLMapSettingsProvider : IMapSettingsProvider
     {
-        Dictionary<string, WorldSetting> WorldSettings;
+        Dictionary<string, WorldSetting>? WorldSettings;
+        private IconSettings _iconSettings;
+
         public XMLMapSettingsProvider(Stream s)
         {
             XmlSerializer serializer = new XmlSerializer(typeof(ApplicationSettingRootDAO));
             ApplicationSettingRootDAO? readitems = (ApplicationSettingRootDAO?)serializer.Deserialize(s);
             if (readitems == null) throw new Exception();
-            if (readitems.worldsettings == null) return;
-            WorldSettings = new Dictionary<string, WorldSetting>();
-            foreach (var item in readitems.worldsettings.Worlds)
+            if (readitems.worldsettings != null)
             {
-                WorldSettings[item.ShortName] = new WorldSetting
+                WorldSettings = new Dictionary<string, WorldSetting>();
+                foreach (var item in readitems.worldsettings.Worlds)
                 {
-                    Name = item.ShortName,
-                    ShortName = item.ShortName,
-                    Slope = item.conversionsetting.Slope,
-                    XIntercept = item.conversionsetting.xintercept,
-                    YIntercept = item.conversionsetting.yintercept,
-                    TileSource = item.filename
+                    WorldSettings[item.ShortName] = new WorldSetting
+                    {
+                        Name = item.ShortName,
+                        ShortName = item.ShortName,
+                        Slope = item.conversionsetting.Slope,
+                        XIntercept = item.conversionsetting.xintercept,
+                        YIntercept = item.conversionsetting.yintercept,
+                        TileSource = item.filename
+                    };
+                }
+            }
+            if (readitems.iconsettings != null)
+            {
+                _iconSettings = new IconSettings
+                {
+                    SmallIconPath = readitems.iconsettings.SmallIconPath,
+                    LargeIconPath = readitems.iconsettings.LargeIconPath,
+                    IconInfos = readitems.iconsettings.Icons.Select(x => new IconInfo
+                    {
+                        GroupName = x.Groupname,
+                        Image = x.ImageName,
+                        InternalName = x.InternalName,
+                        Aliases = x.Aliases
+                    }).ToList()
                 };
             }
         }
 
         public IconSettings GetIconSettings()
         {
-            throw new NotImplementedException();
+            return _iconSettings;
         }
 
         public WorldSetting GetWorldSetting(string worldShortName)

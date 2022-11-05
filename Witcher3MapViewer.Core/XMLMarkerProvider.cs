@@ -14,13 +14,19 @@ namespace Witcher3MapViewer.Core
             if (readitems == null) throw new Exception();
             foreach (MapPinWorldDAO worldDAO in readitems.Worlds)
             {
-                Items[worldDAO.Code] = new List<MarkerSpec>();
+                Items[worldDAO.Code] = GroupMarkerTypes(worldDAO);
             }
         }
 
-        public List<MarkerSpec> GetMarkerSpecs(string worldCode)
+        private List<MarkerSpec> GroupMarkerTypes(MapPinWorldDAO worldDAO)
         {
-            return Items[worldCode];
+            ILookup<string, MapPinDAO>? groups = worldDAO.Pins.ToLookup(x => x.Type);
+            return groups.Select(x => new MarkerSpec(x.Key, x.Select(p => new Point(p.Position.x, p.Position.y)).ToList())).ToList();
+        }
+
+        public List<MarkerSpec> GetMarkerSpecs(string worldName)
+        {
+            return Items[worldName];
         }
     }
 

@@ -1,17 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
+using Witcher3MapViewer.Core;
 
-namespace Witcher3MapViewer
+namespace Witcher3MapViewer.WPF
 {
     /// <summary>
     /// Interaction logic for App.xaml
     /// </summary>
     public partial class App : Application
     {
+        public App()
+        {
+            MainWindow mainWindow = new MainWindow();
+            MapsUIMap mapsUIMap = new MapsUIMap(mainWindow.MapControl);
+            mainWindow.DataContext = new MainWindowViewModel(mapsUIMap);
+            mainWindow.Show();
+        }
     }
 }

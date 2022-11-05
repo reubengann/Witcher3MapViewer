@@ -1,7 +1,6 @@
-﻿using System.Collections.Generic;
-using System.Xml.Serialization;
+﻿using System.Xml.Serialization;
 
-namespace Witcher3MapViewer
+namespace Witcher3MapViewer.Core.Readers
 {
     [XmlRoot("quests")]
     public class QuestListAsRead
@@ -42,7 +41,7 @@ namespace Witcher3MapViewer
         public List<QuestCondition> AvailableConditions { get; set; }
 
         [XmlElement("strict")]
-        public List<QuestCondition> StrictConditions { get; set; }        
+        public List<QuestCondition> StrictConditions { get; set; }
 
         [XmlArray("subquests"), XmlArrayItem("quest")]
         public QuestAsRead[] SubquestsAsRead { get; set; }
@@ -98,7 +97,7 @@ namespace Witcher3MapViewer
             World = toCopy.World;
             UniqueID = toCopy.UniqueID;
             DiscoveredConditions = toCopy.DiscoveredConditions;
-            AvailableConditions = toCopy.AvailableConditions;            
+            AvailableConditions = toCopy.AvailableConditions;
             Reward = toCopy.Reward;
             GUID = toCopy.GUID;
             ObjectivesAsRead = toCopy.ObjectivesAsRead;
@@ -169,7 +168,7 @@ namespace Witcher3MapViewer
             {
                 if (string.IsNullOrEmpty(value))
                 {
-                    ActiveState = default(QuestStatusState);
+                    ActiveState = default;
                 }
                 else
                 {

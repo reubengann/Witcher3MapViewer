@@ -1,11 +1,9 @@
-﻿using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.IO;
+﻿using System.Xml.Serialization;
 
-namespace Witcher3MapViewer
+namespace Witcher3MapViewer.Core.Readers
 {
     class MapPinReader
-    {        
+    {
         List<MapPinWorld> Worlds;
         Dictionary<MapPinWorld, Dictionary<MapPinType, MapPinCollection>> WorldData;
 
@@ -18,11 +16,11 @@ namespace Witcher3MapViewer
                 MapPinCollectionAsRead readitems = (MapPinCollectionAsRead)serializer.Deserialize(reader);
                 Worlds = readitems.Worlds;
             }
-            WorldData = new Dictionary<MapPinWorld, Dictionary<MapPinType, MapPinCollection>>();                        
-            foreach(MapPinWorld w in Worlds)
+            WorldData = new Dictionary<MapPinWorld, Dictionary<MapPinType, MapPinCollection>>();
+            foreach (MapPinWorld w in Worlds)
             {
-                Dictionary<MapPinType, MapPinCollection> Collated = new Dictionary<MapPinType, MapPinCollection>();                                
-                foreach(MapPin pin in w.Pins)
+                Dictionary<MapPinType, MapPinCollection> Collated = new Dictionary<MapPinType, MapPinCollection>();
+                foreach (MapPin pin in w.Pins)
                 {
                     if (!Collated.ContainsKey(TypeLookup[pin.Type]))
                         Collated[TypeLookup[pin.Type]] = new MapPinCollection();
@@ -35,9 +33,9 @@ namespace Witcher3MapViewer
 
         public Dictionary<MapPinType, MapPinCollection> GetPins(string code)
         {
-            foreach(MapPinWorld w in WorldData.Keys)
+            foreach (MapPinWorld w in WorldData.Keys)
             {
-                if(w.Code == code)
+                if (w.Code == code)
                 {
                     return WorldData[w];
                 }
@@ -68,7 +66,7 @@ namespace Witcher3MapViewer
     public class MapPin
     {
         [XmlIgnore]
-        public Mapsui.Geometries.Point Location { get { return new Mapsui.Geometries.Point(PositionAsRead.x, PositionAsRead.y); }}
+        public Point Location { get { return new Point(PositionAsRead.x, PositionAsRead.y); } }
 
         [XmlAttribute("type")]
         public string Type { get; set; }
@@ -124,7 +122,7 @@ namespace Witcher3MapViewer
         public string InternalName;
         public string IconFile;
         public List<string> Aliases;
-        public bool Shown = true;       
+        public bool Shown = true;
 
         public MapPinType(string name, string internalname)
         {

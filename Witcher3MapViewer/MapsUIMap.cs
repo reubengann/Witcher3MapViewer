@@ -5,6 +5,7 @@ using Mapsui.UI.Wpf;
 using SQLite;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using Witcher3MapViewer.Core;
 
 namespace Witcher3MapViewer.WPF
@@ -27,21 +28,16 @@ namespace Witcher3MapViewer.WPF
             control.Map.Layers.Add(tileLayer);
         }
 
-        public void LoadMarkers()
+        public void LoadMarkers(MarkerSpec markerSpec)
         {
             MemoryLayer pointlayer = new MemoryLayer { Style = null };
-            List<Mapsui.Geometries.Point> _points = new List<Mapsui.Geometries.Point> { new Mapsui.Geometries.Point(0, 0) };
-            string path = @"C:\repos\Witcher3MapViewer\Witcher3MapViewer\MarkerImages\RoadSign.png";
+            List<Mapsui.Geometries.Point> _points = markerSpec.WorldLocations.Select(
+                p => new Mapsui.Geometries.Point(p.X, p.Y)
+                ).ToList();
+            string path = markerSpec.ImagePath;
             if (!IconPathToBitmapRegistryIdMap.ContainsKey(path))
-            {
-                using (FileStream fs = new FileStream(path, FileMode.Open))
-                {
-                    MemoryStream ms = new MemoryStream();
-                    fs.CopyTo(ms);
-                    int id = BitmapRegistry.Instance.Register(ms);
-                    IconPathToBitmapRegistryIdMap[path] = id;
-                }
-            }
+                RegisterBitmap(path);
+
             pointlayer.DataSource = new Mapsui.Providers.MemoryProvider(_points);
             SymbolStyle _style = new SymbolStyle
             {
@@ -50,6 +46,17 @@ namespace Witcher3MapViewer.WPF
             pointlayer.Style = _style;
             pointlayer.Name = "foo";
             control.Map.Layers.Add(pointlayer);
+        }
+
+        private void RegisterBitmap(string path)
+        {
+            using (FileStream fs = new FileStream(path, FileMode.Open))
+            {
+                MemoryStream ms = new MemoryStream();
+                fs.CopyTo(ms);
+                int id = BitmapRegistry.Instance.Register(ms);
+                IconPathToBitmapRegistryIdMap[path] = id;
+            }
         }
     }
 }

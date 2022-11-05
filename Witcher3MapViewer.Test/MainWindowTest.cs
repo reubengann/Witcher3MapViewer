@@ -47,7 +47,7 @@ namespace WitcherMapViewerMark2.Test
         public void WhenMapIsLoaded_LoadsMarkers()
         {
             vm.LoadInitialMapCommand.Execute(null);
-            mockMap.Verify(m => m.LoadMarkers());
+            mockMap.Verify(m => m.LoadMarkers(MapMarkers.MapMarkerSpec));
         }
     }
 }

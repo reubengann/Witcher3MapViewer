@@ -24,7 +24,13 @@
             VerticalContentAlignment="Center"
             ItemsSource="{Binding ListOfMaps}"
             SelectedItem="{Binding SelectedMap}"/>
-
-        <local:MarkerToggleControl DataContext="{Binding MarkerToggleViewModel}"/>
+        <Expander Width="Auto" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0" FlowDirection="RightToLeft">
+            <Expander.Header>
+                <Border>
+                    <TextBlock Foreground="White" Background="Transparent" Text="Toggle markers" />
+                </Border>
+            </Expander.Header>
+            <local:MarkerToggleControl DataContext="{Binding MarkerToggleViewModel}"/>
+        </Expander>
     </Grid>
 </Window>

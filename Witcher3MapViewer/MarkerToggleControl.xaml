@@ -34,6 +34,7 @@
                       ItemContainerStyle="{StaticResource TreeViewItemStyle}"
                       ItemsSource="{Binding Markers}"
                       ItemTemplate="{StaticResource CheckBoxItemTemplate}" Padding="1,1,10,1"
+                        FlowDirection="LeftToRight"
                       />
     </Grid>
 </UserControl>

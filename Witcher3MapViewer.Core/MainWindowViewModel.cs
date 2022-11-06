@@ -8,7 +8,7 @@ namespace Witcher3MapViewer.Core
         private readonly IMap _map;
         private readonly IMarkerProvider _markerProvider;
         private readonly IMapSettingsProvider _mapSettingsProvider;
-        private readonly Dictionary<string, string> TileMapPathMap;
+        private readonly Dictionary<string, WorldSetting> TileMapPathMap;
 
         public MainWindowViewModel(IMap map, IMarkerProvider markerProvider, IMapSettingsProvider mapSettingsProvider)
         {
@@ -17,7 +17,7 @@ namespace Witcher3MapViewer.Core
             _mapSettingsProvider = mapSettingsProvider;
             List<WorldSetting> worldSettings = _mapSettingsProvider.GetAll();
             ListOfMaps = worldSettings.Select(x => x.Name).ToList();
-            TileMapPathMap = worldSettings.ToDictionary(x => x.Name, x => x.TileSource);
+            TileMapPathMap = worldSettings.ToDictionary(x => x.Name, x => x);
         }
 
         public ICommand LoadInitialMapCommand { get => new DelegateCommand(LoadInitialMap); }
@@ -40,8 +40,10 @@ namespace Witcher3MapViewer.Core
 
         private void UpdateMap()
         {
-            _map.LoadMap(TileMapPathMap[SelectedMap]);
-            _map.LoadMarkers(MapMarkers.MapMarkerSpec);
+            WorldSetting worldSetting = TileMapPathMap[SelectedMap];
+            _map.LoadMap(worldSetting.TileSource);
+            foreach (var layer in _markerProvider.GetMarkerSpecs(worldSetting.ShortName))
+                _map.LoadMarkers(layer);
         }
 
         private void LoadInitialMap()

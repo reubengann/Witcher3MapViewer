@@ -51,8 +51,8 @@ namespace Witcher3MapViewer.Core
         {
             WorldSetting worldSetting = mapSettingsProvider.GetWorldSetting(worldShortName);
             return new Point(
-                worldPosition.x * worldSetting.Slope + worldSetting.XIntercept,
-                worldPosition.y * worldSetting.Slope + worldSetting.YIntercept
+                (worldPosition.x - worldSetting.XIntercept) / worldSetting.Slope,
+                (worldPosition.y - worldSetting.YIntercept) / worldSetting.Slope
                 );
         }
 

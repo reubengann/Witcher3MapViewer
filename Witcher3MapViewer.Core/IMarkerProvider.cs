@@ -2,6 +2,6 @@
 {
     public interface IMarkerProvider
     {
-        List<MarkerSpec> GetMarkerSpecs(string worldName);
+        List<MarkerSpec> GetMarkerSpecs(string worldShortName);
     }
 }

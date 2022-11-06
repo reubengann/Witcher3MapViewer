@@ -19,9 +19,13 @@ namespace WitcherMapViewerMark2.Test
             mockSettingsProvider.Setup(x => x.GetAll()).Returns(() =>
                 new List<WorldSetting>()
                 {
-                    new WorldSetting {Name = "White Orchard", TileSource = "wo.mbtiles"},
-                    new WorldSetting {Name = "Velen/Novigrad", TileSource = "vn.mbtiles"},
+                    new WorldSetting {Name = "Location 1",  ShortName = "loc1", TileSource = "l1.mbtiles"},
+                    new WorldSetting {Name = "Location 2", ShortName = "loc2", TileSource = "l2.mbtiles"},
                 });
+            mockMarkerProvider.Setup(x => x.GetMarkerSpecs("loc1")).Returns(() =>
+                new List<MarkerSpec>() { MapMarkers.MapMarkerSpec });
+            mockMarkerProvider.Setup(x => x.GetMarkerSpecs("loc2")).Returns(() =>
+                new List<MarkerSpec>() { MapMarkers.MapMarkerSpec });
             vm = new MainWindowViewModel(mockMap.Object, mockMarkerProvider.Object, mockSettingsProvider.Object);
         }
 
@@ -57,7 +61,7 @@ namespace WitcherMapViewerMark2.Test
         {
             vm.LoadInitialMapCommand.Execute(null);
             vm.SelectedMap = vm.ListOfMaps[1];
-            mockMap.Verify(m => m.LoadMap("vn.mbtiles"));
+            mockMap.Verify(m => m.LoadMap("l2.mbtiles"));
         }
 
         [Test]
@@ -71,7 +75,14 @@ namespace WitcherMapViewerMark2.Test
         public void LoadsMapsFromWorldSettings()
         {
             vm.LoadInitialMapCommand.Execute(null);
-            mockMap.Verify(m => m.LoadMap("wo.mbtiles"));
+            mockMap.Verify(m => m.LoadMap("l1.mbtiles"));
+        }
+
+        [Test]
+        public void GetsMarkersFromSettings()
+        {
+            vm.LoadInitialMapCommand.Execute(null);
+            mockMarkerProvider.Verify(x => x.GetMarkerSpecs("loc1"));
         }
     }
 }

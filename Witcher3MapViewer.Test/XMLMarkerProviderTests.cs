@@ -115,8 +115,8 @@ namespace Witcher3MapViewer.Test
             MemoryStream ms = new MemoryStream(Encoding.UTF8.GetBytes(mockFull));
             var p = new XMLMarkerProvider(ms, mockSettingsProvider.Object);
             var result = p.GetMarkerSpecs("WO");
-            double expectedX = 101 * 2 + 10;
-            double expectedY = -9 * 2 - 5;
+            double expectedX = (101.0 - 10.0) / 2.0;
+            double expectedY = (-9.0 + 5.0) / 2.0;
             Assert.That(result[0].WorldLocations[0].X, Is.EqualTo(expectedX).Within(0.00001));
             Assert.That(result[0].WorldLocations[0].Y, Is.EqualTo(expectedY).Within(0.00001));
         }

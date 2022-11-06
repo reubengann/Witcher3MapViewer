@@ -9,9 +9,6 @@
              d:DataContext="{d:DesignInstance local:MarkerToggleDesignTimeViewModel, IsDesignTimeCreatable=True}"
              d:Background="White"
              >
-    <UserControl.DataContext>
-        <local:MarkerToggleDesignTimeViewModel/>
-    </UserControl.DataContext>
     <UserControl.Resources>
         <HierarchicalDataTemplate x:Key="CheckBoxItemTemplate" ItemsSource="{Binding Children}">
             <StackPanel Orientation="Horizontal" Margin="0,0,0,5" IsEnabled="True">

@@ -23,7 +23,7 @@ namespace Witcher3MapViewer.Core
         public ICommand LoadInitialMapCommand { get => new DelegateCommand(LoadInitialMap); }
         public List<string> ListOfMaps { get; set; }
 
-
+        public MarkerToggleViewModel MarkerToggleViewModel { get; set; } = new MarkerToggleViewModel();
 
         private string _selectedMap = "";
 

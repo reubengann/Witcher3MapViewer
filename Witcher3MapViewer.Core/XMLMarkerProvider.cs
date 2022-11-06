@@ -39,7 +39,12 @@ namespace Witcher3MapViewer.Core
         private List<MarkerSpec> GroupMarkerTypes(MapPinWorldDAO worldDAO, string worldShortName)
         {
             ILookup<string, MapPinDAO>? groups = worldDAO.Pins.ToLookup(x => x.Type);
-            return groups.Select(x => new MarkerSpec(FindPathToIcon(x.Key), x.Select(p => ComputeMapPosition(p.Position, worldShortName)).ToList())).ToList();
+            return groups.Select(x => new MarkerSpec(
+                FindPathToIcon(x.Key),
+                x.Select(p => ComputeMapPosition(p.Position, worldShortName)).ToList(),
+                x.Key
+                )
+            ).ToList();
         }
 
         private string FindPathToIcon(string key)

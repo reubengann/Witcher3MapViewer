@@ -1,5 +1,4 @@
 using Moq;
-using Witcher3MapViewer;
 using Witcher3MapViewer.Core;
 
 namespace WitcherMapViewerMark2.Test
@@ -8,9 +7,15 @@ namespace WitcherMapViewerMark2.Test
 
     public class MainWindowTests
     {
-        MarkerSpec MapMarkerSpec = new MarkerSpec(
+        MarkerSpec RoadSign = new MarkerSpec(
             @"C:\repos\Witcher3MapViewer\Witcher3MapViewer\MarkerImages\RoadSign.png",
-            new List<Point> { new Point(0, 0) }
+            new List<Point> { new Point(0, 0) },
+            "RoadSign"
+            );
+        MarkerSpec PlaceOfPower = new MarkerSpec(
+            @"C:\repos\Witcher3MapViewer\Witcher3MapViewer\MarkerImages\PlaceOfPower.png",
+            new List<Point> { new Point(0, 0) },
+            "PlaceOfPower"
             );
 
         Mock<IMap> mockMap;
@@ -31,9 +36,9 @@ namespace WitcherMapViewerMark2.Test
                     new WorldSetting {Name = "Location 2", ShortName = "loc2", TileSource = "l2.mbtiles"},
                 });
             mockMarkerProvider.Setup(x => x.GetMarkerSpecs("loc1")).Returns(() =>
-                new List<MarkerSpec>() { MapMarkerSpec });
+                new List<MarkerSpec>() { RoadSign });
             mockMarkerProvider.Setup(x => x.GetMarkerSpecs("loc2")).Returns(() =>
-                new List<MarkerSpec>() { MapMarkerSpec });
+                new List<MarkerSpec>() { RoadSign });
             vm = new MainWindowViewModel(mockMap.Object, mockMarkerProvider.Object, mockSettingsProvider.Object);
         }
 
@@ -91,6 +96,18 @@ namespace WitcherMapViewerMark2.Test
         {
             vm.LoadInitialMapCommand.Execute(null);
             mockMarkerProvider.Verify(x => x.GetMarkerSpecs("loc1"));
+        }
+
+        [Test]
+        public void LoadsRoadSignLastIfPresent()
+        {
+            mockMarkerProvider.Setup(x => x.GetMarkerSpecs("loc1")).Returns(() =>
+                new List<MarkerSpec>() { RoadSign, PlaceOfPower });
+
+            int callOrder = 0;
+            mockMap.Setup(x => x.LoadMarkers(PlaceOfPower)).Callback(() => Assert.That(callOrder++, Is.EqualTo(0)));
+            mockMap.Setup(x => x.LoadMarkers(RoadSign)).Callback(() => Assert.That(callOrder++, Is.EqualTo(1)));
+            vm.LoadInitialMapCommand.Execute(null);
         }
     }
 }

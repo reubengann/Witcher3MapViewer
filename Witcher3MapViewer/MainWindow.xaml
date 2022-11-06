@@ -25,6 +25,6 @@
             ItemsSource="{Binding ListOfMaps}"
             SelectedItem="{Binding SelectedMap}"/>
 
-
+        <local:MarkerToggleControl/>
     </Grid>
 </Window>

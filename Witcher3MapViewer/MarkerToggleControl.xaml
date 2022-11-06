@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="Witcher3MapViewer.WPF.MarkerToggleControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Witcher3MapViewer.WPF"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+             d:DataContext="{d:DesignInstance local:MarkerToggleDesignTimeViewModel, IsDesignTimeCreatable=True}"
+             d:Background="White"
+             >
+    <UserControl.DataContext>
+        <local:MarkerToggleDesignTimeViewModel/>
+    </UserControl.DataContext>
+    <UserControl.Resources>
+        <HierarchicalDataTemplate x:Key="CheckBoxItemTemplate" ItemsSource="{Binding Children}">
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,5" IsEnabled="True">
+                <CheckBox Focusable="False" IsChecked="{Binding IsChecked}" VerticalAlignment="Center"
+                             
+                          />
+                <Image Source="{Binding SmallIconPath}" MinWidth="40" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Image.Effect>
+                        <DropShadowEffect ShadowDepth="1" BlurRadius="0"/>
+                    </Image.Effect>
+                </Image>
+                <TextBlock Text="{Binding Text}" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+            </StackPanel>
+        </HierarchicalDataTemplate>
+        <Style x:Key="TreeViewItemStyle" TargetType="TreeViewItem">
+            <Setter Property="IsExpanded" Value="True"/>
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <TreeView x:Name="itemChooser"
+                      Margin="10,10,0,10"
+                      HorizontalAlignment="Left"
+                      ItemContainerStyle="{StaticResource TreeViewItemStyle}"
+                      ItemsSource="{Binding Markers}"
+                      ItemTemplate="{StaticResource CheckBoxItemTemplate}" Padding="1,1,10,1"
+                      />
+    </Grid>
+</UserControl>

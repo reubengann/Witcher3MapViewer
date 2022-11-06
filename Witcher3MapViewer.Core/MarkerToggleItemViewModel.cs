@@ -10,6 +10,8 @@ namespace Witcher3MapViewer
 
         private bool? _isChecked = true;
         private readonly MarkerToggleItemViewModel? _parent;
+        private readonly IMap? map;
+        private readonly int layerNum;
 
         public bool? IsChecked
         {
@@ -18,12 +20,14 @@ namespace Witcher3MapViewer
         }
 
         public string SmallIconPath { get; set; }
-        public MarkerToggleItemViewModel(string text, string smallIconPath, MarkerToggleItemViewModel? parent)
+        public MarkerToggleItemViewModel(string text, string smallIconPath, MarkerToggleItemViewModel? parent, IMap? _map, int layerNum)
         {
             Text = text;
             Children = new ObservableCollection<MarkerToggleItemViewModel>();
             SmallIconPath = smallIconPath;
             _parent = parent;
+            map = _map;
+            this.layerNum = layerNum;
         }
 
         void SetIsChecked(bool? value, bool updateChildren, bool updateParent)
@@ -42,6 +46,9 @@ namespace Witcher3MapViewer
                 _parent.VerifyCheckState();
 
             OnPropertyChanged("IsChecked");
+
+            if (layerNum > 0)
+                map?.SetLayerVisibility(layerNum, (bool)(IsChecked == null ? false : IsChecked));
         }
 
         void VerifyCheckState()

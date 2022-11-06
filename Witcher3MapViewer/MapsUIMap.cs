@@ -48,6 +48,11 @@ namespace Witcher3MapViewer.WPF
             control.Map.Layers.Add(pointlayer);
         }
 
+        public void SetLayerVisibility(int layerNumber, bool visible)
+        {
+            control.Map.Layers[layerNumber].Enabled = visible;
+        }
+
         private void RegisterBitmap(string path)
         {
             using (FileStream fs = new FileStream(path, FileMode.Open))

@@ -18,12 +18,13 @@ namespace Witcher3MapViewer.Core
             List<WorldSetting> worldSettings = _mapSettingsProvider.GetAll();
             ListOfMaps = worldSettings.Select(x => x.Name).ToList();
             TileMapPathMap = worldSettings.ToDictionary(x => x.Name, x => x);
+            MarkerToggleViewModel = new MarkerToggleViewModel(_map);
         }
 
         public ICommand LoadInitialMapCommand { get => new DelegateCommand(LoadInitialMap); }
         public List<string> ListOfMaps { get; set; }
 
-        public MarkerToggleViewModel MarkerToggleViewModel { get; set; } = new MarkerToggleViewModel();
+        public MarkerToggleViewModel MarkerToggleViewModel { get; set; }
 
         private string _selectedMap = "";
 
@@ -45,6 +46,7 @@ namespace Witcher3MapViewer.Core
             _map.LoadMap(worldSetting.TileSource);
             MarkerSpec? roadsign = null;
             List<MarkerSpec> layers = _markerProvider.GetMarkerSpecs(worldSetting.ShortName);
+            int layerNumber = 1;
             foreach (var layer in layers)
             {
                 if (layer.type == "RoadSign")
@@ -52,7 +54,8 @@ namespace Witcher3MapViewer.Core
                 else
                 {
                     _map.LoadMarkers(layer);
-                    MarkerToggleViewModel.AddItemToRoot(layer.FullName, layer.ImagePath);
+                    MarkerToggleViewModel.AddItemToRoot(layer.FullName, layer.ImagePath, layerNumber);
+                    layerNumber++;
                 }
             }
             if (roadsign != null) _map.LoadMarkers(roadsign);

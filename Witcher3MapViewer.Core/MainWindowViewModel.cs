@@ -40,6 +40,7 @@ namespace Witcher3MapViewer.Core
 
         private void UpdateMap()
         {
+            MarkerToggleViewModel.Clear();
             WorldSetting worldSetting = TileMapPathMap[SelectedMap];
             _map.LoadMap(worldSetting.TileSource);
             MarkerSpec? roadsign = null;
@@ -47,7 +48,11 @@ namespace Witcher3MapViewer.Core
             {
                 if (layer.type == "RoadSign")
                     roadsign = layer;
-                else _map.LoadMarkers(layer);
+                else
+                {
+                    _map.LoadMarkers(layer);
+                    MarkerToggleViewModel.AddItemToRoot(layer.FullName, layer.ImagePath);
+                }
             }
             if (roadsign != null) _map.LoadMarkers(roadsign);
         }

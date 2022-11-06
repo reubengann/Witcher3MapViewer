@@ -10,12 +10,26 @@ namespace WitcherMapViewerMark2.Test
         MarkerSpec RoadSign = new MarkerSpec(
             @"C:\repos\Witcher3MapViewer\Witcher3MapViewer\MarkerImages\RoadSign.png",
             new List<Point> { new Point(0, 0) },
-            "RoadSign"
+            "RoadSign",
+            "Road sign"
             );
         MarkerSpec PlaceOfPower = new MarkerSpec(
             @"C:\repos\Witcher3MapViewer\Witcher3MapViewer\MarkerImages\PlaceOfPower.png",
             new List<Point> { new Point(0, 0) },
-            "PlaceOfPower"
+            "PlaceOfPower",
+            "Place of Power"
+            );
+        MarkerSpec Harbor = new MarkerSpec(
+            @"C:\repos\Witcher3MapViewer\Witcher3MapViewer\MarkerImages\Harbor.png",
+            new List<Point> { new Point(0, 0) },
+            "Harbor",
+            "Harbor"
+            );
+        MarkerSpec Herbalist = new MarkerSpec(
+            @"C:\repos\Witcher3MapViewer\Witcher3MapViewer\MarkerImages\Herbalist.png",
+            new List<Point> { new Point(0, 0) },
+            "Herbalist",
+            "Herbalist"
             );
 
         Mock<IMap> mockMap;
@@ -36,7 +50,7 @@ namespace WitcherMapViewerMark2.Test
                     new WorldSetting {Name = "Location 2", ShortName = "loc2", TileSource = "l2.mbtiles"},
                 });
             mockMarkerProvider.Setup(x => x.GetMarkerSpecs("loc1")).Returns(() =>
-                new List<MarkerSpec>() { RoadSign });
+                new List<MarkerSpec>() { RoadSign, PlaceOfPower });
             mockMarkerProvider.Setup(x => x.GetMarkerSpecs("loc2")).Returns(() =>
                 new List<MarkerSpec>() { RoadSign });
             vm = new MainWindowViewModel(mockMap.Object, mockMarkerProvider.Object, mockSettingsProvider.Object);
@@ -101,13 +115,36 @@ namespace WitcherMapViewerMark2.Test
         [Test]
         public void LoadsRoadSignLastIfPresent()
         {
-            mockMarkerProvider.Setup(x => x.GetMarkerSpecs("loc1")).Returns(() =>
-                new List<MarkerSpec>() { RoadSign, PlaceOfPower });
+
 
             int callOrder = 0;
             mockMap.Setup(x => x.LoadMarkers(PlaceOfPower)).Callback(() => Assert.That(callOrder++, Is.EqualTo(0)));
             mockMap.Setup(x => x.LoadMarkers(RoadSign)).Callback(() => Assert.That(callOrder++, Is.EqualTo(1)));
             vm.LoadInitialMapCommand.Execute(null);
+        }
+
+        [Test]
+        public void AddsMarkerLayersToToggleMenu()
+        {
+            mockMarkerProvider.Setup(x => x.GetMarkerSpecs("loc1")).Returns(() =>
+                new List<MarkerSpec>() { RoadSign, PlaceOfPower, Harbor, Herbalist });
+            vm.LoadInitialMapCommand.Execute(null);
+            Assert.That(vm.MarkerToggleViewModel.Markers[0].Children.Count, Is.EqualTo(3));
+        }
+
+        [Test]
+        public void ClearsToggleMenuOnNewLoad()
+        {
+            vm.LoadInitialMapCommand.Execute(null);
+            vm.SelectedMap = vm.ListOfMaps[1];
+            Assert.That(vm.MarkerToggleViewModel.Markers[0].Children.Count, Is.EqualTo(0));
+        }
+
+        [Test]
+        public void ToggleMenuShowsFullName()
+        {
+            vm.LoadInitialMapCommand.Execute(null);
+            Assert.That(vm.MarkerToggleViewModel.Markers[0].Children[0].Text, Is.EqualTo(PlaceOfPower.FullName));
         }
     }
 }

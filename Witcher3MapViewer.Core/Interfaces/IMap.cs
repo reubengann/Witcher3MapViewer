@@ -5,12 +5,14 @@
         public string ImagePath;
         public List<Point> WorldLocations;
         public string type;
+        public string FullName;
 
-        public MarkerSpec(string imagePath, List<Point> worldLocations, string type)
+        public MarkerSpec(string imagePath, List<Point> worldLocations, string type, string fullName)
         {
             ImagePath = imagePath;
             WorldLocations = worldLocations;
             this.type = type;
+            FullName = fullName;
         }
     }
 

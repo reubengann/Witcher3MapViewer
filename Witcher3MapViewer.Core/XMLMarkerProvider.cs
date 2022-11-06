@@ -8,6 +8,7 @@ namespace Witcher3MapViewer.Core
         private Dictionary<string, List<MarkerSpec>> Items;
         IconSettings iconSettings;
         Dictionary<string, string> filenameLookup;
+        Dictionary<string, string> nameLookup;
         private readonly IMapSettingsProvider mapSettingsProvider;
 
         public XMLMarkerProvider(Stream s, IMapSettingsProvider mapSettingsProvider)
@@ -19,13 +20,18 @@ namespace Witcher3MapViewer.Core
             if (readitems == null) throw new Exception();
             iconSettings = mapSettingsProvider.GetIconSettings();
             filenameLookup = new Dictionary<string, string>();
+            nameLookup = new Dictionary<string, string>();
             foreach (IconInfo? iconInfo in iconSettings.IconInfos)
             {
                 filenameLookup[iconInfo.InternalName] = iconInfo.Image;
+                nameLookup[iconInfo.InternalName] = iconInfo.GroupName;
                 if (iconInfo.Aliases != null)
                 {
                     foreach (string alias in iconInfo.Aliases)
+                    {
                         filenameLookup[alias] = iconInfo.Image;
+                        nameLookup[alias] = iconInfo.GroupName;
+                    }
 
                 }
             }
@@ -42,9 +48,15 @@ namespace Witcher3MapViewer.Core
             return groups.Select(x => new MarkerSpec(
                 FindPathToIcon(x.Key),
                 x.Select(p => ComputeMapPosition(p.Position, worldShortName)).ToList(),
-                x.Key
+                x.Key,
+                LookUpGroupName(x.Key)
                 )
             ).ToList();
+        }
+
+        private string LookUpGroupName(string key)
+        {
+            return nameLookup[key];
         }
 
         private string FindPathToIcon(string key)

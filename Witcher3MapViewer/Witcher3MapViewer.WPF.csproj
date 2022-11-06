@@ -32,4 +32,22 @@
     </Content>
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Maps\KaerMorhen.mbtiles">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Maps\Skellige.mbtiles">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Maps\Toussaint.mbtiles">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Maps\VelenNovigrad.mbtiles">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Maps\WhiteOrchard.mbtiles">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

@@ -19,8 +19,8 @@ namespace WitcherMapViewerMark2.Test
             mockSettingsProvider.Setup(x => x.GetAll()).Returns(() =>
                 new List<WorldSetting>()
                 {
-                    new WorldSetting {Name = "White Orchard"},
-                    new WorldSetting {Name = "Velen/Novigrad"},
+                    new WorldSetting {Name = "White Orchard", TileSource = "wo.mbtiles"},
+                    new WorldSetting {Name = "Velen/Novigrad", TileSource = "vn.mbtiles"},
                 });
             vm = new MainWindowViewModel(mockMap.Object, mockMarkerProvider.Object, mockSettingsProvider.Object);
         }
@@ -57,7 +57,7 @@ namespace WitcherMapViewerMark2.Test
         {
             vm.LoadInitialMapCommand.Execute(null);
             vm.SelectedMap = vm.ListOfMaps[1];
-            mockMap.Verify(m => m.LoadMap(MapInfo.TileMapPathMap[vm.ListOfMaps[1]]));
+            mockMap.Verify(m => m.LoadMap("vn.mbtiles"));
         }
 
         [Test]
@@ -70,7 +70,8 @@ namespace WitcherMapViewerMark2.Test
         [Test]
         public void LoadsMapsFromWorldSettings()
         {
-
+            vm.LoadInitialMapCommand.Execute(null);
+            mockMap.Verify(m => m.LoadMap("wo.mbtiles"));
         }
     }
 }

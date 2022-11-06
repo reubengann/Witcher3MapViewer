@@ -51,10 +51,7 @@ namespace Witcher3MapViewer.Core
         private Point ComputeMapPosition(MapPinPositionDAO worldPosition, string worldShortName)
         {
             WorldSetting worldSetting = mapSettingsProvider.GetWorldSetting(worldShortName);
-            return new Point(
-                (worldPosition.x - worldSetting.XIntercept) / worldSetting.Slope,
-                (worldPosition.y - worldSetting.YIntercept) / worldSetting.Slope
-                );
+            return RealToGameSpaceConversion.ToWorldSpace(new Point(worldPosition.x, worldPosition.y), worldSetting);
         }
 
         public List<MarkerSpec> GetMarkerSpecs(string worldName)

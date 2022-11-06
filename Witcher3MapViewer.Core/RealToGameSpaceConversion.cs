@@ -1,4 +1,4 @@
-﻿namespace Witcher3MapViewer
+﻿namespace Witcher3MapViewer.Core
 {
     public class Point
     {
@@ -12,27 +12,18 @@
         }
     }
 
-    public class RealToGameSpaceConversion
+    public static class RealToGameSpaceConversion
     {
-        private double Slope, InterceptX, InterceptY;
-
-        public RealToGameSpaceConversion(double slope, double interceptx, double intercepty)
+        public static Point ToGameSpace(Point realspace, WorldSetting worldSetting)
         {
-            Slope = slope;
-            InterceptX = interceptx;
-            InterceptY = intercepty;
+            return new Point(Math.Round(worldSetting.Slope * realspace.X + worldSetting.XIntercept),
+                Math.Round(worldSetting.Slope * realspace.Y + worldSetting.YIntercept));
         }
 
-        public Point ToGameSpace(Point realspace)
+        public static Point ToWorldSpace(Point gamespace, WorldSetting worldSetting)
         {
-            return new Point(Math.Round(Slope * realspace.X + InterceptX),
-                Math.Round(Slope * realspace.Y + InterceptY));
-        }
-
-        public Point ToWorldSpace(Point gamespace)
-        {
-            return new Point((gamespace.X - InterceptX) / Slope,
-                (gamespace.Y - InterceptY) / Slope);
+            return new Point((gamespace.X - worldSetting.XIntercept) / worldSetting.Slope,
+                (gamespace.Y - worldSetting.YIntercept) / worldSetting.Slope);
         }
     }
 }

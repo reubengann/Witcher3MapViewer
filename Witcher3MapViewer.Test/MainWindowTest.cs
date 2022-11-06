@@ -1,10 +1,18 @@
 using Moq;
+using Witcher3MapViewer;
 using Witcher3MapViewer.Core;
 
 namespace WitcherMapViewerMark2.Test
 {
+
+
     public class MainWindowTests
     {
+        MarkerSpec MapMarkerSpec = new MarkerSpec(
+            @"C:\repos\Witcher3MapViewer\Witcher3MapViewer\MarkerImages\RoadSign.png",
+            new List<Point> { new Point(0, 0) }
+            );
+
         Mock<IMap> mockMap;
         Mock<IMapSettingsProvider> mockSettingsProvider;
         Mock<IMarkerProvider> mockMarkerProvider;
@@ -23,9 +31,9 @@ namespace WitcherMapViewerMark2.Test
                     new WorldSetting {Name = "Location 2", ShortName = "loc2", TileSource = "l2.mbtiles"},
                 });
             mockMarkerProvider.Setup(x => x.GetMarkerSpecs("loc1")).Returns(() =>
-                new List<MarkerSpec>() { MapMarkers.MapMarkerSpec });
+                new List<MarkerSpec>() { MapMarkerSpec });
             mockMarkerProvider.Setup(x => x.GetMarkerSpecs("loc2")).Returns(() =>
-                new List<MarkerSpec>() { MapMarkers.MapMarkerSpec });
+                new List<MarkerSpec>() { MapMarkerSpec });
             vm = new MainWindowViewModel(mockMap.Object, mockMarkerProvider.Object, mockSettingsProvider.Object);
         }
 

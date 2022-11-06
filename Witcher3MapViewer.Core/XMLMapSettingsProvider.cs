@@ -6,26 +6,30 @@ namespace Witcher3MapViewer.Core
     {
         Dictionary<string, WorldSetting>? WorldSettings;
         private IconSettings? _iconSettings;
+        private List<WorldSetting> _allSettings;
 
         public XMLMapSettingsProvider(Stream s)
         {
             XmlSerializer serializer = new XmlSerializer(typeof(ApplicationSettingRootDAO));
             ApplicationSettingRootDAO? readitems = (ApplicationSettingRootDAO?)serializer.Deserialize(s);
+            _allSettings = new List<WorldSetting>();
             if (readitems == null) throw new Exception();
             if (readitems.worldsettings != null && readitems.worldsettings.Worlds != null)
             {
                 WorldSettings = new Dictionary<string, WorldSetting>();
                 foreach (WorldSettingDAO? item in readitems.worldsettings.Worlds)
                 {
-                    WorldSettings[item.ShortName] = new WorldSetting
+                    WorldSetting world = new WorldSetting
                     {
-                        Name = item.ShortName,
+                        Name = item.Name,
                         ShortName = item.ShortName,
                         Slope = item.conversionsetting.Slope,
                         XIntercept = item.conversionsetting.xintercept,
                         YIntercept = item.conversionsetting.yintercept,
                         TileSource = item.filename
                     };
+                    WorldSettings[item.ShortName] = world;
+                    _allSettings.Add(world);
                 }
             }
             if (readitems.iconsettings != null)
@@ -43,6 +47,8 @@ namespace Witcher3MapViewer.Core
                     }).ToList() ?? new List<IconInfo>()
                 };
             }
+
+
         }
 
         public IconSettings GetIconSettings()
@@ -55,6 +61,17 @@ namespace Witcher3MapViewer.Core
         {
             if (WorldSettings == null) throw new Exception();
             return WorldSettings[worldShortName];
+        }
+
+        public static XMLMapSettingsProvider FromFile(string filepath)
+        {
+            using FileStream sr = new FileStream(filepath, FileMode.Open);
+            return new XMLMapSettingsProvider(sr);
+        }
+
+        public List<WorldSetting> GetAll()
+        {
+            return _allSettings;
         }
     }
 

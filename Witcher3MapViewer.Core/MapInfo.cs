@@ -10,14 +10,5 @@
             { "Kaer Morhen" , @"C:\repos\Witcher3MapViewer\Witcher3MapViewer\Maps\KaerMorhen.mbtiles" },
             { "Toussaint" , @"C:\repos\Witcher3MapViewer\Witcher3MapViewer\Maps\Toussaint.mbtiles" },
         };
-
-        public static List<string> ListOfMaps { get; set; } = new List<string>
-        {
-            "White Orchard",
-            "Velen/Novigrad",
-            "Skellige",
-            "Kaer Morhen",
-            "Toussaint"
-        };
     }
 }

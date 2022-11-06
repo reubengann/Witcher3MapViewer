@@ -7,15 +7,18 @@ namespace Witcher3MapViewer.Core
     {
         private readonly IMap _map;
         private readonly IMarkerProvider _markerProvider;
+        private readonly IMapSettingsProvider _mapSettingsProvider;
 
-        public MainWindowViewModel(IMap map, IMarkerProvider markerProvider)
+        public MainWindowViewModel(IMap map, IMarkerProvider markerProvider, IMapSettingsProvider mapSettingsProvider)
         {
             _map = map;
             _markerProvider = markerProvider;
+            _mapSettingsProvider = mapSettingsProvider;
+            ListOfMaps = _mapSettingsProvider.GetAll().Select(x => x.Name).ToList();
         }
 
         public ICommand LoadInitialMapCommand { get => new DelegateCommand(LoadInitialMap); }
-        public List<string> ListOfMaps { get; set; } = new List<string>(MapInfo.ListOfMaps);
+        public List<string> ListOfMaps { get; set; }
 
 
 

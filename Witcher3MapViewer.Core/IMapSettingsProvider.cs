@@ -4,5 +4,6 @@
     {
         WorldSetting GetWorldSetting(string worldShortName);
         IconSettings GetIconSettings();
+        List<WorldSetting> GetAll();
     }
 }

@@ -60,6 +60,12 @@ namespace Witcher3MapViewer.Core
         {
             return Items[worldName];
         }
+
+        public static XMLMarkerProvider FromFile(string filepath, IMapSettingsProvider mapSettingsProvider)
+        {
+            using FileStream sr = new FileStream(filepath, FileMode.Open);
+            return new XMLMarkerProvider(sr, mapSettingsProvider);
+        }
     }
 
     [XmlRoot("mappins")]

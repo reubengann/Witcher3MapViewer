@@ -6,6 +6,7 @@ namespace WitcherMapViewerMark2.Test
     public class MainWindowTests
     {
         Mock<IMap> mockMap;
+        Mock<IMapSettingsProvider> mockSettingsProvider;
         Mock<IMarkerProvider> mockMarkerProvider;
         MainWindowViewModel vm;
 
@@ -14,7 +15,14 @@ namespace WitcherMapViewerMark2.Test
         {
             mockMap = new Mock<IMap>();
             mockMarkerProvider = new Mock<IMarkerProvider>();
-            vm = new MainWindowViewModel(mockMap.Object, mockMarkerProvider.Object);
+            mockSettingsProvider = new Mock<IMapSettingsProvider>();
+            mockSettingsProvider.Setup(x => x.GetAll()).Returns(() =>
+                new List<WorldSetting>()
+                {
+                    new WorldSetting {Name = "White Orchard"},
+                    new WorldSetting {Name = "Velen/Novigrad"},
+                });
+            vm = new MainWindowViewModel(mockMap.Object, mockMarkerProvider.Object, mockSettingsProvider.Object);
         }
 
         [Test]
@@ -25,9 +33,16 @@ namespace WitcherMapViewerMark2.Test
         }
 
         [Test]
-        public void MainWindow_HasAllFiveMapsAsOptions()
+        public void UsesSettingsToPopulateListOfMaps()
         {
-            Assert.That(vm.ListOfMaps.Count, Is.EqualTo(5));
+            mockSettingsProvider.Verify(x => x.GetAll());
+        }
+
+        [Test]
+        public void MainWindow_UsesMapSettingsToPopulateListOfMaps()
+        {
+
+            Assert.That(vm.ListOfMaps.Count, Is.EqualTo(2));
         }
 
         [Test]
@@ -41,8 +56,8 @@ namespace WitcherMapViewerMark2.Test
         public void WhenMapSelectionChanges_LoadsCorrespondingMap()
         {
             vm.LoadInitialMapCommand.Execute(null);
-            vm.SelectedMap = vm.ListOfMaps[2];
-            mockMap.Verify(m => m.LoadMap(MapInfo.TileMapPathMap[vm.ListOfMaps[2]]));
+            vm.SelectedMap = vm.ListOfMaps[1];
+            mockMap.Verify(m => m.LoadMap(MapInfo.TileMapPathMap[vm.ListOfMaps[1]]));
         }
 
         [Test]
@@ -50,6 +65,12 @@ namespace WitcherMapViewerMark2.Test
         {
             vm.LoadInitialMapCommand.Execute(null);
             mockMap.Verify(m => m.LoadMarkers(It.IsAny<MarkerSpec>()));
+        }
+
+        [Test]
+        public void LoadsMapsFromWorldSettings()
+        {
+
         }
     }
 }

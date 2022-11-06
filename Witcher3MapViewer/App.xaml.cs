@@ -1,5 +1,4 @@
-﻿using System.IO;
-using System.Windows;
+﻿using System.Windows;
 using Witcher3MapViewer.Core;
 
 namespace Witcher3MapViewer.WPF
@@ -13,17 +12,9 @@ namespace Witcher3MapViewer.WPF
         {
             MainWindow mainWindow = new MainWindow();
             MapsUIMap mapsUIMap = new MapsUIMap(mainWindow.MapControl);
-            XMLMapSettingsProvider mapSettingsProvider;
-            using (FileStream sr = new FileStream(@"C:\repos\Witcher3MapViewer\Witcher3MapViewer\Settings.xml", FileMode.Open))
-            {
-                mapSettingsProvider = new XMLMapSettingsProvider(sr);
-            }
-            XMLMarkerProvider markerProvider;
-            using (FileStream sr = new FileStream(@"C:\repos\Witcher3MapViewer\Witcher3MapViewer\MapPins.xml", FileMode.Open))
-            {
-                markerProvider = new XMLMarkerProvider(sr, mapSettingsProvider);
-            }
-            mainWindow.DataContext = new MainWindowViewModel(mapsUIMap, markerProvider);
+            XMLMapSettingsProvider mapSettingsProvider = XMLMapSettingsProvider.FromFile("Settings.xml");
+            XMLMarkerProvider markerProvider = XMLMarkerProvider.FromFile("MapPins.xml", mapSettingsProvider);
+            mainWindow.DataContext = new MainWindowViewModel(mapsUIMap, markerProvider, mapSettingsProvider);
             mainWindow.Show();
         }
     }

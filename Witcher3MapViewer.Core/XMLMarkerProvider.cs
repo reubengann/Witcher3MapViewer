@@ -9,6 +9,7 @@ namespace Witcher3MapViewer.Core
         IconSettings iconSettings;
         Dictionary<string, string> filenameLookup;
         Dictionary<string, string> nameLookup;
+        private Dictionary<string, string> canonicalNameLookup;
         private readonly IMapSettingsProvider mapSettingsProvider;
 
         public XMLMarkerProvider(Stream s, IMapSettingsProvider mapSettingsProvider)
@@ -21,16 +22,19 @@ namespace Witcher3MapViewer.Core
             iconSettings = mapSettingsProvider.GetIconSettings();
             filenameLookup = new Dictionary<string, string>();
             nameLookup = new Dictionary<string, string>();
+            canonicalNameLookup = new Dictionary<string, string>();
             foreach (IconInfo? iconInfo in iconSettings.IconInfos)
             {
                 filenameLookup[iconInfo.InternalName] = iconInfo.Image;
                 nameLookup[iconInfo.InternalName] = iconInfo.GroupName;
+                canonicalNameLookup[iconInfo.InternalName] = iconInfo.InternalName;
                 if (iconInfo.Aliases != null)
                 {
                     foreach (string alias in iconInfo.Aliases)
                     {
                         filenameLookup[alias] = iconInfo.Image;
                         nameLookup[alias] = iconInfo.GroupName;
+                        canonicalNameLookup[alias] = iconInfo.InternalName;
                     }
 
                 }
@@ -44,7 +48,8 @@ namespace Witcher3MapViewer.Core
 
         private List<MarkerSpec> GroupMarkerTypes(MapPinWorldDAO worldDAO, string worldShortName)
         {
-            ILookup<string, MapPinDAO>? groups = worldDAO.Pins.ToLookup(x => x.Type);
+            //type maps to InternalName or Alias
+            ILookup<string, MapPinDAO>? groups = worldDAO.Pins.ToLookup(x => canonicalNameLookup[x.Type]);
             return groups.Select(x => new MarkerSpec(
                 FindPathToIcon(x.Key),
                 x.Select(p => ComputeMapPosition(p.Position, worldShortName)).ToList(),

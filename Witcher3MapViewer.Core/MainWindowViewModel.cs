@@ -44,7 +44,8 @@ namespace Witcher3MapViewer.Core
             WorldSetting worldSetting = TileMapPathMap[SelectedMap];
             _map.LoadMap(worldSetting.TileSource);
             MarkerSpec? roadsign = null;
-            foreach (var layer in _markerProvider.GetMarkerSpecs(worldSetting.ShortName))
+            List<MarkerSpec> layers = _markerProvider.GetMarkerSpecs(worldSetting.ShortName);
+            foreach (var layer in layers)
             {
                 if (layer.type == "RoadSign")
                     roadsign = layer;

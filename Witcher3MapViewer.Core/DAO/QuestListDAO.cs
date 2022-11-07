@@ -3,10 +3,7 @@ using System.Xml.Serialization;
 
 namespace Witcher3MapViewer.Core.DAO
 {
-    public enum QuestStatusState
-    {
-        NotFound = 0, Inactive = 1, Active = 2, Failed = 3, Success = 4
-    }
+
 
     [XmlRoot("quests")]
     public class QuestListDAO

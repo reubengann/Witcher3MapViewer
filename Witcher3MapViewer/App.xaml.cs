@@ -14,6 +14,7 @@ namespace Witcher3MapViewer.WPF
             MapsUIMap mapsUIMap = new MapsUIMap(mainWindow.MapControl);
             XMLMapSettingsProvider mapSettingsProvider = XMLMapSettingsProvider.FromFile("Settings.xml");
             XMLMarkerProvider markerProvider = XMLMarkerProvider.FromFile("MapPins.xml", mapSettingsProvider);
+            XMLQuestListProvider questListProvider = XMLQuestListProvider.FromFile("Quests.xml");
             mainWindow.DataContext = new MainWindowViewModel(mapsUIMap, markerProvider, mapSettingsProvider);
             mainWindow.Show();
         }

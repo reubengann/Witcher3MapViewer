@@ -38,7 +38,7 @@ namespace Witcher3MapViewer.Core
                 LevelRequirement = item.LevelRequirement,
                 World = item.World,
                 Name = item.Name,
-                GUID = item.GUID.Value,
+                GUID = item.GUID?.Value ?? "",
 
             };
             if (item.Reward != null)
@@ -59,6 +59,10 @@ namespace Witcher3MapViewer.Core
                         {
                             quest.AvailableIfAny.Any.Add(reference.Value);
                         }
+                        else if (reference.ActiveState == QuestStatusState.Active)
+                        {
+                            quest.AvailableIfAny.Active.Add(reference.Value);
+                        }
                         else
                         {
                             throw new NotImplementedException();
@@ -72,13 +76,15 @@ namespace Witcher3MapViewer.Core
                 quest.DiscoverPrompt = new QuestDiscoverPrompt
                 {
                     Info = prompt.Info,
-                    Location = new QuestDiscoverLocation
+
+                };
+                if (prompt.DiscoverPosition != null)
+                    quest.DiscoverPrompt.Location = new QuestDiscoverLocation
                     {
                         WorldCode = prompt.DiscoverPosition.World,
                         X = prompt.DiscoverPosition.X,
                         Y = prompt.DiscoverPosition.Y
-                    }
-                };
+                    };
             }
             if (item.ObjectivesAsRead != null)
             {
@@ -107,6 +113,8 @@ namespace Witcher3MapViewer.Core
                 foreach (var c in item.HideConditions)
                 {
                     if (c.ActiveState == QuestStatusState.Active)
+                        quest.HideIfAny.Active.Add(c.Value);
+                    else if (c.ActiveState == QuestStatusState.Success)
                         quest.HideIfAny.Success.Add(c.Value);
                     else
                     {
@@ -153,9 +161,23 @@ namespace Witcher3MapViewer.Core
                     return QuestType.SideQuest;
                 case "contract":
                     return QuestType.Contract;
+                case "treasure":
+                    return QuestType.Treasure;
+                case "event":
+                    return QuestType.Event;
+                case "race":
+                    return QuestType.Race;
+                case "endgame":
+                    return QuestType.EndGame;
                 default:
                     throw new NotImplementedException();
             }
+        }
+
+        public static XMLQuestListProvider FromFile(string filepath)
+        {
+            using FileStream sr = new FileStream(filepath, FileMode.Open);
+            return new XMLQuestListProvider(sr);
         }
     }
 }

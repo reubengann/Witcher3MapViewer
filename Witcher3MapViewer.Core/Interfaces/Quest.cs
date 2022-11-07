@@ -6,7 +6,11 @@
         Unknown,
         Main,
         SideQuest,
-        Contract
+        Contract,
+        Treasure,
+        Event,
+        Race,
+        EndGame
     }
     public class Quest
     {
@@ -37,7 +41,7 @@
     public class QuestDiscoverPrompt
     {
         public string Info { get; set; } = default!;
-        public QuestDiscoverLocation Location { get; set; } = default!;
+        public QuestDiscoverLocation? Location { get; set; } = default!;
     }
 
     public class QuestDiscoverLocation
@@ -51,6 +55,7 @@
     {
         public List<string> Success { get; set; } = new List<string>();
         public List<string> Any { get; set; } = new List<string>();
+        public List<string> Active { get; internal set; } = new List<string>();
     }
 
     public class QuestReward

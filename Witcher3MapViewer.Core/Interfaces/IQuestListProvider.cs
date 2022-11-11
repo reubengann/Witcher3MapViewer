@@ -3,5 +3,6 @@
     public interface IQuestListProvider
     {
         List<Quest> GetAllQuests();
+        Advent FindAdvent(string guid);
     }
 }

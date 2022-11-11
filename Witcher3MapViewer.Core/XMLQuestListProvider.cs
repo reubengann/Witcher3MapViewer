@@ -6,6 +6,7 @@ namespace Witcher3MapViewer.Core
     public class XMLQuestListProvider : IQuestListProvider
     {
         private readonly List<Quest> quests;
+        private Dictionary<string, Advent> Index;
 
         public List<Quest> GetAllQuests()
         {
@@ -17,7 +18,10 @@ namespace Witcher3MapViewer.Core
             XmlSerializer serializer = new XmlSerializer(typeof(QuestListDAO));
             QuestListDAO? readitems = (QuestListDAO?)serializer.Deserialize(s);
             if (readitems == null) throw new Exception();
+            Index = new Dictionary<string, Advent>();
+
             quests = new List<Quest>();
+
             if (readitems.Quests != null)
             {
                 foreach (QuestDAO? item in readitems.Quests)
@@ -25,9 +29,26 @@ namespace Witcher3MapViewer.Core
                     Quest quest = ExtractQuest(item);
 
                     quests.Add(quest);
+                    Index[quest.GUID] = quest;
+                }
+            }
+            if (readitems.Outcomes != null)
+            {
+                foreach (QuestDAO? item in readitems.Outcomes)
+                {
+                    Outcome outcome = new Outcome
+                    {
+                        GUID = item.GUID.Value,
+                        UniqueID = item.UniqueID,
+                        Name = item.Name
+                    };
+                    Index[outcome.GUID] = outcome;
+                    
                 }
             }
         }
+
+        
 
         private Quest ExtractQuest(QuestDAO item)
         {
@@ -178,6 +199,11 @@ namespace Witcher3MapViewer.Core
         {
             using FileStream sr = new FileStream(filepath, FileMode.Open);
             return new XMLQuestListProvider(sr);
+        }
+
+        public Advent FindAdvent(string guid)
+        {
+            return Index[guid];
         }
     }
 }

@@ -16,14 +16,19 @@
         Race,
         EndGame
     }
-    public class Quest
+
+    public abstract class Advent
     {
+        public int UniqueID { get; set; }
+        public string GUID { get; set; } = default!;
         public string Name { get; set; } = default!;
+    }
+
+    public class Quest : Advent
+    {
         public QuestType QuestType { get; set; }
         public int LevelRequirement { get; set; }
         public string World { get; set; } = default!;
-        public int UniqueID { get; set; }
-        public string GUID { get; set; } = default!;
         public QuestReward? Reward { get; set; }
         public QuestConditions AvailableIfAny { get; set; } = new QuestConditions();
         public QuestConditions HideIfAny { get; set; } = new QuestConditions();
@@ -32,6 +37,11 @@
         public QuestDiscoverPrompt? DiscoverPrompt { get; set; }
         public List<QuestObjective>? Objectives { get; set; }
         public List<Quest>? Subquests { get; set; }
+
+    }
+
+    public class Outcome : Advent
+    {
 
     }
 

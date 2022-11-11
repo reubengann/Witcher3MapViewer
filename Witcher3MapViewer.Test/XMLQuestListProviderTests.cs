@@ -82,7 +82,10 @@ namespace Witcher3MapViewer.Test
 <hideif>
 <GUID state=""JS_Active"">3D38A3BB-43644405-D5D87083-7731411C</GUID>
 </hideif>
-</quest></quests>";
+</quest><outcome id=""450"">
+<name>Killed Gaetan in Where the Cat and Wolf Play</name>
+<GUID>3D38A3BB-43644405-D5D87083-7731411C</GUID>
+</outcome></quests>";
 
         string mockWithStrict = @"<quests><quest type=""side"" world=""NO, SK"" level=""11"" id=""133"">
 <name>Following the Thread</name>
@@ -172,7 +175,7 @@ namespace Witcher3MapViewer.Test
             MemoryStream ms = new MemoryStream(Encoding.UTF8.GetBytes(mockWithHide));
             var reader = new XMLQuestListProvider(ms);
             var result = reader.GetAllQuests()[0];
-            Assert.That(result.HideIfAny.Success.Count, Is.EqualTo(1));
+            Assert.That(result.HideIfAny.Active.Count, Is.EqualTo(1));
         }
 
         [Test]
@@ -191,6 +194,15 @@ namespace Witcher3MapViewer.Test
             var reader = new XMLQuestListProvider(ms);
             var result = reader.GetAllQuests()[0];
             Assert.That(result.AutomaticallyDoneIfConditions.Success.Count, Is.EqualTo(1));
+        }
+
+        [Test]
+        public void WhenHasOutcomeLinkAddsIt()
+        {
+            MemoryStream ms = new MemoryStream(Encoding.UTF8.GetBytes(mockWithHide));
+            var reader = new XMLQuestListProvider(ms);
+            var result = reader.GetAllQuests()[0];
+            Assert.That(reader.FindAdvent(result.HideIfAny.Active[0]).GUID, Is.EqualTo("3D38A3BB-43644405-D5D87083-7731411C"));
         }
     }
 }

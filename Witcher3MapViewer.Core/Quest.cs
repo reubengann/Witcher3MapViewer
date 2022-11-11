@@ -38,6 +38,8 @@
         public List<QuestObjective>? Objectives { get; set; }
         public List<Quest>? Subquests { get; set; }
 
+        public bool HasAnyConditions => AvailableIfAny.HasAny || HideIfAny.HasAny || RequiredStrictConditions.HasAny;
+
     }
 
     public class Outcome : Advent
@@ -70,6 +72,8 @@
         public List<string> Success { get; set; } = new List<string>();
         public List<string> Any { get; set; } = new List<string>();
         public List<string> Active { get; internal set; } = new List<string>();
+
+        public bool HasAny => Any.Count > 0 || Success.Count > 0 || Active.Count > 0;
     }
 
     public class QuestReward

@@ -21,5 +21,6 @@
         void LoadMap(string path);
         void LoadMarkers(MarkerSpec markerSpec);
         void SetLayerVisibility(int layerNumber, bool visible);
+        void CenterMap(double x, double y);
     }
 }

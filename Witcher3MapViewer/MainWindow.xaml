@@ -15,6 +15,11 @@
     </i:Interaction.Triggers>
     <Grid>
         <map:MapControl x:Name="MapControl"/>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
         <ComboBox 
             HorizontalAlignment="Right"
             VerticalAlignment="Bottom"
@@ -23,8 +28,12 @@
             Margin="10"
             VerticalContentAlignment="Center"
             ItemsSource="{Binding ListOfMaps}"
-            SelectedItem="{Binding SelectedMap}"/>
-        <Expander Width="Auto" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0" FlowDirection="RightToLeft">
+            SelectedItem="{Binding SelectedMap}"
+            Grid.Column="1"/>
+        <Expander Width="Auto" HorizontalAlignment="Right" 
+                  VerticalAlignment="Top" Margin="0" 
+                  FlowDirection="RightToLeft"
+                  Grid.Column="1">
             <Expander.Header>
                 <Border>
                     <TextBlock Foreground="White" Background="Transparent" Text="Toggle markers" />
@@ -32,6 +41,14 @@
             </Expander.Header>
             <local:MarkerToggleControl DataContext="{Binding MarkerToggleViewModel}"/>
         </Expander>
-        <local:QuestChecklist DataContext="{Binding QuestListViewModel}"/>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="8*"/>
+                </Grid.RowDefinitions>
+                <local:QuestChecklist Grid.Row="1"  VerticalAlignment="Stretch" DataContext="{Binding QuestListViewModel}"/>
+            </Grid>
+        </Grid>
     </Grid>
 </Window>

@@ -11,6 +11,7 @@ namespace Witcher3MapViewer.Core
         private readonly IQuestListProvider _questListProvider;
         private readonly IQuestAvailabilityProvider _availabilityProvider;
         private readonly Dictionary<string, WorldSetting> TileMapPathMap;
+        Dictionary<string, string> shortToLongNameMap;
 
         public MainWindowViewModel(IMap map,
             IMarkerProvider markerProvider,
@@ -24,10 +25,29 @@ namespace Witcher3MapViewer.Core
             _questListProvider = questListProvider;
             _availabilityProvider = availabilityProvider;
             List<WorldSetting> worldSettings = _mapSettingsProvider.GetAll();
+            shortToLongNameMap = worldSettings.ToDictionary(x => x.ShortName, x => x.Name);
             ListOfMaps = worldSettings.Select(x => x.Name).ToList();
             TileMapPathMap = worldSettings.ToDictionary(x => x.Name, x => x);
             MarkerToggleViewModel = new MarkerToggleViewModel(_map);
             QuestListViewModel = new QuestListViewModel(questListProvider.GetAllQuests(), availabilityProvider);
+            QuestListViewModel.ItemSelectedChanged += QuestListViewModel_ItemSelectedChanged;
+        }
+
+        private void QuestListViewModel_ItemSelectedChanged(QuestViewModel obj)
+        {
+            var longName = shortToLongNameMap[obj._quest.World];
+            if (SelectedMap != longName)
+            {
+                SelectedMap = longName;
+            }
+            var quest = obj._quest;
+            if (quest.DiscoverPrompt == null) return;
+            var p = quest.DiscoverPrompt;
+            if (p.Location != null)
+            {
+                var worldpoint = RealToGameSpaceConversion.ToWorldSpace(new Point(p.Location.X, p.Location.Y), TileMapPathMap[SelectedMap]);
+                _map.CenterMap(worldpoint.X, worldpoint.Y);
+            }
         }
 
         public ICommand LoadInitialMapCommand { get => new DelegateCommand(LoadInitialMap); }

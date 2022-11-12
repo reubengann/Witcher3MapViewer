@@ -63,5 +63,10 @@ namespace Witcher3MapViewer.WPF
                 IconPathToBitmapRegistryIdMap[path] = id;
             }
         }
+
+        public void CenterMap(double x, double y)
+        {
+            control.Navigator.NavigateTo(new Mapsui.Geometries.Point(x, y), control.Map.Resolutions[3], 1000);
+        }
     }
 }

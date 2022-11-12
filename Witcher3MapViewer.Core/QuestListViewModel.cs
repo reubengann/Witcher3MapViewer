@@ -4,6 +4,8 @@ namespace Witcher3MapViewer.Core
 {
     public class QuestListViewModel : BaseViewModel
     {
+        public event Action<QuestViewModel>? ItemSelectedChanged;
+
         ObservableCollection<QuestViewModel> _currentQuests;
         public ObservableCollection<QuestViewModel> CurrentQuests { get { return _currentQuests; } }
 
@@ -13,7 +15,15 @@ namespace Witcher3MapViewer.Core
                 currentQuests.Select(q => new QuestViewModel(q, questAvailabilityProvider, null))
                 );
             foreach (var qvm in _currentQuests)
+            {
                 qvm.ItemWasChanged += RefreshVisible;
+                qvm.SelectedWasChanged += ChildSelectedChanged;
+            }
+        }
+
+        private void ChildSelectedChanged(QuestViewModel obj)
+        {
+            ItemSelectedChanged?.Invoke(obj);
         }
 
         private void RefreshVisible()
@@ -30,6 +40,7 @@ namespace Witcher3MapViewer.Core
         public Quest _quest;
         private readonly IQuestAvailabilityProvider _questAvailabilityProvider;
         public event Action? ItemWasChanged;
+        public event Action<QuestViewModel>? SelectedWasChanged;
 
         public string Name => _quest.Name;
         public int SuggestedLevel => _quest.LevelRequirement;
@@ -80,6 +91,7 @@ namespace Witcher3MapViewer.Core
             {
                 _isSelected = value;
                 OnPropertyChanged(nameof(IsSelected));
+                SelectedWasChanged?.Invoke(this);
             }
         }
 

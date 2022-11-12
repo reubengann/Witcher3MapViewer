@@ -32,5 +32,6 @@
             </Expander.Header>
             <local:MarkerToggleControl DataContext="{Binding MarkerToggleViewModel}"/>
         </Expander>
+        <local:QuestChecklist DataContext="{Binding QuestListViewModel}"/>
     </Grid>
 </Window>

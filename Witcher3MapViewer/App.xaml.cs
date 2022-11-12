@@ -15,7 +15,8 @@ namespace Witcher3MapViewer.WPF
             XMLMapSettingsProvider mapSettingsProvider = XMLMapSettingsProvider.FromFile("Settings.xml");
             XMLMarkerProvider markerProvider = XMLMarkerProvider.FromFile("MapPins.xml", mapSettingsProvider);
             XMLQuestListProvider questListProvider = XMLQuestListProvider.FromFile("Quests.xml");
-            mainWindow.DataContext = new MainWindowViewModel(mapsUIMap, markerProvider, mapSettingsProvider);
+            QuestAvailabilityProvider availabilityProvider = new QuestAvailabilityProvider();
+            mainWindow.DataContext = new MainWindowViewModel(mapsUIMap, markerProvider, mapSettingsProvider, questListProvider, availabilityProvider);
             mainWindow.Show();
         }
     }

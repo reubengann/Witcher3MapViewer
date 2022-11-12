@@ -36,7 +36,7 @@
         public QuestConditions AutomaticallyDoneIfConditions { get; set; } = new QuestConditions();
         public QuestDiscoverPrompt? DiscoverPrompt { get; set; }
         public List<QuestObjective>? Objectives { get; set; }
-        public List<Quest>? Subquests { get; set; }
+        public List<Quest> Subquests { get; set; } = new List<Quest>();
 
         public bool HasAnyConditions => AvailableIfAny.HasAny || HideIfAny.HasAny || RequiredStrictConditions.HasAny;
 

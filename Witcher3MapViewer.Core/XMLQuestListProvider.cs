@@ -43,12 +43,12 @@ namespace Witcher3MapViewer.Core
                         Name = item.Name
                     };
                     Index[outcome.GUID] = outcome;
-                    
+
                 }
             }
         }
 
-        
+
 
         private Quest ExtractQuest(QuestDAO item)
         {
@@ -121,7 +121,6 @@ namespace Witcher3MapViewer.Core
             }
             if (item.SubquestsAsRead != null)
             {
-                quest.Subquests = new List<Quest>();
                 foreach (var subquestDAO in item.SubquestsAsRead)
                 {
                     var subquest = ExtractQuest(subquestDAO);

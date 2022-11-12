@@ -1,8 +1,9 @@
 ﻿namespace Witcher3MapViewer.Core
 {
-    internal interface IQuestAvailabilityProvider
+    public interface IQuestAvailabilityProvider
     {
         bool IsQuestAvailable(Quest q);
-        void SetState(string guid, QuestStatusState state);
+        void SetState(string guid, QuestStatusState? state);
+        QuestStatusState GetState(string guid);
     }
 }

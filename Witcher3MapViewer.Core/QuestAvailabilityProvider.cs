@@ -4,6 +4,12 @@
     {
         private Dictionary<string, QuestStatusState> _statuses = new Dictionary<string, QuestStatusState>();
 
+        public QuestStatusState GetState(string guid)
+        {
+            if (!_statuses.ContainsKey(guid)) return QuestStatusState.NotFound;
+            return _statuses[guid];
+        }
+
         public bool IsQuestAvailable(Quest q)
         {
             if (!q.HasAnyConditions) return true;
@@ -15,9 +21,11 @@
             return false;
         }
 
-        public void SetState(string guid, QuestStatusState state)
+        public void SetState(string guid, QuestStatusState? state)
         {
-            _statuses[guid] = state;
+            if (state == null)
+                _statuses.Remove(guid);
+            else _statuses[guid] = (QuestStatusState)state;
         }
     }
 }

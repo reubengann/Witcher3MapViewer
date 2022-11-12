@@ -35,6 +35,8 @@ namespace WitcherMapViewerMark2.Test
         Mock<IMap> mockMap;
         Mock<IMapSettingsProvider> mockSettingsProvider;
         Mock<IMarkerProvider> mockMarkerProvider;
+        Mock<IQuestAvailabilityProvider> mockQuestAvailabilityProvider;
+        Mock<IQuestListProvider> mockQuestListProvider;
         MainWindowViewModel vm;
 
         [SetUp]
@@ -53,7 +55,10 @@ namespace WitcherMapViewerMark2.Test
                 new List<MarkerSpec>() { RoadSign, PlaceOfPower });
             mockMarkerProvider.Setup(x => x.GetMarkerSpecs("loc2")).Returns(() =>
                 new List<MarkerSpec>() { RoadSign });
-            vm = new MainWindowViewModel(mockMap.Object, mockMarkerProvider.Object, mockSettingsProvider.Object);
+            mockQuestAvailabilityProvider = new Mock<IQuestAvailabilityProvider>();
+            mockQuestListProvider = new Mock<IQuestListProvider>();
+            vm = new MainWindowViewModel(mockMap.Object, mockMarkerProvider.Object,
+                mockSettingsProvider.Object, mockQuestListProvider.Object, mockQuestAvailabilityProvider.Object);
         }
 
         [Test]

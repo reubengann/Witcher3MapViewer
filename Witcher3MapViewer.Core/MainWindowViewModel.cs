@@ -8,23 +8,33 @@ namespace Witcher3MapViewer.Core
         private readonly IMap _map;
         private readonly IMarkerProvider _markerProvider;
         private readonly IMapSettingsProvider _mapSettingsProvider;
+        private readonly IQuestListProvider _questListProvider;
+        private readonly IQuestAvailabilityProvider _availabilityProvider;
         private readonly Dictionary<string, WorldSetting> TileMapPathMap;
 
-        public MainWindowViewModel(IMap map, IMarkerProvider markerProvider, IMapSettingsProvider mapSettingsProvider)
+        public MainWindowViewModel(IMap map,
+            IMarkerProvider markerProvider,
+            IMapSettingsProvider mapSettingsProvider,
+            IQuestListProvider questListProvider,
+            IQuestAvailabilityProvider availabilityProvider)
         {
             _map = map;
             _markerProvider = markerProvider;
             _mapSettingsProvider = mapSettingsProvider;
+            _questListProvider = questListProvider;
+            _availabilityProvider = availabilityProvider;
             List<WorldSetting> worldSettings = _mapSettingsProvider.GetAll();
             ListOfMaps = worldSettings.Select(x => x.Name).ToList();
             TileMapPathMap = worldSettings.ToDictionary(x => x.Name, x => x);
             MarkerToggleViewModel = new MarkerToggleViewModel(_map);
+            QuestListViewModel = new QuestListViewModel(questListProvider.GetAllQuests(), availabilityProvider);
         }
 
         public ICommand LoadInitialMapCommand { get => new DelegateCommand(LoadInitialMap); }
         public List<string> ListOfMaps { get; set; }
 
         public MarkerToggleViewModel MarkerToggleViewModel { get; set; }
+        public QuestListViewModel QuestListViewModel { get; set; }
 
         private string _selectedMap = "";
 

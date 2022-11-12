@@ -4,6 +4,8 @@ namespace Witcher3MapViewer.Test
 {
     public class QuestAvailabilityProviderTest
     {
+        QuestAvailabilityProvider provider;
+
         Quest questWithNoDependency = new Quest
         {
             Name = "First Quest",
@@ -27,29 +29,34 @@ namespace Witcher3MapViewer.Test
         [SetUp]
         public void SetUp()
         {
+            provider = new QuestAvailabilityProvider();
             questWithDependency.AvailableIfAny.Success.Add("0AE82268-4FFF5D8D-4A219CB4-11E480F8");
         }
 
         [Test]
         public void ReturnsTrueOnAnyQuestWithNoDependencies()
         {
-            QuestAvailabilityProvider provider = new QuestAvailabilityProvider();
             Assert.That(provider.IsQuestAvailable(questWithNoDependency), Is.True);
         }
 
         [Test]
         public void QuestWithUnmetDependenciesReturnsFalse()
         {
-            QuestAvailabilityProvider provider = new QuestAvailabilityProvider();
             Assert.That(provider.IsQuestAvailable(questWithDependency), Is.False);
         }
 
         [Test]
-        public void QuestWithMmetDependenciesReturnsFalse()
+        public void QuestWithMetDependenciesReturnsTrue()
         {
-            QuestAvailabilityProvider provider = new QuestAvailabilityProvider();
             provider.SetState(questWithNoDependency.GUID, QuestStatusState.Success);
             Assert.That(provider.IsQuestAvailable(questWithDependency), Is.True);
+        }
+
+        [Test]
+        public void WhenStateIsActiveButSuccessNeededReturnsFalse()
+        {
+            provider.SetState(questWithNoDependency.GUID, QuestStatusState.Active);
+            Assert.That(provider.IsQuestAvailable(questWithDependency), Is.False);
         }
     }
 }

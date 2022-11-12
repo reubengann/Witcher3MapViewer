@@ -36,7 +36,15 @@ namespace Witcher3MapViewer.Core
         public int PlayerLevel => 0;
         bool? _isSelected = false;
 
-        public bool Visible => _questAvailabilityProvider.IsQuestAvailable(_quest);
+        public bool Visible
+        {
+            get
+            {
+                if (_parent != null)
+                    return _questAvailabilityProvider.IsQuestAvailable(_parent._quest);
+                return _questAvailabilityProvider.IsQuestAvailable(_quest);
+            }
+        }
 
 
         public QuestViewModel(Quest quest, IQuestAvailabilityProvider questAvailabilityProvider, QuestViewModel? parent)

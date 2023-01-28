@@ -4,6 +4,8 @@
     {
         private Dictionary<string, QuestStatusState> _statuses = new Dictionary<string, QuestStatusState>();
 
+        public event Action AvailabilityChanged;
+
         public QuestStatusState GetState(string guid)
         {
             if (!_statuses.ContainsKey(guid)) return QuestStatusState.NotFound;

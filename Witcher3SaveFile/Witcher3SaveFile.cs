@@ -1700,20 +1700,20 @@ namespace SaveFile
             return Status;
         }
 
-        QuestStatusState ParseStatusStateFromString(string statusstring)
+        FileQuestStatusState ParseStatusStateFromString(string statusstring)
         {
             switch (statusstring)
             {
                 case "JS_Success":
-                    return QuestStatusState.Success;
+                    return FileQuestStatusState.Success;
                 case "JS_Failed":
-                    return QuestStatusState.Failed;
+                    return FileQuestStatusState.Failed;
                 case "JS_Inactive":
-                    return QuestStatusState.Inactive;
+                    return FileQuestStatusState.Inactive;
                 case "JS_Active":
-                    return QuestStatusState.Active;
+                    return FileQuestStatusState.Active;
                 default:
-                    return QuestStatusState.NotFound;
+                    return FileQuestStatusState.NotFound;
             }
         }
     }
@@ -1721,7 +1721,7 @@ namespace SaveFile
     public class Witcher3JournalEntryStatus
     {
         public Witcher3JournalEntryPath[] Path;
-        public QuestStatusState Status;
+        public FileQuestStatusState Status;
         public bool Unread;
         public string PrimaryGUID;
     }

@@ -2,7 +2,7 @@
 
 namespace SaveFile
 {
-    public enum QuestStatusState
+    public enum FileQuestStatusState
     {
         NotFound = 0, Inactive = 1, Active = 2, Failed = 3, Success = 4
     }

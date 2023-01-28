@@ -1,4 +1,4 @@
-﻿namespace Witcher3SaveFile
+﻿namespace SaveFile
 {
     internal static class BinaryReaderHelper
     {

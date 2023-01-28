@@ -1,17 +1,24 @@
-﻿using System.Text.RegularExpressions;
+﻿using System.Runtime.CompilerServices;
+using System.Text.RegularExpressions;
 
-namespace Witcher3SaveFile
+namespace SaveFile
 {
     public class Witcher3SaveFile
     {
+        public Witcher3CJournal CJournalManager;
+        public Witcher3GwentManager GwentManager;
+        public int CharacterLevel, CharacterFreeXP;
+
+        static List<int> validFileVersions = new List<int> { 18, 19, 23 };
+
         int VariableTableOffset;
         int StringTableFooterOffset;
         int StringTableOffset;
         int NMSectionOffset;
         int RBSectionOffset;
         List<VariableIndexEntry> MainVariableIndex;
-        public List<VariableIndexEntry> VariableIndex;
-        public List<Witcher3GenericVariable> Hierarchy;
+        List<VariableIndexEntry> VariableIndex;
+        List<Witcher3GenericVariable> Hierarchy;
         List<string> StringTable;
         int position;
         ArrayStringReader arrayStringReader;
@@ -38,9 +45,7 @@ namespace Witcher3SaveFile
                               "W3TableState", "EFocusModeSoundEffectType", "EJournalStatus",
                               "EAIAttitude", "eGwintFaction", "EPlayerWeapon"};
 
-        public Witcher3CJournal CJournalManager;
-        public Witcher3GwentManager GwentManager;
-        public int CharacterLevel, CharacterFreeXP;
+        
         //public long TimeToLoadJournal, TimeToFindXP;
 
         public Witcher3SaveFile(string filename)
@@ -1486,7 +1491,7 @@ namespace Witcher3SaveFile
                 throw new InvalidDataException("Typecode failure");
             }
             int code2 = f.ReadInt32();
-            if (code2 != 18 && code2 != 19)
+            if (!validFileVersions.Contains(code2))
             {
                 throw new InvalidDataException("Typecode failure");
             }

@@ -2,7 +2,7 @@
 using System.Diagnostics;
 using System.Text;
 
-namespace Witcher3SaveFile
+namespace SaveFile
 {
     public static class ChunkedLz4File
     {

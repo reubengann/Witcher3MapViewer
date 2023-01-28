@@ -1,6 +1,6 @@
 ﻿using System.Text;
 
-namespace Witcher3SaveFile
+namespace SaveFile
 {
     public enum QuestStatusState
     {

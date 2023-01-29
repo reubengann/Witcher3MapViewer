@@ -1,4 +1,6 @@
-﻿using System.Windows;
+﻿using System;
+using System.IO;
+using System.Windows;
 using Witcher3MapViewer.Core;
 
 namespace Witcher3MapViewer.WPF
@@ -15,7 +17,12 @@ namespace Witcher3MapViewer.WPF
             XMLMapSettingsProvider mapSettingsProvider = XMLMapSettingsProvider.FromFile("Settings.xml");
             XMLMarkerProvider markerProvider = XMLMarkerProvider.FromFile("MapPins.xml", mapSettingsProvider);
             XMLQuestListProvider questListProvider = XMLQuestListProvider.FromFile("Quests.xml");
-            QuestAvailabilityProvider availabilityProvider = new QuestAvailabilityProvider();
+            string myDocuments = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            string ersatzpath = Path.Combine(myDocuments, "The Witcher 3", "gamesaves");
+            SaveFileAvailabilityProvider availabilityProvider = new SaveFileAvailabilityProvider(
+                    ersatzpath, "", Path.GetTempPath()
+                );
+            //ManualQuestAvailabilityProvider availabilityProvider = new ManualQuestAvailabilityProvider();
             mainWindow.DataContext = new MainWindowViewModel(mapsUIMap, markerProvider, mapSettingsProvider, questListProvider, availabilityProvider);
             mainWindow.Show();
         }

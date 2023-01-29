@@ -1,5 +1,4 @@
-﻿using System.Runtime.CompilerServices;
-using System.Text.RegularExpressions;
+﻿using System.Text.RegularExpressions;
 
 namespace SaveFile
 {
@@ -45,7 +44,7 @@ namespace SaveFile
                               "W3TableState", "EFocusModeSoundEffectType", "EJournalStatus",
                               "EAIAttitude", "eGwintFaction", "EPlayerWeapon"};
 
-        
+
         //public long TimeToLoadJournal, TimeToFindXP;
 
         public Witcher3SaveFile(string filename)
@@ -1648,10 +1647,12 @@ namespace SaveFile
     public class Witcher3CJournal
     {
         public List<Witcher3JournalEntryStatus> Statuses;
+        public Dictionary<string, Witcher3JournalEntryStatus> StatusDict;
 
         public Witcher3CJournal(Witcher3BS CJournalManager)
         {
             Statuses = new List<Witcher3JournalEntryStatus>();
+            StatusDict = new Dictionary<string, Witcher3JournalEntryStatus>();
             if (CJournalManager.Name != "CJournalManager")
                 throw new System.Exception("Not a valid CJournalManager");
 
@@ -1668,7 +1669,9 @@ namespace SaveFile
             while (i < JActiveEntries.Members.Count)
             {
                 Witcher3BS Status = JActiveEntries.Members[i] as Witcher3BS;
-                Statuses.Add(ParseStatusVar(Status));
+                Witcher3JournalEntryStatus item = ParseStatusVar(Status);
+                Statuses.Add(item);
+                StatusDict[item.PrimaryGUID] = item;
                 i++;
             }
 

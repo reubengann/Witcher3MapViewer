@@ -35,7 +35,7 @@
         public QuestConditions RequiredStrictConditions { get; set; } = new QuestConditions();
         public QuestConditions AutomaticallyDoneIfConditions { get; set; } = new QuestConditions();
         public QuestDiscoverPrompt? DiscoverPrompt { get; set; }
-        public List<QuestObjective>? Objectives { get; set; }
+        public List<Quest>? Objectives { get; set; }
         public List<Quest> Subquests { get; set; } = new List<Quest>();
 
         public bool HasAnyConditions => AvailableIfAny.HasAny || HideIfAny.HasAny || RequiredStrictConditions.HasAny;
@@ -47,12 +47,12 @@
 
     }
 
-    public class QuestObjective
-    {
-        public string Name { get; set; } = default!;
-        public string GUID { get; set; } = default!;
+    //public class QuestObjective
+    //{
+    //    public string Name { get; set; } = default!;
+    //    public string GUID { get; set; } = default!;
 
-    }
+    //}
 
     public class QuestDiscoverPrompt
     {

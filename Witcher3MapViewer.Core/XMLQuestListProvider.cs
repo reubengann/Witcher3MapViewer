@@ -109,10 +109,10 @@ namespace Witcher3MapViewer.Core
             }
             if (item.ObjectivesAsRead != null)
             {
-                quest.Objectives = new List<QuestObjective>();
+                quest.Objectives = new List<Quest>();
                 foreach (var objective in item.ObjectivesAsRead)
                 {
-                    quest.Objectives.Add(new QuestObjective
+                    quest.Objectives.Add(new Quest
                     {
                         Name = objective.Name,
                         GUID = objective.GUID.Value,

@@ -13,6 +13,7 @@ namespace Witcher3MapViewer.WPF
         private readonly string _saveFileDirectory;
         private readonly string _localProgressFilename;
         private readonly string _tempfolder;
+        private Witcher3SaveFile _saveFile;
 
         public event Action? AvailabilityChanged;
 
@@ -21,7 +22,7 @@ namespace Witcher3MapViewer.WPF
             _saveFileDirectory = saveFileDirectory;
             _localProgressFilename = localProgressFilename;
             _tempfolder = tempfolder;
-            LoadNewestFile();
+            _saveFile = LoadNewestFile();
             _fileSystemWatcher = new FileSystemWatcher(_saveFileDirectory);
             SetUpFilewatcher(_fileSystemWatcher);
         }
@@ -39,12 +40,24 @@ namespace Witcher3MapViewer.WPF
 
         public QuestStatusState GetState(string guid)
         {
-            throw new NotImplementedException();
+            if (!_saveFile.CJournalManager.StatusDict.ContainsKey(guid))
+            {
+                return QuestStatusState.NotFound;
+            }
+            Witcher3JournalEntryStatus status = _saveFile.CJournalManager.StatusDict[guid];
+            return (QuestStatusState)status.Status;
         }
 
         public bool IsQuestAvailable(Quest q)
         {
-            throw new NotImplementedException();
+            if (!q.HasAnyConditions) return true;
+            foreach (var item in q.AvailableIfAny.Success)
+            {
+
+                if (GetState(item) >= QuestStatusState.Success)
+                    return true;
+            }
+            return false;
         }
 
         public void SetState(string guid, QuestStatusState? state)

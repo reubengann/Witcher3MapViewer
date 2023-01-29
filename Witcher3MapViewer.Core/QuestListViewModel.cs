@@ -19,6 +19,7 @@ namespace Witcher3MapViewer.Core
                 qvm.ItemWasChanged += RefreshVisible;
                 qvm.SelectedWasChanged += ChildSelectedChanged;
             }
+            questAvailabilityProvider.AvailabilityChanged += RefreshVisible;
         }
 
         private void ChildSelectedChanged(QuestViewModel obj)
@@ -64,11 +65,19 @@ namespace Witcher3MapViewer.Core
             _quest = quest;
             _questAvailabilityProvider = questAvailabilityProvider;
             Children = new List<QuestViewModel>();
+            if (_quest.Objectives != null)
+            {
+                foreach (Quest o in _quest.Objectives)
+                {
+                    Children.Add(new QuestViewModel(o, questAvailabilityProvider, this));
+                }
+            }
             foreach (Quest sq in _quest.Subquests)
             {
                 Children.Add(new QuestViewModel(sq, questAvailabilityProvider, this));
             }
         }
+
 
         public bool? IsChecked
         {

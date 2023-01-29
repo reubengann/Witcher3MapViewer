@@ -1,10 +1,10 @@
 ﻿namespace Witcher3MapViewer.Core
 {
-    public class QuestAvailabilityProvider : IQuestAvailabilityProvider
+    public class ManualQuestAvailabilityProvider : IQuestAvailabilityProvider
     {
         private Dictionary<string, QuestStatusState> _statuses = new Dictionary<string, QuestStatusState>();
 
-        public event Action AvailabilityChanged;
+        public event Action? AvailabilityChanged;
 
         public QuestStatusState GetState(string guid)
         {

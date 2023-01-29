@@ -1,7 +1,7 @@
 using Moq;
 using Witcher3MapViewer.Core;
 
-namespace WitcherMapViewerMark2.Test
+namespace Witcher3MapViewer.Test
 {
 
 
@@ -57,6 +57,7 @@ namespace WitcherMapViewerMark2.Test
                 new List<MarkerSpec>() { RoadSign });
             mockQuestAvailabilityProvider = new Mock<IQuestAvailabilityProvider>();
             mockQuestListProvider = new Mock<IQuestListProvider>();
+            mockQuestListProvider.Setup(x => x.GetAllQuests()).Returns(() => new List<Quest>());
             vm = new MainWindowViewModel(mockMap.Object, mockMarkerProvider.Object,
                 mockSettingsProvider.Object, mockQuestListProvider.Object, mockQuestAvailabilityProvider.Object);
         }

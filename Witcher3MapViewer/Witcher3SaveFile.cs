@@ -1,5 +1,5 @@
-﻿using System.IO;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
 
@@ -7,6 +7,8 @@ namespace Witcher3MapViewer
 {
     public class Witcher3SaveFile
     {
+        static List<int> validVersions = new List<int> { 18, 19, 23 };
+
         int VariableTableOffset;
         int StringTableFooterOffset;
         int StringTableOffset;
@@ -63,7 +65,7 @@ namespace Witcher3MapViewer
         }
 
         private void LoadSaveQuick(string filename)
-        {            
+        {
             //Load the CJournalManager, Gwent Manager, and levelManager only
             using (FileStream compressedStream = File.OpenRead(filename))
             using (Stream decompressedStream = ChunkedLz4File.Decompress(compressedStream))
@@ -121,7 +123,7 @@ namespace Witcher3MapViewer
                                 bytesread += 2;
                                 string SpecificType = StringTable[f.ReadInt16()];
                                 bytesread += 2;
-                                if (Name == "levelManager")                                    
+                                if (Name == "levelManager")
                                 {
                                     if (SpecificType == "handle:W3LevelManager")
                                     {
@@ -131,7 +133,7 @@ namespace Witcher3MapViewer
                                         GetLevel(LevelData);
                                         found = true;
                                     }
-                                }                                
+                                }
                             }
                             else
                             {   //PO but not PORP, just a coincidence
@@ -142,7 +144,7 @@ namespace Witcher3MapViewer
                         {   //no PORP here, keep looking
                             f.SeekRelative(1);
                         }
-                    }   
+                    }
                 }
                 //TimeToFindXP = stopwatch.ElapsedMilliseconds - temp;
 
@@ -166,7 +168,7 @@ namespace Witcher3MapViewer
             }
 
             CJournalManager = new Witcher3CJournal(FindInHierarchy("CJournalManager"));
-            GwentManager = new Witcher3GwentManager(FindInHierarchy("CR4GwintManager"));                       
+            GwentManager = new Witcher3GwentManager(FindInHierarchy("CR4GwintManager"));
         }
 
         private void LoadSaveFromFile(string filename)
@@ -210,7 +212,7 @@ namespace Witcher3MapViewer
 
         VariableIndexEntry ScanForMainVariableByName(BinaryReader f, string query)
         {
-            foreach(VariableIndexEntry vie in MainVariableIndex)
+            foreach (VariableIndexEntry vie in MainVariableIndex)
             {
                 f.Seek(vie.Offset);
                 Witcher3BS member = ReadVariable(f, vie.Size) as Witcher3BS;
@@ -223,7 +225,7 @@ namespace Witcher3MapViewer
         int LocateVariableOffsetInIndex(VariableIndexEntry query)
         {
             int i = 0;
-            while(i < VariableIndex.Count)
+            while (i < VariableIndex.Count)
             {
                 if (VariableIndex[i].Offset == query.Offset)
                     return i;
@@ -1489,11 +1491,11 @@ namespace Witcher3MapViewer
                 throw new InvalidDataException("Typecode failure");
             }
             int code2 = f.ReadInt32();
-            if(code2 != 18 && code2 != 19)
+            if (!validVersions.Contains(code2))
             {
                 throw new InvalidDataException("Typecode failure");
             }
-            if(f.ReadInt32() != 163)
+            if (f.ReadInt32() != 163)
             {
                 throw new InvalidDataException("Typecode failure");
             }
@@ -1580,7 +1582,7 @@ namespace Witcher3MapViewer
                 }
             }
         }
-        
+
 
 
     }
@@ -1640,7 +1642,7 @@ namespace Witcher3MapViewer
             return result;
         }
 
-        
+
     }
 
     public class Witcher3CJournal
@@ -1714,7 +1716,7 @@ namespace Witcher3MapViewer
                     return QuestStatusState.NotFound;
             }
         }
-    }    
+    }
 
     public class Witcher3JournalEntryStatus
     {
@@ -1750,7 +1752,7 @@ namespace Witcher3MapViewer
 
         public Witcher3GwentCard(Witcher3BS SBCollectionCard)
         {
-            foreach(Witcher3GenericVariable v in SBCollectionCard.Members)
+            foreach (Witcher3GenericVariable v in SBCollectionCard.Members)
             {
                 Witcher3VL val = v as Witcher3VL;
                 if (val.Name == "cardIndex")

@@ -32,6 +32,25 @@ namespace Witcher3MapViewer.Core
             foreach (var qvm in _currentQuests)
                 qvm.RefreshVisibility();
         }
+
+        public void SelectBest()
+        {
+            QuestViewModel? best = null;
+            foreach (QuestViewModel q in CurrentQuests)
+            {
+                if (q.IsChecked != true)
+                {
+                    if (q.QuestType != QuestType.Main)
+                    {
+                        q.IsSelected = true;
+                        return;
+                    }
+                    else if (best == null)
+                        best = q;
+                }
+            }
+            if (best != null) best.IsSelected = true;
+        }
     }
 
     public class QuestViewModel : BaseViewModel//, IComparable
@@ -46,6 +65,8 @@ namespace Witcher3MapViewer.Core
         public string Name => _quest.Name;
         public int SuggestedLevel => _quest.LevelRequirement;
         public int PlayerLevel => 0;
+        public QuestType QuestType => _quest.QuestType;
+
         bool? _isSelected = false;
 
         public bool Visible

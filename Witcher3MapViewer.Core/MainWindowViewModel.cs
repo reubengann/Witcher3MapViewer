@@ -31,6 +31,7 @@ namespace Witcher3MapViewer.Core
             MarkerToggleViewModel = new MarkerToggleViewModel(_map);
             QuestListViewModel = new QuestListViewModel(questListProvider.GetAllQuests(), availabilityProvider);
             QuestListViewModel.ItemSelectedChanged += QuestListViewModel_ItemSelectedChanged;
+            QuestListViewModel.SelectBest();
         }
 
         private void QuestListViewModel_ItemSelectedChanged(QuestViewModel obj)

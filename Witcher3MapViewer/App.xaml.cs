@@ -22,8 +22,9 @@ namespace Witcher3MapViewer.WPF
             SaveFileAvailabilityProvider availabilityProvider = new SaveFileAvailabilityProvider(
                     ersatzpath, "", Path.GetTempPath()
                 );
+            SaveFileLevelProvider levelProvider = new SaveFileLevelProvider(availabilityProvider);
             //ManualQuestAvailabilityProvider availabilityProvider = new ManualQuestAvailabilityProvider();
-            mainWindow.DataContext = new MainWindowViewModel(mapsUIMap, markerProvider, mapSettingsProvider, questListProvider, availabilityProvider);
+            mainWindow.DataContext = new MainWindowViewModel(mapsUIMap, markerProvider, mapSettingsProvider, questListProvider, availabilityProvider, levelProvider);
             mainWindow.Show();
         }
     }

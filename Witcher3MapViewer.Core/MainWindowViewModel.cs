@@ -17,7 +17,8 @@ namespace Witcher3MapViewer.Core
             IMarkerProvider markerProvider,
             IMapSettingsProvider mapSettingsProvider,
             IQuestListProvider questListProvider,
-            IQuestAvailabilityProvider availabilityProvider)
+            IQuestAvailabilityProvider availabilityProvider,
+            ILevelProvider levelProvider)
         {
             _map = map;
             _markerProvider = markerProvider;
@@ -29,7 +30,7 @@ namespace Witcher3MapViewer.Core
             ListOfMaps = worldSettings.Select(x => x.Name).ToList();
             TileMapPathMap = worldSettings.ToDictionary(x => x.Name, x => x);
             MarkerToggleViewModel = new MarkerToggleViewModel(_map);
-            QuestListViewModel = new QuestListViewModel(questListProvider.GetAllQuests(), availabilityProvider);
+            QuestListViewModel = new QuestListViewModel(questListProvider.GetAllQuests(), availabilityProvider, levelProvider);
             QuestListViewModel.ItemSelectedChanged += QuestListViewModel_ItemSelectedChanged;
             QuestListViewModel.SelectBest();
         }

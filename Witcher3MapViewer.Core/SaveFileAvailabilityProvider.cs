@@ -1,11 +1,6 @@
 ﻿using SaveFile;
-using System;
-using System.IO;
-using System.Linq;
-using System.Threading;
-using Witcher3MapViewer.Core;
 
-namespace Witcher3MapViewer.WPF
+namespace Witcher3MapViewer.Core
 {
     public class SaveFileAvailabilityProvider : IQuestAvailabilityProvider
     {
@@ -16,6 +11,8 @@ namespace Witcher3MapViewer.WPF
         private Witcher3SaveFile _saveFile;
 
         public event Action? AvailabilityChanged;
+
+        public int PlayerLevel => _saveFile.CharacterLevel;
 
         public SaveFileAvailabilityProvider(string saveFileDirectory, string localProgressFilename, string tempfolder)
         {

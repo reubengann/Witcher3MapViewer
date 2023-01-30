@@ -10,4 +10,8 @@
     <PackageReference Include="Prism.Core" Version="8.1.97" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Witcher3SaveFile\Witcher3SaveFile.csproj" />
+  </ItemGroup>
+
 </Project>

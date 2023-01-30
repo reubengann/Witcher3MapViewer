@@ -21,7 +21,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Witcher3MapViewer.Core\Witcher3MapViewer.Core.csproj" />
-    <ProjectReference Include="..\Witcher3SaveFile\Witcher3SaveFile.csproj" />
   </ItemGroup>
 
   <ItemGroup>

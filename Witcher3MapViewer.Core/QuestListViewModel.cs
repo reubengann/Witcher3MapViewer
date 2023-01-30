@@ -7,12 +7,14 @@ namespace Witcher3MapViewer.Core
         public event Action<QuestViewModel>? ItemSelectedChanged;
 
         ObservableCollection<QuestViewModel> _currentQuests;
+        private readonly ILevelProvider _levelProvider;
+
         public ObservableCollection<QuestViewModel> CurrentQuests { get { return _currentQuests; } }
 
-        public QuestListViewModel(List<Quest> currentQuests, IQuestAvailabilityProvider questAvailabilityProvider)
+        public QuestListViewModel(List<Quest> currentQuests, IQuestAvailabilityProvider questAvailabilityProvider, ILevelProvider levelProvider)
         {
             _currentQuests = new ObservableCollection<QuestViewModel>(
-                currentQuests.Select(q => new QuestViewModel(q, questAvailabilityProvider, null))
+                currentQuests.Select(q => new QuestViewModel(q, questAvailabilityProvider, levelProvider, null))
                 );
             foreach (var qvm in _currentQuests)
             {
@@ -20,6 +22,7 @@ namespace Witcher3MapViewer.Core
                 qvm.SelectedWasChanged += ChildSelectedChanged;
             }
             questAvailabilityProvider.AvailabilityChanged += RefreshVisible;
+            _levelProvider = levelProvider;
         }
 
         private void ChildSelectedChanged(QuestViewModel obj)
@@ -35,12 +38,13 @@ namespace Witcher3MapViewer.Core
 
         public void SelectBest()
         {
+            int level = _levelProvider.GetLevel();
             QuestViewModel? best = null;
             foreach (QuestViewModel q in CurrentQuests)
             {
                 if (q.IsChecked != true)
                 {
-                    if (q.QuestType != QuestType.Main)
+                    if (q.QuestType != QuestType.Main && q.SuggestedLevel <= level)
                     {
                         q.IsSelected = true;
                         return;
@@ -80,7 +84,7 @@ namespace Witcher3MapViewer.Core
         }
 
 
-        public QuestViewModel(Quest quest, IQuestAvailabilityProvider questAvailabilityProvider, QuestViewModel? parent)
+        public QuestViewModel(Quest quest, IQuestAvailabilityProvider questAvailabilityProvider, ILevelProvider levelProvider, QuestViewModel? parent)
         {
             _parent = parent;
             _quest = quest;
@@ -90,12 +94,12 @@ namespace Witcher3MapViewer.Core
             {
                 foreach (Quest o in _quest.Objectives)
                 {
-                    Children.Add(new QuestViewModel(o, questAvailabilityProvider, this));
+                    Children.Add(new QuestViewModel(o, questAvailabilityProvider, levelProvider, this));
                 }
             }
             foreach (Quest sq in _quest.Subquests)
             {
-                Children.Add(new QuestViewModel(sq, questAvailabilityProvider, this));
+                Children.Add(new QuestViewModel(sq, questAvailabilityProvider, levelProvider, this));
             }
         }
 

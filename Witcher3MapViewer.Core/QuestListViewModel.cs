@@ -21,7 +21,7 @@ namespace Witcher3MapViewer.Core
                 qvm.ItemWasChanged += RefreshVisible;
                 qvm.SelectedWasChanged += ChildSelectedChanged;
             }
-            questAvailabilityProvider.AvailabilityChanged += RefreshVisible;
+            questAvailabilityProvider.AvailabilityChanged += RefreshAndSelectNew;
             _levelProvider = levelProvider;
         }
 
@@ -30,10 +30,17 @@ namespace Witcher3MapViewer.Core
             ItemSelectedChanged?.Invoke(obj);
         }
 
+        private void RefreshAndSelectNew()
+        {
+            RefreshVisible();
+            SelectBest();
+        }
+
         private void RefreshVisible()
         {
             foreach (var qvm in _currentQuests)
                 qvm.RefreshVisibility();
+
         }
 
         public void SelectBest()
@@ -44,7 +51,7 @@ namespace Witcher3MapViewer.Core
             {
                 if (q.IsChecked != true)
                 {
-                    if (q.QuestType != QuestType.Main && q.SuggestedLevel <= level)
+                    if (q.QuestType != QuestType.Main && q.SuggestedLevel <= level && q.Visible == true)
                     {
                         q.IsSelected = true;
                         return;
@@ -106,7 +113,11 @@ namespace Witcher3MapViewer.Core
 
         public bool? IsChecked
         {
-            get { return _questAvailabilityProvider.GetState(_quest.GUID) == QuestStatusState.Success; }
+            get
+            {
+                QuestStatusState questStatusState = _questAvailabilityProvider.GetState(_quest.GUID);
+                return questStatusState == QuestStatusState.Success;
+            }
             set
             {
                 if (value == true)
@@ -125,13 +136,15 @@ namespace Witcher3MapViewer.Core
             {
                 _isSelected = value;
                 OnPropertyChanged(nameof(IsSelected));
-                SelectedWasChanged?.Invoke(this);
+                if (value == true)
+                    SelectedWasChanged?.Invoke(this);
             }
         }
 
         public void RefreshVisibility()
         {
             OnPropertyChanged(nameof(Visible));
+            OnPropertyChanged(nameof(IsChecked));
         }
 
         //private bool? _isDeferred = false;

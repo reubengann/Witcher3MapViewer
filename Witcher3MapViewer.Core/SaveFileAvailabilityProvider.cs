@@ -75,7 +75,7 @@ namespace Witcher3MapViewer.Core
         private void _fileSystemWatcher_Changed(object sender, FileSystemEventArgs e)
         {
             Thread.Sleep(2000);
-            LoadNewestFile();
+            _saveFile = LoadNewestFile();
             AvailabilityChanged?.Invoke();
         }
 

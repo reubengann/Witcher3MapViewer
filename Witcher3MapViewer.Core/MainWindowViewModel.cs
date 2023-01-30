@@ -27,6 +27,7 @@ namespace Witcher3MapViewer.Core
             _availabilityProvider = availabilityProvider;
             List<WorldSetting> worldSettings = _mapSettingsProvider.GetAll();
             shortToLongNameMap = worldSettings.ToDictionary(x => x.ShortName, x => x.Name);
+            shortToLongNameMap["VE"] = shortToLongNameMap["NO"];
             ListOfMaps = worldSettings.Select(x => x.Name).ToList();
             TileMapPathMap = worldSettings.ToDictionary(x => x.Name, x => x);
             MarkerToggleViewModel = new MarkerToggleViewModel(_map);
@@ -50,6 +51,17 @@ namespace Witcher3MapViewer.Core
                 var worldpoint = RealToGameSpaceConversion.ToWorldSpace(new Point(p.Location.X, p.Location.Y), TileMapPathMap[SelectedMap]);
                 _map.CenterMap(worldpoint.X, worldpoint.Y);
             }
+            if (quest.DiscoverPrompt != null)
+                InfoMessage = quest.DiscoverPrompt.Info;
+            else InfoMessage = string.Empty;
+        }
+
+        private string _infoMessage;
+
+        public string InfoMessage
+        {
+            get { return _infoMessage; }
+            set { _infoMessage = value; OnPropertyChanged(nameof(InfoMessage)); }
         }
 
         public ICommand LoadInitialMapCommand { get => new DelegateCommand(LoadInitialMap); }

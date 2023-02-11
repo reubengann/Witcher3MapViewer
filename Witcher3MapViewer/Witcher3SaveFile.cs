@@ -7,7 +7,7 @@ namespace Witcher3MapViewer
 {
     public class Witcher3SaveFile
     {
-        static List<int> validVersions = new List<int> { 18, 19, 23 };
+        static List<int> validVersions = new List<int> { 18, 19, 23, 24 };
 
         int VariableTableOffset;
         int StringTableFooterOffset;

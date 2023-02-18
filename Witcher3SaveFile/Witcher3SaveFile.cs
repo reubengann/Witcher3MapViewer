@@ -8,7 +8,7 @@ namespace SaveFile
         public Witcher3GwentManager GwentManager;
         public int CharacterLevel, CharacterFreeXP;
 
-        static List<int> validFileVersions = new List<int> { 18, 19, 23 };
+        static List<int> validFileVersions = new List<int> { 18, 19, 23, 24 };
 
         int VariableTableOffset;
         int StringTableFooterOffset;

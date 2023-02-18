@@ -1,8 +1,10 @@
-﻿namespace Witcher3MapViewer.Core
+﻿using System.Text.Json;
+
+namespace Witcher3MapViewer.Core
 {
-    public class ManualQuestAvailabilityProvider : IQuestAvailabilityProvider
+    public abstract class ManualQuestAvailabilityProvider : IQuestAvailabilityProvider
     {
-        private Dictionary<string, QuestStatusState> _statuses = new Dictionary<string, QuestStatusState>();
+        protected Dictionary<string, QuestStatusState> _statuses = new Dictionary<string, QuestStatusState>();
 
         public event Action? AvailabilityChanged;
 
@@ -23,11 +25,37 @@
             return false;
         }
 
-        public void SetState(string guid, QuestStatusState? state)
+        public virtual void SetState(string guid, QuestStatusState? state)
         {
             if (state == null)
                 _statuses.Remove(guid);
             else _statuses[guid] = (QuestStatusState)state;
+        }
+    }
+
+    public class JsonManualQuestAvailabilityProvider : ManualQuestAvailabilityProvider
+    {
+        private readonly string filepath;
+
+        public JsonManualQuestAvailabilityProvider(string filepath)
+        {
+            this.filepath = filepath;
+            if (File.Exists(filepath))
+            {
+                var jsonString = File.ReadAllText(filepath);
+                var read = JsonSerializer.Deserialize<Dictionary<string, QuestStatusState>>(jsonString);
+                if (read != null)
+                {
+                    _statuses = read;
+                }
+            }
+        }
+
+        public override void SetState(string guid, QuestStatusState? state)
+        {
+            base.SetState(guid, state);
+            var write = JsonSerializer.Serialize(_statuses);
+            File.WriteAllText(filepath, write);
         }
     }
 }

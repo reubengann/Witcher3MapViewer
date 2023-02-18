@@ -6,7 +6,7 @@ namespace Witcher3MapViewer.Core
     {
         FileSystemWatcher _fileSystemWatcher;
         private readonly string _saveFileDirectory;
-        private readonly string _localProgressFilename;
+        private readonly JsonManualQuestAvailabilityProvider _localProgress;
         private readonly string _tempfolder;
         private Witcher3SaveFile _saveFile;
 
@@ -17,7 +17,7 @@ namespace Witcher3MapViewer.Core
         public SaveFileAvailabilityProvider(string saveFileDirectory, string localProgressFilename, string tempfolder)
         {
             _saveFileDirectory = saveFileDirectory;
-            _localProgressFilename = localProgressFilename;
+            _localProgress = new JsonManualQuestAvailabilityProvider(localProgressFilename);
             _tempfolder = tempfolder;
             _saveFile = LoadNewestFile();
             _fileSystemWatcher = new FileSystemWatcher(_saveFileDirectory);
@@ -37,6 +37,8 @@ namespace Witcher3MapViewer.Core
 
         public QuestStatusState GetState(string guid)
         {
+            var localState = _localProgress.GetState(guid);
+            if (localState != QuestStatusState.NotFound) return localState;
             if (!_saveFile.CJournalManager.StatusDict.ContainsKey(guid))
             {
                 return QuestStatusState.NotFound;
@@ -59,7 +61,7 @@ namespace Witcher3MapViewer.Core
 
         public void SetState(string guid, QuestStatusState? state)
         {
-            throw new NotImplementedException();
+            _localProgress.SetState(guid, state);
         }
 
         private void SetUpFilewatcher(FileSystemWatcher watcher)

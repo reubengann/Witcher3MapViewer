@@ -2,6 +2,11 @@
 
 namespace Witcher3MapViewer.Test
 {
+    class FakeManualQuestAvailabilityProvider : ManualQuestAvailabilityProvider
+    {
+
+    }
+
     public class QuestAvailabilityProviderTest
     {
         ManualQuestAvailabilityProvider provider;
@@ -29,7 +34,7 @@ namespace Witcher3MapViewer.Test
         [SetUp]
         public void SetUp()
         {
-            provider = new ManualQuestAvailabilityProvider();
+            provider = new FakeManualQuestAvailabilityProvider();
             questWithDependency.AvailableIfAny.Success.Add("0AE82268-4FFF5D8D-4A219CB4-11E480F8");
         }
 

@@ -44,7 +44,11 @@ namespace Witcher3MapViewer.Core
                 SelectedMap = longName;
             }
             var quest = obj._quest;
-            if (quest.DiscoverPrompt == null) return;
+            if (quest.DiscoverPrompt == null)
+            {
+                InfoMessage = "Advance main quest";
+                return;
+            }
             var p = quest.DiscoverPrompt;
             if (p.Location != null)
             {

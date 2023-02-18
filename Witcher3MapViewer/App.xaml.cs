@@ -13,9 +13,10 @@ namespace Witcher3MapViewer.WPF
         public App()
         {
             MainWindow mainWindow = new MainWindow();
-            MapsUIMap mapsUIMap = new MapsUIMap(mainWindow.MapControl);
             XMLMapSettingsProvider mapSettingsProvider = XMLMapSettingsProvider.FromFile("Settings.xml");
             XMLMarkerProvider markerProvider = XMLMarkerProvider.FromFile("MapPins.xml", mapSettingsProvider);
+            string largeIconPath = mapSettingsProvider.GetIconSettings().LargeIconPath;
+            MapsUIMap mapsUIMap = new MapsUIMap(mainWindow.MapControl, Path.Combine(largeIconPath, "Circle.png"));
             XMLQuestListProvider questListProvider = XMLQuestListProvider.FromFile("Quests.xml");
             string myDocuments = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
             string ersatzpath = Path.Combine(myDocuments, "The Witcher 3", "gamesaves");

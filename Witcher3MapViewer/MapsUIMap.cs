@@ -13,11 +13,16 @@ namespace Witcher3MapViewer.WPF
     public class MapsUIMap : IMap
     {
         private readonly MapControl control;
+        private readonly string pathToCircle;
         Dictionary<string, int> IconPathToBitmapRegistryIdMap = new Dictionary<string, int>();
+        Mapsui.Layers.MemoryLayer? CircleLayer;
 
-        public MapsUIMap(MapControl control)
+        public MapsUIMap(MapControl control, string pathToCircle)
         {
+            if (!File.Exists(pathToCircle))
+                throw new FileNotFoundException("Could not find circle.png");
             this.control = control;
+            this.pathToCircle = pathToCircle;
         }
 
         public void LoadMap(string path)
@@ -46,6 +51,7 @@ namespace Witcher3MapViewer.WPF
             pointlayer.Style = _style;
             pointlayer.Name = "foo";
             control.Map.Layers.Add(pointlayer);
+            AddCircleLayer(pathToCircle);
         }
 
         public void SetLayerVisibility(int layerNumber, bool visible)
@@ -66,7 +72,34 @@ namespace Witcher3MapViewer.WPF
 
         public void CenterMap(double x, double y)
         {
-            control.Navigator.NavigateTo(new Mapsui.Geometries.Point(x, y), control.Map.Resolutions[3], 1000);
+            Mapsui.Geometries.Point center = new Mapsui.Geometries.Point(x, y);
+            control.Navigator.NavigateTo(center, control.Map.Resolutions[3], 1000);
+            AddCircleAt(center);
+        }
+
+        private void AddCircleLayer(string pathToCircle)
+        {
+            if (CircleLayer == null)
+            {
+                Mapsui.Layers.MemoryLayer _pointlayer = new Mapsui.Layers.MemoryLayer();
+                List<Mapsui.Geometries.Point> _points = new List<Mapsui.Geometries.Point>();
+                _pointlayer.DataSource = new Mapsui.Providers.MemoryProvider(_points);
+                _pointlayer.Name = "Circle";
+                SymbolStyle _style = new SymbolStyle();
+                if (!IconPathToBitmapRegistryIdMap.ContainsKey(pathToCircle))
+                    RegisterBitmap(pathToCircle);
+                _style.BitmapId = IconPathToBitmapRegistryIdMap[pathToCircle];
+                _pointlayer.Style = _style;
+                CircleLayer = _pointlayer;
+            }
+            control.Map.Layers.Add(CircleLayer);
+        }
+
+        private void AddCircleAt(Mapsui.Geometries.Point Center)
+        {
+            if (CircleLayer == null) return;
+            CircleLayer.DataSource = new Mapsui.Providers.MemoryProvider(Center);
+            CircleLayer.Enabled = true;
         }
     }
 }

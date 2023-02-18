@@ -175,12 +175,12 @@
 <name>Scavenger Hunt: Viper School Gear</name>
 <GUID>AA5D86A4-401E4811-7C74B6AC-7A80CBB3</GUID>
 <available>
+<GUID state="JS_Success">C1AA4441-48FF64E8-972B3BB9-250CC191</GUID>
+</available>
 <discoverprompt>
 <XY world="WO" X="-35" Y="327" />
 <info>Blow the door open with Aard and loot a corpse inside</info>
 </discoverprompt>
-<GUID state="JS_Success">C1AA4441-48FF64E8-972B3BB9-250CC191</GUID>
-</available>
 </quest>
 
 <!--Velen available after imperial audience 3A6B433B-47EA9285-23D96FB9-9A37E56E-->

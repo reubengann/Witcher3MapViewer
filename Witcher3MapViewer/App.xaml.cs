@@ -21,7 +21,7 @@ namespace Witcher3MapViewer.WPF
             string myDocuments = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
             string ersatzpath = Path.Combine(myDocuments, "The Witcher 3", "gamesaves");
             SaveFileAvailabilityProvider availabilityProvider = new SaveFileAvailabilityProvider(
-                    ersatzpath, "", Path.GetTempPath()
+                    ersatzpath, "quest_statuses.json", Path.GetTempPath()
                 );
             SaveFileLevelProvider levelProvider = new SaveFileLevelProvider(availabilityProvider);
             //ManualQuestAvailabilityProvider availabilityProvider = new ManualQuestAvailabilityProvider();

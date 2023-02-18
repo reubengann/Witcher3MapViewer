@@ -51,7 +51,7 @@ namespace Witcher3MapViewer.Core
             {
                 if (q.IsChecked != true)
                 {
-                    if (q.QuestType != QuestType.Main && q.SuggestedLevel <= level && q.Visible == true)
+                    if (q.QuestType != QuestType.Main && q.SuggestedLevel <= level + 2 && q.Visible == true)
                     {
                         q.IsSelected = true;
                         return;
@@ -116,6 +116,7 @@ namespace Witcher3MapViewer.Core
             get
             {
                 QuestStatusState questStatusState = _questAvailabilityProvider.GetState(_quest.GUID);
+
                 return questStatusState == QuestStatusState.Success;
             }
             set
@@ -145,6 +146,10 @@ namespace Witcher3MapViewer.Core
         {
             OnPropertyChanged(nameof(Visible));
             OnPropertyChanged(nameof(IsChecked));
+            foreach (var c in Children)
+            {
+                c.RefreshVisibility();
+            }
         }
 
         //private bool? _isDeferred = false;

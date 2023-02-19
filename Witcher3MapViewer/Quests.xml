@@ -1366,7 +1366,7 @@
 <name>Empty Coop</name>
 <GUID>5D8D80D4-47E33A15-8C576FB1-3AC4736F</GUID>
 <available>
-<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+<GUID state="JS_Success">9EFDC32A-48F7E75E-421189B7-97877E0E</GUID>
 </available>
 <discoverprompt>
 <info>! sign</info>
@@ -1379,7 +1379,7 @@
 <name>Message from an Old Friend</name>
 <GUID>546EC303-469C24B8-809E7286-58C288A0</GUID>
 <available>
-<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+<GUID state="JS_Success">9EFDC32A-48F7E75E-421189B7-97877E0E</GUID>
 </available>
 <discoverprompt>
 <info>Talk to the bookseller</info>
@@ -1433,7 +1433,7 @@
 <name>Hey, You Wanna Look at My Stuff?</name>
 <GUID>966D9C4F-4058A759-EF437983-146F4BB6</GUID>
 <available>
-<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+<GUID state="JS_Success">9EFDC32A-48F7E75E-421189B7-97877E0E</GUID>
 </available>
 <discoverprompt>
 <info>Talk to dwarf merchant</info>
@@ -1457,7 +1457,7 @@
 <name>Novigrad Hospitality</name>
 <GUID>894669D1-458497AB-E2FA1CAE-46DFC1D0</GUID>
 <available>
-<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+<GUID state="JS_Success">9EFDC32A-48F7E75E-421189B7-97877E0E</GUID>
 </available>
 <discoverprompt>
 <info>! sign</info>
@@ -1968,7 +1968,7 @@
   <GUID state="JS_Success">85131BEE-4AF999EC-AD9B0586-FA06CE11</GUID>  
 </available>
   <available>  
-    <GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+    <GUID state="JS_Success">9EFDC32A-48F7E75E-421189B7-97877E0E</GUID>
   </available>
 <discoverprompt>
 <XY world="NO" X="627" Y="1876"/>

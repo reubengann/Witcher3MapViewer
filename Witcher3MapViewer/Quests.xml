@@ -418,6 +418,7 @@
 <XY world="VE" X="1685" Y="-149" />
 </discoverprompt>
 <reward XP="25"/>
+<GUID>DDFF7999-EDC8-4C51-A865-53C796616BD1</GUID>
 </quest>
 
 <quest type="side" world="VE" level="5" id="68">
@@ -430,6 +431,7 @@
 <XY world="VE" X="451" Y="-488" />
 </discoverprompt>
 <reward XP="25"/>
+<GUID>8DC14A3C-B56B-4518-BBF2-25B70A10D7FB</GUID>
 </quest>
 
 <quest type="event" world="VE" level="5" id="70">
@@ -440,6 +442,7 @@
 <discoverprompt>
 <XY world="VE" X="1259" Y="387" />
 </discoverprompt>
+<GUID>951CFA9E-5674-4799-9EA5-213C8FEA04E2</GUID>
 </quest>
 
 <quest type="event" world="VE" level="5" id="427">
@@ -450,6 +453,7 @@
 <discoverprompt>
 <XY world="VE" X="150" Y="509"/>
 </discoverprompt>
+<GUID>854A54A8-1DC1-4446-AE42-35B6CD034483</GUID>
 </quest>
 
 <quest type="event" world="VE" level="5" id="428">
@@ -460,6 +464,7 @@
 <discoverprompt>
 <XY world="VE" X="1225" Y="831"/>
 </discoverprompt>
+<GUID>A321D1EB-2CA8-45B3-9F1F-96A1C9F2E2B5</GUID>
 </quest>
 
 <quest type="event" world="VE" level="5" id="71">
@@ -470,6 +475,7 @@
 <discoverprompt>
 <XY world="VE" X="1732" Y="55"/>
 </discoverprompt>
+<GUID>A1D66C01-1CF2-4583-8903-B83AB45E0137</GUID>
 </quest>
 
 <quest type="side" world="VE" level="6" id="82">
@@ -541,7 +547,7 @@
 <name>A Greedy God</name>
 <GUID>1026A2E0-4A9338E6-7F4D409D-0C5BE595</GUID>
 <available>
-<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+<GUID state="JS_Success">9B0CDB84-48EB84A9-D74AE685-1F8EBF16</GUID>
 </available>
 <discoverprompt>
 <info>! sign</info>

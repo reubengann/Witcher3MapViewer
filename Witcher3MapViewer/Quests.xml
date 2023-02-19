@@ -623,6 +623,7 @@
 </available>
 <discoverprompt>
 <XY world="VE" X="-496" Y="-754"/>
+<info>Hidden treasure marker</info>
 </discoverprompt>
 </quest>
 
@@ -633,7 +634,7 @@
 <GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
 </available>
 <discoverprompt>
-<info>Notice board</info>
+<info>Notice board (Monster in the cemetery)</info>
 <XY world="VE" X="770" Y="63"/>
 </discoverprompt>
 </quest>
@@ -669,7 +670,7 @@
 <GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
 </available>
 <discoverprompt>
-<info>! sign near a toppled statue</info>
+<info>! sign near a toppled statue (check Duen Hen if not here)</info>
 <XY world="VE" X="-69" Y="154"/>
 </discoverprompt>
 <reward XP="85"/>
@@ -937,7 +938,7 @@
 <reward XP="100"/>
 </quest>
 
-<quest type="main" world="VE" level="6" id="75">
+<quest type="main" world="VE" level="6" id="73">
 <name>Wandering in the Dark</name>
 <GUID>9B0CDB84-48EB84A9-D74AE685-1F8EBF16</GUID>
 <available>
@@ -961,6 +962,9 @@
 <available>
 <GUID state="JS_Success">46D709E3-477DBFF9-A58BFE83-2D712006</GUID>
 </available>
+<discoverprompt>
+<info>Automatically given after Magic Lamp</info>
+</discoverprompt>
 </quest>
 
 <quest type="side" world="VE" level="6" id="80">
@@ -970,6 +974,9 @@
 <GUID state="JS_Success">287CD23B-4C20FCC1-D52269AD-47670132</GUID>
 </available>
 <reward XP="1350"/>
+<discoverprompt>
+<info>Automatically given after An Invitation from Keira Metz</info>
+</discoverprompt>
 </quest>
 
 <quest type="side" world="VE" level="6" id="81">
@@ -979,6 +986,9 @@
 <GUID state="JS_Success">38E268CF-431777D8-0A106B87-22F7BA0D</GUID>
 </available>
 <reward XP="155"/>
+<discoverprompt>
+<info>Automatically given after A Towerful of Mice</info>
+</discoverprompt>
 </quest>
 
 <quest type="side" world="VE" level="8" id="99">
@@ -988,9 +998,12 @@
 <GUID state="JS_Success">1EE3C260-47DE26F3-7D422FA3-94EE84C7</GUID>
 </available>
 <reward XP="250"/>
+<discoverprompt>
+<info>Automatically given after A Favor for a Friend</info>
+</discoverprompt>
 </quest>
 
-<quest type="main" world="VE" level="6" id="73">
+<quest type="main" world="VE" level="6" id="75">
 <name>Bloody Baron</name>
 <GUID>9EFDC32A-48F7E75E-421189B7-97877E0E</GUID>
 <available>
@@ -1469,7 +1482,7 @@
 <name>Of Dairy and Darkness</name>
 <GUID>B85F69B4-4563B896-339733A6-9223A984</GUID>
 <available>
-<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+<GUID state="JS_Success">9EFDC32A-48F7E75E-421189B7-97877E0E</GUID>
 </available>
 <discoverprompt>
 <info>Talk to the merchant</info>

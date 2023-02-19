@@ -111,7 +111,8 @@ namespace Witcher3MapViewer.Core
 
         private void LoadInitialMap()
         {
-            SelectedMap = ListOfMaps.First();
+            if (string.IsNullOrEmpty(SelectedMap))
+                SelectedMap = ListOfMaps.First();
         }
     }
 }

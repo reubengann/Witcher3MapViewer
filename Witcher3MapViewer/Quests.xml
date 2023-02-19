@@ -270,6 +270,7 @@
 <info>! sign</info>
 <XY world="VE" X="-30" Y="-114" />
 </discoverprompt>
+<GUID>C355D2B9-B478-4961-B22A-568860D63901</GUID>
 </quest>
 
 <quest type="event" level="3" world = "VE" id="47">
@@ -281,6 +282,7 @@
 <info>! sign (only at night?)</info>
 <XY world="VE" X="794" Y="266" />
 </discoverprompt>
+<GUID>8B2CA862-67B5-4822-BED6-7C3B309DF341</GUID>
 </quest>
 
 <quest type="event" level="3" world = "VE" id="425">
@@ -292,6 +294,7 @@
 <info>! sign</info>
 <XY world="VE" X="1086" Y="-298" />
 </discoverprompt>
+<GUID>CF2BF2AA-B722-42F2-A03C-8F0DFED9B407</GUID>
 </quest>
 
 <quest type="event" level="3" world = "VE" id="48">
@@ -303,6 +306,7 @@
 <info>! sign</info>
 <XY world="VE" X="305" Y="-143" />
 </discoverprompt>
+<GUID>2BAC8BE1-BEE4-41AA-B3C8-BE1F361E223A</GUID>
 </quest>
 
 <quest type="event" level="0" world = "VE" id="30">
@@ -313,6 +317,7 @@
 <discoverprompt>
 <XY world="VE" X="522" Y="-209" />
 </discoverprompt>
+<GUID>1C31587E-4EF2-4FCC-8E87-DF29E7D6B1D7</GUID>
 </quest>
 
 <quest type="event" level="2" world = "VE" id="43">
@@ -325,6 +330,7 @@
 <XY world="VE" X="146" Y="789" />
 </discoverprompt>
 <reward XP="25" />
+<GUID>FA9FFB3B-C8B4-4CA1-82D3-669458DE41B9</GUID>
 </quest>
 
 <quest type="event" level="4" world = "VE" id="50">
@@ -337,6 +343,7 @@
 <info>! sign over a dog</info>
 </discoverprompt>
 <reward XP="10" />
+<GUID>691C4E1B-7486-40BC-9694-1D86B8F88B87</GUID>
 </quest>
 
 <quest type="treasure" level="4" world = "VE" id="51">

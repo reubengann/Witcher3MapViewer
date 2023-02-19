@@ -18,7 +18,7 @@ namespace Witcher3MapViewer.Core
                 );
             foreach (var qvm in _currentQuests)
             {
-                qvm.ItemWasChanged += RefreshVisible;
+                qvm.ItemWasChanged += RefreshAndSelectNew;
                 qvm.SelectedWasChanged += ChildSelectedChanged;
             }
             questAvailabilityProvider.AvailabilityChanged += RefreshAndSelectNew;

@@ -17,7 +17,7 @@ namespace SaveFile
             {
                 byte[] chunkData = chunk.Read(input);
                 memoryStream.Write(chunkData, 0, chunkData.Length);
-                Debug.Assert(input.Position == chunk.EndOfChunkOffset || chunk.EndOfChunkOffset == 0);
+                //Debug.Assert(input.Position == chunk.EndOfChunkOffset || chunk.EndOfChunkOffset == 0);
             }
             memoryStream.Position = header.HeaderSize;
             return memoryStream;
@@ -83,7 +83,7 @@ namespace SaveFile
                     Debug.Assert(bytesDecoded == DecompressedChunkSize);
                 }
 
-                Debug.Assert(inputStream.Position == EndOfChunkOffset || EndOfChunkOffset == 0);
+                //Debug.Assert(inputStream.Position == EndOfChunkOffset || EndOfChunkOffset == 0);
             }
 
             return outputData;

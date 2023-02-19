@@ -106,5 +106,10 @@ namespace Witcher3MapViewer.Core
                 catch (Exception) { return false; }
             }
         }
+
+        public Dictionary<int, int> GetGwent()
+        {
+            return _saveFile.GwentManager.Counts;
+        }
     }
 }

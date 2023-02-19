@@ -25,7 +25,9 @@ namespace Witcher3MapViewer.WPF
                 );
             SaveFileLevelProvider levelProvider = new SaveFileLevelProvider(availabilityProvider);
             //ManualQuestAvailabilityProvider availabilityProvider = new ManualQuestAvailabilityProvider();
-            mainWindow.DataContext = new MainWindowViewModel(mapsUIMap, markerProvider, mapSettingsProvider, questListProvider, availabilityProvider, levelProvider);
+            XMLGwentCardProvider gwentCardProvider = XMLGwentCardProvider.FromFile("Gwent.xml");
+            SaveFileGwentStatusProvider saveFileGwent = new SaveFileGwentStatusProvider(availabilityProvider);
+            mainWindow.DataContext = new MainWindowViewModel(mapsUIMap, markerProvider, mapSettingsProvider, questListProvider, availabilityProvider, gwentCardProvider, levelProvider, saveFileGwent);
             mainWindow.Show();
         }
     }

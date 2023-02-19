@@ -59,7 +59,7 @@ namespace Witcher3MapViewer.Test
             mockQuestListProvider = new Mock<IQuestListProvider>();
             mockQuestListProvider.Setup(x => x.GetAllQuests()).Returns(() => new List<Quest>());
             vm = new MainWindowViewModel(mockMap.Object, mockMarkerProvider.Object,
-                mockSettingsProvider.Object, mockQuestListProvider.Object, mockQuestAvailabilityProvider.Object, new Mock<ILevelProvider>().Object);
+                mockSettingsProvider.Object, mockQuestListProvider.Object, mockQuestAvailabilityProvider.Object, new Mock<IGwentCardProvider>().Object, new Mock<ILevelProvider>().Object, new Mock<IGwentStatusProvider>().Object);
         }
 
         [Test]

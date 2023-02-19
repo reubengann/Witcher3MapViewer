@@ -1774,6 +1774,7 @@ namespace SaveFile
     {
         public List<Witcher3GwentCard> RegularCards;
         public List<Witcher3GwentCard> LeaderCards;
+        public Dictionary<int, int> Counts;
 
         public Witcher3GwentManager(Witcher3BS GwentBS)
         {
@@ -1794,13 +1795,16 @@ namespace SaveFile
 
             RegularCards = new List<Witcher3GwentCard>();
             LeaderCards = new List<Witcher3GwentCard>();
+            Counts = new Dictionary<int, int>();
 
             uint NumberOfEntries = (uint)SizeVL.Value.Value;
             int i = 1;
             while (i < SBCollectionCardSize.Members.Count)
             {
                 Witcher3BS SBCollectionCard = SBCollectionCardSize.Members[i] as Witcher3BS;
-                RegularCards.Add(new Witcher3GwentCard(SBCollectionCard));
+                Witcher3GwentCard card = new Witcher3GwentCard(SBCollectionCard);
+                RegularCards.Add(card);
+                Counts[card.cardIndex] = card.numCopies;
                 i++;
             }
 
@@ -1814,7 +1818,9 @@ namespace SaveFile
             while (i < SBLeaderCollectionCardSize.Members.Count)
             {
                 Witcher3BS SBCollectionCard = SBLeaderCollectionCardSize.Members[i] as Witcher3BS;
-                LeaderCards.Add(new Witcher3GwentCard(SBCollectionCard));
+                Witcher3GwentCard card = new Witcher3GwentCard(SBCollectionCard);
+                LeaderCards.Add(card);
+                Counts[card.cardIndex] = card.numCopies;
                 i++;
             }
 

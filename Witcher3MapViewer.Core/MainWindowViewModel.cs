@@ -10,6 +10,8 @@ namespace Witcher3MapViewer.Core
         private readonly IMapSettingsProvider _mapSettingsProvider;
         private readonly IQuestListProvider _questListProvider;
         private readonly IQuestAvailabilityProvider _availabilityProvider;
+        private readonly IGwentCardProvider gwentCardProvider;
+        private readonly IGwentStatusProvider gwentStatusProvider;
         private readonly Dictionary<string, WorldSetting> TileMapPathMap;
         Dictionary<string, string> shortToLongNameMap;
 
@@ -18,13 +20,18 @@ namespace Witcher3MapViewer.Core
             IMapSettingsProvider mapSettingsProvider,
             IQuestListProvider questListProvider,
             IQuestAvailabilityProvider availabilityProvider,
-            ILevelProvider levelProvider)
+            IGwentCardProvider gwentCardProvider,
+            ILevelProvider levelProvider,
+            IGwentStatusProvider gwentStatusProvider
+            )
         {
             _map = map;
             _markerProvider = markerProvider;
             _mapSettingsProvider = mapSettingsProvider;
             _questListProvider = questListProvider;
             _availabilityProvider = availabilityProvider;
+            this.gwentCardProvider = gwentCardProvider;
+            this.gwentStatusProvider = gwentStatusProvider;
             List<WorldSetting> worldSettings = _mapSettingsProvider.GetAll();
             shortToLongNameMap = worldSettings.ToDictionary(x => x.ShortName, x => x.Name);
             shortToLongNameMap["VE"] = shortToLongNameMap["NO"];
@@ -66,6 +73,21 @@ namespace Witcher3MapViewer.Core
         {
             get { return _infoMessage; }
             set { _infoMessage = value; OnPropertyChanged(nameof(InfoMessage)); }
+        }
+
+        public string GwentMessage
+        {
+            get
+            {
+                int totalCount = 0;
+                int totalOwned = 0;
+                foreach (var g in gwentCardProvider.GetGwentCards())
+                {
+                    totalCount++;
+                    if (gwentStatusProvider.GetCount(g.cardIndex) > 0) totalOwned++;
+                }
+                return $"Gwent cards {totalOwned}/{totalCount}";
+            }
         }
 
         public ICommand LoadInitialMapCommand { get => new DelegateCommand(LoadInitialMap); }

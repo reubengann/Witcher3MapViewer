@@ -14,7 +14,7 @@ namespace Witcher3MapViewer.Core
         public QuestListViewModel(List<Quest> currentQuests, IQuestAvailabilityProvider questAvailabilityProvider, ILevelProvider levelProvider)
         {
             _currentQuests = new ObservableCollection<QuestViewModel>(
-                currentQuests.Select(q => new QuestViewModel(q, questAvailabilityProvider, levelProvider, null)).OrderBy(x => x.SuggestedLevel)
+                currentQuests.Select(q => new QuestViewModel(q, questAvailabilityProvider, levelProvider, null)).OrderBy(x => x._quest.UniqueID)
                 );
 
             foreach (var qvm in _currentQuests)
@@ -52,13 +52,16 @@ namespace Witcher3MapViewer.Core
             {
                 if (q.IsChecked != true)
                 {
-                    if (q.QuestType != QuestType.Main && q.SuggestedLevel <= level + 2 && q.Visible == true)
+                    if (q.Visible == true)
                     {
-                        q.IsSelected = true;
-                        return;
+                        if (q.QuestType != QuestType.Main && q.SuggestedLevel <= level + 2)
+                        {
+                            q.IsSelected = true;
+                            return;
+                        }
+                        else if (best == null && q.QuestType == QuestType.Main)
+                            best = q;
                     }
-                    else if (best == null)
-                        best = q;
                 }
             }
             if (best != null) best.IsSelected = true;

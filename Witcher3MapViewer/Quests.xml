@@ -1338,8 +1338,11 @@
 <name>Gwent: Playing Innkeeps</name>
 <GUID>15BA81D3-4E85B6BD-DF83E995-5D7770CE</GUID>
 <available>
-<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+<GUID state="JS_Success">9EFDC32A-48F7E75E-421189B7-97877E0E</GUID>
 </available>
+<discoverprompt>
+<info>Play any innkeeper in Velen</info>
+</discoverprompt>
 <objectives>
 <objective id="442">
 <name>Win Stjepan's unique card</name>

@@ -14,8 +14,9 @@ namespace Witcher3MapViewer.Core
         public QuestListViewModel(List<Quest> currentQuests, IQuestAvailabilityProvider questAvailabilityProvider, ILevelProvider levelProvider)
         {
             _currentQuests = new ObservableCollection<QuestViewModel>(
-                currentQuests.Select(q => new QuestViewModel(q, questAvailabilityProvider, levelProvider, null))
+                currentQuests.Select(q => new QuestViewModel(q, questAvailabilityProvider, levelProvider, null)).OrderBy(x => x.SuggestedLevel)
                 );
+
             foreach (var qvm in _currentQuests)
             {
                 qvm.ItemWasChanged += RefreshAndSelectNew;

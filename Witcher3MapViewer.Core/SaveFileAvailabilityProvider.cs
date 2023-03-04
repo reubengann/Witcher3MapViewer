@@ -52,11 +52,15 @@ namespace Witcher3MapViewer.Core
             if (!q.HasAnyConditions) return true;
             foreach (var item in q.AvailableIfAny.Success)
             {
-
-                if (GetState(item) >= QuestStatusState.Success)
-                    return true;
+                if (GetState(item) < QuestStatusState.Success)
+                    return false;
             }
-            return false;
+            foreach (var item in q.AvailableIfAny.Active)
+            {
+                if (GetState(item) < QuestStatusState.Active)
+                    return false;
+            }
+            return true;
         }
 
         public void SetState(string guid, QuestStatusState? state)

@@ -11,10 +11,10 @@ namespace Witcher3MapViewer.Core
 
         public ObservableCollection<QuestViewModel> CurrentQuests { get { return _currentQuests; } }
 
-        public QuestListViewModel(List<Quest> currentQuests, IQuestAvailabilityProvider questAvailabilityProvider, ILevelProvider levelProvider)
+        public QuestListViewModel(List<Quest> currentQuests, IQuestAvailabilityProvider questAvailabilityProvider, ILevelProvider levelProvider, Func<Quest, bool>? showpolicy = null)
         {
             _currentQuests = new ObservableCollection<QuestViewModel>(
-                currentQuests.Select(q => new QuestViewModel(q, questAvailabilityProvider, levelProvider, null)).OrderBy(x => x._quest.UniqueID)
+                currentQuests.Select(q => new QuestViewModel(q, questAvailabilityProvider, levelProvider, null, showpolicy)).OrderBy(x => x._quest.UniqueID)
                 );
 
             foreach (var qvm in _currentQuests)
@@ -24,6 +24,8 @@ namespace Witcher3MapViewer.Core
             }
             questAvailabilityProvider.AvailabilityChanged += RefreshAndSelectNew;
             _levelProvider = levelProvider;
+
+
         }
 
         private void ChildSelectedChanged(QuestViewModel obj)
@@ -77,6 +79,14 @@ namespace Witcher3MapViewer.Core
         public event Action? ItemWasChanged;
         public event Action<QuestViewModel>? SelectedWasChanged;
 
+        private Func<Quest, bool> _showPolicy;
+
+        public Func<Quest, bool> ShowPolicy
+        {
+            get { return _showPolicy; }
+            set { _showPolicy = value; }
+        }
+
         public string Name => _quest.Name;
         public int SuggestedLevel => _quest.LevelRequirement;
         public int PlayerLevel => 0;
@@ -89,28 +99,35 @@ namespace Witcher3MapViewer.Core
             get
             {
                 if (_parent != null)
-                    return _questAvailabilityProvider.IsQuestAvailable(_parent._quest);
-                return _questAvailabilityProvider.IsQuestAvailable(_quest);
+                    //return _questAvailabilityProvider.IsQuestAvailable(_parent._quest);
+                    return _showPolicy(_parent._quest);
+                //return _questAvailabilityProvider.IsQuestAvailable(_quest);
+                return _showPolicy(_quest);
             }
         }
 
 
-        public QuestViewModel(Quest quest, IQuestAvailabilityProvider questAvailabilityProvider, ILevelProvider levelProvider, QuestViewModel? parent)
+        public QuestViewModel(Quest quest, IQuestAvailabilityProvider questAvailabilityProvider, ILevelProvider levelProvider, QuestViewModel? parent, Func<Quest, bool>? showpolicy = null)
         {
             _parent = parent;
             _quest = quest;
             _questAvailabilityProvider = questAvailabilityProvider;
+
+            if (showpolicy == null)
+                _showPolicy = q => _questAvailabilityProvider.IsQuestAvailable(q);
+            else _showPolicy = showpolicy;
+
             Children = new List<QuestViewModel>();
             if (_quest.Objectives != null)
             {
                 foreach (Quest o in _quest.Objectives)
                 {
-                    Children.Add(new QuestViewModel(o, questAvailabilityProvider, levelProvider, this));
+                    Children.Add(new QuestViewModel(o, questAvailabilityProvider, levelProvider, this, showpolicy));
                 }
             }
             foreach (Quest sq in _quest.Subquests)
             {
-                Children.Add(new QuestViewModel(sq, questAvailabilityProvider, levelProvider, this));
+                Children.Add(new QuestViewModel(sq, questAvailabilityProvider, levelProvider, this, showpolicy));
             }
         }
 

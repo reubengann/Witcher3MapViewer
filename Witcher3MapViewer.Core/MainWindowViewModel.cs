@@ -38,7 +38,10 @@ namespace Witcher3MapViewer.Core
             ListOfMaps = worldSettings.Select(x => x.Name).ToList();
             TileMapPathMap = worldSettings.ToDictionary(x => x.Name, x => x);
             MarkerToggleViewModel = new MarkerToggleViewModel(_map);
-            QuestListViewModel = new QuestListViewModel(questListProvider.GetAllQuests(), availabilityProvider, levelProvider);
+
+            Func<Quest, bool> showAllAvailablePolicy = q => _availabilityProvider.IsQuestAvailable(q);
+            Func<Quest, bool> showAvailableAndUndonePolicy = q => _availabilityProvider.IsQuestAvailable(q) && _availabilityProvider.GetState(q.GUID) < QuestStatusState.Success;
+            QuestListViewModel = new QuestListViewModel(questListProvider.GetAllQuests(), availabilityProvider, levelProvider, showAvailableAndUndonePolicy);
             QuestListViewModel.ItemSelectedChanged += QuestListViewModel_ItemSelectedChanged;
             QuestListViewModel.SelectBest();
         }

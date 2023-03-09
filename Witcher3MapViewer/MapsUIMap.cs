@@ -73,7 +73,7 @@ namespace Witcher3MapViewer.WPF
         public void CenterMap(double x, double y)
         {
             Mapsui.Geometries.Point center = new Mapsui.Geometries.Point(x, y);
-            control.Navigator.NavigateTo(center, control.Map.Resolutions[3], 1000);
+            control.Navigator.NavigateTo(center, control.Map.Resolutions[4], 1000);
             AddCircleAt(center);
         }
 

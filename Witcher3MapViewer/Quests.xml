@@ -590,6 +590,7 @@
 <GUID state="JS_Success">EA962976-4E950F34-834FC1BD-461991C7</GUID> <!-- Ladies of the Wood -->
 </available>
 <discoverprompt>
+<info>In an alley, 3 elves. Maybe only at night?</info>
 <XY world="VE" X="862" Y="1831"/>
 </discoverprompt>
 </quest>
@@ -1335,6 +1336,7 @@
 </available>
 <discoverprompt>
 <XY world="NO" X="409" Y="1673" />
+<info>Woman being harassed by a soldier</info>
 </discoverprompt>
 <reward XP="10" />
 </quest>
@@ -1359,6 +1361,7 @@
 <GUID state="JS_Success">EA962976-4E950F34-834FC1BD-461991C7</GUID> <!-- Ladies of the Wood -->
 </available>
 <discoverprompt>
+<info>Preacher</info>
 <XY world="NO" X="715" Y="1855" />
 </discoverprompt>
 </quest>
@@ -1427,6 +1430,7 @@
 </available>
 <discoverprompt>
 <XY world="NO" X="1346" Y="1596"/>
+<info>Help people being harassed by soldiers</info>
 </discoverprompt>
 <reward XP="25"/>
 </quest>
@@ -1440,6 +1444,7 @@
 </available>
 <discoverprompt>
 <XY world="NO" X="550" Y="1839"/>
+<info>Two guys in front of the Golden Sturgeon</info>
 </discoverprompt>
 <reward XP="25"/>
 </quest>
@@ -1452,6 +1457,7 @@
 <GUID state="JS_Success">EA962976-4E950F34-834FC1BD-461991C7</GUID> <!-- Ladies of the Wood -->
 </available>
 <discoverprompt>
+<info>An elf being harassed by two men</info>
 <XY world="NO" X="556" Y="1674"/>
 </discoverprompt>
 </quest>
@@ -1616,7 +1622,7 @@
 <GUID state="JS_Success">EA962976-4E950F34-834FC1BD-461991C7</GUID> <!-- Ladies of the Wood -->
 </available>
 <discoverprompt>
-<info>Notice board</info>
+<info>Notice board (Contract: Imp)</info>
 <XY world="NO" X="670" Y="1903"/>
 </discoverprompt>
 </quest>
@@ -1654,6 +1660,7 @@
 <GUID state="JS_Success">EA962976-4E950F34-834FC1BD-461991C7</GUID> <!-- Ladies of the Wood -->
 </available>
 <discoverprompt>
+<info>Behind the warehouse, see two people arguing</info>
 <XY world="NO" X="311" Y="1706"/>
 </discoverprompt>
 </quest>
@@ -1666,6 +1673,7 @@
 <GUID state="JS_Success">EA962976-4E950F34-834FC1BD-461991C7</GUID> <!-- Ladies of the Wood -->
 </available>
 <discoverprompt>
+<info>Save Moritz from a burning pyre. Random.</info>
 <XY world="NO" X="653" Y="1659"/>
 </discoverprompt>
 </quest>
@@ -1678,6 +1686,7 @@
 <GUID state="JS_Success">EA962976-4E950F34-834FC1BD-461991C7</GUID> <!-- Ladies of the Wood -->
 </available>
 <discoverprompt>
+<info>At night, 3 men around a campfire</info>
 <XY world="NO" X="1372" Y="1507"/>
 </discoverprompt>
 </quest>
@@ -1702,6 +1711,7 @@
 <GUID state="JS_Success">EA962976-4E950F34-834FC1BD-461991C7</GUID> <!-- Ladies of the Wood -->
 </available>
 <discoverprompt>
+<info>Notice board</info>
 <XY world="NO" X="1121" Y="2379"/>
 </discoverprompt>
 </quest>
@@ -1715,7 +1725,7 @@
 </available>
 <discoverprompt>
 <XY world="NO" X="559" Y="1841"/>
-<info>Notice board</info>
+<info>Notice board (Contract issued by the temple guard)</info>
 </discoverprompt>
 </quest>
 
@@ -2039,8 +2049,7 @@
 <name>The Price of Passage</name>
 <GUID>B31D80A7-DBA9-47E6-B0D1-2E412036C30B</GUID>
 <available>
-<GUID state="JS_Success">DB024D36-4E9AE35E-FB098D89-C8E7AB0F</GUID> <!-- Family Matters -->
-<GUID state="JS_Success">EA962976-4E950F34-834FC1BD-461991C7</GUID> <!-- Ladies of the Wood -->
+<GUID state="JS_Active">43E9C2A8-43DADE8C-FEC51388-977FB3FC</GUID> <!-- Ladies of the Wood -->
 </available>
 <discoverprompt>
 <XY world="NO" X="1681" Y="1037"/>
@@ -2363,6 +2372,7 @@
 <GUID state="JS_Success">2EE64753-4749CF55-84ECCFA2-AFF34B00</GUID>
 </available>
 <discoverprompt>
+<info>Crying woman outside Crippled Kate's</info>
 <XY world="NO" X="579" Y="1781"/>
 </discoverprompt>
 </quest>

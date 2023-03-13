@@ -868,6 +868,9 @@
 <hideif>
 <GUID state="JS_Active">3D38A3BB-43644405-D5D87083-7731411C</GUID>
 </hideif>
+<discoverprompt>
+<info>Only available if you spared Gaetan</info>
+</discoverprompt>
 </quest>
 
 <quest type="treasure" world="VE" level="28" id="290">
@@ -1669,11 +1672,10 @@
 <name>Saving Moritz Diefenthal</name>
 <GUID>1797BAE3-C7B3-4689-9896-2A601D131EC3</GUID>
 <available>
-<GUID state="JS_Success">DB024D36-4E9AE35E-FB098D89-C8E7AB0F</GUID> <!-- Family Matters -->
-<GUID state="JS_Success">EA962976-4E950F34-834FC1BD-461991C7</GUID> <!-- Ladies of the Wood -->
+<GUID state="JS_Success">DF5C1032-43CFD052-056742B1-5E8C57B0</GUID> <!-- Matter of life and death -->
 </available>
 <discoverprompt>
-<info>Save Moritz from a burning pyre. Random.</info>
+<info>Save Moritz from a burning pyre.</info>
 <XY world="NO" X="653" Y="1659"/>
 </discoverprompt>
 </quest>
@@ -1815,6 +1817,7 @@
 </available>
 <discoverprompt>
 <XY world="NO" X="667" Y="1898"/>
+<info>Notice board (Haunted House)</info>
 </discoverprompt>
 <reward XP="350"/>
 </quest>
@@ -1828,6 +1831,7 @@
 </available>
 <discoverprompt>
 <XY world="NO" X="595" Y="1699"/>
+<info>Talk to the blacksmith</info>
 </discoverprompt>
 <reward XP="200"/>
 </quest>
@@ -2202,6 +2206,9 @@
 <available>
 <GUID state="JS_Success">C5306CA1-4D2C97E4-525EF78E-72552F9E</GUID>
 </available>
+<discoverprompt>
+<info>Given automatically</info>
+</discoverprompt>
 </quest>
 
 <quest type="side" world="NO" level="11" id="131">
@@ -2235,6 +2242,9 @@
 <available>
 <GUID state="JS_Success">06950C40-442252DF-03C66981-3FD2B4F3</GUID>
 </available>
+<discoverprompt>
+<info>Given during A Matter of Life and Death</info>
+</discoverprompt>
 </quest>
 
 <quest type="side" world="NO" level="12" id="148">
@@ -2308,6 +2318,9 @@
 <available>
 <GUID state="JS_Success">C5306CA1-4D2C97E4-525EF78E-72552F9E</GUID>
 </available>
+<discoverprompt>
+<info>Talk to Dandelion</info>
+</discoverprompt>
 </quest>
 
 <quest type="side" world="NO" level="14" id="182">
@@ -2316,6 +2329,9 @@
 <available>
 <GUID state="JS_Success">DF5C1032-43CFD052-056742B1-5E8C57B0</GUID>
 </available>
+<discoverprompt>
+<info>Given automatically</info>
+</discoverprompt>
 </quest>
 
 <quest type="side" world="NO" level="16" id="208">
@@ -2324,6 +2340,9 @@
 <available>
 <GUID state="JS_Success">1DBEC8F9-4023BB3B-23EB70A1-52D14101</GUID>
 </available>
+<discoverprompt>
+<info>Given automatically after Cabaret</info>
+</discoverprompt>
 </quest>
 
 <quest type="side" world="NO" level="9" id="108">
@@ -2363,6 +2382,9 @@
 <available>
 <GUID state="JS_Success">01FCFD79-4DAE6202-792CD396-240BAFD5</GUID>
 </available>
+<discoverprompt>
+<info>Given automatically if you met with Radovid</info>
+</discoverprompt>
 </quest>
 
 <quest type="side" world="NO" level="14" id="181">
@@ -2506,7 +2528,7 @@
 
 <!-- Skellige after Destination Skellige 550442BD-43AF7D49-9E0A09B5-54BCCDCC -->
 
-<quest type="treasure" world="SK" level="26" id="278">
+<quest type="treasure" world="NO" level="26" id="278">
 <name>Scavenger Hunt: Griffin School Gear Upgrade Diagrams - Part 3</name>
 <GUID>C4ED40CA-4C8EFD8A-D5D4F2BB-D9346FC0</GUID>
 <available>
@@ -2685,7 +2707,23 @@
 <reward XP="0"/>
 </quest>
 
-<quest type="side" world="NO, SK" level="11" id="133">
+
+<quest type="side" world="SK" level="12" id="133">
+<name>Flesh for Sale</name>
+<GUID>75CE5700-4B1F1BBE-069237AE-6D20CA0F</GUID>
+<available>
+<GUID state="JS_Success">550442BD-43AF7D49-9E0A09B5-54BCCDCC</GUID>
+</available>
+<hideif>
+<GUID state="JS_Success">23EBF49C-4CD2BFB5-A2D8FB94-B27040A6</GUID>
+</hideif>
+<discoverprompt>
+<XY world="SK" X="2098" Y="-1945"/>
+<info>Before Following the Thread</info>
+</discoverprompt>
+</quest>
+
+<quest type="side" world="NO" level="11" id="141">
 <name>Following the Thread</name>
 <GUID>23EBF49C-4CD2BFB5-A2D8FB94-B27040A6</GUID>
 <available>
@@ -2716,20 +2754,6 @@
 </discoverprompt>
 </quest>
 
-<quest type="side" world="SK" level="12" id="141">
-<name>Flesh for Sale</name>
-<GUID>75CE5700-4B1F1BBE-069237AE-6D20CA0F</GUID>
-<available>
-<GUID state="JS_Success">550442BD-43AF7D49-9E0A09B5-54BCCDCC</GUID>
-</available>
-<hideif>
-<GUID state="JS_Success">23EBF49C-4CD2BFB5-A2D8FB94-B27040A6</GUID>
-</hideif>
-<discoverprompt>
-<XY world="SK" X="2098" Y="-1945"/>
-<info>Before Following the Thread</info>
-</discoverprompt>
-</quest>
 
 <quest type="treasure" world="SK" level="12" id="151">
 <name>Nilfgaardian Treasure</name>
@@ -2837,6 +2861,7 @@
 </available>
 <discoverprompt>
 <XY world="SK" X="-405" Y="-200"/>
+<info>A man being attacked by sirens</info>
 </discoverprompt>
 <reward XP="50"/>
 </quest>
@@ -2849,6 +2874,7 @@
 </available>
 <discoverprompt>
 <XY world="SK" X="549" Y="-409"/>
+<info>A beggar</info>
 </discoverprompt>
 </quest>
 
@@ -2938,6 +2964,7 @@
 <GUID state="JS_Success">23EBF49C-4CD2BFB5-A2D8FB94-B27040A6</GUID>
 </hideif>
 <discoverprompt>
+<info>Might be unavailable depending on Flesh for Sale/Following the thread</info>
 <XY world="SK" X="2123" Y="-1932"/>
 </discoverprompt>
 </quest>
@@ -3022,7 +3049,7 @@
 </available>
 <discoverprompt>
 <XY world="SK" X="-530" Y="-322"/>
-<info>Kill a werewolf</info>
+<info>Kill a werewolf (only at night)</info>
 </discoverprompt>
 </quest>
 
@@ -3044,6 +3071,7 @@
 <GUID state="JS_Success">550442BD-43AF7D49-9E0A09B5-54BCCDCC</GUID>
 </available>
 <discoverprompt>
+<info>Help a man facing pirates near a shrine.</info>
 <XY world="SK" X="2015" Y="-1839"/>
 </discoverprompt>
 </quest>
@@ -3056,7 +3084,7 @@
 </available>
 <discoverprompt>
 <XY world="SK" X="662" Y="647"/>
-<info>Cave entrance</info>
+<info>Go into the cave and deal with the bandits.</info>
 </discoverprompt>
 </quest>
 
@@ -3102,6 +3130,9 @@
 <available>
 <GUID state="JS_Success">F8815175-4F992A27-45F5F19C-7706FA95</GUID>
 </available>
+<discoverprompt>
+<info>Given after The Phantom of Eldberg</info>
+</discoverprompt>
 </quest>
 
 <quest type="side" world="SK" level="14" id="183">
@@ -3110,6 +3141,9 @@
 <available>
 <GUID state="JS_Success">5A628AFB-4D9FAEBD-6C403A9A-066B4AC2</GUID>
 </available>
+<discoverprompt>
+<info>Given after Stranger in a Strange Land</info>
+</discoverprompt>
 </quest>
 
 <quest type="side" world="SK" level="15" id="197">
@@ -3182,7 +3216,7 @@
 </available>
 <discoverprompt>
 <XY world="SK" X="518" Y="200"/>
-<info>! sign</info>
+<info>! sign over a cyclops</info>
 </discoverprompt>
 <reward XP="75"/>
 </quest>
@@ -3194,6 +3228,7 @@
 <GUID state="JS_Success">550442BD-43AF7D49-9E0A09B5-54BCCDCC</GUID>
 </available>
 <discoverprompt>
+<info>Approach nearby group in the woods southwest of town</info>
 <XY world="SK" X="54" Y="-150"/>
 </discoverprompt>
 <reward XP="75"/>
@@ -3470,7 +3505,7 @@
 <name>Echoes of the Past</name>
 <GUID>E7EB9A3A-47FB160A-471604AD-4323F31E</GUID>
 <available>
-<GUID state="JS_Success">FB952C6E-46B165C3-C41A748A-802EC470</GUID>
+<GUID state="JS_Success">FB952C6E-46B165C3-C41A748A-802EC470</GUID> <!-- The King is Dead - Long Live the King -->
 </available>
 <reward XP="30"/>
 </quest>
@@ -3479,13 +3514,13 @@
 <name>Missing Persons</name>
 <GUID>92387564-42BF535E-F56A9393-7895DAC7</GUID>
 <available>
-<GUID state="JS_Success">E7EB9A3A-47FB160A-471604AD-4323F31E</GUID>
+<GUID state="JS_Success">E7EB9A3A-47FB160A-471604AD-4323F31E</GUID> <!-- Echoes of the Past -->
 </available>
 </quest>
 
 <quest type="main" world="SK" level="14" id="175">
 <name>Nameless</name>
-<GUID>7F6B63A6-439ECA50-D7D46C9F-263EAC98</GUID>
+<GUID>7F6B63A6-439ECA50-D7D46C9F-263EAC98</GUID> <!-- Missing Persons -->
 <available>
 <GUID state="JS_Success">92387564-42BF535E-F56A9393-7895DAC7</GUID>
 </available>
@@ -3495,7 +3530,7 @@
 <name>The Calm Before the Storm</name>
 <GUID>5C6A7440-4323E4F5-9BAF8D90-D64FD1E2</GUID>
 <available>
-<GUID state="JS_Success">7F6B63A6-439ECA50-D7D46C9F-263EAC98</GUID>
+<GUID state="JS_Success">7F6B63A6-439ECA50-D7D46C9F-263EAC98</GUID> <!-- Nameless -->
 </available>
 </quest>
 <!-- ends In Ciri's Footsteps -->
@@ -3528,9 +3563,12 @@
 <GUID state="JS_Success">FB952C6E-46B165C3-C41A748A-802EC470</GUID>
 </available>
 <reward XP="1300"/>
+<discoverprompt>
+<info>Given automatically after The King is Dead</info>
+</discoverprompt>
 </quest>
 
-<quest type="side" world="SK" level="24" id="261">
+<quest type="side" world="SK" level="24" id="256">
 <name>Master Armorers</name>
 <GUID>10D429DF-44D89D62-38DC6AA5-D34876F3</GUID>
 <available>
@@ -3542,7 +3580,7 @@
 <reward XP="40"/>
 </quest>
 
-<quest type="contract" world="VE" level="24" id="256">
+<quest type="contract" world="VE" level="24" id="261">
 <name>The Griffin from the Highlands</name>
 <GUID>323560BF-4414ECF7-1A9A6CBA-03E51D37</GUID>
 <available>
@@ -3550,7 +3588,7 @@
 </available>
 <discoverprompt>
 <XY world="VE" X="243" Y="139"/>
-<info>Talk to the Crow's Perch armorer, then get the notice from the board nearby.</info>
+<info>Talk to the Crow's Perch armorer, advance Master Armorers.</info>
 </discoverprompt>
 <reward XP="40"/>
 </quest>
@@ -3574,6 +3612,9 @@
 <GUID state="JS_Success">FB952C6E-46B165C3-C41A748A-802EC470</GUID>
 </available>
 <reward XP="125"/>
+<discoverprompt>
+<info>Given automatically after The King is Dead</info>
+</discoverprompt>
 </quest>
 
 <quest type="side" world="SK" level="18" id="219">
@@ -3594,6 +3635,9 @@
 <available>
 <GUID state="JS_Success">B5130AE1-468A2171-0B7BD3B0-3FBE5499</GUID>
 </available>
+<discoverprompt>
+<info>Automatically given after King's Gambit</info>
+</discoverprompt>
 </quest>
 
 <!-- Kaer Morhen after Uma is obtained 9C69ECD5-44A14450-ED8D95BC-C7C2218F
@@ -3615,7 +3659,7 @@
 <name>Gwent: Old Pals</name>
 <GUID>B3C40CBF-4F39BB84-020888A2-7CEF294F</GUID>
 <available>
-<GUID state="JS_Success">5C6A7440-4323E4F5-9BAF8D90-D64FD1E2</GUID>
+<GUID state="JS_Success">5C6A7440-4323E4F5-9BAF8D90-D64FD1E2</GUID> <!-- The Calm Before the Storm -->
 </available>
 <discoverprompt>
 <XY world="NO" X="729" Y="1727"/>
@@ -3633,11 +3677,11 @@
 </subquests>
 </quest>
 
-<quest type="treasure" world="KM" level="14" id="189">
+<quest type="treasure" world="NO" level="14" id="189">
 <name>Scavenger Hunt: Wolf School Gear</name>
 <GUID>ECDA507B-4902A54F-85D7CAA9-E26BF51C</GUID>
 <available>
-<GUID state="JS_Success">BCFD66C3-4E55BECB-00975882-A9203CDC</GUID>
+<GUID state="JS_Success">9C69ECD5-44A14450-ED8D95BC-C7C2218F</GUID>
 </available>
 <discoverprompt>
 <XY world="NO" X="596" Y="1697"/>
@@ -3645,7 +3689,7 @@
 </discoverprompt>
 </quest>
 
-<quest type="treasure" world="KM" level="21" id="241">
+<quest type="treasure" world="NO" level="21" id="241">
 <name>Scavenger Hunt: Wolf School Gear Upgrade Diagrams - Part 1</name>
 <GUID>2B4D53F2-4D13E107-B76B1BBE-46F9BEE2</GUID>
 <available>

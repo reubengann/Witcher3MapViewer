@@ -14,7 +14,7 @@
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0">
             <TextBlock Padding="2" Text="{Binding CollectEmAllStatus}"/>
-            <TextBlock Padding="2">DLC summary</TextBlock>
+            <!--<TextBlock Padding="2">DLC summary</TextBlock>-->
         </StackPanel>
         <DataGrid Grid.Row="1" AutoGenerateColumns="False" ItemsSource="{Binding Cards}" HorizontalScrollBarVisibility="Disabled">
             <DataGrid.Columns>

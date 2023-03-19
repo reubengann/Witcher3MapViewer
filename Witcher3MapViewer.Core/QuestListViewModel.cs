@@ -8,13 +8,14 @@ namespace Witcher3MapViewer.Core
 
         ObservableCollection<QuestViewModel> _currentQuests;
         private readonly ILevelProvider _levelProvider;
+        private readonly PolicyStore policyStore;
 
         public ObservableCollection<QuestViewModel> CurrentQuests { get { return _currentQuests; } }
 
-        public QuestListViewModel(List<Quest> currentQuests, IQuestAvailabilityProvider questAvailabilityProvider, ILevelProvider levelProvider, Func<Quest, bool>? showpolicy = null)
+        public QuestListViewModel(List<Quest> currentQuests, IQuestAvailabilityProvider questAvailabilityProvider, ILevelProvider levelProvider, PolicyStore policyStore)
         {
             _currentQuests = new ObservableCollection<QuestViewModel>(
-                currentQuests.Select(q => new QuestViewModel(q, questAvailabilityProvider, levelProvider, null, showpolicy)).OrderBy(x => x._quest.UniqueID)
+                currentQuests.Select(q => new QuestViewModel(q, questAvailabilityProvider, levelProvider, null, policyStore.CurrentPolicy)).OrderBy(x => x._quest.UniqueID)
                 );
 
             foreach (var qvm in _currentQuests)
@@ -24,8 +25,7 @@ namespace Witcher3MapViewer.Core
             }
             questAvailabilityProvider.AvailabilityChanged += RefreshAndSelectNew;
             _levelProvider = levelProvider;
-
-
+            this.policyStore = policyStore;
         }
 
         private void ChildSelectedChanged(QuestViewModel obj)

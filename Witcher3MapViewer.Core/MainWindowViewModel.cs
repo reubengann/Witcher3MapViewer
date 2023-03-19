@@ -14,6 +14,8 @@ namespace Witcher3MapViewer.Core
         private readonly IGwentCardProvider gwentCardProvider;
         private readonly IGwentStatusProvider gwentStatusProvider;
         private readonly IGwentTrackerWindow gwentTrackerWindow;
+        private readonly IOptionsDialogWindow optionsDialogWindow;
+        private readonly PolicyStore policyStore;
         private readonly Dictionary<string, WorldSetting> TileMapPathMap;
         Dictionary<string, string> shortToLongNameMap;
 
@@ -25,7 +27,9 @@ namespace Witcher3MapViewer.Core
             IGwentCardProvider gwentCardProvider,
             ILevelProvider levelProvider,
             IGwentStatusProvider gwentStatusProvider,
-            IGwentTrackerWindow gwentTrackerWindow
+            IGwentTrackerWindow gwentTrackerWindow,
+            IOptionsDialogWindow optionsDialogWindow,
+            PolicyStore policyStore
             )
         {
             _map = map;
@@ -36,6 +40,8 @@ namespace Witcher3MapViewer.Core
             this.gwentCardProvider = gwentCardProvider;
             this.gwentStatusProvider = gwentStatusProvider;
             this.gwentTrackerWindow = gwentTrackerWindow;
+            this.optionsDialogWindow = optionsDialogWindow;
+            this.policyStore = policyStore;
             List<WorldSetting> worldSettings = _mapSettingsProvider.GetAll();
             shortToLongNameMap = worldSettings.ToDictionary(x => x.ShortName, x => x.Name);
             shortToLongNameMap["VE"] = shortToLongNameMap["NO"];
@@ -44,8 +50,8 @@ namespace Witcher3MapViewer.Core
             MarkerToggleViewModel = new MarkerToggleViewModel(_map);
 
             //Func<Quest, bool> defaultpolicy = q => _availabilityProvider.IsQuestAvailable(q);
-            Func<Quest, bool> defaultpolicy = q => _availabilityProvider.IsQuestAvailable(q) && _availabilityProvider.GetState(q.GUID) < QuestStatusState.Success;
-            QuestListViewModel = new QuestListViewModel(questListProvider.GetAllQuests(), availabilityProvider, levelProvider, defaultpolicy);
+            //Func<Quest, bool> defaultpolicy = q => _availabilityProvider.IsQuestAvailable(q) && _availabilityProvider.GetState(q.GUID) < QuestStatusState.Success;
+            QuestListViewModel = new QuestListViewModel(questListProvider.GetAllQuests(), availabilityProvider, levelProvider, policyStore);
             QuestListViewModel.ItemSelectedChanged += QuestListViewModel_ItemSelectedChanged;
             QuestListViewModel.SelectBest();
             gwentStatusProvider.StatusUpdated += GwentStatusProvider_StatusUpdated;
@@ -105,6 +111,13 @@ namespace Witcher3MapViewer.Core
 
         public ICommand LoadInitialMapCommand { get => new DelegateCommand(LoadInitialMap); }
         public ICommand OpenGwentWindowCommand => new DelegateCommand(LaunchGwentWindow);
+
+        public ICommand OpenOptionsWindowCommand => new DelegateCommand(LaunchOptionsWindow);
+
+        private void LaunchOptionsWindow()
+        {
+            optionsDialogWindow.ShowDialog();
+        }
 
         private void LaunchGwentWindow()
         {

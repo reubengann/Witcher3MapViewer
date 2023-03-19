@@ -55,7 +55,7 @@
                     <RowDefinition Height="2*"/>
                     <RowDefinition Height="8*"/>
                 </Grid.RowDefinitions>
-                <Button Grid.Row="0" Content="{Binding GwentMessage}" HorizontalAlignment="Left" Width="250"  Height="auto" VerticalAlignment="Bottom" Margin="0 0 15 0" Padding="5"/>
+                <Button Grid.Row="0" Content="{Binding GwentMessage}" Command="{Binding OpenGwentWindowCommand}" HorizontalAlignment="Left" Width="250"  Height="auto" VerticalAlignment="Bottom" Margin="0 0 15 0" Padding="5"/>
                 <local:QuestChecklist Grid.Row="1" VerticalAlignment="Stretch" DataContext="{Binding QuestListViewModel}"/>
             </Grid>
             

@@ -1,5 +1,6 @@
 ﻿using Prism.Commands;
 using System.Windows.Input;
+using Witcher3MapViewer.Core.Interfaces;
 
 namespace Witcher3MapViewer.Core
 {
@@ -12,6 +13,7 @@ namespace Witcher3MapViewer.Core
         private readonly IQuestAvailabilityProvider _availabilityProvider;
         private readonly IGwentCardProvider gwentCardProvider;
         private readonly IGwentStatusProvider gwentStatusProvider;
+        private readonly IGwentTrackerWindow gwentTrackerWindow;
         private readonly Dictionary<string, WorldSetting> TileMapPathMap;
         Dictionary<string, string> shortToLongNameMap;
 
@@ -22,7 +24,8 @@ namespace Witcher3MapViewer.Core
             IQuestAvailabilityProvider availabilityProvider,
             IGwentCardProvider gwentCardProvider,
             ILevelProvider levelProvider,
-            IGwentStatusProvider gwentStatusProvider
+            IGwentStatusProvider gwentStatusProvider,
+            IGwentTrackerWindow gwentTrackerWindow
             )
         {
             _map = map;
@@ -32,6 +35,7 @@ namespace Witcher3MapViewer.Core
             _availabilityProvider = availabilityProvider;
             this.gwentCardProvider = gwentCardProvider;
             this.gwentStatusProvider = gwentStatusProvider;
+            this.gwentTrackerWindow = gwentTrackerWindow;
             List<WorldSetting> worldSettings = _mapSettingsProvider.GetAll();
             shortToLongNameMap = worldSettings.ToDictionary(x => x.ShortName, x => x.Name);
             shortToLongNameMap["VE"] = shortToLongNameMap["NO"];
@@ -94,6 +98,13 @@ namespace Witcher3MapViewer.Core
         }
 
         public ICommand LoadInitialMapCommand { get => new DelegateCommand(LoadInitialMap); }
+        public ICommand OpenGwentWindowCommand => new DelegateCommand(LaunchGwentWindow);
+
+        private void LaunchGwentWindow()
+        {
+            gwentTrackerWindow.LaunchWindow(gwentCardProvider.GetGwentCards(), gwentStatusProvider);
+        }
+
         public List<string> ListOfMaps { get; set; }
 
         public MarkerToggleViewModel MarkerToggleViewModel { get; set; }

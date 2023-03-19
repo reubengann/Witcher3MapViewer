@@ -27,7 +27,8 @@ namespace Witcher3MapViewer.WPF
             //ManualQuestAvailabilityProvider availabilityProvider = new ManualQuestAvailabilityProvider();
             XMLGwentCardProvider gwentCardProvider = XMLGwentCardProvider.FromFile("Gwent.xml");
             SaveFileGwentStatusProvider saveFileGwent = new SaveFileGwentStatusProvider(availabilityProvider);
-            mainWindow.DataContext = new MainWindowViewModel(mapsUIMap, markerProvider, mapSettingsProvider, questListProvider, availabilityProvider, gwentCardProvider, levelProvider, saveFileGwent);
+            GwentTrackerWPFWindow gwentTrackerWPFWindow = new GwentTrackerWPFWindow();
+            mainWindow.DataContext = new MainWindowViewModel(mapsUIMap, markerProvider, mapSettingsProvider, questListProvider, availabilityProvider, gwentCardProvider, levelProvider, saveFileGwent, gwentTrackerWPFWindow);
             mainWindow.Show();
         }
     }

@@ -48,6 +48,12 @@ namespace Witcher3MapViewer.Core
             QuestListViewModel = new QuestListViewModel(questListProvider.GetAllQuests(), availabilityProvider, levelProvider, defaultpolicy);
             QuestListViewModel.ItemSelectedChanged += QuestListViewModel_ItemSelectedChanged;
             QuestListViewModel.SelectBest();
+            gwentStatusProvider.StatusUpdated += GwentStatusProvider_StatusUpdated;
+        }
+
+        private void GwentStatusProvider_StatusUpdated()
+        {
+            OnPropertyChanged(nameof(GwentMessage));
         }
 
         private void QuestListViewModel_ItemSelectedChanged(QuestViewModel obj)

@@ -2817,6 +2817,7 @@
 <subquests>
 
 	<quest type="side" world="VE" level="13" id="452">
+	<GUID>6CE4FA05-FD9B-4981-963E-075E6CF0F85C</GUID>
 	<name>Buy Tristianna and Isador from the Lindenvale merchant</name>
 	<discoverprompt>
 	<XY world="VE" X="784" Y="65"/>
@@ -2824,6 +2825,7 @@
 	</quest>
 	
 	<quest type="side" world="VE" level="13" id="453">
+	<GUID>9F853673-E660-42A9-BC11-D738A750E4DE</GUID>
 	<name>Buy Religion and Life from the Crow's Perch merchant</name>
 	<discoverprompt>
 	<XY world="VE" X="208" Y="92"/>
@@ -2831,6 +2833,7 @@
 	</quest>
 	
 	<quest type="side" world="VE" level="13" id="454">
+	<GUID>B4210B68-04C3-499F-B9E3-6771038B5B5A</GUID>
 	<name>Buy The Cult of Freya from the Priest in Elector's Square </name>
 	<discoverprompt>
 	<XY world="NO" X="486" Y="2188"/>
@@ -2838,6 +2841,7 @@
 	</quest>
 	
 	<quest type="side" world="VE" level="13" id="455">
+	<GUID>490EBDFC-4911-4BB7-815E-CFDC6CA30A8B</GUID>
 	<name>Buy The Curious Cases of Virtuous Vegga from the Merchant</name>
 	<discoverprompt>
 	<XY world="NO" X="681" Y="2016"/>
@@ -2845,6 +2849,7 @@
 	</quest>
 	
 	<quest type="side" world="VE" level="13" id="456">
+	<GUID>D0DA510D-E5A9-4911-9EE8-BDB13114DF18</GUID>
 	<name>Buy Change Your Life! from the Loan Shark</name>
 	<discoverprompt>
 	<XY world="NO" X="831" Y="1929"/>
@@ -3107,6 +3112,7 @@
 <GUID state="JS_Success">7ECF7633-46381266-A19DDA89-92DB202A</GUID>
 </available>
 <discoverprompt>
+<info>Talk to a woman in the center of the harbor</info>
 <XY world="SK" X="1499" Y="1912"/>
 </discoverprompt>
 </quest>
@@ -3365,6 +3371,7 @@
 </available>
 <discoverprompt>
 <XY world="SK" X="373" Y="-698"/>
+<info>! sign over a group of people</info>
 </discoverprompt>
 </quest>
 
@@ -3380,28 +3387,30 @@
 </discoverprompt>
 </quest>
 
-<quest type="side" world="SK" level="28" id="128">
+<quest type="side" world="SK" level="14" id="128">
+<name>Master of the Arena</name>
+<GUID>C8C83587-4D2ACAC0-E41A85B5-A9F1DAE8</GUID>
+<available>
+<!--<GUID state="JS_Active">3B9CD0F0-4CE07724-3F8C88BA-4B34E232</GUID>--> <!-- Fists of Fury: Champion of Champions -->
+<GUID state="JS_Success">550442BD-43AF7D49-9E0A09B5-54BCCDCC</GUID> <!-- Destination: Skellige -->
+</available>
+<discoverprompt>
+<info>During Fists of Fury: Champion of Champions, talk to the guards</info>
+<XY world="SK" X="-1369" Y="1387"/>
+</discoverprompt>
+</quest>
+
+<quest type="side" world="SK" level="28" id="176">
 <name>Fists of Fury: Champion of Champions</name>
 <GUID>3B9CD0F0-4CE07724-3F8C88BA-4B34E232</GUID>
 <available>
 <GUID state="JS_Success">14C1A784-40ABFB76-D665B5A2-38D873AD</GUID>
 </available>
 <discoverprompt>
+<info>Fists of Fury: Given at the end of Skellige Style</info>
 <XY world="SK" X="-1369" Y="1387"/>
 </discoverprompt>
 <reward XP="50"/>
-</quest>
-
-<quest type="side" world="SK" level="14" id="176">
-<name>Master of the Arena</name>
-<GUID>C8C83587-4D2ACAC0-E41A85B5-A9F1DAE8</GUID>
-<available>
-<GUID state="JS_Active">3B9CD0F0-4CE07724-3F8C88BA-4B34E232</GUID> <!-- Fists of Fury: Champion of Champions -->
-<GUID state="JS_Success">550442BD-43AF7D49-9E0A09B5-54BCCDCC</GUID> <!-- Destination: Skellige -->
-</available>
-<discoverprompt>
-<XY world="SK" X="-1369" Y="1387"/>
-</discoverprompt>
 </quest>
 
 <quest type="side" world="SK" level="30" id="304">

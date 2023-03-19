@@ -2,6 +2,7 @@
 {
     public interface IGwentStatusProvider
     {
+        event Action? StatusUpdated;
         int GetCount(int id);
     }
 }

@@ -30,10 +30,16 @@ namespace Witcher3MapViewer.Core
             {
                 _cards.Add(new GwentCardViewModel(card, gwentStatusProvider));
             }
+            gwentStatusProvider.StatusUpdated += GwentStatusProvider_StatusUpdated;
+        }
+
+        private void GwentStatusProvider_StatusUpdated()
+        {
+            OnPropertyChanged(nameof(CollectEmAllStatus));
         }
     }
 
-    public class GwentCardViewModel
+    public class GwentCardViewModel : BaseViewModel
     {
         private readonly GwentCard thecard;
         private readonly IGwentStatusProvider gwentStatusProvider;
@@ -42,6 +48,12 @@ namespace Witcher3MapViewer.Core
         {
             this.thecard = thecard;
             this.gwentStatusProvider = gwentStatusProvider;
+            gwentStatusProvider.StatusUpdated += GwentStatusProvider_StatusUpdated;
+        }
+
+        private void GwentStatusProvider_StatusUpdated()
+        {
+            OnPropertyChanged(nameof(IsChecked));
         }
 
         private bool _isChecked;

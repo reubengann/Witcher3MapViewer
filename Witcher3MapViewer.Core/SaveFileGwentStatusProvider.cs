@@ -7,7 +7,15 @@
         public SaveFileGwentStatusProvider(SaveFileAvailabilityProvider saveFile)
         {
             this.saveFile = saveFile;
+            this.saveFile.AvailabilityChanged += SaveFile_AvailabilityChanged;
         }
+
+        private void SaveFile_AvailabilityChanged()
+        {
+            StatusUpdated?.Invoke();
+        }
+
+        public event Action? StatusUpdated;
 
         public int GetCount(int id)
         {

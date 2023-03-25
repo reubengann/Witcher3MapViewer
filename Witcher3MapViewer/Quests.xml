@@ -1904,7 +1904,8 @@
 
 <quest type="side" world="NO" level="32" id="312">
 <name>Enchanting: Start-up Costs</name>
-<GUID>9FC8532C-4082C982-86035EB7-565348C8</GUID>
+<GUID>BACA6F45-42119393-83A37B8B-B475EB03</GUID>
+<!-- Changed??? Could be BACA6F45-42119393-83A37B8B-B475EB03, 2B5B7472-49ABFE6F-86A9B28F-79492D77, 08855038-4C9CD955-E11A70A6-11C135B3, F6FD0753-4DF7DF10-7E79F4A3-07DCDBDE-->
 <available>
 <GUID state="JS_Success">DB024D36-4E9AE35E-FB098D89-C8E7AB0F</GUID> <!-- Family Matters -->
 <GUID state="JS_Success">EA962976-4E950F34-834FC1BD-461991C7</GUID> <!-- Ladies of the Wood -->
@@ -2399,7 +2400,7 @@
 </discoverprompt>
 </quest>
 
-<quest type="main" world="NO" level="32" id="308">
+<quest type="dlcmain" world="NO" level="32" id="308">
 <name>Evil's Soft First Touches</name>
 <GUID>92B33408-4FCDF297-7F1F0CA4-60ED91A0</GUID>
 <available>
@@ -2415,9 +2416,12 @@
 <GUID state="JS_Active">92B33408-4FCDF297-7F1F0CA4-60ED91A0</GUID>
 </available>
 <reward XP="500"/>
+<discoverprompt>
+<info>Given during Evil's Soft First Touches</info>
+</discoverprompt>
 </quest>
 
-<quest type="main" world="NO" level="33" id="315">
+<quest type="dlcmain" world="NO" level="33" id="315">
 <name>Dead Man's Party</name>
 <GUID>78053F6B-498256AE-F9C0229F-B9EF3972</GUID>
 <available>
@@ -2437,7 +2441,7 @@
 </subquests>
 </quest>
 
-<quest type="main" world="NO" level="34" id="320">
+<quest type="dlcmain" world="NO" level="34" id="320">
 <name>Open Sesame!</name>
 <GUID>B554FBE9-41969AB7-7123A48A-258002C0</GUID>
 <available>
@@ -3660,7 +3664,7 @@
 </available>
 <discoverprompt>
 <XY world="NO" X="694" Y="1756"/>
-<info>Unknown when this triggers</info>
+<info>Maybe only if you met Cleaver?</info>
 </discoverprompt>
 </quest>
 
@@ -3710,7 +3714,7 @@
 </discoverprompt>
 </quest>
 
-<quest type="treasure" world="KM" level="21" id="242">
+<quest type="treasure" world="VE" level="21" id="242">
 <name>Scavenger Hunt: Wolf School Gear Upgrade Diagrams - Part 2</name>
 <GUID>65F92ED7-46364BBF-274F688B-2B9B242B</GUID>
 <available>
@@ -3722,7 +3726,7 @@
 </discoverprompt>
 </quest>
 
-<quest type="treasure" world="KM" level="29" id="294">
+<quest type="treasure" world="VE" level="29" id="294">
 <name>Scavenger Hunt: Wolf School Gear Upgrade Diagrams - Part 3</name>
 <GUID>0ACA2DC7-441F17F1-629E568D-1DDC8373</GUID>
 <available>
@@ -3735,7 +3739,7 @@
 </discoverprompt>
 </quest>
 
-<quest type="treasure" world="KM" level="29" id="295">
+<quest type="treasure" world="VE" level="29" id="295">
 <name>Scavenger Hunt: Wolf School Gear Upgrade Diagrams - Part 4</name>
 <GUID>B5A3EBF1-48584027-035CBD88-C65AE7D1</GUID>
 <available>
@@ -3781,6 +3785,7 @@
 <GUID state="JS_Success">9C69ECD5-44A14450-ED8D95BC-C7C2218F</GUID>
 </available>
 <discoverprompt>
+<info>Enter the cave</info>
 <XY world="KM" X="-323" Y="177"/>
 </discoverprompt>
 </quest>
@@ -3792,6 +3797,7 @@
 <GUID state="JS_Success">9C69ECD5-44A14450-ED8D95BC-C7C2218F</GUID>
 </available>
 <discoverprompt>
+<info>Enter the bastion</info>
 <XY world="KM" X="-321" Y="-13"/>
 </discoverprompt>
 </quest>
@@ -3803,6 +3809,7 @@
 <GUID state="JS_Success">9C69ECD5-44A14450-ED8D95BC-C7C2218F</GUID>
 </available>
 <discoverprompt>
+<info>Find a dead drowner next to a hut</info>
 <XY world="KM" X="94" Y="407"/>
 </discoverprompt>
 <reward XP="120"/>
@@ -3827,6 +3834,7 @@
 <GUID state="JS_Success">9C69ECD5-44A14450-ED8D95BC-C7C2218F</GUID>
 </available>
 <discoverprompt>
+<info>Strange weather</info>
 <XY world="KM" X="201" Y="-378"/>
 </discoverprompt>
 <reward XP="100"/>
@@ -3840,7 +3848,7 @@
 </available>
 <discoverprompt>
 <XY world="KM" X="59" Y="22"/>
-<info>Get Monstrum papers from a dresser a the bottom of a tower near a chest</info>
+<info>Get Monstrum papers from a dresser at the bottom of a tower near a chest</info>
 </discoverprompt>
 </quest>
 
@@ -3848,7 +3856,7 @@
 <name>Ugly Baby</name>
 <GUID>CA9F7D30-404727DE-FA4173B3-C7766A6A</GUID>
 <available>
-<GUID state="JS_Success">9C69ECD5-44A14450-ED8D95BC-C7C2218F</GUID>
+<GUID state="JS_Success">5C6A7440-4323E4F5-9BAF8D90-D64FD1E2</GUID>
 </available>
 <reward XP="125"/>
 

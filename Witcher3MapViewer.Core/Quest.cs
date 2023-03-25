@@ -9,6 +9,7 @@
     {
         Unknown,
         Main,
+        DLCMain,
         SideQuest,
         Contract,
         Treasure,

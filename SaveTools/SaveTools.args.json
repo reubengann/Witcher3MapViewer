@@ -3,8 +3,24 @@
   "Id": "91c48cf9-bd79-456e-90bf-418a753f219b",
   "Items": [
     {
+      "Id": "1b0ea989-bf34-480e-9404-eef2f00c835d",
+      "Command": "parse"
+    },
+    {
       "Id": "eb16f64f-b0b5-4b8c-8bec-d56a55aa381f",
       "Command": "C:\\Users\\reube\\Desktop\\badsave1.sav"
+    },
+    {
+      "Id": "6d722017-3451-4671-afe5-345b2a55048e",
+      "Command": "compare"
+    },
+    {
+      "Id": "b3999b34-c9be-48b0-b7c7-17b193fe0ea0",
+      "Command": "ManualSave_11416f_7e716000_41d9859.sav"
+    },
+    {
+      "Id": "a49b90a4-6fe1-46b4-b8a5-89f5b06ea9e5",
+      "Command": "CheckPoint_11416f_7e716000_41e1d64.sav"
     }
   ]
 }

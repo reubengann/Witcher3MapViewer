@@ -177,6 +177,8 @@ namespace Witcher3MapViewer.Core
             {
                 case "main":
                     return QuestType.Main;
+                case "dlcmain":
+                    return QuestType.DLCMain;
                 case "side":
                     return QuestType.SideQuest;
                 case "contract":

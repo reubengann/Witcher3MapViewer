@@ -2,7 +2,7 @@
   "profiles": {
     "SaveTools": {
       "commandName": "Project",
-      "commandLineArgs": "C:\\Users\\reube\\Desktop\\badsave1.sav"
+      "commandLineArgs": "compare ManualSave_11416f_7e716000_41d9859.sav CheckPoint_11416f_7e716000_41e1d64.sav"
     }
   }
 }

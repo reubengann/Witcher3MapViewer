@@ -2078,7 +2078,7 @@
 </discoverprompt>
 </quest>
 
-<quest type="main" world="NO" level="34" id="324">
+<quest type="dlcmain" world="NO" level="34" id="324">
 <name>Envoys, Wineboys</name>
 <GUID>629E3452-444A67F6-70C1C197-BF6E22EF</GUID>
 <available>
@@ -2513,7 +2513,7 @@
 <GUID state="JS_Success">B554FBE9-41969AB7-7123A48A-258002C0</GUID>
 </available>
 <discoverprompt>
-<info>Buy the bird statue at the auction during Open Sesame</info>
+<info>Buy the bird statue at the auction during Open Sesame, then dismantle it at a craftsman.</info>
 </discoverprompt>
 </quest>
 
@@ -4183,7 +4183,7 @@
 <!-- Toussaint after Envoys Wineboys but technically only after Beast of Touissant
 (11D55E15-434FE711-E89E10B8-17BB09E2) -->
 
-<quest type="main" world="TO" level="35" id="333">
+<quest type="dlcmain" world="TO" level="35" id="333">
 <name>The Beast of Toussaint</name>
 <GUID>11D55E15-434FE711-E89E10B8-17BB09E2</GUID>
 <available>
@@ -4192,7 +4192,7 @@
 <reward XP="3250"/>
 </quest>
 
-<quest type="main" world="TO" level="36" id="336">
+<quest type="dlcmain" world="TO" level="36" id="336">
 <name>Blood Run</name>
 <GUID>1939E60D-401CDF59-6F4765BB-25BCEEC8</GUID>
 <available>
@@ -4201,7 +4201,7 @@
 <reward XP="1000"/>
 </quest>
 
-<quest type="main" world="TO" level="39" id="366">
+<quest type="dlcmain" world="TO" level="39" id="366">
 <name>La Cage au Fou</name>
 <GUID>CE23E598-4D3B3C3B-2778AD92-095146A9</GUID>
 <available>
@@ -4209,7 +4209,7 @@
 </available>
 </quest>
 
-<quest type="main" world="TO" level="42" id="387">
+<quest type="dlcmain" world="TO" level="42" id="387">
 <name>Where Children Toil, Toys Waste Away</name>
 <GUID>B4D11A9C-4DDEB849-23845981-1887E867</GUID>
 <available>
@@ -4218,7 +4218,7 @@
 <reward XP="1600"/>
 </quest>
 
-<quest type="main" world="TO" level="42" id="388">
+<quest type="dlcmain" world="TO" level="42" id="388">
 <name>Wine is Sacred</name>
 <GUID>C9D7BC04-43B303DD-7ED3AAA9-9A7378BD</GUID>
 <available>
@@ -4227,7 +4227,7 @@
 <reward XP="2550"/>
 </quest>
 
-<quest type="main" world="TO" level="43" id="392">
+<quest type="dlcmain" world="TO" level="43" id="392">
 <name>The Man from Cintra</name>
 <GUID>6C2340E8-4E58E618-BF93D5A9-E8E5CB29</GUID>
 <available>
@@ -4246,7 +4246,7 @@
 </subquests>
 </quest>
 
-<quest type="main" world="TO" level="47" id="403">
+<quest type="dlcmain" world="TO" level="47" id="403">
 <name>Capture the Castle</name>
 <GUID>B0E13120-43A56E44-83D0F5A0-EE26759E</GUID>
 <available>
@@ -4254,7 +4254,7 @@
 </available>
 </quest>
 
-<quest type="main" world="TO" level="47" id="405">
+<quest type="dlcmain" world="TO" level="47" id="405">
 <name>The Night of Long Fangs</name>
 <GUID>FF48073D-4F6969E5-F79CD7BE-E217B3AD</GUID>
 <available>
@@ -4262,7 +4262,7 @@
 </available>
 </quest>
 
-<quest type="main" world="TO" level="47" id="404">
+<quest type="dlcmain" world="TO" level="47" id="404">
 <name>Blood Simple</name>
 <GUID>41C2C88E-465E617E-E504A28D-B7557E96</GUID>
 <available>
@@ -4273,7 +4273,7 @@
 </hideif>
 </quest>
 
-<quest type="main" world="TO" level="47" id="406">
+<quest type="dlcmain" world="TO" level="47" id="406">
 <name>What Lies Unseen</name>
 <GUID>E2F4AA1D-4BDD183B-9DDFD89D-009B34B7</GUID>
 <available>
@@ -4287,7 +4287,7 @@
 </hideif>
 </quest>
 
-<quest type="main" world="TO" level="47" id="407">
+<quest type="dlcmain" world="TO" level="47" id="407">
 <name>Beyond Hill and Dale...</name>
 <GUID>E458AAC7-4C80112B-0C1E6694-113E60B1</GUID>
 <available>
@@ -4298,7 +4298,7 @@
 </discoverprompt>
 </quest>
 
-<quest type="main" world="TO" level="49" id="415">
+<quest type="dlcmain" world="TO" level="49" id="415">
 <name>Tesham Mutna</name>
 <GUID>BE9868E4-427C64C0-FEC15FAB-C7077CC2</GUID>
 <available>
@@ -4307,7 +4307,7 @@
 </available>
 </quest>
 
-<quest type="main" world="TO" level="49" id="416">
+<quest type="dlcmain" world="TO" level="49" id="416">
 <name>Pomp and Strange Circumstance</name>
 <GUID>75B389CC-4F5043B3-9CC508A2-88F82183</GUID>
 <available>
@@ -4318,7 +4318,7 @@
 </discoverprompt>
 </quest>
 
-<quest type="main" world="TO" level="49" id="417">
+<quest type="dlcmain" world="TO" level="49" id="417">
 <name>Be It Ever So Humble</name>
 <GUID>C9F4557A-4660507F-1FE53F9D-B6C060BE</GUID>
 <available>
@@ -4332,7 +4332,7 @@
 </available>
 </quest>
 
-<quest type="main" world="TO" level="49" id="418">
+<quest type="dlcmain" world="TO" level="49" id="418">
 <name>Burlap is the New Stripe</name>
 <GUID>FD761CAC-44DF7883-8A45C9AF-50163CDF</GUID>
 <available>
@@ -4389,7 +4389,7 @@
 </discoverprompt>
 </quest>
 
-<quest type="main" world="TO" level="0" id="1">
+<quest type="dlcmain" world="TO" level="0" id="1">
 <name>No Place Like Home</name>
 <GUID>35E4C812-422459EF-1F816FAC-7E53B70E</GUID>
 <available>

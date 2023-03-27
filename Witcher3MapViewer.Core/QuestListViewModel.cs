@@ -61,7 +61,7 @@ namespace Witcher3MapViewer.Core
                             q.IsSelected = true;
                             return;
                         }
-                        else if (best == null && q.QuestType == QuestType.DLCMain)
+                        else if ((best == null || best.QuestType == QuestType.Main) && q.QuestType == QuestType.DLCMain)
                         {
                             best = q;
                         }

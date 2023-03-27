@@ -2082,7 +2082,7 @@
 <name>Envoys, Wineboys</name>
 <GUID>629E3452-444A67F6-70C1C197-BF6E22EF</GUID>
 <available>
-<GUID state="JS_Success">C5306CA1-4D2C97E4-525EF78E-72552F9E</GUID>
+<GUID state="JS_Success">0551620D-437310FC-3A100C91-55645E17</GUID> <!-- After Hearts of Stone, Whatsoever a Man Soweth -->
 </available>
 <reward XP="0"/>
 </quest>
@@ -2487,7 +2487,7 @@
 <reward XP="100"/>
 </quest>
 
-<quest type="main" world="NO" level="35" id="332">
+<quest type="dlcmain" world="NO" level="35" id="332">
 <name>Scenes From a Marriage</name>
 <GUID>5F9AB09D-451BD33F-475ABAA4-4B7BF3BF</GUID>
 <available>
@@ -2497,7 +2497,7 @@
 <reward XP="1100"/>
 </quest>
 
-<quest type="main" world="NO" level="38" id="361">
+<quest type="dlcmain" world="NO" level="38" id="361">
 <name>Whatsoever a Man Soweth</name>
 <GUID>0551620D-437310FC-3A100C91-55645E17</GUID>
 <available>

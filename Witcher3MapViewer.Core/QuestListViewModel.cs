@@ -56,10 +56,14 @@ namespace Witcher3MapViewer.Core
                 {
                     if (q.Visible == true)
                     {
-                        if (q.QuestType != QuestType.Main && q.SuggestedLevel <= level + 2)
+                        if (q.QuestType != QuestType.Main && q.QuestType != QuestType.DLCMain && q.SuggestedLevel <= level + 2)
                         {
                             q.IsSelected = true;
                             return;
+                        }
+                        else if (best == null && q.QuestType == QuestType.DLCMain)
+                        {
+                            best = q;
                         }
                         else if (best == null && q.QuestType == QuestType.Main)
                             best = q;

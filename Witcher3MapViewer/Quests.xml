@@ -4389,19 +4389,22 @@
 </discoverprompt>
 </quest>
 
-<quest type="dlcmain" world="TO" level="0" id="1">
+<quest type="side" world="TO" level="0" id="1">
 <name>No Place Like Home</name>
 <GUID>35E4C812-422459EF-1F816FAC-7E53B70E</GUID>
 <available>
-<GUID state="JS_Success">11D55E15-434FE711-E89E10B8-17BB09E2</GUID>
+<GUID state="JS_Success">11D55E15-434FE711-E89E10B8-17BB09E2</GUID> <!--The Beast of Toussaint-->
 </available>
+<discoverprompt>
+<info>Given automatically during Beast of Beauclaire</info>
+</discoverprompt>
 </quest>
 
 <quest type="side" world="TO" level="35" id="334">
 <name>Turn and Face the Strange</name>
 <GUID>A644CC5F-41D19717-CE2A4398-34879DFB</GUID>
 <available>
-<GUID state="JS_Success">11D55E15-434FE711-E89E10B8-17BB09E2</GUID>
+<GUID state="JS_Success">11D55E15-434FE711-E89E10B8-17BB09E2</GUID> <!--The Beast of Toussaint-->
 </available>
 <discoverprompt>
 <XY world="TO" X="-599" Y="-1372"/>
@@ -4414,7 +4417,7 @@
 <name>The Warble of a Smitten Knight</name>
 <GUID>AD9E547A-40323AEB-87AD21AE-8AE49F72</GUID>
 <available>
-<GUID state="JS_Success">11D55E15-434FE711-E89E10B8-17BB09E2</GUID>
+<GUID state="JS_Success">11D55E15-434FE711-E89E10B8-17BB09E2</GUID> <!--The Beast of Toussaint-->
 </available>
 <discoverprompt>
 <XY world="TO" X="-419" Y="-959"/>
@@ -4427,7 +4430,7 @@
 <name>Naughty Feathers</name>
 <GUID>91D57451-409E-4EAC-8165-BA079B40C9B7</GUID>
 <available>
-<GUID state="JS_Success">AD9E547A-40323AEB-87AD21AE-8AE49F72</GUID>
+<GUID state="JS_Success">C9F4557A-4660507F-1FE53F9D-B6C060BE</GUID>
 </available>
 <discoverprompt>
 <info>Talk to Guillame after Warble of a Smitten Knight</info>
@@ -4451,7 +4454,7 @@
 <name>Fists of Fury: Toussaint</name>
 <GUID>AF499A50-4016055D-97A4A787-06336148</GUID>
 <available>
-<GUID state="JS_Success">11D55E15-434FE711-E89E10B8-17BB09E2</GUID>
+<GUID state="JS_Success">11D55E15-434FE711-E89E10B8-17BB09E2</GUID> <!--The Beast of Toussaint-->
 </available>
 <discoverprompt>
 <XY world="TO" X="-504" Y="-1344"/>
@@ -4465,17 +4468,20 @@
 <available>
 <GUID state="JS_Success">AF499A50-4016055D-97A4A787-06336148</GUID>
 </available>
+<discoverprompt>
+<info>Given by Fists of Fury</info>
+</discoverprompt>
 </quest>
 
 <quest type="side" world="TO" level="36" id="338">
 <name>Till Death Do You Part</name>
 <GUID>6791BAC0-4EAC8D29-8900EA8D-62CF8490</GUID>
 <available>
-<GUID state="JS_Success">11D55E15-434FE711-E89E10B8-17BB09E2</GUID>
+<GUID state="JS_Success">11D55E15-434FE711-E89E10B8-17BB09E2</GUID> <!--The Beast of Toussaint-->
 </available>
 <discoverprompt>
 <XY world="TO" X="-504" Y="-1344"/>
-<info>Notice board</info>
+<info>Notice board (Quarreling at the cemetery)</info>
 </discoverprompt>
 </quest>
 
@@ -4485,7 +4491,7 @@
 <name>Paperchase</name>
 <GUID>E1815592-4F7DF37A-F3593B9B-52E1F152</GUID>
 <available>
-<GUID state="JS_Success">11D55E15-434FE711-E89E10B8-17BB09E2</GUID>
+<GUID state="JS_Success">11D55E15-434FE711-E89E10B8-17BB09E2</GUID> <!--The Beast of Toussaint-->
 </available>
 <discoverprompt>
 <XY world="TO" X="-503" Y="-1420"/>
@@ -4497,7 +4503,7 @@
 <name>Gwent: Never Fear, Skellige's Here</name>
 <GUID>10792209-4257AE39-5B821199-2FFB20EC</GUID>
 <available>
-<GUID state="JS_Success">11D55E15-434FE711-E89E10B8-17BB09E2</GUID>
+<GUID state="JS_Success">11D55E15-434FE711-E89E10B8-17BB09E2</GUID> <!--The Beast of Toussaint-->
 </available>
 <discoverprompt>
 <XY world="TO" X="-479" Y="-959"/>
@@ -4521,7 +4527,7 @@
 <name>Goodness, Gracious, Great Balls of Granite!</name>
 <GUID>3C3DC52F-445095B5-89C66893-79E185A1</GUID>
 <available>
-<GUID state="JS_Success">11D55E15-434FE711-E89E10B8-17BB09E2</GUID>
+<GUID state="JS_Success">11D55E15-434FE711-E89E10B8-17BB09E2</GUID> <!--The Beast of Toussaint-->
 </available>
 <discoverprompt>
 <XY world="TO" X="-504" Y="-1344"/>
@@ -4534,11 +4540,11 @@
 <name>Father Knows Worst</name>
 <GUID>E0EB6BB5-492FD420-5E53F4B9-6CC58BB7</GUID>
 <available>
-<GUID state="JS_Success">11D55E15-434FE711-E89E10B8-17BB09E2</GUID>
+<GUID state="JS_Success">11D55E15-434FE711-E89E10B8-17BB09E2</GUID> <!--The Beast of Toussaint-->
 </available>
 <discoverprompt>
 <XY world="TO" X="-504" Y="-1344"/>
-<info>Notice board</info>
+<info>Notice board (Armed Escort Wanted)</info>
 </discoverprompt>
 <reward XP="300"/>
 </quest>
@@ -4547,11 +4553,11 @@
 <name>Bovine Blues</name>
 <GUID>2633D68E-4C40FA82-D17A2A88-0A46D256</GUID>
 <available>
-<GUID state="JS_Success">11D55E15-434FE711-E89E10B8-17BB09E2</GUID>
+<GUID state="JS_Success">11D55E15-434FE711-E89E10B8-17BB09E2</GUID> <!--The Beast of Toussaint-->
 </available>
 <discoverprompt>
 <XY world="TO" X="288" Y="-996"/>
-<info>Notice board</info>
+<info>Notice board (Mysteriously plummeting cattle)</info>
 </discoverprompt>
 <reward XP="600"/>
 </quest>
@@ -4562,6 +4568,9 @@
 <available>
 <GUID state="JS_Success">2633D68E-4C40FA82-D17A2A88-0A46D256</GUID>
 </available>
+<discoverprompt>
+<info>Given after Bovine Blues</info>
+</discoverprompt>
 
 <subquests>
 	<quest type="side" world="TO" level="37" id="346">
@@ -4625,7 +4634,7 @@
 <name>Big Game Hunter</name>
 <GUID>39087354-4BBDC2C0-3D0942B3-0230FD61</GUID>
 <available>
-<GUID state="JS_Success">11D55E15-434FE711-E89E10B8-17BB09E2</GUID>
+<GUID state="JS_Success">11D55E15-434FE711-E89E10B8-17BB09E2</GUID> <!--The Beast of Toussaint-->
 </available>
 <discoverprompt>
 <XY world="TO" X="-159" Y="-656"/>
@@ -4637,7 +4646,7 @@
 <name>Vintner's Contract: Rivecalme Storehouse</name>
 <GUID>367672BA-41E9AB7F-F339428C-D5D493C0</GUID>
 <available>
-<GUID state="JS_Success">11D55E15-434FE711-E89E10B8-17BB09E2</GUID>
+<GUID state="JS_Success">11D55E15-434FE711-E89E10B8-17BB09E2</GUID> <!--The Beast of Toussaint-->
 </available>
 <discoverprompt>
 <XY world="TO" X="-223" Y="-312"/>
@@ -4653,45 +4662,52 @@
 </available>
 <discoverprompt>
 <XY world="TO" X="-159" Y="-656"/>
-<info>Notice board</info>
+<info>Notice board (Office of Internal Revenue)</info>
 </discoverprompt>
-</quest>
-
-<quest type="side" world="TO" level="37" id="353">
-<name>Wine Wars: Coronata</name>
-<GUID>E0AD810B-4517493B-1D1AD1B3-6B79080F</GUID>
-<available>
-<GUID state="JS_Success">642890AD-4F8ECBE6-2756EFA2-F755509A</GUID>
-</available>
-</quest>
-
-<quest type="side" world="TO" level="37" id="354">
-<name>Wine Wars: Vermentino</name>
-<GUID>7A0007EE-4B89DAF9-50D65893-42FE261B</GUID>
-<available>
-<GUID state="JS_Success">642890AD-4F8ECBE6-2756EFA2-F755509A</GUID>
-</available>
-</quest>
-
-<quest type="side" world="TO" level="42" id="390">
-<name>Wine Wars: The Deus in the Machina</name>
-<GUID>060EE78A-4B7A92A4-B4DF28A4-63E01A87</GUID>
-<available>
-<GUID state="JS_Active">E0AD810B-4517493B-1D1AD1B3-6B79080F</GUID>
-<GUID state="JS_Active">7A0007EE-4B89DAF9-50D65893-42FE261B</GUID>
-</available>
-<discoverprompt>
-<XY world="TO" X="-23" Y="99"/>
-</discoverprompt>
-</quest>
-
-<quest type="side" world="TO" level="39" id="368">
-<name>Wine Wars: Belgaard</name>
-<GUID>642890AD-4F8ECBE6-2756EFA2-F755509A</GUID>
-<available>
-<GUID state="JS_Success">060EE78A-4B7A92A4-B4DF28A4-63E01A87</GUID>
-</available>
 <subquests>
+	<quest type="side" world="TO" level="37" id="353">
+	<name>Wine Wars: Coronata</name>
+	<GUID>E0AD810B-4517493B-1D1AD1B3-6B79080F</GUID>
+	<available>
+	<GUID state="JS_Success">642890AD-4F8ECBE6-2756EFA2-F755509A</GUID>
+	</available>
+	</quest>
+	
+	<quest type="side" world="TO" level="37" id="354">
+	<name>Wine Wars: Vermentino</name>
+	<GUID>7A0007EE-4B89DAF9-50D65893-42FE261B</GUID>
+	<available>
+	<GUID state="JS_Success">642890AD-4F8ECBE6-2756EFA2-F755509A</GUID>
+	</available>
+	</quest>
+	
+	<quest type="side" world="TO" level="42" id="390">
+	<name>Wine Wars: The Deus in the Machina</name>
+	<GUID>060EE78A-4B7A92A4-B4DF28A4-63E01A87</GUID>
+	<available>
+	<GUID state="JS_Active">E0AD810B-4517493B-1D1AD1B3-6B79080F</GUID>
+	<GUID state="JS_Active">7A0007EE-4B89DAF9-50D65893-42FE261B</GUID>
+	</available>
+	<discoverprompt>
+	<XY world="TO" X="-23" Y="99"/>
+	</discoverprompt>
+	</quest>
+	
+	<quest type="side" world="TO" level="39" id="368">
+	<name>Wine Wars: Belgaard</name>
+	<!--<GUID>642890AD-4F8ECBE6-2756EFA2-F755509A</GUID>
+	63BCE128-4AF8CF79-857E498C-1E71FA77
+	81301669-408BEDE7-DA45F285-CA63334C
+	42327C9F-4AE2BDB8-51AF5B85-7B598CFE
+	B68762B6-475FAF21-2AF5DE9B-C3094F75
+	D53DFE3E-4D1BE314-EF5C0A92-A220C5A2
+	-->
+	<GUID>63BCE128-4AF8CF79-857E498C-1E71FA77</GUID>
+	<available>
+	<!--<GUID state="JS_Success">060EE78A-4B7A92A4-B4DF28A4-63E01A87</GUID>-->
+	<GUID state="JS_Success">11D55E15-434FE711-E89E10B8-17BB09E2</GUID>
+	</available>
+	</quest>
 
 	<quest type="side" world="TO" level="40" id="378">
 	<name>Wine Wars: Consorting</name>
@@ -4767,7 +4783,7 @@
 </available>
 <discoverprompt>
 <XY world="TO" X="-159" Y="-656"/>
-<info>Notice board</info>
+<info>Notice board (Notice from the Ducal Camerlengo)</info>
 </discoverprompt>
 </quest>
 
@@ -4830,7 +4846,7 @@
 </available>
 <discoverprompt>
 <XY world="TO" X="-774" Y="-373"/>
-<info>Notice board</info>
+<info>Notice board (Needed: Master Magicker)</info>
 </discoverprompt>
 </quest>
 
@@ -5141,7 +5157,7 @@
 </available>
 <discoverprompt>
 <XY world="TO" X="-504" Y="-1344"/>
-<info>Notice board</info>
+<info>Notice board (Test Yourself with the Trials...)</info>
 </discoverprompt>
 <reward XP="300"/>
 </quest>

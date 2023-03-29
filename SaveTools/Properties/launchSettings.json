@@ -2,7 +2,7 @@
   "profiles": {
     "SaveTools": {
       "commandName": "Project",
-      "commandLineArgs": "compare ManualSave_11416f_7e716000_41d9859.sav CheckPoint_11416f_7e716000_41e1d64.sav"
+      "commandLineArgs": "compare ManualSave_1266d8_7e716c00_5048320.sav ManualSave_11b6cd_7e716c00_505e1b1.sav"
     }
   }
 }

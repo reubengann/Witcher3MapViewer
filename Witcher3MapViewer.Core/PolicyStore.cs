@@ -24,6 +24,13 @@
             {
                 return false;
             }
+            if (q.HideIfAny != null && q.HideIfAny.AllConditions.Count > 0)
+            {
+                foreach (string c in q.HideIfAny.AllConditions)
+                {
+                    if (_availabilityProvider.GetState(c) >= QuestStatusState.Active) return false;
+                }
+            }
             return true;
         }
     }

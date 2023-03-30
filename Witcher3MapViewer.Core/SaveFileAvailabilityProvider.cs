@@ -50,17 +50,29 @@ namespace Witcher3MapViewer.Core
         public bool IsQuestAvailable(Quest q)
         {
             if (!q.HasAnyConditions) return true;
+            if (q.OneOfAbsolutelyRequired.HasAny && !IsAnyAbsolutelyRequiredMet(q))
+                return false;
             foreach (var item in q.AvailableIfAny.Success)
             {
-                if (GetState(item) < QuestStatusState.Success)
-                    return false;
+                if (GetState(item) == QuestStatusState.Success)
+                    return true;
             }
             foreach (var item in q.AvailableIfAny.Active)
             {
-                if (GetState(item) < QuestStatusState.Active)
-                    return false;
+                if (GetState(item) >= QuestStatusState.Active)
+                    return true;
             }
-            return true;
+            return false;
+        }
+
+        private bool IsAnyAbsolutelyRequiredMet(Quest q)
+        {
+            foreach (var item in q.OneOfAbsolutelyRequired.Success)
+            {
+                if (GetState(item) == QuestStatusState.Success)
+                    return true;
+            }
+            return false;
         }
 
         public void SetState(string guid, QuestStatusState? state)

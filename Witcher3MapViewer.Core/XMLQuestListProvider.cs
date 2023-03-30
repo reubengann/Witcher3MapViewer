@@ -91,6 +91,31 @@ namespace Witcher3MapViewer.Core
                     }
                 }
             }
+            if (item.AbsolutelyRequiredConditions != null)
+            {
+                foreach (var condition in item.AbsolutelyRequiredConditions)
+                {
+                    foreach (var reference in condition.GUIDStates)
+                    {
+                        if (reference.ActiveState == QuestStatusState.Success)
+                        {
+                            quest.OneOfAbsolutelyRequired.Success.Add(reference.Value);
+                        }
+                        else if (reference.ActiveState == QuestStatusState.NotFound)
+                        {
+                            quest.OneOfAbsolutelyRequired.Any.Add(reference.Value);
+                        }
+                        else if (reference.ActiveState == QuestStatusState.Active)
+                        {
+                            quest.OneOfAbsolutelyRequired.Active.Add(reference.Value);
+                        }
+                        else
+                        {
+                            throw new NotImplementedException();
+                        }
+                    }
+                }
+            }
             if (item.DiscoverPrompt != null)
             {
                 QuestDiscoverPromptDAO prompt = item.DiscoverPrompt;

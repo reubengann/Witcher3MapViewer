@@ -4321,11 +4321,11 @@
 <quest type="dlcmain" world="TO" level="49" id="417">
 <name>Be It Ever So Humble</name>
 <GUID>C9F4557A-4660507F-1FE53F9D-B6C060BE</GUID>
-<available>
+<oneofabsolutelyrequired>
 <GUID state="JS_Success">8F17E40A-4942D119-96BC5A99-28A6F4D9</GUID>
 <GUID state="JS_Success">E8D3E37E-443DA208-F6407683-AA607416</GUID>
 <GUID state="JS_Success">053B2B41-41E1DB6D-D6F4ECA6-94443258</GUID>
-</available>
+</oneofabsolutelyrequired>
 <available>
 <GUID state="JS_Success">75B389CC-4F5043B3-9CC508A2-88F82183</GUID>
 <GUID state="JS_Success">FD761CAC-44DF7883-8A45C9AF-50163CDF</GUID>

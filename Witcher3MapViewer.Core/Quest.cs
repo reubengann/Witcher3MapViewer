@@ -32,6 +32,7 @@
         public string World { get; set; } = default!;
         public QuestReward? Reward { get; set; }
         public QuestConditions AvailableIfAny { get; set; } = new QuestConditions();
+        public QuestConditions OneOfAbsolutelyRequired { get; set; } = new QuestConditions();
         public QuestConditions HideIfAny { get; set; } = new QuestConditions();
         public QuestConditions RequiredStrictConditions { get; set; } = new QuestConditions();
         public QuestConditions AutomaticallyDoneIfConditions { get; set; } = new QuestConditions();
@@ -75,6 +76,7 @@
         public List<string> Active { get; internal set; } = new List<string>();
 
         public bool HasAny => Any.Count > 0 || Success.Count > 0 || Active.Count > 0;
+        public List<string> AllConditions => Success.Concat(Any).Concat(Active).ToList();
     }
 
     public class QuestReward

@@ -38,6 +38,9 @@ namespace Witcher3MapViewer.Core.DAO
         [XmlElement("available")]
         public List<QuestConditionDAO> AvailableConditions { get; set; }
 
+        [XmlElement("oneofabsolutelyrequired")]
+        public List<QuestConditionDAO> AbsolutelyRequiredConditions { get; set; }
+
         [XmlElement("strict")]
         public List<QuestConditionDAO> StrictConditions { get; set; }
 

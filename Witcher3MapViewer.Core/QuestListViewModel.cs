@@ -56,7 +56,7 @@ namespace Witcher3MapViewer.Core
                 {
                     if (q.Visible == true)
                     {
-                        if (q.QuestType != QuestType.Main && q.QuestType != QuestType.DLCMain && q.SuggestedLevel <= level + 2)
+                        if (q.QuestType != QuestType.Main && q.QuestType != QuestType.EndGame && q.QuestType != QuestType.DLCMain && q.SuggestedLevel <= level + 2)
                         {
                             q.IsSelected = true;
                             return;

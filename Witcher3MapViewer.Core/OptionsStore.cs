@@ -71,7 +71,7 @@ namespace Witcher3MapViewer.Core
         {
             if (!File.Exists(path))
             {
-                File.WriteAllText(path, JsonSerializer.Serialize(new OptionsFile(), new JsonSerializerOptions { WriteIndented = true }));
+                throw new FileNotFoundException();
             }
             var jsonString = File.ReadAllText(path);
             var file = JsonSerializer.Deserialize<OptionsFile>(jsonString);
@@ -81,6 +81,11 @@ namespace Witcher3MapViewer.Core
             else if (file.TrackingMode == "Automatic") trackingMode = TrackingMode.Automatic;
             else { throw new Exception("Unknown tracking mode in file"); }
             return new Options(file.ShowOnlyAvailable, file.ShowComplete, trackingMode, file.SaveFilePath);
+        }
+
+        public static Options Default()
+        {
+            return new Options(true, false, TrackingMode.Manual, "");
         }
     }
 

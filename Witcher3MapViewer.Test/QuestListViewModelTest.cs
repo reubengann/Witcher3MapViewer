@@ -17,13 +17,14 @@ namespace Witcher3MapViewer.Test
                 GUID = Guid.NewGuid().ToString(),
             };
         }
+        Options o = new Options(true, false, TrackingMode.Manual, "");
 
         [Test]
         public void Test_When_No_Requirement_SelectBest_Sets_SideQuest_as_Best()
         {
             List<Quest> quests = new List<Quest> { makeQuest(QuestType.Main, 0), makeQuest(QuestType.SideQuest, 0) };
             IQuestAvailabilityProvider avail = new Mock<IQuestAvailabilityProvider>().Object;
-            QuestListViewModel vm = new QuestListViewModel(quests, avail, new Mock<ILevelProvider>().Object, new OptionsStore(avail));
+            QuestListViewModel vm = new QuestListViewModel(quests, avail, new Mock<ILevelProvider>().Object, new OptionsStore(o, avail));
             vm.SelectBest();
             Assert.That(vm.CurrentQuests[1].IsSelected, Is.True);
         }
@@ -33,7 +34,7 @@ namespace Witcher3MapViewer.Test
         {
             List<Quest> quests = new List<Quest> { makeQuest(QuestType.Main, 0), makeQuest(QuestType.Main, 1) };
             IQuestAvailabilityProvider avail = new Mock<IQuestAvailabilityProvider>().Object;
-            QuestListViewModel vm = new QuestListViewModel(quests, avail, new Mock<ILevelProvider>().Object, new OptionsStore(avail));
+            QuestListViewModel vm = new QuestListViewModel(quests, avail, new Mock<ILevelProvider>().Object, new OptionsStore(o, avail));
             vm.SelectBest();
             Assert.That(vm.CurrentQuests[0].IsSelected, Is.True);
         }
@@ -45,7 +46,7 @@ namespace Witcher3MapViewer.Test
             Mock<ILevelProvider> mock = new Mock<ILevelProvider>();
             mock.Setup(x => x.GetLevel()).Returns(1);
             IQuestAvailabilityProvider avail = new Mock<IQuestAvailabilityProvider>().Object;
-            QuestListViewModel vm = new QuestListViewModel(quests, avail, mock.Object, new OptionsStore(avail));
+            QuestListViewModel vm = new QuestListViewModel(quests, avail, mock.Object, new OptionsStore(o, avail));
             vm.SelectBest();
             Assert.That(vm.CurrentQuests[0].IsSelected, Is.True);
         }

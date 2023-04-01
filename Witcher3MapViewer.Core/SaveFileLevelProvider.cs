@@ -13,5 +13,9 @@
         {
             return _save.PlayerLevel;
         }
+
+        public void SetLevel(int level)
+        {
+        }
     }
 }

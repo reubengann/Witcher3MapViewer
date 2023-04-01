@@ -6,6 +6,9 @@
         xmlns:local="clr-namespace:Witcher3MapViewer.WPF"
         mc:Ignorable="d"
         Title="OptionsWindow" Height="450" Width="300">
+    <Window.Resources>
+        <local:RGColorConverter x:Key="colorConvertor"/>
+    </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
@@ -21,7 +24,7 @@
                 <Button IsEnabled="{Binding IsFileModeChecked}" Content="Find automatically" Command="{Binding FindSaveFilePathCommand}"/>
             </StackPanel>
             <TextBox IsEnabled="{Binding IsFileModeChecked}" Text="{Binding SaveFilePath, UpdateSourceTrigger=PropertyChanged}" Margin="10" />
-            <Label Margin="0" Foreground="Red" Height="15" Padding="0" Content="{Binding ErrorMessage}"/>
+            <Label Foreground="{Binding PathOk, Converter={StaticResource colorConvertor}}" Height="20" Padding="0" Content="{Binding ErrorMessage}"/>
         </StackPanel>
         <StackPanel Grid.Row="1">
             <Label Content="Quest menu options"/>

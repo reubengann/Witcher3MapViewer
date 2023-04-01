@@ -26,5 +26,10 @@
             }
             return 0;
         }
+
+        public void SetCount(int id, int count)
+        {
+
+        }
     }
 }

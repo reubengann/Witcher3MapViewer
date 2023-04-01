@@ -10,6 +10,7 @@ namespace Witcher3MapViewer.Core
         public OptionsWindowViewModel(Options options)
         {
             this.options = options;
+            if (options.TrackingMode == TrackingMode.Automatic) CheckPathBox();
         }
 
         public bool ShowOnlyAvailable { get => options.ShowOnlyAvailable; set => options.ShowOnlyAvailable = value; }
@@ -40,14 +41,26 @@ namespace Witcher3MapViewer.Core
             if (string.IsNullOrEmpty(SaveFilePath))
             {
                 ErrorMessage = "Please enter a path";
+                PathOk = false;
                 return;
             }
             if (!Directory.Exists(SaveFilePath))
             {
                 ErrorMessage = "Not a valid directory";
+                PathOk = false;
+                return;
             }
-            else ErrorMessage = "";
+            ErrorMessage = "Path looks good";
+            PathOk = true;
         }
+        private bool pathOk;
+
+        public bool PathOk
+        {
+            get { return pathOk; }
+            set { pathOk = value; OnPropertyChanged(nameof(PathOk)); }
+        }
+
 
         public string SaveFilePath
         {

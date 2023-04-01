@@ -9,6 +9,8 @@
             _save = save;
         }
 
+        public event Action LevelChanged;
+
         public int GetLevel()
         {
             return _save.PlayerLevel;

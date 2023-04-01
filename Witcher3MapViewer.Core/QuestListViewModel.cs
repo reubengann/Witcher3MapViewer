@@ -25,6 +25,7 @@ namespace Witcher3MapViewer.Core
             }
             questAvailabilityProvider.AvailabilityChanged += RefreshAndSelectNew;
             _levelProvider = levelProvider;
+            _levelProvider.LevelChanged += RefreshAndSelectNew;
             this.policyStore = policyStore;
         }
 

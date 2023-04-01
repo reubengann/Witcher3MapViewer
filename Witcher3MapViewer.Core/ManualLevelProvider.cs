@@ -6,7 +6,7 @@ namespace Witcher3MapViewer.Core
     {
         private readonly string filename;
         private int Level;
-
+        public event Action LevelChanged;
         public ManualLevelProvider(string filename)
         {
             this.filename = filename;
@@ -32,6 +32,7 @@ namespace Witcher3MapViewer.Core
         {
             Level = level;
             File.WriteAllText(filename, JsonSerializer.Serialize(new CharacterLevelFile { Level = level }));
+            LevelChanged?.Invoke();
         }
     }
 

@@ -15,7 +15,7 @@ namespace Witcher3MapViewer.Core
         private readonly IGwentStatusProvider gwentStatusProvider;
         private readonly IGwentTrackerWindow gwentTrackerWindow;
         private readonly IOptionsDialogWindow optionsDialogWindow;
-        private readonly PolicyStore policyStore;
+        private readonly OptionsStore policyStore;
         private readonly Dictionary<string, WorldSetting> TileMapPathMap;
         Dictionary<string, string> shortToLongNameMap;
 
@@ -29,7 +29,7 @@ namespace Witcher3MapViewer.Core
             IGwentStatusProvider gwentStatusProvider,
             IGwentTrackerWindow gwentTrackerWindow,
             IOptionsDialogWindow optionsDialogWindow,
-            PolicyStore policyStore
+            OptionsStore policyStore
             )
         {
             _map = map;

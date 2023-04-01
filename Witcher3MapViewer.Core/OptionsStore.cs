@@ -1,20 +1,20 @@
 ﻿namespace Witcher3MapViewer.Core
 {
-    public class PolicyStore
+    public class OptionsStore
     {
         private readonly IQuestAvailabilityProvider _availabilityProvider;
 
         private bool ShowOnlyAvailable;
         private bool ShowComplete;
 
-        public PolicyStore(IQuestAvailabilityProvider availabilityProvider)
+        public OptionsStore(IQuestAvailabilityProvider availabilityProvider)
         {
             _availabilityProvider = availabilityProvider;
             ShowOnlyAvailable = true;
             ShowComplete = false;
         }
 
-        public bool CurrentPolicy(Quest q)
+        public bool QuestDisplayPolicy(Quest q)
         {
             if (ShowOnlyAvailable && !_availabilityProvider.IsQuestAvailable(q))
             {
@@ -33,5 +33,12 @@
             }
             return true;
         }
+    }
+
+    public class Options
+    {
+        public bool ShowOnlyAvailable { get; set; }
+        public bool ShowComplete { get; set; }
+
     }
 }

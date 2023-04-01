@@ -29,7 +29,7 @@ namespace Witcher3MapViewer.WPF
             SaveFileGwentStatusProvider saveFileGwent = new SaveFileGwentStatusProvider(availabilityProvider);
             GwentTrackerWPFWindow gwentTrackerWPFWindow = new GwentTrackerWPFWindow();
             OptionsWPFDialogWindow optionsWPFDialogWindow = new OptionsWPFDialogWindow();
-            mainWindow.DataContext = new MainWindowViewModel(mapsUIMap, markerProvider, mapSettingsProvider, questListProvider, availabilityProvider, gwentCardProvider, levelProvider, saveFileGwent, gwentTrackerWPFWindow, optionsWPFDialogWindow, new PolicyStore(availabilityProvider));
+            mainWindow.DataContext = new MainWindowViewModel(mapsUIMap, markerProvider, mapSettingsProvider, questListProvider, availabilityProvider, gwentCardProvider, levelProvider, saveFileGwent, gwentTrackerWPFWindow, optionsWPFDialogWindow, new OptionsStore(availabilityProvider));
             mainWindow.Show();
         }
     }

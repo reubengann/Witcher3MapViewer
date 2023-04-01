@@ -8,14 +8,14 @@ namespace Witcher3MapViewer.Core
 
         ObservableCollection<QuestViewModel> _currentQuests;
         private readonly ILevelProvider _levelProvider;
-        private readonly PolicyStore policyStore;
+        private readonly OptionsStore policyStore;
 
         public ObservableCollection<QuestViewModel> CurrentQuests { get { return _currentQuests; } }
 
-        public QuestListViewModel(List<Quest> currentQuests, IQuestAvailabilityProvider questAvailabilityProvider, ILevelProvider levelProvider, PolicyStore policyStore)
+        public QuestListViewModel(List<Quest> currentQuests, IQuestAvailabilityProvider questAvailabilityProvider, ILevelProvider levelProvider, OptionsStore policyStore)
         {
             _currentQuests = new ObservableCollection<QuestViewModel>(
-                currentQuests.Select(q => new QuestViewModel(q, questAvailabilityProvider, levelProvider, null, policyStore.CurrentPolicy)).OrderBy(x => x._quest.UniqueID)
+                currentQuests.Select(q => new QuestViewModel(q, questAvailabilityProvider, levelProvider, null, policyStore.QuestDisplayPolicy)).OrderBy(x => x._quest.UniqueID)
                 );
 
             foreach (var qvm in _currentQuests)

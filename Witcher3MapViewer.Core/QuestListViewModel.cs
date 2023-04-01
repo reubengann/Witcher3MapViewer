@@ -22,6 +22,8 @@ namespace Witcher3MapViewer.Core
             {
                 qvm.ItemWasChanged += RefreshAndSelectNew;
                 qvm.SelectedWasChanged += ChildSelectedChanged;
+                foreach (var child in qvm.Children)
+                    child.ItemWasChanged += RefreshAndSelectNew;
             }
             questAvailabilityProvider.AvailabilityChanged += RefreshAndSelectNew;
             _levelProvider = levelProvider;

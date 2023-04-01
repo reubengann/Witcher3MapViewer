@@ -33,6 +33,8 @@ namespace Witcher3MapViewer.Core
             }
             return true;
         }
+
+        public bool IsManual => options.TrackingMode == TrackingMode.Manual;
     }
 
     public enum TrackingMode

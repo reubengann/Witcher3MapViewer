@@ -16,7 +16,7 @@ namespace Witcher3MapViewer.Core
         private readonly IGwentStatusProvider gwentStatusProvider;
         private readonly IGwentTrackerWindow gwentTrackerWindow;
         private readonly IOptionsDialogWindow optionsDialogWindow;
-        private readonly OptionsStore policyStore;
+        private readonly OptionsStore optionsStore;
         private readonly Dictionary<string, WorldSetting> TileMapPathMap;
         Dictionary<string, string> shortToLongNameMap;
 
@@ -30,7 +30,7 @@ namespace Witcher3MapViewer.Core
             IGwentStatusProvider gwentStatusProvider,
             IGwentTrackerWindow gwentTrackerWindow,
             IOptionsDialogWindow optionsDialogWindow,
-            OptionsStore policyStore
+            OptionsStore optionsStore
             )
         {
             _map = map;
@@ -43,7 +43,7 @@ namespace Witcher3MapViewer.Core
             this.gwentStatusProvider = gwentStatusProvider;
             this.gwentTrackerWindow = gwentTrackerWindow;
             this.optionsDialogWindow = optionsDialogWindow;
-            this.policyStore = policyStore;
+            this.optionsStore = optionsStore;
             List<WorldSetting> worldSettings = _mapSettingsProvider.GetAll();
             shortToLongNameMap = worldSettings.ToDictionary(x => x.ShortName, x => x.Name);
             shortToLongNameMap["VE"] = shortToLongNameMap["NO"];
@@ -51,7 +51,7 @@ namespace Witcher3MapViewer.Core
             TileMapPathMap = worldSettings.ToDictionary(x => x.Name, x => x);
             MarkerToggleViewModel = new MarkerToggleViewModel(_map);
 
-            QuestListViewModel = new QuestListViewModel(questListProvider.GetAllQuests(), availabilityProvider, levelProvider, policyStore);
+            QuestListViewModel = new QuestListViewModel(questListProvider.GetAllQuests(), availabilityProvider, levelProvider, optionsStore);
             QuestListViewModel.ItemSelectedChanged += QuestListViewModel_ItemSelectedChanged;
             QuestListViewModel.SelectBest();
             gwentStatusProvider.StatusUpdated += GwentStatusProvider_StatusUpdated;
@@ -63,6 +63,8 @@ namespace Witcher3MapViewer.Core
             levelProvider.SetLevel(levelProvider.GetLevel() + 1);
             OnPropertyChanged(nameof(PlayerLevel));
         }
+
+        public bool ShowLevelControls => optionsStore.IsManual;
 
         public ICommand DecreaseLevelCommand => new DelegateCommand(DecreaseLevel);
         private void DecreaseLevel()

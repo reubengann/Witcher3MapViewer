@@ -13,6 +13,9 @@
             <i:InvokeCommandAction Command="{Binding LoadInitialMapCommand}"/>
         </i:EventTrigger>
     </i:Interaction.Triggers>
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="BtoV"/>
+    </Window.Resources>
     <Grid>
         <map:MapControl x:Name="MapControl"/>
         <Grid>
@@ -59,8 +62,8 @@
                     <StackPanel Background="White" Orientation="Horizontal">
                         <TextBlock Background="White" Text="Player Level: "/>
                         <TextBlock Background="White" Text="{Binding PlayerLevel}"/>
-                        <Button Width="20" Command="{Binding IncreaseLevelCommand}" Margin="15 0 0 0" Content="&#x2191;"/>
-                        <Button Width="20" Command="{Binding DecreaseLevelCommand}" Content="&#x2193;"/>
+                        <Button Width="20" Command="{Binding IncreaseLevelCommand}" Visibility="{Binding ShowLevelControls, Converter={StaticResource BtoV}}" Margin="15 0 0 0" Content="&#x2191;"/>
+                        <Button Width="20" Command="{Binding DecreaseLevelCommand}" Visibility="{Binding ShowLevelControls, Converter={StaticResource BtoV}}" Content="&#x2193;"/>
                     </StackPanel>
                     <Button VerticalAlignment="Bottom" Content="Options" Height="25" Command="{Binding OpenOptionsWindowCommand}"/>
                     <Button Content="{Binding GwentMessage}" Height="25" Command="{Binding OpenGwentWindowCommand}" />

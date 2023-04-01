@@ -56,6 +56,12 @@
                     <RowDefinition Height="8*"/>
                 </Grid.RowDefinitions>
                 <StackPanel Grid.Row="0"  HorizontalAlignment="Left" Width="250"  Height="auto" VerticalAlignment="Bottom" Margin="0 0 15 0">
+                    <StackPanel Background="White" Orientation="Horizontal">
+                        <TextBlock Background="White" Text="Player Level: "/>
+                        <TextBlock Background="White" Text="{Binding PlayerLevel}"/>
+                        <Button Width="20" Command="{Binding IncreaseLevelCommand}" Margin="15 0 0 0" Content="&#x2191;"/>
+                        <Button Width="20" Command="{Binding DecreaseLevelCommand}" Content="&#x2193;"/>
+                    </StackPanel>
                     <Button VerticalAlignment="Bottom" Content="Options" Height="25" Command="{Binding OpenOptionsWindowCommand}"/>
                     <Button Content="{Binding GwentMessage}" Height="25" Command="{Binding OpenGwentWindowCommand}" />
                 </StackPanel>

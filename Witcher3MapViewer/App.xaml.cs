@@ -7,14 +7,23 @@ namespace Witcher3MapViewer.WPF
     public partial class App : Application
     {
         private const string OptionsPath = "options.json";
+        private const string SettingsXMLPath = "Settings.xml";
+        private const string MapPinsXMLPath = "MapPins.xml";
+        private const string QuestsXMLPath = "Quests.xml";
+        private const string CirclePNGPath = "Circle.png";
+        private const string OptionsJSONPath = "options.json";
+        private const string QuestStatusJsonPath = "quest_statuses.json";
+        private const string ManualLevelJsonPath = "level.json";
+        private const string ManualGwentJsonPath = "gwent_statuses.json";
+        private const string GwentXMLPath = "Gwent.xml";
 
         public App()
         {
-            XMLMapSettingsProvider mapSettingsProvider = XMLMapSettingsProvider.FromFile("Settings.xml");
-            XMLMarkerProvider markerProvider = XMLMarkerProvider.FromFile("MapPins.xml", mapSettingsProvider);
+            XMLMapSettingsProvider mapSettingsProvider = XMLMapSettingsProvider.FromFile(SettingsXMLPath);
+            XMLMarkerProvider markerProvider = XMLMarkerProvider.FromFile(MapPinsXMLPath, mapSettingsProvider);
             MainWindow mainWindow = new MainWindow();
             string largeIconPath = mapSettingsProvider.GetIconSettings().LargeIconPath;
-            MapsUIMap mapsUIMap = new MapsUIMap(mainWindow.MapControl, Path.Combine(largeIconPath, "Circle.png"));
+            MapsUIMap mapsUIMap = new MapsUIMap(mainWindow.MapControl, Path.Combine(largeIconPath, CirclePNGPath));
             mainWindow.Show();
 
             Options options;
@@ -28,7 +37,7 @@ namespace Witcher3MapViewer.WPF
                     mainWindow.Close();
                     return;
                 };
-                options.Save("options.json");
+                options.Save(OptionsJSONPath);
             }
             else
             {
@@ -36,7 +45,7 @@ namespace Witcher3MapViewer.WPF
             }
 
 
-            XMLQuestListProvider questListProvider = XMLQuestListProvider.FromFile("Quests.xml");
+            XMLQuestListProvider questListProvider = XMLQuestListProvider.FromFile(QuestsXMLPath);
 
             IQuestAvailabilityProvider availabilityProvider;
             ILevelProvider levelProvider;
@@ -44,7 +53,7 @@ namespace Witcher3MapViewer.WPF
             if (options.TrackingMode == TrackingMode.Automatic)
             {
                 SaveFileAvailabilityProvider saveFileAvailabilityProvider = new SaveFileAvailabilityProvider(
-                                        options.SaveFilePath, "quest_statuses.json", Path.GetTempPath()
+                                        options.SaveFilePath, QuestStatusJsonPath, Path.GetTempPath()
                                     );
                 availabilityProvider = saveFileAvailabilityProvider;
                 levelProvider = new SaveFileLevelProvider(saveFileAvailabilityProvider);
@@ -52,12 +61,12 @@ namespace Witcher3MapViewer.WPF
             }
             else
             {
-                availabilityProvider = new JsonManualQuestAvailabilityProvider("quest_statuses.json");
-                levelProvider = new ManualLevelProvider("level.json");
-                gwentStatusProvider = new ManualGwentProvider("gwent_statuses.json");
+                availabilityProvider = new JsonManualQuestAvailabilityProvider(QuestStatusJsonPath);
+                levelProvider = new ManualLevelProvider(ManualLevelJsonPath);
+                gwentStatusProvider = new ManualGwentProvider(ManualGwentJsonPath);
             }
             OptionsStore optionsStore = new OptionsStore(options, availabilityProvider);
-            XMLGwentCardProvider gwentCardProvider = XMLGwentCardProvider.FromFile("Gwent.xml");
+            XMLGwentCardProvider gwentCardProvider = XMLGwentCardProvider.FromFile(GwentXMLPath);
             GwentTrackerWPFWindow gwentTrackerWPFWindow = new GwentTrackerWPFWindow();
 
             mainWindow.DataContext = new MainWindowViewModel(

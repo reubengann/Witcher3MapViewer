@@ -12,6 +12,7 @@ namespace Witcher3MapViewer.Core
         private readonly IQuestListProvider _questListProvider;
         private readonly IQuestAvailabilityProvider _availabilityProvider;
         private readonly IGwentCardProvider gwentCardProvider;
+        private readonly ILevelProvider levelProvider;
         private readonly IGwentStatusProvider gwentStatusProvider;
         private readonly IGwentTrackerWindow gwentTrackerWindow;
         private readonly IOptionsDialogWindow optionsDialogWindow;
@@ -38,6 +39,7 @@ namespace Witcher3MapViewer.Core
             _questListProvider = questListProvider;
             _availabilityProvider = availabilityProvider;
             this.gwentCardProvider = gwentCardProvider;
+            this.levelProvider = levelProvider;
             this.gwentStatusProvider = gwentStatusProvider;
             this.gwentTrackerWindow = gwentTrackerWindow;
             this.optionsDialogWindow = optionsDialogWindow;
@@ -49,13 +51,29 @@ namespace Witcher3MapViewer.Core
             TileMapPathMap = worldSettings.ToDictionary(x => x.Name, x => x);
             MarkerToggleViewModel = new MarkerToggleViewModel(_map);
 
-            //Func<Quest, bool> defaultpolicy = q => _availabilityProvider.IsQuestAvailable(q);
-            //Func<Quest, bool> defaultpolicy = q => _availabilityProvider.IsQuestAvailable(q) && _availabilityProvider.GetState(q.GUID) < QuestStatusState.Success;
             QuestListViewModel = new QuestListViewModel(questListProvider.GetAllQuests(), availabilityProvider, levelProvider, policyStore);
             QuestListViewModel.ItemSelectedChanged += QuestListViewModel_ItemSelectedChanged;
             QuestListViewModel.SelectBest();
             gwentStatusProvider.StatusUpdated += GwentStatusProvider_StatusUpdated;
         }
+
+        public ICommand IncreaseLevelCommand => new DelegateCommand(IncreaseLevel);
+        private void IncreaseLevel()
+        {
+            levelProvider.SetLevel(levelProvider.GetLevel() + 1);
+            OnPropertyChanged(nameof(PlayerLevel));
+        }
+
+        public ICommand DecreaseLevelCommand => new DelegateCommand(DecreaseLevel);
+        private void DecreaseLevel()
+        {
+            int level = levelProvider.GetLevel();
+            if (level == 1) { return; }
+            levelProvider.SetLevel(level - 1);
+            OnPropertyChanged(nameof(PlayerLevel));
+        }
+
+        public string PlayerLevel => levelProvider.GetLevel().ToString();
 
         private void GwentStatusProvider_StatusUpdated()
         {

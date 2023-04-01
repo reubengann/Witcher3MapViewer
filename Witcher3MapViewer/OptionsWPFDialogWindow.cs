@@ -5,20 +5,25 @@ namespace Witcher3MapViewer.WPF
 {
     public class OptionsWPFDialogWindow : IOptionsDialogWindow
     {
-        public PolicyOptions? ShowDialog()
+        Options options;
+
+        public OptionsWPFDialogWindow(Options options)
+        {
+            this.options = options;
+        }
+
+        public Options GetNewOptions()
+        {
+            return options;
+        }
+
+        public bool ShowDialog()
         {
             OptionsWindow optionsWindow = new OptionsWindow();
-            OptionsWindowViewModel optionsWindowViewModel = new OptionsWindowViewModel();
+            OptionsWindowViewModel optionsWindowViewModel = new OptionsWindowViewModel(options);
             optionsWindow.DataContext = optionsWindowViewModel;
             var result = optionsWindow.ShowDialog();
-            if (result != true)
-            {
-                return null;
-            }
-            var po = new PolicyOptions();
-            po.ShowRaces = optionsWindowViewModel.ShowRaces;
-            return po;
-
+            return result ?? false;
         }
     }
 }

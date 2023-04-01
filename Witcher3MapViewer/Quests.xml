@@ -103,7 +103,7 @@
 <GUID state="JS_Success">42CE0F47-454E0055-8AC991AD-A09CAFB3</GUID>
 </available>
 <discoverprompt>
-<info>Notice board</info>
+<info>Notice board (make sure to ask Tomira where she's from)</info>
 <XY world="WO" X="3" Y="-15" />
 </discoverprompt>
 <GUID>ADDBEE45-437F7E6B-286D2E91-190FEF86</GUID>
@@ -4330,6 +4330,9 @@
 <GUID state="JS_Success">75B389CC-4F5043B3-9CC508A2-88F82183</GUID>
 <GUID state="JS_Success">FD761CAC-44DF7883-8A45C9AF-50163CDF</GUID>
 </available>
+<discoverprompt>
+<info>Go to Corvo Bianco</info>
+</discoverprompt>
 </quest>
 
 <quest type="dlcmain" world="TO" level="49" id="418">

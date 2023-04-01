@@ -34,7 +34,7 @@
             <CheckBox Content="Show complete quests" 
                       HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" 
                       IsChecked="{Binding ShowComplete}" />
-            <!--<Button Margin="10,10,10,10">Reset quest statuses</Button>-->
+            <Button Command="{Binding RequestResetCommand}" Margin="10,10,10,10">Reset quest statuses</Button>
         </StackPanel>
         <StackPanel VerticalAlignment="Bottom" Grid.Row="2"  Orientation="Horizontal" Margin="0 0 0 10">
             <Button IsDefault="True"  Content="Save and close" HorizontalAlignment="Center" Margin="10,10,10,0" VerticalAlignment="Top" Width="106" Height="28" Click="Ok_Clicked"/>

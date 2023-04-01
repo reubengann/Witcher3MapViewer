@@ -25,11 +25,18 @@ namespace Witcher3MapViewer.Core
             return false;
         }
 
+        public abstract void ResetManualStates();
+
         public virtual void SetState(string guid, QuestStatusState? state)
         {
             if (state == null)
                 _statuses.Remove(guid);
             else _statuses[guid] = (QuestStatusState)state;
+        }
+
+        protected void OnAvailabilityChanged()
+        {
+            AvailabilityChanged?.Invoke();
         }
     }
 
@@ -51,9 +58,21 @@ namespace Witcher3MapViewer.Core
             }
         }
 
+        public override void ResetManualStates()
+        {
+            _statuses.Clear();
+            SaveFile();
+            OnAvailabilityChanged();
+        }
+
         public override void SetState(string guid, QuestStatusState? state)
         {
             base.SetState(guid, state);
+            SaveFile();
+        }
+
+        private void SaveFile()
+        {
             var write = JsonSerializer.Serialize(_statuses);
             File.WriteAllText(filepath, write);
         }

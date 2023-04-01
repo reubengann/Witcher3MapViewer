@@ -62,6 +62,10 @@ namespace Witcher3MapViewer.Core
         }
 
 
+        public ICommand RequestResetCommand => new DelegateCommand(() => RequestedResetOfQuests = true);
+        public bool RequestedResetOfQuests { get; set; } = false;
+
+
         public string SaveFilePath
         {
             get => options.SaveFilePath;

@@ -137,6 +137,10 @@ namespace Witcher3MapViewer.Core
         private void LaunchOptionsWindow()
         {
             optionsDialogWindow.ShowDialog();
+            if (optionsDialogWindow.ResetWasRequested())
+            {
+                _availabilityProvider.ResetManualStates();
+            }
         }
 
         private void LaunchGwentWindow()

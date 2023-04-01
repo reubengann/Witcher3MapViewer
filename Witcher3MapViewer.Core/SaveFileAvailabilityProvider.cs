@@ -127,5 +127,11 @@ namespace Witcher3MapViewer.Core
         {
             return _saveFile.GwentManager.Counts;
         }
+
+        public void ResetManualStates()
+        {
+            _localProgress.ResetManualStates();
+            AvailabilityChanged?.Invoke();
+        }
     }
 }

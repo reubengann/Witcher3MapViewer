@@ -4,5 +4,6 @@
     public interface IOptionsDialogWindow
     {
         bool ShowDialog();
+        bool ResetWasRequested();
     }
 }

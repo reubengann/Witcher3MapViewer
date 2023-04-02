@@ -69,6 +69,11 @@ namespace Witcher3MapViewer.Core
             File.WriteAllText(path, JsonSerializer.Serialize(file, new JsonSerializerOptions { WriteIndented = true }));
         }
 
+        public Options Copy()
+        {
+            return new Options(ShowOnlyAvailable, ShowComplete, TrackingMode, SaveFilePath);
+        }
+
         public static Options FromFile(string path)
         {
             if (!File.Exists(path))

@@ -30,7 +30,11 @@ namespace Witcher3MapViewer.WPF
             OptionsWindowViewModel optionsWindowViewModel = new OptionsWindowViewModel(options);
             optionsWindow.DataContext = optionsWindowViewModel;
             var result = optionsWindow.ShowDialog();
-            ResetRequested = optionsWindowViewModel.RequestedResetOfQuests;
+            if (result == true)
+            {
+                ResetRequested = optionsWindowViewModel.RequestedResetOfQuests;
+                options = optionsWindowViewModel.NewOptions;
+            }
             return result ?? false;
         }
     }

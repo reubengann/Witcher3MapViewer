@@ -37,6 +37,7 @@ namespace Witcher3MapViewer.WPF
                     mainWindow.Close();
                     return;
                 };
+                options = optionsWPFDialogWindow.GetNewOptions();
                 options.Save(OptionsJSONPath);
             }
             else

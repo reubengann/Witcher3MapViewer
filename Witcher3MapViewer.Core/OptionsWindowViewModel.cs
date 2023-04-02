@@ -7,12 +7,13 @@ namespace Witcher3MapViewer.Core
     {
         readonly Options options;
 
-        public OptionsWindowViewModel(Options options)
+        public OptionsWindowViewModel(Options originalOptions)
         {
-            this.options = options;
+            options = originalOptions.Copy();
             if (options.TrackingMode == TrackingMode.Automatic) CheckPathBox();
         }
 
+        public Options NewOptions => options;
         public bool ShowOnlyAvailable { get => options.ShowOnlyAvailable; set => options.ShowOnlyAvailable = value; }
         public bool ShowComplete { get => options.ShowComplete; set => options.ShowComplete = value; }
         public bool IsManualModeChecked

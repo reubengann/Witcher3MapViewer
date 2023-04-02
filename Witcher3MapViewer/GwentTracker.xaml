@@ -1,11 +1,11 @@
-﻿<Window x:Class="Witcher3MapViewer.GwentTracker"
+﻿<Window x:Class="Witcher3MapViewer.WPF.GwentTracker"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Witcher3MapViewer"
+        xmlns:local="clr-namespace:Witcher3MapViewer.WPF"
         mc:Ignorable="d"
-        Title="Gwent Tracker" Height="355" Width="362.5">
+        Title="GwentTracker" Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -14,11 +14,18 @@
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0">
             <TextBlock Padding="2" Text="{Binding CollectEmAllStatus}"/>
-            <TextBlock Padding="2">DLC summary</TextBlock>
+            <!--<TextBlock Padding="2">DLC summary</TextBlock>-->
         </StackPanel>
         <DataGrid Grid.Row="1" AutoGenerateColumns="False" ItemsSource="{Binding Cards}" HorizontalScrollBarVisibility="Disabled">
             <DataGrid.Columns>
-                <DataGridCheckBoxColumn Binding="{Binding IsChecked}" Header=""/>
+                <!--<DataGridCheckBoxColumn Binding="{Binding IsChecked, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Header=""/>-->
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <CheckBox IsChecked="{Binding IsChecked, UpdateSourceTrigger=PropertyChanged}"></CheckBox>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
                 <DataGridTextColumn Binding="{Binding Name}" Header="Name" Width="135">
                     <DataGridTextColumn.ElementStyle>
                         <Style>
@@ -45,8 +52,8 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <Button>Close</Button>
-            <Button x:Name="ShowOnMapButton" Grid.Column="1" Grid.ColumnSpan="2" Click="ShowOnMapButton_Click">Show players on map</Button>
+            <!--<Button>Close</Button>
+            <Button x:Name="ShowOnMapButton" Grid.Column="1" Grid.ColumnSpan="2" Click="ShowOnMapButton_Click">Show players on map</Button>-->
         </Grid>
 
     </Grid>

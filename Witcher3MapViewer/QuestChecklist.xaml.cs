@@ -10,16 +10,17 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Witcher3MapViewer.WPF
 {
     /// <summary>
-    /// Interaction logic for GwentTracker.xaml
+    /// Interaction logic for QuestChecklist.xaml
     /// </summary>
-    public partial class GwentTracker : Window
+    public partial class QuestChecklist : UserControl
     {
-        public GwentTracker()
+        public QuestChecklist()
         {
             InitializeComponent();
         }

@@ -1,0 +1,53 @@
+﻿<Window x:Class="Witcher3MapViewer.WPF.OptionsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Witcher3MapViewer.WPF"
+        mc:Ignorable="d"
+        Title="OptionsWindow" Height="450" Width="300">
+    <Window.Resources>
+        <local:RGColorConverter x:Key="colorConvertor"/>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Margin="5" Grid.Row="0">
+            <Label FontWeight="Bold">Track quests using save files or manually?</Label>
+            <RadioButton Margin="0 0 0 10" IsChecked="{Binding IsManualModeChecked}">Manual</RadioButton>
+            <RadioButton IsChecked="{Binding IsFileModeChecked}">Using Files</RadioButton>
+            <StackPanel Margin="0 10 0 0" Orientation="Horizontal">
+                <Label Content="Path to save files"/>
+                <Button IsEnabled="{Binding IsFileModeChecked}" Content="Find automatically" Command="{Binding FindSaveFilePathCommand}"/>
+            </StackPanel>
+            <TextBox IsEnabled="{Binding IsFileModeChecked}" Text="{Binding SaveFilePath, UpdateSourceTrigger=PropertyChanged}" Margin="10" />
+            <Label Foreground="{Binding PathOk, Converter={StaticResource colorConvertor}}" Height="20" Padding="0" Content="{Binding ErrorMessage}"/>
+        </StackPanel>
+        <StackPanel Grid.Row="1">
+            <Label Content="Quest menu options"/>
+            <CheckBox Content="Only show available quests" 
+                      HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" 
+                      IsChecked="{Binding ShowOnlyAvailable}"/>
+            <CheckBox Content="Show complete quests" 
+                      HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" 
+                      IsChecked="{Binding ShowComplete}" />
+            <CheckBox Content="Show races" 
+                      HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" 
+                      IsChecked="{Binding ShowRaces}" />
+            <CheckBox Content="Show untracked events" 
+                      HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" 
+                      IsChecked="{Binding ShowEvents}" />
+            <CheckBox Content="Show treasure hunts" 
+                      HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" 
+                      IsChecked="{Binding ShowTreasure}" />
+            <Button Command="{Binding RequestResetCommand}" Margin="10,10,10,10">Reset quest statuses</Button>
+        </StackPanel>
+        <StackPanel VerticalAlignment="Bottom" Grid.Row="2"  Orientation="Horizontal" Margin="0 0 0 10">
+            <Button IsDefault="True"  Content="Save and close" HorizontalAlignment="Center" Margin="10,10,10,0" VerticalAlignment="Top" Width="106" Height="28" Click="Ok_Clicked"/>
+            <Button IsCancel="True" Content="Cancel" HorizontalAlignment="Center" Margin="10,10,10,0" VerticalAlignment="Top" Width="106" Height="28" Click="Cancel_Clicked"/>
+        </StackPanel>
+    </Grid>
+</Window>

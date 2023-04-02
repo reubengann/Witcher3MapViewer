@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Windows.Data;
 using System.Windows.Media;
 
-namespace Witcher3MapViewer
+namespace Witcher3MapViewer.WPF
 {
 
     public class RowColorConvertor : IMultiValueConverter

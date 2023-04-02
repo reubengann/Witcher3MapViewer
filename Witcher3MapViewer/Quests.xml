@@ -18,6 +18,10 @@
 <name>Ask travelers about Yennefer</name>
 <GUID>42CE0F47-454E0055-8AC991AD-A09CAFB3</GUID>
 </objective>
+<objective id="439">
+<name>Ask the herbalist about buckthorn</name>
+<GUID>50E659DB-44831AA8-31BA8EA6-8EB62F91</GUID>
+</objective>
 </objectives>
 <subquests>
 <quest type="main" level="3" world = "WO" id="44">
@@ -26,12 +30,6 @@
 <available>
 <GUID>42CE0F47-454E0055-8AC991AD-A09CAFB3</GUID>
 </available>
-<objectives>
-<objective id="439">
-<name>Ask the herbalist about buckthorn</name>
-<GUID>50E659DB-44831AA8-31BA8EA6-8EB62F91</GUID>
-</objective>
-</objectives>
 <reward XP="500"/>
 </quest>
 <quest type="main" level="2" world = "WO" id="39">
@@ -103,7 +101,7 @@
 <GUID state="JS_Success">42CE0F47-454E0055-8AC991AD-A09CAFB3</GUID>
 </available>
 <discoverprompt>
-<info>Notice board</info>
+<info>Notice board (make sure to ask Tomira where she's from)</info>
 <XY world="WO" X="3" Y="-15" />
 </discoverprompt>
 <GUID>ADDBEE45-437F7E6B-286D2E91-190FEF86</GUID>
@@ -175,12 +173,12 @@
 <name>Scavenger Hunt: Viper School Gear</name>
 <GUID>AA5D86A4-401E4811-7C74B6AC-7A80CBB3</GUID>
 <available>
+<GUID state="JS_Success">C1AA4441-48FF64E8-972B3BB9-250CC191</GUID>
+</available>
 <discoverprompt>
 <XY world="WO" X="-35" Y="327" />
 <info>Blow the door open with Aard and loot a corpse inside</info>
 </discoverprompt>
-<GUID state="JS_Success">C1AA4441-48FF64E8-972B3BB9-250CC191</GUID>
-</available>
 </quest>
 
 <!--Velen available after imperial audience 3A6B433B-47EA9285-23D96FB9-9A37E56E-->
@@ -190,7 +188,7 @@
 <quest type="side" level="0" world = "VE" id="12">
 <name>Gwent: Velen Players</name>
 <available>
-<GUID state="JS_Success">9EFDC32A-48F7E75E-421189B7-97877E0E</GUID>
+<GUID state="JS_Success">32F85932-44D65DB3-A07704AA-F340C0BC</GUID> <!-- Ciri's Story: The King of the Wolves -->
 </available>
 <discoverprompt>
 <XY world="VE" X="510" Y="544" />
@@ -224,7 +222,7 @@
 <quest type="side" level="0" world = "VE" id="22">
 <name>The Truth is in the Stars</name>
 <available>
-<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID> <!-- Imperial Audience -->
 </available>
 <discoverprompt>
 <XY world="VE" X="1877" Y="-192" />
@@ -237,7 +235,7 @@
 <quest type="side" level="3" world = "VE" id="45">
 <name>Funeral Pyres</name>
 <available>
-<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID> <!-- Imperial Audience -->
 </available>
 <discoverprompt>
 <XY world="VE" X="778" Y="558" />
@@ -250,7 +248,7 @@
 <quest type="side" level="4" world = "VE" id="49">
 <name>Hazardous Goods</name>
 <available>
-<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID> <!-- Imperial Audience -->
 </available>
 <discoverprompt>
 <XY world="VE" X="1087" Y="147" />
@@ -263,8 +261,9 @@
 
 <quest type="event" level="3" world = "VE" id="46">
 <name>Deadly Crossing I</name>
+<GUID>C355D2B9-B478-4961-B22A-568860D63901</GUID>
 <available>
-<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID> <!-- Imperial Audience -->
 </available>
 <discoverprompt>
 <info>! sign</info>
@@ -274,8 +273,9 @@
 
 <quest type="event" level="3" world = "VE" id="47">
 <name>Deadly Crossing II</name>
+<GUID>8B2CA862-67B5-4822-BED6-7C3B309DF341</GUID>
 <available>
-<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID> <!-- Imperial Audience -->
 </available>
 <discoverprompt>
 <info>! sign (only at night?)</info>
@@ -286,63 +286,68 @@
 <quest type="event" level="3" world = "VE" id="425">
 <name>Deadly Crossing III</name>
 <available>
-<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID> <!-- Imperial Audience -->
 </available>
 <discoverprompt>
 <info>! sign</info>
 <XY world="VE" X="1086" Y="-298" />
 </discoverprompt>
+<GUID>CF2BF2AA-B722-42F2-A03C-8F0DFED9B407</GUID>
 </quest>
 
 <quest type="event" level="3" world = "VE" id="48">
 <name>Highway Robbery</name>
 <available>
-<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID> <!-- Imperial Audience -->
 </available>
 <discoverprompt>
 <info>! sign</info>
 <XY world="VE" X="305" Y="-143" />
 </discoverprompt>
+<GUID>2BAC8BE1-BEE4-41AA-B3C8-BE1F361E223A</GUID>
 </quest>
 
 <quest type="event" level="0" world = "VE" id="30">
 <name>Highwayman's Cache</name>
 <available>
-<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID> <!-- Imperial Audience -->
 </available>
 <discoverprompt>
 <XY world="VE" X="522" Y="-209" />
 </discoverprompt>
+<GUID>1C31587E-4EF2-4FCC-8E87-DF29E7D6B1D7</GUID>
 </quest>
 
 <quest type="event" level="2" world = "VE" id="43">
 <name>Harassing A Troll</name>
 <available>
-<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID> <!-- Imperial Audience -->
 </available>
 <discoverprompt>
 <info>! sign</info>
 <XY world="VE" X="146" Y="789" />
 </discoverprompt>
 <reward XP="25" />
+<GUID>FA9FFB3B-C8B4-4CA1-82D3-669458DE41B9</GUID>
 </quest>
 
 <quest type="event" level="4" world = "VE" id="50">
 <name>Man's Best Friend</name>
 <available>
-<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID> <!-- Imperial Audience -->
 </available>
 <discoverprompt>
 <XY world="VE" X="641" Y="797" />
 <info>! sign over a dog</info>
 </discoverprompt>
 <reward XP="10" />
+<GUID>691C4E1B-7486-40BC-9694-1D86B8F88B87</GUID>
 </quest>
 
 <quest type="treasure" level="4" world = "VE" id="51">
 <name>Sunken Treasure</name>
 <available>
-<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID> <!-- Imperial Audience -->
 </available>
 <discoverprompt>
 <XY world="VE" X="-458" Y="197" />
@@ -355,7 +360,7 @@
 <quest type="treasure" level="4" world = "VE" id="52">
 <name>An Unfortunate Turn of Events</name>
 <available>
-<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID> <!-- Imperial Audience -->
 </available>
 <discoverprompt>
 <XY world="VE" X="1205" Y="334" />
@@ -368,7 +373,7 @@
 <quest type="treasure" level="4" world = "VE" id="53">
 <name>Lost Goods</name>
 <available>
-<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID> <!-- Imperial Audience -->
 </available>
 <discoverprompt>
 <XY world="VE" X="1855" Y="572" />
@@ -379,7 +384,7 @@
 <quest type="treasure" level="4" world = "VE" id="57">
 <name>Queen Zuleyka's Treasure</name>
 <available>
-<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID> <!-- Imperial Audience -->
 </available>
 <discoverprompt>
 <info>Hidden treasure marker</info>
@@ -391,7 +396,7 @@
 <quest type="treasure" level="4" world = "VE" id="59">
 <name>Sunken Chest</name>
 <available>
-<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID> <!-- Imperial Audience -->
 </available>
 <discoverprompt>
 <info>Hidden treasure marker</info>
@@ -411,65 +416,71 @@
 <XY world="VE" X="1685" Y="-149" />
 </discoverprompt>
 <reward XP="25"/>
+<GUID>DDFF7999-EDC8-4C51-A865-53C796616BD1</GUID>
 </quest>
 
 <quest type="side" world="VE" level="5" id="68">
 <name>A Dog's Life</name>
 <GUID>9E0FE58C-4C1692EE-AEEDE1AD-9B01FE10</GUID>
 <available>
-<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID> <!-- Imperial Audience -->
 </available>
 <discoverprompt>
 <XY world="VE" X="451" Y="-488" />
 </discoverprompt>
 <reward XP="25"/>
+<GUID>8DC14A3C-B56B-4518-BBF2-25B70A10D7FB</GUID>
 </quest>
 
 <quest type="event" world="VE" level="5" id="70">
 <name>Caravan Attack</name>
 <available>
-<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID> <!-- Imperial Audience -->
 </available>
 <discoverprompt>
 <XY world="VE" X="1259" Y="387" />
 </discoverprompt>
+<GUID>951CFA9E-5674-4799-9EA5-213C8FEA04E2</GUID>
 </quest>
 
 <quest type="event" world="VE" level="5" id="427">
 <name>Looters I - Revolting Peasants</name>
 <available>
-<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID> <!-- Imperial Audience -->
 </available>
 <discoverprompt>
 <XY world="VE" X="150" Y="509"/>
 </discoverprompt>
+<GUID>854A54A8-1DC1-4446-AE42-35B6CD034483</GUID>
 </quest>
 
 <quest type="event" world="VE" level="5" id="428">
 <name>Looters II - Ghoulish Gatherers</name>
 <available>
-<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID> <!-- Imperial Audience -->
 </available>
 <discoverprompt>
 <XY world="VE" X="1225" Y="831"/>
 </discoverprompt>
+<GUID>A321D1EB-2CA8-45B3-9F1F-96A1C9F2E2B5</GUID>
 </quest>
 
 <quest type="event" world="VE" level="5" id="71">
 <name>Looters III - Toderas Bandits</name>
 <available>
-<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID> <!-- Imperial Audience -->
 </available>
 <discoverprompt>
 <XY world="VE" X="1732" Y="55"/>
 </discoverprompt>
+<GUID>A1D66C01-1CF2-4583-8903-B83AB45E0137</GUID>
 </quest>
 
 <quest type="side" world="VE" level="6" id="82">
 <name>The Fall of the House of Reardon</name>
 <GUID>4FF26AE8-45267A85-9103158E-1931163D</GUID>
 <available>
-<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID> <!-- Imperial Audience -->
 </available>
 <discoverprompt>
 <info>! sign over crying woman</info>
@@ -495,7 +506,7 @@
 <name>Fools' Gold</name>
 <GUID>5C8108FD-45D9966D-21960981-F9AFBBD2</GUID>
 <available>
-<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID> <!-- Imperial Audience -->
 </available>
 <discoverprompt>
 <info>! sign over men roasting a pig</info>
@@ -508,7 +519,7 @@
 <name>Patrol Gone Missing</name>
 <GUID>C5583B34-44155D58-82174C98-CE7BE4EF</GUID>
 <available>
-<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID> <!-- Imperial Audience -->
 </available>
 <discoverprompt>
 <info>Notice board</info>
@@ -521,7 +532,7 @@
 <name>Lynch Mob</name>
 <GUID>B917E855-4C13AE9D-AB964AA6-9EC295A3</GUID>
 <available>
-<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID> <!-- Imperial Audience -->
 </available>
 <discoverprompt>
 <info>! sign</info>
@@ -534,7 +545,7 @@
 <name>A Greedy God</name>
 <GUID>1026A2E0-4A9338E6-7F4D409D-0C5BE595</GUID>
 <available>
-<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+<GUID state="JS_Success">9B0CDB84-48EB84A9-D74AE685-1F8EBF16</GUID>
 </available>
 <discoverprompt>
 <info>! sign</info>
@@ -547,10 +558,10 @@
 <name>Wild at Heart</name>
 <GUID>15CBFA78-4DA5D1B1-FC623EAD-9F73CE73</GUID>
 <available>
-<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID> <!-- Imperial Audience -->
 </available>
 <discoverprompt>
-<info>Notice board</info>
+<info>Notice board in Midcopse, Missing Wife notice</info>
 <XY world="VE" X="930" Y="590"/>
 </discoverprompt>
 <reward XP="150"/>
@@ -560,7 +571,7 @@
 <name>Hidden from the World</name>
 <GUID>DDF3B2FC-42AA9D43-BF69CF8C-B5C34370</GUID>
 <available>
-<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID> <!-- Imperial Audience -->
 </available>
 <discoverprompt>
 <info>Hidden treasure marker</info>
@@ -571,18 +582,22 @@
 
 <quest type="event" world="VE" level="8" id="100">
 <name>Karmic Justice</name>
+<GUID>40DBB1DE-230E-45D9-8BD8-BB0B59E46C25</GUID>
 <available>
-<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+<GUID state="JS_Success">DB024D36-4E9AE35E-FB098D89-C8E7AB0F</GUID> <!-- Family Matters -->
+<GUID state="JS_Success">EA962976-4E950F34-834FC1BD-461991C7</GUID> <!-- Ladies of the Wood -->
 </available>
 <discoverprompt>
+<info>In an alley, 3 elves. Maybe only at night?</info>
 <XY world="VE" X="862" Y="1831"/>
 </discoverprompt>
 </quest>
 
 <quest type="event" world="VE" level="9" id="110">
 <name>Face Me if You Dare</name>
+<GUID>4773F5D4-CD41-4970-BC9E-5614A11EE42F</GUID>
 <available>
-<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID> <!-- Imperial Audience -->
 </available>
 <discoverprompt>
 <XY world="VE" X="217" Y="-28"/>
@@ -594,7 +609,7 @@
 <name>Out of the Frying Pan, Into the Fire</name>
 <GUID>6CA5D2B3-4040584A-6B44E8B6-20B2AC27</GUID>
 <available>
-<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID> <!-- Imperial Audience -->
 </available>
 <discoverprompt>
 <info>Hidden treasure marker</info>
@@ -606,10 +621,11 @@
 <name>The Dead Have No Defense</name>
 <GUID>ED406EC1-4CC5DB14-A9ED4497-27262A26</GUID>
 <available>
-<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID> <!-- Imperial Audience -->
 </available>
 <discoverprompt>
 <XY world="VE" X="-496" Y="-754"/>
+<info>Hidden treasure marker</info>
 </discoverprompt>
 </quest>
 
@@ -617,10 +633,10 @@
 <name>The Merry Widow</name>
 <GUID>34DDEA30-468AE445-77D61A92-31DD03DC</GUID>
 <available>
-<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID> <!-- Imperial Audience -->
 </available>
 <discoverprompt>
-<info>Notice board</info>
+<info>Notice board (Monster in the cemetery)</info>
 <XY world="VE" X="770" Y="63"/>
 </discoverprompt>
 </quest>
@@ -641,7 +657,7 @@
 <name>Jenny o' the Woods</name>
 <GUID>01ED9015-41F7A1C1-3C1F26BB-6E0A3E0B</GUID>
 <available>
-<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID> <!-- Imperial Audience -->
 </available>
 <discoverprompt>
 <info>Notice board</info>
@@ -653,10 +669,10 @@
 <name>Defender of the Faith</name>
 <GUID>93A95560-416AFF7A-6CFE1FA6-9FD77B9C</GUID>
 <available>
-<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID> <!-- Imperial Audience -->
 </available>
 <discoverprompt>
-<info>! sign near a toppled statue</info>
+<info>! sign near a toppled statue (check Duen Hen if not here)</info>
 <XY world="VE" X="-69" Y="154"/>
 </discoverprompt>
 <reward XP="85"/>
@@ -666,7 +682,7 @@
 <name>Love's Cruel Snares</name>
 <GUID>2EE12A3D-432BFAF7-0908759A-8DE7890E</GUID>
 <available>
-<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID> <!-- Imperial Audience -->
 </available>
 <discoverprompt>
 <XY world="VE" X="-591" Y="-340"/>
@@ -678,9 +694,10 @@
 <name>Death By Fire</name>
 <GUID>4FDB3D24-4D7090BF-67EB0B9A-F9492C96</GUID>
 <available>
-<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID> <!-- Imperial Audience -->
 </available>
 <discoverprompt>
+<info>Talk to the men in front of a burning house</info>
 <XY world="VE" X="1083" Y="909"/>
 </discoverprompt>
 <reward XP="25"/>
@@ -690,9 +707,10 @@
 <name>Fists of Fury: Velen</name>
 <GUID>BD0558AA-4C809220-048AB2BB-453FC15D</GUID>
 <available>
-<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID> <!-- Imperial Audience -->
 </available>
 <discoverprompt>
+<info>Talk to the bookie</info>
 <XY world="VE" X="770" Y="70"/>
 </discoverprompt>
 </quest>
@@ -701,7 +719,7 @@
 <name>Scavenger Hunt: Griffin School Gear</name>
 <GUID>50B8D133-4FAA0E7B-B42AF7BE-6B57B0F0</GUID>
 <available>
-<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID> <!-- Imperial Audience -->
 </available>
 <discoverprompt>
 <info>Buy map from armorer</info>
@@ -713,9 +731,10 @@
 <name>Swamp Thing</name>
 <GUID>210232CB-4EF519B3-67C847AA-2FA3F75F</GUID>
 <available>
-<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID> <!-- Imperial Audience -->
 </available>
 <discoverprompt>
+<info>Talk to Leslav</info>
 <XY world="VE" X="1148" Y="-572"/>
 </discoverprompt>
 </quest>
@@ -724,7 +743,7 @@
 <name>Blood Ties</name>
 <GUID>BCBB27C8-4FA7E374-3CC1408F-8CD2AC77</GUID>
 <available>
-<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID> <!-- Imperial Audience -->
 </available>
 <discoverprompt>
 <XY world="VE" X="2361" Y="-897"/>
@@ -735,7 +754,7 @@
 <name>The Things Men Do For Coin...</name>
 <GUID>4CBF2CDE-488F74F6-45D4BFAA-E41558FE</GUID>
 <available>
-<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID> <!-- Imperial Audience -->
 </available>
 <discoverprompt>
 <XY world="VE" X="550" Y="984"/>
@@ -746,7 +765,7 @@
 <name>Coast of Wrecks</name>
 <GUID>6361033C-4E1B9ACF-83944B87-FF32099D</GUID>
 <available>
-<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID> <!-- Imperial Audience -->
 </available>
 <discoverprompt>
 <XY world="VE" X="254" Y="1224"/>
@@ -757,7 +776,7 @@
 <name>Don't Play with the Gods</name>
 <GUID>1D6D26EC-454BD469-FEBC1E9A-F246129B</GUID>
 <available>
-<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID> <!-- Imperial Audience -->
 </available>
 <discoverprompt>
 <XY world="VE" X="-235" Y="-691"/>
@@ -768,7 +787,7 @@
 <name>A Costly Mistake</name>
 <GUID>987A0A55-4A591BD2-64B80897-ECCB7F89</GUID>
 <available>
-<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID> <!-- Imperial Audience -->
 </available>
 <discoverprompt>
 <XY world="VE" X="-634" Y="147"/>
@@ -779,7 +798,7 @@
 <name>Tough Luck</name>
 <GUID>9D07785D-40177008-757518A2-60A41A1A</GUID>
 <available>
-<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID> <!-- Imperial Audience -->
 </available>
 <discoverprompt>
 <XY world="VE" X="1327" Y="492"/>
@@ -791,7 +810,7 @@
 <name>Mysterious Tracks</name>
 <GUID>FDADCB0D-43B1AC15-D25AF1A3-92360167</GUID>
 <available>
-<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID> <!-- Imperial Audience -->
 </available>
 <discoverprompt>
 <XY world="VE" X="773" Y="67"/>
@@ -803,7 +822,7 @@
 <name>Phantom of the Trade Route</name>
 <GUID>915C91BF-47B869DE-0B9CEDBE-44113A37</GUID>
 <available>
-<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID> <!-- Imperial Audience -->
 </available>
 <discoverprompt>
 <XY world="VE" X="1902" Y="-148"/>
@@ -815,7 +834,7 @@
 <name>The Beast of Honorton</name>
 <GUID>BD40C6D4-4532FB2D-187DEDBF-2C42C6F6</GUID>
 <available>
-<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID> <!-- Imperial Audience -->
 </available>
 <discoverprompt>
 <XY world="VE" X="197" Y="-456"/>
@@ -830,7 +849,7 @@
 <name>Where the Cat and Wolf Play...</name>
 <GUID>35CCCB0A-4C518790-D11C34B4-6CDBEA77</GUID>
 <available>
-<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID> <!-- Imperial Audience -->
 </available>
 <discoverprompt>
 <XY world="VE" X="240" Y="-206"/>
@@ -847,13 +866,16 @@
 <hideif>
 <GUID state="JS_Active">3D38A3BB-43644405-D5D87083-7731411C</GUID>
 </hideif>
+<discoverprompt>
+<info>Only available if you spared Gaetan</info>
+</discoverprompt>
 </quest>
 
 <quest type="treasure" world="VE" level="28" id="290">
 <name>A Plea Ignored</name>
 <GUID>33474E9D-43AD427F-47E908A5-EB14398F</GUID>
 <available>
-<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID> <!-- Imperial Audience -->
 </available>
 <discoverprompt>
 <XY world="VE" X="-725" Y="-659"/>
@@ -864,7 +886,7 @@
 <name>Missing Brother</name>
 <GUID>6C4EF31A-4B5F767F-B846D393-85EA4A1C</GUID>
 <available>
-<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID> <!-- Imperial Audience -->
 </available>
 <discoverprompt>
 <XY world="VE" X="510" Y="543"/>
@@ -876,7 +898,7 @@
 <name>Woodland Beast</name>
 <GUID>6AFAFC3C-47D50499-6D21D3A7-0D30C14D</GUID>
 <available>
-<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID> <!-- Imperial Audience -->
 </available>
 <discoverprompt>
 <info>Notice board</info>
@@ -888,7 +910,7 @@
 <name>The Mystery of the Byways Murders</name>
 <GUID>96D759B7-465E24FF-1E756D99-63C57C10</GUID>
 <available>
-<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID> <!-- Imperial Audience -->
 </available>
 <discoverprompt>
 <XY world="VE" X="170" Y="-452"/>
@@ -901,7 +923,7 @@
 <name>The Nilfgaardian Connection</name>
 <GUID>3D77BF9D-4F453FF0-66AA658F-A6353227</GUID>
 <available>
-<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID> <!-- Imperial Audience -->
 </available>
 <reward XP="100"/>
 <!--<subquests>
@@ -924,7 +946,7 @@
 <reward XP="100"/>
 </quest>
 
-<quest type="main" world="VE" level="6" id="75">
+<quest type="main" world="VE" level="6" id="73">
 <name>Wandering in the Dark</name>
 <GUID>9B0CDB84-48EB84A9-D74AE685-1F8EBF16</GUID>
 <available>
@@ -948,6 +970,9 @@
 <available>
 <GUID state="JS_Success">46D709E3-477DBFF9-A58BFE83-2D712006</GUID>
 </available>
+<discoverprompt>
+<info>Automatically given after Magic Lamp</info>
+</discoverprompt>
 </quest>
 
 <quest type="side" world="VE" level="6" id="80">
@@ -957,6 +982,9 @@
 <GUID state="JS_Success">287CD23B-4C20FCC1-D52269AD-47670132</GUID>
 </available>
 <reward XP="1350"/>
+<discoverprompt>
+<info>Automatically given after An Invitation from Keira Metz</info>
+</discoverprompt>
 </quest>
 
 <quest type="side" world="VE" level="6" id="81">
@@ -966,6 +994,9 @@
 <GUID state="JS_Success">38E268CF-431777D8-0A106B87-22F7BA0D</GUID>
 </available>
 <reward XP="155"/>
+<discoverprompt>
+<info>Automatically given after A Towerful of Mice</info>
+</discoverprompt>
 </quest>
 
 <quest type="side" world="VE" level="8" id="99">
@@ -975,31 +1006,33 @@
 <GUID state="JS_Success">1EE3C260-47DE26F3-7D422FA3-94EE84C7</GUID>
 </available>
 <reward XP="250"/>
+<discoverprompt>
+<info>Automatically given after A Favor for a Friend</info>
+</discoverprompt>
 </quest>
 
-<quest type="main" world="VE" level="6" id="73">
+<quest type="main" world="VE" level="6" id="75">
 <name>Bloody Baron</name>
 <GUID>9EFDC32A-48F7E75E-421189B7-97877E0E</GUID>
 <available>
 <GUID state="JS_Success">3D77BF9D-4F453FF0-66AA658F-A6353227</GUID>
 </available>
 <reward XP="250"/>
-<subquests>
+</quest>
+
 <quest type="main" world="VE" level="5" id="61">
 <name>Ciri's Story: The King of the Wolves</name>
 <GUID>32F85932-44D65DB3-A07704AA-F340C0BC</GUID>
 <available>
-<GUID state="JS_Active">9EFDC32A-48F7E75E-421189B7-97877E0E</GUID>
+<GUID state="JS_Success">9EFDC32A-48F7E75E-421189B7-97877E0E</GUID>
 </available>
-</quest>
-</subquests>
 </quest>
 
 <quest type="race" world="VE" level="0" id="8">
 <name>Races: Crow's Perch</name>
 <GUID>6E696C48-49E62FEA-947FC48E-AB746137</GUID>
 <available>
-<GUID state="JS_Success">9EFDC32A-48F7E75E-421189B7-97877E0E</GUID>
+<GUID state="JS_Success">32F85932-44D65DB3-A07704AA-F340C0BC</GUID> <!-- Ciri's Story: The King of the Wolves -->
 </available>
 <discoverprompt>
 <XY world="VE" X="242" Y="137"/>
@@ -1010,9 +1043,10 @@
 <name>Ciri's Room</name>
 <GUID>74A38073-4CBDFE20-A68A8A9A-0AB18A1C</GUID>
 <available>
-<GUID state="JS_Success">9EFDC32A-48F7E75E-421189B7-97877E0E</GUID>
+<GUID state="JS_Success">32F85932-44D65DB3-A07704AA-F340C0BC</GUID> <!-- Ciri's Story: The King of the Wolves -->
 </available>
 <discoverprompt>
+<info>Given automatically during Bloody Baron</info>
 <XY world="VE" X="177" Y="180"/>
 </discoverprompt>
 <reward XP="100"/>
@@ -1022,7 +1056,7 @@
 <name>Family Matters</name>
 <GUID>DB024D36-4E9AE35E-FB098D89-C8E7AB0F</GUID>
 <available>
-<GUID state="JS_Success">9EFDC32A-48F7E75E-421189B7-97877E0E</GUID>
+<GUID state="JS_Success">32F85932-44D65DB3-A07704AA-F340C0BC</GUID> <!-- Ciri's Story: The King of the Wolves -->
 </available>
 
 <subquests>
@@ -1109,6 +1143,7 @@
 <GUID>D637A77D-4F37B7B2-BBD695A6-E1090C08</GUID>
 <available>
 <GUID state="JS_Success">93A95560-416AFF7A-6CFE1FA6-9FD77B9C</GUID>
+<GUID state="JS_Success">32F85932-44D65DB3-A07704AA-F340C0BC</GUID> <!-- Ciri's Story: The King of the Wolves -->
 </available>
 <discoverprompt>
 <XY world="VE" X="-162" Y="265"/>
@@ -1130,7 +1165,7 @@
 <name>Shrieker</name>
 <GUID>AEDB434D-438C5423-61A7D898-6DC9F894</GUID>
 <available>
-<GUID state="JS_Success">9EFDC32A-48F7E75E-421189B7-97877E0E</GUID>
+<GUID state="JS_Success">32F85932-44D65DB3-A07704AA-F340C0BC</GUID> <!-- Ciri's Story: The King of the Wolves -->
 </available>
 <discoverprompt>
 <info>Notice board</info>
@@ -1142,7 +1177,7 @@
 <name>Thou Shalt Not Pass</name>
 <GUID>37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
 <available>
-<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+<GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID> <!-- Imperial Audience -->
 </available>
 <discoverprompt>
 <info>Try to cross the Pontar bridge</info>
@@ -1161,7 +1196,7 @@
     <name>Fake Papers</name>
     <GUID>33B84675-457F7812-2FB590BE-541D6702</GUID>
     <available>
-      <GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+      <GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID> <!-- Imperial Audience -->
     </available>
     <discoverprompt>
       <XY world="VE" X="865" Y="946"/>
@@ -1171,7 +1206,7 @@
         <name>Bitter Harvest</name>
         <GUID>8767DF69-4B263640-582710B9-F501FDBA</GUID>
         <available>
-          <GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID>
+          <GUID state="JS_Success">3A6B433B-47EA9285-23D96FB9-9A37E56E</GUID> <!-- Imperial Audience -->
         </available>
       </quest>
     </subquests>
@@ -1180,10 +1215,12 @@
 
 
   <!--Novigrad available after Thou Shalt Not Pass, Fake Papers, Family Matters, or Woodland Beast (if a pass was obtained) -->
+  <!-- But usually done after Family Matters and Ladies of the Wood -->
 
 
 <quest type="event" level="0" world = "VE" id="27">
 <name>At the Mercy of Strangers</name>
+<GUID>328456A8-197B-4999-9980-694FE20FAB8D</GUID>
 <available>
 <GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
 </available>
@@ -1280,7 +1317,8 @@
 <quest type="side" level="0" world = "NO" id="41">
 <name>The Dwarven Document Dilemma</name>
 <available>
-<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+<GUID state="JS_Success">DB024D36-4E9AE35E-FB098D89-C8E7AB0F</GUID> <!-- Family Matters -->
+<GUID state="JS_Success">EA962976-4E950F34-834FC1BD-461991C7</GUID> <!-- Ladies of the Wood -->
 </available>
 <discoverprompt>
 <info>! sign</info>
@@ -1292,19 +1330,24 @@
 
 <quest type="event" level="0" world = "NO" id="32">
 <name>Strumpet In Distress</name>
+<GUID>7CEAD1A1-6B78-47BD-A185-FED1E820AF5D</GUID>
 <available>
-<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+<GUID state="JS_Success">DB024D36-4E9AE35E-FB098D89-C8E7AB0F</GUID> <!-- Family Matters -->
+<GUID state="JS_Success">EA962976-4E950F34-834FC1BD-461991C7</GUID> <!-- Ladies of the Wood -->
 </available>
 <discoverprompt>
 <XY world="NO" X="409" Y="1673" />
+<info>Woman being harassed by a soldier</info>
 </discoverprompt>
 <reward XP="10" />
 </quest>
 
 <quest type="event" level="0" world = "NO" id="33">
 <name>Suspicious Shakedown</name>
+<GUID>A1C948A4-D19D-4680-9891-0E6FC28C0CB7</GUID>
 <available>
-<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+<GUID state="JS_Success">DB024D36-4E9AE35E-FB098D89-C8E7AB0F</GUID> <!-- Family Matters -->
+<GUID state="JS_Success">EA962976-4E950F34-834FC1BD-461991C7</GUID> <!-- Ladies of the Wood -->
 </available>
 <discoverprompt>
 <XY world="NO" X="746" Y="1768" />
@@ -1313,10 +1356,13 @@
 
 <quest type="event" level="0" world = "NO" id="34">
 <name>The Flame Of Hatred</name>
+<GUID>0CED3E7F-4E71-4378-A65C-8476B43EF8AD</GUID>
 <available>
-<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+<GUID state="JS_Success">DB024D36-4E9AE35E-FB098D89-C8E7AB0F</GUID> <!-- Family Matters -->
+<GUID state="JS_Success">EA962976-4E950F34-834FC1BD-461991C7</GUID> <!-- Ladies of the Wood -->
 </available>
 <discoverprompt>
+<info>Preacher</info>
 <XY world="NO" X="715" Y="1855" />
 </discoverprompt>
 </quest>
@@ -1325,8 +1371,12 @@
 <name>Gwent: Playing Innkeeps</name>
 <GUID>15BA81D3-4E85B6BD-DF83E995-5D7770CE</GUID>
 <available>
-<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+<GUID state="JS_Success">DB024D36-4E9AE35E-FB098D89-C8E7AB0F</GUID> <!-- Family Matters -->
+<GUID state="JS_Success">EA962976-4E950F34-834FC1BD-461991C7</GUID>
 </available>
+<discoverprompt>
+<info>Play any innkeeper in Velen</info>
+</discoverprompt>
 <objectives>
 <objective id="442">
 <name>Win Stjepan's unique card</name>
@@ -1350,7 +1400,8 @@
 <name>Empty Coop</name>
 <GUID>5D8D80D4-47E33A15-8C576FB1-3AC4736F</GUID>
 <available>
-<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+<GUID state="JS_Success">DB024D36-4E9AE35E-FB098D89-C8E7AB0F</GUID> <!-- Family Matters -->
+<GUID state="JS_Success">EA962976-4E950F34-834FC1BD-461991C7</GUID> <!-- Ladies of the Wood -->
 </available>
 <discoverprompt>
 <info>! sign</info>
@@ -1363,7 +1414,8 @@
 <name>Message from an Old Friend</name>
 <GUID>546EC303-469C24B8-809E7286-58C288A0</GUID>
 <available>
-<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+<GUID state="JS_Success">DB024D36-4E9AE35E-FB098D89-C8E7AB0F</GUID> <!-- Family Matters -->
+<GUID state="JS_Success">EA962976-4E950F34-834FC1BD-461991C7</GUID> <!-- Ladies of the Wood -->
 </available>
 <discoverprompt>
 <info>Talk to the bookseller</info>
@@ -1374,39 +1426,49 @@
 <quest type="event" world="NO" level="0" id="26">
 <name>A Warm Welcome</name>
 <available>
-<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+<GUID state="JS_Success">DB024D36-4E9AE35E-FB098D89-C8E7AB0F</GUID> <!-- Family Matters -->
+<GUID state="JS_Success">EA962976-4E950F34-834FC1BD-461991C7</GUID> <!-- Ladies of the Wood -->
 </available>
 <discoverprompt>
 <XY world="NO" X="1346" Y="1596"/>
+<info>Help people being harassed by soldiers</info>
 </discoverprompt>
 <reward XP="25"/>
 </quest>
 
 <quest type="event" world="NO" level="0" id="28">
 <name>Drunken Rabble</name>
+<GUID>35E96D3E-30C3-41A4-8496-59423836DBCF</GUID>
 <available>
-<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+<GUID state="JS_Success">DB024D36-4E9AE35E-FB098D89-C8E7AB0F</GUID> <!-- Family Matters -->
+<GUID state="JS_Success">EA962976-4E950F34-834FC1BD-461991C7</GUID> <!-- Ladies of the Wood -->
 </available>
 <discoverprompt>
 <XY world="NO" X="550" Y="1839"/>
+<info>Two guys in front of the Golden Sturgeon</info>
 </discoverprompt>
 <reward XP="25"/>
 </quest>
 
 <quest type="event" world="NO" level="0" id="31">
 <name>Racists of Novigrad I</name>
+<GUID>D2984EEF-12A3-4BA4-B8F5-10D330882D91</GUID>
 <available>
-<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+<GUID state="JS_Success">DB024D36-4E9AE35E-FB098D89-C8E7AB0F</GUID> <!-- Family Matters -->
+<GUID state="JS_Success">EA962976-4E950F34-834FC1BD-461991C7</GUID> <!-- Ladies of the Wood -->
 </available>
 <discoverprompt>
+<info>An elf being harassed by two men</info>
 <XY world="NO" X="556" Y="1674"/>
 </discoverprompt>
 </quest>
 
 <quest type="event" world="NO" level="7" id="94">
 <name>Racists of Novigrad II</name>
+<GUID>CC6631A5-606C-4E10-82DA-6D1C74429608</GUID>
 <available>
-<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+<GUID state="JS_Success">DB024D36-4E9AE35E-FB098D89-C8E7AB0F</GUID> <!-- Family Matters -->
+<GUID state="JS_Success">EA962976-4E950F34-834FC1BD-461991C7</GUID> <!-- Ladies of the Wood -->
 </available>
 <discoverprompt>
 <XY world="NO" X="858" Y="1815"/>
@@ -1417,7 +1479,8 @@
 <name>Hey, You Wanna Look at My Stuff?</name>
 <GUID>966D9C4F-4058A759-EF437983-146F4BB6</GUID>
 <available>
-<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+<GUID state="JS_Success">DB024D36-4E9AE35E-FB098D89-C8E7AB0F</GUID> <!-- Family Matters -->
+<GUID state="JS_Success">EA962976-4E950F34-834FC1BD-461991C7</GUID> <!-- Ladies of the Wood -->
 </available>
 <discoverprompt>
 <info>Talk to dwarf merchant</info>
@@ -1441,7 +1504,8 @@
 <name>Novigrad Hospitality</name>
 <GUID>894669D1-458497AB-E2FA1CAE-46DFC1D0</GUID>
 <available>
-<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+<GUID state="JS_Success">DB024D36-4E9AE35E-FB098D89-C8E7AB0F</GUID> <!-- Family Matters -->
+<GUID state="JS_Success">EA962976-4E950F34-834FC1BD-461991C7</GUID> <!-- Ladies of the Wood -->
 </available>
 <discoverprompt>
 <info>! sign</info>
@@ -1453,7 +1517,8 @@
 <name>Of Dairy and Darkness</name>
 <GUID>B85F69B4-4563B896-339733A6-9223A984</GUID>
 <available>
-<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+<GUID state="JS_Success">DB024D36-4E9AE35E-FB098D89-C8E7AB0F</GUID> <!-- Family Matters -->
+<GUID state="JS_Success">EA962976-4E950F34-834FC1BD-461991C7</GUID> <!-- Ladies of the Wood -->
 </available>
 <discoverprompt>
 <info>Talk to the merchant</info>
@@ -1463,8 +1528,10 @@
 
 <quest type="event" world="NO" level="9" id="111">
 <name>Face Me if You Dare II</name>
+<GUID>9EB2DF70-54DF-4474-A12F-7D4D5FC202C1</GUID>
 <available>
-<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+<GUID state="JS_Success">DB024D36-4E9AE35E-FB098D89-C8E7AB0F</GUID> <!-- Family Matters -->
+<GUID state="JS_Success">EA962976-4E950F34-834FC1BD-461991C7</GUID> <!-- Ladies of the Wood -->
 </available>
 <discoverprompt>
 <XY world="NO" X="898" Y="1732"/>
@@ -1474,8 +1541,10 @@
 
 <quest type="event" world="NO" level="9" id="112">
 <name>Face Me if You Dare III</name>
+<GUID>17842294-BDE6-42B2-90A5-460E228F69CA</GUID>
 <available>
-<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+<GUID state="JS_Success">DB024D36-4E9AE35E-FB098D89-C8E7AB0F</GUID> <!-- Family Matters -->
+<GUID state="JS_Success">EA962976-4E950F34-834FC1BD-461991C7</GUID> <!-- Ladies of the Wood -->
 </available>
 <discoverprompt>
 <XY world="NO" X="501" Y="1910"/>
@@ -1497,8 +1566,10 @@
 
 <quest type="event" world="NO" level="10" id="123">
 <name>The Most Truest of Basilisks</name>
+<GUID>C5DF0A99-E230-4F43-A6CC-F419F1583C24</GUID>
 <available>
-<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+<GUID state="JS_Success">DB024D36-4E9AE35E-FB098D89-C8E7AB0F</GUID> <!-- Family Matters -->
+<GUID state="JS_Success">EA962976-4E950F34-834FC1BD-461991C7</GUID> <!-- Ladies of the Wood -->
 </available>
 <discoverprompt>
 <info>! sign</info>
@@ -1510,7 +1581,8 @@
 <name>A Barnful of Trouble</name>
 <GUID>8586A6C6-4EB2533D-38A053BC-89E8CF3B</GUID>
 <available>
-<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+<GUID state="JS_Success">DB024D36-4E9AE35E-FB098D89-C8E7AB0F</GUID> <!-- Family Matters -->
+<GUID state="JS_Success">EA962976-4E950F34-834FC1BD-461991C7</GUID> <!-- Ladies of the Wood -->
 </available>
 <discoverprompt>
 <info>! sign</info>
@@ -1522,7 +1594,8 @@
 <name>Spooked Mare</name>
 <GUID>9C6ECBD4-42140800-325CDBB1-5A64A760</GUID>
 <available>
-<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+<GUID state="JS_Success">DB024D36-4E9AE35E-FB098D89-C8E7AB0F</GUID> <!-- Family Matters -->
+<GUID state="JS_Success">EA962976-4E950F34-834FC1BD-461991C7</GUID> <!-- Ladies of the Wood -->
 </available>
 <discoverprompt>
 <XY world="NO" X="2004" Y="897"/>
@@ -1533,7 +1606,8 @@
 <name>A Walk on the Waterfront</name>
 <GUID>6EF66A4F-4A74160D-9D1B88BF-4891A5C4</GUID>
 <available>
-<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+<GUID state="JS_Success">DB024D36-4E9AE35E-FB098D89-C8E7AB0F</GUID> <!-- Family Matters -->
+<GUID state="JS_Success">EA962976-4E950F34-834FC1BD-461991C7</GUID> <!-- Ladies of the Wood -->
 </available>
 <discoverprompt>
 <info>! sign</info>
@@ -1545,10 +1619,11 @@
 <name>An Elusive Thief</name>
 <GUID>D713995F-4D748EC3-F8C29892-A5309EB8</GUID>
 <available>
-<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+<GUID state="JS_Success">DB024D36-4E9AE35E-FB098D89-C8E7AB0F</GUID> <!-- Family Matters -->
+<GUID state="JS_Success">EA962976-4E950F34-834FC1BD-461991C7</GUID> <!-- Ladies of the Wood -->
 </available>
 <discoverprompt>
-<info>Notice board</info>
+<info>Notice board (Contract: Imp)</info>
 <XY world="NO" X="670" Y="1903"/>
 </discoverprompt>
 </quest>
@@ -1569,7 +1644,8 @@
 <name>A Tome Entombed</name>
 <GUID>08C47340-461756C2-B17C5499-33536918</GUID>
 <available>
-<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+<GUID state="JS_Success">DB024D36-4E9AE35E-FB098D89-C8E7AB0F</GUID> <!-- Family Matters -->
+<GUID state="JS_Success">EA962976-4E950F34-834FC1BD-461991C7</GUID> <!-- Ladies of the Wood -->
 </available>
 <discoverprompt>
 <XY world="NO" X="805" Y="1945"/>
@@ -1581,37 +1657,46 @@
 <name>Warehouse of Woe</name>
 <GUID>A1B177A9-451D23B7-58728DB5-7D319E51</GUID>
 <available>
-<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+<GUID state="JS_Success">DB024D36-4E9AE35E-FB098D89-C8E7AB0F</GUID> <!-- Family Matters -->
+<GUID state="JS_Success">EA962976-4E950F34-834FC1BD-461991C7</GUID> <!-- Ladies of the Wood -->
 </available>
 <discoverprompt>
+<info>Behind the warehouse, see two people arguing</info>
 <XY world="NO" X="311" Y="1706"/>
 </discoverprompt>
 </quest>
 
 <quest type="event" world="NO" level="13" id="163">
 <name>Saving Moritz Diefenthal</name>
+<GUID>1797BAE3-C7B3-4689-9896-2A601D131EC3</GUID>
 <available>
-<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+<GUID state="JS_Success">DF5C1032-43CFD052-056742B1-5E8C57B0</GUID> <!-- Matter of life and death -->
 </available>
 <discoverprompt>
+<info>Save Moritz from a burning pyre.</info>
 <XY world="NO" X="653" Y="1659"/>
 </discoverprompt>
 </quest>
 
 <quest type="event" world="NO" level="13" id="165">
+<GUID>7B3B9669-33B4-4ADB-A642-546A154CB9D8</GUID>
 <name>Strangers in the Night</name>
 <available>
-<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+<GUID state="JS_Success">DB024D36-4E9AE35E-FB098D89-C8E7AB0F</GUID> <!-- Family Matters -->
+<GUID state="JS_Success">EA962976-4E950F34-834FC1BD-461991C7</GUID> <!-- Ladies of the Wood -->
 </available>
 <discoverprompt>
+<info>At night, 3 men around a campfire</info>
 <XY world="NO" X="1372" Y="1507"/>
 </discoverprompt>
 </quest>
 
 <quest type="event" world="NO" level="14" id="188">
 <name>Never Trust Children</name>
+<GUID>8CDE418C-DEF4-436D-AF98-C7EC27FDAB1E</GUID>
 <available>
-<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+<GUID state="JS_Success">DB024D36-4E9AE35E-FB098D89-C8E7AB0F</GUID> <!-- Family Matters -->
+<GUID state="JS_Success">EA962976-4E950F34-834FC1BD-461991C7</GUID> <!-- Ladies of the Wood -->
 </available>
 <discoverprompt>
 <XY world="NO" X="764" Y="1929"/>
@@ -1622,9 +1707,11 @@
 <name>The Apiarian Phantom</name>
 <GUID>256F8A48-4F3E33FD-E11C309D-93EA863F</GUID>
 <available>
-<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+<GUID state="JS_Success">DB024D36-4E9AE35E-FB098D89-C8E7AB0F</GUID> <!-- Family Matters -->
+<GUID state="JS_Success">EA962976-4E950F34-834FC1BD-461991C7</GUID> <!-- Ladies of the Wood -->
 </available>
 <discoverprompt>
+<info>Notice board</info>
 <XY world="NO" X="1121" Y="2379"/>
 </discoverprompt>
 </quest>
@@ -1633,11 +1720,12 @@
 <name>Deadly Delights</name>
 <GUID>2EE64753-4749CF55-84ECCFA2-AFF34B00</GUID>
 <available>
-<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+<GUID state="JS_Success">DB024D36-4E9AE35E-FB098D89-C8E7AB0F</GUID> <!-- Family Matters -->
+<GUID state="JS_Success">EA962976-4E950F34-834FC1BD-461991C7</GUID> <!-- Ladies of the Wood -->
 </available>
 <discoverprompt>
 <XY world="NO" X="559" Y="1841"/>
-<info>Notice board</info>
+<info>Notice board (Contract issued by the temple guard)</info>
 </discoverprompt>
 </quest>
 
@@ -1645,7 +1733,8 @@
 <name>Little Red</name>
 <GUID>E60EB31F-4ACB13E6-6245ECB4-140153C9</GUID>
 <available>
-<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+<GUID state="JS_Success">DB024D36-4E9AE35E-FB098D89-C8E7AB0F</GUID> <!-- Family Matters -->
+<GUID state="JS_Success">EA962976-4E950F34-834FC1BD-461991C7</GUID> <!-- Ladies of the Wood -->
 </available>
 <discoverprompt>
 <XY world="NO" X="1111" Y="2378"/>
@@ -1656,7 +1745,8 @@
 <name>The White Lady</name>
 <GUID>30A9D01A-4F9DC8AF-93BD3E90-040A9450</GUID>
 <available>
-<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+<GUID state="JS_Success">DB024D36-4E9AE35E-FB098D89-C8E7AB0F</GUID> <!-- Family Matters -->
+<GUID state="JS_Success">EA962976-4E950F34-834FC1BD-461991C7</GUID> <!-- Ladies of the Wood -->
 </available>
 <discoverprompt>
 <XY world="NO" X="616" Y="1555"/>
@@ -1668,7 +1758,8 @@
 <name>Blood Gold</name>
 <GUID>B16A5F09-47813DA7-85C24BB8-948B248C</GUID>
 <available>
-<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+<GUID state="JS_Success">DB024D36-4E9AE35E-FB098D89-C8E7AB0F</GUID> <!-- Family Matters -->
+<GUID state="JS_Success">EA962976-4E950F34-834FC1BD-461991C7</GUID> <!-- Ladies of the Wood -->
 </available>
 <discoverprompt>
 <XY world="NO" X="1400" Y="1149"/>
@@ -1680,7 +1771,8 @@
 <name>Battlefield Loot</name>
 <GUID>6272B5A8-450D5CB6-DE9279B4-788C5C7E</GUID>
 <available>
-<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+<GUID state="JS_Success">DB024D36-4E9AE35E-FB098D89-C8E7AB0F</GUID> <!-- Family Matters -->
+<GUID state="JS_Success">EA962976-4E950F34-834FC1BD-461991C7</GUID> <!-- Ladies of the Wood -->
 </available>
 <discoverprompt>
 <XY world="NO" X="1267" Y="1274"/>
@@ -1690,8 +1782,10 @@
 
 <quest type="event" world="NO" level="20" id="237">
 <name>Witch Hunter Raids</name>
+<GUID>96E47DD3-0DBE-498A-9569-49E5D1E642EB</GUID>
 <available>
-<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+<GUID state="JS_Success">DB024D36-4E9AE35E-FB098D89-C8E7AB0F</GUID> <!-- Family Matters -->
+<GUID state="JS_Success">EA962976-4E950F34-834FC1BD-461991C7</GUID> <!-- Ladies of the Wood -->
 </available>
 <discoverprompt>
 <XY world="NO" X="579" Y="1558"/>
@@ -1702,7 +1796,8 @@
 <name>Fists of Fury: Novigrad</name>
 <GUID>ADB63834-4EFADC15-0B036E9D-D61D4EDD</GUID>
 <available>
-<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+<GUID state="JS_Success">DB024D36-4E9AE35E-FB098D89-C8E7AB0F</GUID> <!-- Family Matters -->
+<GUID state="JS_Success">EA962976-4E950F34-834FC1BD-461991C7</GUID> <!-- Ladies of the Wood -->
 </available>
 <discoverprompt>
 <XY world="NO" X="669" Y="1904"/>
@@ -1715,10 +1810,12 @@
 <name>Doors Slamming Shut</name>
 <GUID>AF164E2C-41CC196D-1AB4BFB6-1DAA9A91</GUID>
 <available>
-<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+<GUID state="JS_Success">DB024D36-4E9AE35E-FB098D89-C8E7AB0F</GUID> <!-- Family Matters -->
+<GUID state="JS_Success">EA962976-4E950F34-834FC1BD-461991C7</GUID> <!-- Ladies of the Wood -->
 </available>
 <discoverprompt>
 <XY world="NO" X="667" Y="1898"/>
+<info>Notice board (Haunted House)</info>
 </discoverprompt>
 <reward XP="350"/>
 </quest>
@@ -1727,10 +1824,12 @@
 <name>Of Swords and Dumplings</name>
 <GUID>BCFD66C3-4E55BECB-00975882-A9203CDC</GUID>
 <available>
-<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+<GUID state="JS_Success">DB024D36-4E9AE35E-FB098D89-C8E7AB0F</GUID> <!-- Family Matters -->
+<GUID state="JS_Success">EA962976-4E950F34-834FC1BD-461991C7</GUID> <!-- Ladies of the Wood -->
 </available>
 <discoverprompt>
 <XY world="NO" X="595" Y="1699"/>
+<info>Talk to the blacksmith</info>
 </discoverprompt>
 <reward XP="200"/>
 </quest>
@@ -1739,7 +1838,8 @@
 <name>Lord of the Wood</name>
 <GUID>31761A49-453910B0-B7EB03A7-BA362A08</GUID>
 <available>
-<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+<GUID state="JS_Success">DB024D36-4E9AE35E-FB098D89-C8E7AB0F</GUID> <!-- Family Matters -->
+<GUID state="JS_Success">EA962976-4E950F34-834FC1BD-461991C7</GUID> <!-- Ladies of the Wood -->
 </available>
 <discoverprompt>
 <XY world="NO" X="870" Y="1507"/>
@@ -1751,7 +1851,8 @@
 <name>The Oxenfurt Drunk</name>
 <GUID>43E9C2A8-43DADE8C-FEC51388-977FB3FC</GUID>
 <available>
-<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+<GUID state="JS_Success">DB024D36-4E9AE35E-FB098D89-C8E7AB0F</GUID> <!-- Family Matters -->
+<GUID state="JS_Success">EA962976-4E950F34-834FC1BD-461991C7</GUID> <!-- Ladies of the Wood -->
 </available>
 <discoverprompt>
 <XY world="NO" X="1704" Y="1043"/>
@@ -1764,7 +1865,8 @@
 <name>Races: Swift as the Western Winds</name>
 <GUID>7A04F9E7-49102A1F-94AAFA85-CAC3157C</GUID>
 <available>
-<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+<GUID state="JS_Success">DB024D36-4E9AE35E-FB098D89-C8E7AB0F</GUID> <!-- Family Matters -->
+<GUID state="JS_Success">EA962976-4E950F34-834FC1BD-461991C7</GUID> <!-- Ladies of the Wood -->
 </available>
 <discoverprompt>
 <XY world="NO" X="2505" Y="2410"/>
@@ -1788,7 +1890,8 @@
 <name>The Taxman Cometh</name>
 <GUID>7E6E5238-4F4BE640-A7AD1189-B6398F13</GUID>
 <available>
-<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+<GUID state="JS_Success">DB024D36-4E9AE35E-FB098D89-C8E7AB0F</GUID> <!-- Family Matters -->
+<GUID state="JS_Success">EA962976-4E950F34-834FC1BD-461991C7</GUID> <!-- Ladies of the Wood -->
 </available>
 <discoverprompt>
 <XY world="NO" X="1703" Y="1063"/>
@@ -1799,9 +1902,11 @@
 
 <quest type="side" world="NO" level="32" id="312">
 <name>Enchanting: Start-up Costs</name>
-<GUID>9FC8532C-4082C982-86035EB7-565348C8</GUID>
+<GUID>BACA6F45-42119393-83A37B8B-B475EB03</GUID>
+<!-- Changed??? Could be BACA6F45-42119393-83A37B8B-B475EB03, 2B5B7472-49ABFE6F-86A9B28F-79492D77, 08855038-4C9CD955-E11A70A6-11C135B3, F6FD0753-4DF7DF10-7E79F4A3-07DCDBDE-->
 <available>
-<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+<GUID state="JS_Success">DB024D36-4E9AE35E-FB098D89-C8E7AB0F</GUID> <!-- Family Matters -->
+<GUID state="JS_Success">EA962976-4E950F34-834FC1BD-461991C7</GUID> <!-- Ladies of the Wood -->
 </available>
 <discoverprompt>
 <XY world="NO" X="2521" Y="2416"/>
@@ -1822,7 +1927,8 @@
 <name>Dowry</name>
 <GUID>19D6292E-455662A6-537BEC9D-06609599</GUID>
 <available>
-<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+<GUID state="JS_Success">DB024D36-4E9AE35E-FB098D89-C8E7AB0F</GUID> <!-- Family Matters -->
+<GUID state="JS_Success">EA962976-4E950F34-834FC1BD-461991C7</GUID> <!-- Ladies of the Wood -->
 </available>
 <discoverprompt>
 <XY world="NO" X="1536" Y="1187"/>
@@ -1833,7 +1939,8 @@
 <name>Tinker, Hunter, Soldier, Spy</name>
 <GUID>96F7F53A-412C7099-F5BE66B0-227B967D</GUID>
 <available>
-<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+<GUID state="JS_Success">DB024D36-4E9AE35E-FB098D89-C8E7AB0F</GUID> <!-- Family Matters -->
+<GUID state="JS_Success">EA962976-4E950F34-834FC1BD-461991C7</GUID> <!-- Ladies of the Wood -->
 </available>
 <discoverprompt>
 <XY world="NO" X="1551" Y="2392"/>
@@ -1844,7 +1951,8 @@
 <name>From Ofier's Distant Shores</name>
 <GUID>A1FFE752-47824B4F-276EA882-944E443E</GUID>
 <available>
-<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+<GUID state="JS_Success">DB024D36-4E9AE35E-FB098D89-C8E7AB0F</GUID> <!-- Family Matters -->
+<GUID state="JS_Success">EA962976-4E950F34-834FC1BD-461991C7</GUID> <!-- Ladies of the Wood -->
 </available>
 <discoverprompt>
 <XY world="NO" X="2505" Y="2410"/>
@@ -1857,7 +1965,8 @@
 <name>The Creature from Oxenfurt Forest</name>
 <GUID>0FD87FDB-405C3D98-3871229B-03B5864B</GUID>
 <available>
-<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+<GUID state="JS_Success">DB024D36-4E9AE35E-FB098D89-C8E7AB0F</GUID> <!-- Family Matters -->
+<GUID state="JS_Success">EA962976-4E950F34-834FC1BD-461991C7</GUID> <!-- Ladies of the Wood -->
 </available>
 <discoverprompt>
 <XY world="NO" X="1701" Y="1040"/>
@@ -1870,7 +1979,8 @@
 <name>The Cursed Chapel</name>
 <GUID>D5D60E68-40E4E8AC-9FADA380-0F2889DC</GUID>
 <available>
-<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+<GUID state="JS_Success">DB024D36-4E9AE35E-FB098D89-C8E7AB0F</GUID> <!-- Family Matters -->
+<GUID state="JS_Success">EA962976-4E950F34-834FC1BD-461991C7</GUID> <!-- Ladies of the Wood -->
 </available>
 <discoverprompt>
 <XY world="NO" X="2489" Y="2512"/>
@@ -1881,7 +1991,8 @@
 <name>The Royal Air Force</name>
 <GUID>55341374-4C989677-B9A42DAE-06229E06</GUID>
 <available>
-<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+<GUID state="JS_Success">DB024D36-4E9AE35E-FB098D89-C8E7AB0F</GUID> <!-- Family Matters -->
+<GUID state="JS_Success">EA962976-4E950F34-834FC1BD-461991C7</GUID> <!-- Ladies of the Wood -->
 </available>
 <discoverprompt>
 <XY world="NO" X="2196" Y="1601"/>
@@ -1892,7 +2003,8 @@
 <name>The Sword, Famine and Perfidy</name>
 <GUID>4F1D428D-4906FE69-E65FAA9B-2F7D3200</GUID>
 <available>
-<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+<GUID state="JS_Success">DB024D36-4E9AE35E-FB098D89-C8E7AB0F</GUID> <!-- Family Matters -->
+<GUID state="JS_Success">EA962976-4E950F34-834FC1BD-461991C7</GUID> <!-- Ladies of the Wood -->
 </available>
 <discoverprompt>
 <XY world="NO" X="501" Y="2443"/>
@@ -1903,7 +2015,8 @@
 <name>The Drakenborg Redemption</name>
 <GUID>665C3401-4B425D8F-70D367AA-EE8FCF0F</GUID>
 <available>
-<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+<GUID state="JS_Success">DB024D36-4E9AE35E-FB098D89-C8E7AB0F</GUID> <!-- Family Matters -->
+<GUID state="JS_Success">EA962976-4E950F34-834FC1BD-461991C7</GUID> <!-- Ladies of the Wood -->
 </available>
 <discoverprompt>
 <XY world="NO" X="1180" Y="2667"/>
@@ -1915,7 +2028,8 @@
 <name>The Secret Life of Count Romilly</name>
 <GUID>4F090ED7-4C07940F-D4B94484-85848FBD</GUID>
 <available>
-<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+<GUID state="JS_Success">DB024D36-4E9AE35E-FB098D89-C8E7AB0F</GUID> <!-- Family Matters -->
+<GUID state="JS_Success">EA962976-4E950F34-834FC1BD-461991C7</GUID> <!-- Ladies of the Wood -->
 </available>
 <discoverprompt>
 <XY world="NO" X="2727" Y="1702"/>
@@ -1926,7 +2040,8 @@
 <name>A Surprise Inheritance</name>
 <GUID>6F79BD9A-4653FFF3-29511FA8-513857C3</GUID>
 <available>
-<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+<GUID state="JS_Success">DB024D36-4E9AE35E-FB098D89-C8E7AB0F</GUID> <!-- Family Matters -->
+<GUID state="JS_Success">EA962976-4E950F34-834FC1BD-461991C7</GUID> <!-- Ladies of the Wood -->
 </available>
 <discoverprompt>
 <XY world="NO" X="2449" Y="1499"/>
@@ -1935,8 +2050,9 @@
 
 <quest type="event" world="NO" level="0" id="430">
 <name>The Price of Passage</name>
+<GUID>B31D80A7-DBA9-47E6-B0D1-2E412036C30B</GUID>
 <available>
-<GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+<GUID state="JS_Active">43E9C2A8-43DADE8C-FEC51388-977FB3FC</GUID> <!-- Ladies of the Wood -->
 </available>
 <discoverprompt>
 <XY world="NO" X="1681" Y="1037"/>
@@ -1952,7 +2068,7 @@
   <GUID state="JS_Success">85131BEE-4AF999EC-AD9B0586-FA06CE11</GUID>  
 </available>
   <available>  
-    <GUID state="JS_Success">37881603-4A81EF31-571EBAAC-4304CEE6</GUID>
+    <GUID state="JS_Success">DB024D36-4E9AE35E-FB098D89-C8E7AB0F</GUID> <!-- Family Matters -->
   </available>
 <discoverprompt>
 <XY world="NO" X="627" Y="1876"/>
@@ -1960,11 +2076,11 @@
 </discoverprompt>
 </quest>
 
-<quest type="main" world="NO" level="34" id="324">
+<quest type="dlcmain" world="NO" level="34" id="324">
 <name>Envoys, Wineboys</name>
 <GUID>629E3452-444A67F6-70C1C197-BF6E22EF</GUID>
 <available>
-<GUID state="JS_Success">C5306CA1-4D2C97E4-525EF78E-72552F9E</GUID>
+<GUID state="JS_Success">0551620D-437310FC-3A100C91-55645E17</GUID> <!-- After Hearts of Stone, Whatsoever a Man Soweth -->
 </available>
 <reward XP="0"/>
 </quest>
@@ -1973,7 +2089,8 @@
 <name>Pyres of Novigrad</name>
 <GUID>A7EA902C-4021DB99-121C2E86-77E6923D</GUID>
 <available>
-<GUID state="JS_Success">3D77BF9D-4F453FF0-66AA658F-A6353227</GUID>
+<GUID state="JS_Success">DB024D36-4E9AE35E-FB098D89-C8E7AB0F</GUID> <!-- Family Matters -->
+<GUID state="JS_Success">EA962976-4E950F34-834FC1BD-461991C7</GUID> <!-- Ladies of the Wood -->
 </available>
 </quest>
 
@@ -2073,6 +2190,8 @@
 	<name>Count Reuven's Treasure</name>
 	<GUID>0292F065-4622C52C-4B7C3492-C7B3FA8E</GUID>
 	<available>
+	<GUID state="JS_Success">EA962976-4E950F34-834FC1BD-461991C7</GUID> <!-- Ladies of the Wood -->
+	<GUID state="JS_Success">DB024D36-4E9AE35E-FB098D89-C8E7AB0F</GUID> <!-- Family Matters -->
 	<GUID state="JS_Active">5E9E0041-463E3ECD-C72D1B98-5CF5D6C6</GUID>
 	</available>
 	</quest>
@@ -2086,6 +2205,9 @@
 <available>
 <GUID state="JS_Success">C5306CA1-4D2C97E4-525EF78E-72552F9E</GUID>
 </available>
+<discoverprompt>
+<info>Given automatically</info>
+</discoverprompt>
 </quest>
 
 <quest type="side" world="NO" level="11" id="131">
@@ -2119,6 +2241,9 @@
 <available>
 <GUID state="JS_Success">06950C40-442252DF-03C66981-3FD2B4F3</GUID>
 </available>
+<discoverprompt>
+<info>Given during A Matter of Life and Death</info>
+</discoverprompt>
 </quest>
 
 <quest type="side" world="NO" level="12" id="148">
@@ -2192,6 +2317,9 @@
 <available>
 <GUID state="JS_Success">C5306CA1-4D2C97E4-525EF78E-72552F9E</GUID>
 </available>
+<discoverprompt>
+<info>Talk to Dandelion</info>
+</discoverprompt>
 </quest>
 
 <quest type="side" world="NO" level="14" id="182">
@@ -2200,6 +2328,9 @@
 <available>
 <GUID state="JS_Success">DF5C1032-43CFD052-056742B1-5E8C57B0</GUID>
 </available>
+<discoverprompt>
+<info>Given automatically</info>
+</discoverprompt>
 </quest>
 
 <quest type="side" world="NO" level="16" id="208">
@@ -2208,6 +2339,9 @@
 <available>
 <GUID state="JS_Success">1DBEC8F9-4023BB3B-23EB70A1-52D14101</GUID>
 </available>
+<discoverprompt>
+<info>Given automatically after Cabaret</info>
+</discoverprompt>
 </quest>
 
 <quest type="side" world="NO" level="9" id="108">
@@ -2247,6 +2381,9 @@
 <available>
 <GUID state="JS_Success">01FCFD79-4DAE6202-792CD396-240BAFD5</GUID>
 </available>
+<discoverprompt>
+<info>Given automatically if you met with Radovid</info>
+</discoverprompt>
 </quest>
 
 <quest type="side" world="NO" level="14" id="181">
@@ -2256,11 +2393,12 @@
 <GUID state="JS_Success">2EE64753-4749CF55-84ECCFA2-AFF34B00</GUID>
 </available>
 <discoverprompt>
+<info>Crying woman outside Crippled Kate's</info>
 <XY world="NO" X="579" Y="1781"/>
 </discoverprompt>
 </quest>
 
-<quest type="main" world="NO" level="32" id="308">
+<quest type="dlcmain" world="NO" level="32" id="308">
 <name>Evil's Soft First Touches</name>
 <GUID>92B33408-4FCDF297-7F1F0CA4-60ED91A0</GUID>
 <available>
@@ -2276,9 +2414,12 @@
 <GUID state="JS_Active">92B33408-4FCDF297-7F1F0CA4-60ED91A0</GUID>
 </available>
 <reward XP="500"/>
+<discoverprompt>
+<info>Given during Evil's Soft First Touches</info>
+</discoverprompt>
 </quest>
 
-<quest type="main" world="NO" level="33" id="315">
+<quest type="dlcmain" world="NO" level="33" id="315">
 <name>Dead Man's Party</name>
 <GUID>78053F6B-498256AE-F9C0229F-B9EF3972</GUID>
 <available>
@@ -2298,7 +2439,7 @@
 </subquests>
 </quest>
 
-<quest type="main" world="NO" level="34" id="320">
+<quest type="dlcmain" world="NO" level="34" id="320">
 <name>Open Sesame!</name>
 <GUID>B554FBE9-41969AB7-7123A48A-258002C0</GUID>
 <available>
@@ -2344,7 +2485,7 @@
 <reward XP="100"/>
 </quest>
 
-<quest type="main" world="NO" level="35" id="332">
+<quest type="dlcmain" world="NO" level="35" id="332">
 <name>Scenes From a Marriage</name>
 <GUID>5F9AB09D-451BD33F-475ABAA4-4B7BF3BF</GUID>
 <available>
@@ -2354,7 +2495,7 @@
 <reward XP="1100"/>
 </quest>
 
-<quest type="main" world="NO" level="38" id="361">
+<quest type="dlcmain" world="NO" level="38" id="361">
 <name>Whatsoever a Man Soweth</name>
 <GUID>0551620D-437310FC-3A100C91-55645E17</GUID>
 <available>
@@ -2370,7 +2511,7 @@
 <GUID state="JS_Success">B554FBE9-41969AB7-7123A48A-258002C0</GUID>
 </available>
 <discoverprompt>
-<info>Buy the bird statue at the auction during Open Sesame</info>
+<info>Buy the bird statue at the auction during Open Sesame, then dismantle it at a craftsman.</info>
 </discoverprompt>
 </quest>
 
@@ -2389,7 +2530,7 @@
 
 <!-- Skellige after Destination Skellige 550442BD-43AF7D49-9E0A09B5-54BCCDCC -->
 
-<quest type="treasure" world="SK" level="26" id="278">
+<quest type="treasure" world="NO" level="26" id="278">
 <name>Scavenger Hunt: Griffin School Gear Upgrade Diagrams - Part 3</name>
 <GUID>C4ED40CA-4C8EFD8A-D5D4F2BB-D9346FC0</GUID>
 <available>
@@ -2531,6 +2672,7 @@
 
 <quest type="event" world="SK" level="0" id="35">
 <name>Worthy of Trust</name>
+<GUID>11AE373C-0365-413C-B301-9A3F242BA993</GUID>
 <available>
 <GUID state="JS_Success">550442BD-43AF7D49-9E0A09B5-54BCCDCC</GUID>
 </available>
@@ -2567,7 +2709,23 @@
 <reward XP="0"/>
 </quest>
 
-<quest type="side" world="NO, SK" level="11" id="133">
+
+<quest type="side" world="SK" level="12" id="133">
+<name>Flesh for Sale</name>
+<GUID>75CE5700-4B1F1BBE-069237AE-6D20CA0F</GUID>
+<available>
+<GUID state="JS_Success">550442BD-43AF7D49-9E0A09B5-54BCCDCC</GUID>
+</available>
+<hideif>
+<GUID state="JS_Success">23EBF49C-4CD2BFB5-A2D8FB94-B27040A6</GUID>
+</hideif>
+<discoverprompt>
+<XY world="SK" X="2098" Y="-1945"/>
+<info>Before Following the Thread</info>
+</discoverprompt>
+</quest>
+
+<quest type="side" world="NO" level="11" id="141">
 <name>Following the Thread</name>
 <GUID>23EBF49C-4CD2BFB5-A2D8FB94-B27040A6</GUID>
 <available>
@@ -2598,20 +2756,6 @@
 </discoverprompt>
 </quest>
 
-<quest type="side" world="SK" level="12" id="141">
-<name>Flesh for Sale</name>
-<GUID>75CE5700-4B1F1BBE-069237AE-6D20CA0F</GUID>
-<available>
-<GUID state="JS_Success">550442BD-43AF7D49-9E0A09B5-54BCCDCC</GUID>
-</available>
-<hideif>
-<GUID state="JS_Success">23EBF49C-4CD2BFB5-A2D8FB94-B27040A6</GUID>
-</hideif>
-<discoverprompt>
-<XY world="SK" X="2098" Y="-1945"/>
-<info>Before Following the Thread</info>
-</discoverprompt>
-</quest>
 
 <quest type="treasure" world="SK" level="12" id="151">
 <name>Nilfgaardian Treasure</name>
@@ -2675,6 +2819,7 @@
 <subquests>
 
 	<quest type="side" world="VE" level="13" id="452">
+	<GUID>6CE4FA05-FD9B-4981-963E-075E6CF0F85C</GUID>
 	<name>Buy Tristianna and Isador from the Lindenvale merchant</name>
 	<discoverprompt>
 	<XY world="VE" X="784" Y="65"/>
@@ -2682,6 +2827,7 @@
 	</quest>
 	
 	<quest type="side" world="VE" level="13" id="453">
+	<GUID>9F853673-E660-42A9-BC11-D738A750E4DE</GUID>
 	<name>Buy Religion and Life from the Crow's Perch merchant</name>
 	<discoverprompt>
 	<XY world="VE" X="208" Y="92"/>
@@ -2689,6 +2835,7 @@
 	</quest>
 	
 	<quest type="side" world="VE" level="13" id="454">
+	<GUID>B4210B68-04C3-499F-B9E3-6771038B5B5A</GUID>
 	<name>Buy The Cult of Freya from the Priest in Elector's Square </name>
 	<discoverprompt>
 	<XY world="NO" X="486" Y="2188"/>
@@ -2696,6 +2843,7 @@
 	</quest>
 	
 	<quest type="side" world="VE" level="13" id="455">
+	<GUID>490EBDFC-4911-4BB7-815E-CFDC6CA30A8B</GUID>
 	<name>Buy The Curious Cases of Virtuous Vegga from the Merchant</name>
 	<discoverprompt>
 	<XY world="NO" X="681" Y="2016"/>
@@ -2703,6 +2851,7 @@
 	</quest>
 	
 	<quest type="side" world="VE" level="13" id="456">
+	<GUID>D0DA510D-E5A9-4911-9EE8-BDB13114DF18</GUID>
 	<name>Buy Change Your Life! from the Loan Shark</name>
 	<discoverprompt>
 	<XY world="NO" X="831" Y="1929"/>
@@ -2713,22 +2862,26 @@
 
 <quest type="event" world="SK" level="13" id="164">
 <name>Siren's Call</name>
+<GUID>C3F8E494-BD8D-488F-A812-39F13E1A371E</GUID>
 <available>
 <GUID state="JS_Success">550442BD-43AF7D49-9E0A09B5-54BCCDCC</GUID>
 </available>
 <discoverprompt>
 <XY world="SK" X="-405" Y="-200"/>
+<info>A man being attacked by sirens</info>
 </discoverprompt>
 <reward XP="50"/>
 </quest>
 
 <quest type="event" world="SK" level="13" id="166">
 <name>Woe is Me</name>
+<GUID>CF64132A-398A-4714-BDC1-465CF3D86ABA</GUID>
 <available>
 <GUID state="JS_Success">550442BD-43AF7D49-9E0A09B5-54BCCDCC</GUID>
 </available>
 <discoverprompt>
 <XY world="SK" X="549" Y="-409"/>
+<info>A beggar</info>
 </discoverprompt>
 </quest>
 
@@ -2818,12 +2971,14 @@
 <GUID state="JS_Success">23EBF49C-4CD2BFB5-A2D8FB94-B27040A6</GUID>
 </hideif>
 <discoverprompt>
+<info>Might be unavailable depending on Flesh for Sale/Following the thread</info>
 <XY world="SK" X="2123" Y="-1932"/>
 </discoverprompt>
 </quest>
 
 <quest type="event" world="SK" level="14" id="187">
 <name>Never Trust Children II</name>
+<GUID>6DB26DE1-E366-4667-9216-EBB39BD4D5CB</GUID>
 <available>
 <GUID state="JS_Success">550442BD-43AF7D49-9E0A09B5-54BCCDCC</GUID>
 </available>
@@ -2895,17 +3050,19 @@
 
 <quest type="event" world="SK" level="15" id="201">
 <name>Call of the Wild</name>
+<GUID>7CACD6BE-079F-4D02-9A17-3EA8BE488EF9</GUID>
 <available>
 <GUID state="JS_Success">550442BD-43AF7D49-9E0A09B5-54BCCDCC</GUID>
 </available>
 <discoverprompt>
 <XY world="SK" X="-530" Y="-322"/>
-<info>Kill a werewolf</info>
+<info>Kill a werewolf (only at night)</info>
 </discoverprompt>
 </quest>
 
 <quest type="event" world="SK" level="16" id="209">
 <name>Farting Trolls</name>
+<GUID>5717065D-8C2F-4EDD-A5BA-CA3F4585D713</GUID>
 <available>
 <GUID state="JS_Success">550442BD-43AF7D49-9E0A09B5-54BCCDCC</GUID>
 </available>
@@ -2916,22 +3073,25 @@
 
 <quest type="event" world="SK" level="17" id="215">
 <name>The Four Faces of Hemdall</name>
+<GUID>3E829109-EC06-4BC4-A368-0756704FF178</GUID>
 <available>
 <GUID state="JS_Success">550442BD-43AF7D49-9E0A09B5-54BCCDCC</GUID>
 </available>
 <discoverprompt>
+<info>Help a man facing pirates near a shrine.</info>
 <XY world="SK" X="2015" Y="-1839"/>
 </discoverprompt>
 </quest>
 
 <quest type="event" world="SK" level="25" id="271">
 <name>Yustianna Disturbed</name>
+<GUID>6BBFA8BD-2942-4EE1-9DF4-FE27DFBB1283</GUID>
 <available>
 <GUID state="JS_Success">550442BD-43AF7D49-9E0A09B5-54BCCDCC</GUID>
 </available>
 <discoverprompt>
 <XY world="SK" X="662" Y="647"/>
-<info>Cave entrance</info>
+<info>Go into the cave and deal with the bandits.</info>
 </discoverprompt>
 </quest>
 
@@ -2954,6 +3114,7 @@
 <GUID state="JS_Success">7ECF7633-46381266-A19DDA89-92DB202A</GUID>
 </available>
 <discoverprompt>
+<info>Talk to a woman in the center of the harbor</info>
 <XY world="SK" X="1499" Y="1912"/>
 </discoverprompt>
 </quest>
@@ -2977,6 +3138,9 @@
 <available>
 <GUID state="JS_Success">F8815175-4F992A27-45F5F19C-7706FA95</GUID>
 </available>
+<discoverprompt>
+<info>Given after The Phantom of Eldberg</info>
+</discoverprompt>
 </quest>
 
 <quest type="side" world="SK" level="14" id="183">
@@ -2985,6 +3149,9 @@
 <available>
 <GUID state="JS_Success">5A628AFB-4D9FAEBD-6C403A9A-066B4AC2</GUID>
 </available>
+<discoverprompt>
+<info>Given after Stranger in a Strange Land</info>
+</discoverprompt>
 </quest>
 
 <quest type="side" world="SK" level="15" id="197">
@@ -3057,7 +3224,7 @@
 </available>
 <discoverprompt>
 <XY world="SK" X="518" Y="200"/>
-<info>! sign</info>
+<info>! sign over a cyclops</info>
 </discoverprompt>
 <reward XP="75"/>
 </quest>
@@ -3069,6 +3236,7 @@
 <GUID state="JS_Success">550442BD-43AF7D49-9E0A09B5-54BCCDCC</GUID>
 </available>
 <discoverprompt>
+<info>Approach nearby group in the woods southwest of town</info>
 <XY world="SK" X="54" Y="-150"/>
 </discoverprompt>
 <reward XP="75"/>
@@ -3205,6 +3373,7 @@
 </available>
 <discoverprompt>
 <XY world="SK" X="373" Y="-698"/>
+<info>! sign over a group of people</info>
 </discoverprompt>
 </quest>
 
@@ -3220,27 +3389,30 @@
 </discoverprompt>
 </quest>
 
-<quest type="side" world="SK" level="28" id="128">
+<quest type="side" world="SK" level="14" id="128">
+<name>Master of the Arena</name>
+<GUID>C8C83587-4D2ACAC0-E41A85B5-A9F1DAE8</GUID>
+<available>
+<!--<GUID state="JS_Active">3B9CD0F0-4CE07724-3F8C88BA-4B34E232</GUID>--> <!-- Fists of Fury: Champion of Champions -->
+<GUID state="JS_Success">550442BD-43AF7D49-9E0A09B5-54BCCDCC</GUID> <!-- Destination: Skellige -->
+</available>
+<discoverprompt>
+<info>During Fists of Fury: Champion of Champions, talk to the guards</info>
+<XY world="SK" X="-1369" Y="1387"/>
+</discoverprompt>
+</quest>
+
+<quest type="side" world="SK" level="28" id="176">
 <name>Fists of Fury: Champion of Champions</name>
 <GUID>3B9CD0F0-4CE07724-3F8C88BA-4B34E232</GUID>
 <available>
 <GUID state="JS_Success">14C1A784-40ABFB76-D665B5A2-38D873AD</GUID>
 </available>
 <discoverprompt>
+<info>Fists of Fury: Given at the end of Skellige Style</info>
 <XY world="SK" X="-1369" Y="1387"/>
 </discoverprompt>
 <reward XP="50"/>
-</quest>
-
-<quest type="side" world="SK" level="14" id="176">
-<name>Master of the Arena</name>
-<GUID>C8C83587-4D2ACAC0-E41A85B5-A9F1DAE8</GUID>
-<available>
-<GUID state="JS_Active">3B9CD0F0-4CE07724-3F8C88BA-4B34E232</GUID>
-</available>
-<discoverprompt>
-<XY world="SK" X="-1369" Y="1387"/>
-</discoverprompt>
 </quest>
 
 <quest type="side" world="SK" level="30" id="304">
@@ -3344,7 +3516,7 @@
 <name>Echoes of the Past</name>
 <GUID>E7EB9A3A-47FB160A-471604AD-4323F31E</GUID>
 <available>
-<GUID state="JS_Success">FB952C6E-46B165C3-C41A748A-802EC470</GUID>
+<GUID state="JS_Success">FB952C6E-46B165C3-C41A748A-802EC470</GUID> <!-- The King is Dead - Long Live the King -->
 </available>
 <reward XP="30"/>
 </quest>
@@ -3353,13 +3525,13 @@
 <name>Missing Persons</name>
 <GUID>92387564-42BF535E-F56A9393-7895DAC7</GUID>
 <available>
-<GUID state="JS_Success">E7EB9A3A-47FB160A-471604AD-4323F31E</GUID>
+<GUID state="JS_Success">E7EB9A3A-47FB160A-471604AD-4323F31E</GUID> <!-- Echoes of the Past -->
 </available>
 </quest>
 
 <quest type="main" world="SK" level="14" id="175">
 <name>Nameless</name>
-<GUID>7F6B63A6-439ECA50-D7D46C9F-263EAC98</GUID>
+<GUID>7F6B63A6-439ECA50-D7D46C9F-263EAC98</GUID> <!-- Missing Persons -->
 <available>
 <GUID state="JS_Success">92387564-42BF535E-F56A9393-7895DAC7</GUID>
 </available>
@@ -3369,7 +3541,7 @@
 <name>The Calm Before the Storm</name>
 <GUID>5C6A7440-4323E4F5-9BAF8D90-D64FD1E2</GUID>
 <available>
-<GUID state="JS_Success">7F6B63A6-439ECA50-D7D46C9F-263EAC98</GUID>
+<GUID state="JS_Success">7F6B63A6-439ECA50-D7D46C9F-263EAC98</GUID> <!-- Nameless -->
 </available>
 </quest>
 <!-- ends In Ciri's Footsteps -->
@@ -3402,9 +3574,12 @@
 <GUID state="JS_Success">FB952C6E-46B165C3-C41A748A-802EC470</GUID>
 </available>
 <reward XP="1300"/>
+<discoverprompt>
+<info>Given automatically after The King is Dead</info>
+</discoverprompt>
 </quest>
 
-<quest type="side" world="SK" level="24" id="261">
+<quest type="side" world="SK" level="24" id="256">
 <name>Master Armorers</name>
 <GUID>10D429DF-44D89D62-38DC6AA5-D34876F3</GUID>
 <available>
@@ -3416,7 +3591,7 @@
 <reward XP="40"/>
 </quest>
 
-<quest type="contract" world="VE" level="24" id="256">
+<quest type="contract" world="VE" level="24" id="261">
 <name>The Griffin from the Highlands</name>
 <GUID>323560BF-4414ECF7-1A9A6CBA-03E51D37</GUID>
 <available>
@@ -3424,7 +3599,7 @@
 </available>
 <discoverprompt>
 <XY world="VE" X="243" Y="139"/>
-<info>Talk to the Crow's Perch armorer, then get the notice from the board nearby.</info>
+<info>Talk to the Crow's Perch armorer, advance Master Armorers.</info>
 </discoverprompt>
 <reward XP="40"/>
 </quest>
@@ -3448,6 +3623,9 @@
 <GUID state="JS_Success">FB952C6E-46B165C3-C41A748A-802EC470</GUID>
 </available>
 <reward XP="125"/>
+<discoverprompt>
+<info>Given automatically after The King is Dead</info>
+</discoverprompt>
 </quest>
 
 <quest type="side" world="SK" level="18" id="219">
@@ -3468,6 +3646,9 @@
 <available>
 <GUID state="JS_Success">B5130AE1-468A2171-0B7BD3B0-3FBE5499</GUID>
 </available>
+<discoverprompt>
+<info>Automatically given after King's Gambit</info>
+</discoverprompt>
 </quest>
 
 <!-- Kaer Morhen after Uma is obtained 9C69ECD5-44A14450-ED8D95BC-C7C2218F
@@ -3481,7 +3662,7 @@
 </available>
 <discoverprompt>
 <XY world="NO" X="694" Y="1756"/>
-<info>Unknown when this triggers</info>
+<info>Maybe only if you met Cleaver?</info>
 </discoverprompt>
 </quest>
 
@@ -3489,7 +3670,7 @@
 <name>Gwent: Old Pals</name>
 <GUID>B3C40CBF-4F39BB84-020888A2-7CEF294F</GUID>
 <available>
-<GUID state="JS_Success">5C6A7440-4323E4F5-9BAF8D90-D64FD1E2</GUID>
+<GUID state="JS_Success">5C6A7440-4323E4F5-9BAF8D90-D64FD1E2</GUID> <!-- The Calm Before the Storm -->
 </available>
 <discoverprompt>
 <XY world="NO" X="729" Y="1727"/>
@@ -3507,11 +3688,11 @@
 </subquests>
 </quest>
 
-<quest type="treasure" world="KM" level="14" id="189">
+<quest type="treasure" world="NO" level="14" id="189">
 <name>Scavenger Hunt: Wolf School Gear</name>
 <GUID>ECDA507B-4902A54F-85D7CAA9-E26BF51C</GUID>
 <available>
-<GUID state="JS_Success">BCFD66C3-4E55BECB-00975882-A9203CDC</GUID>
+<GUID state="JS_Success">9C69ECD5-44A14450-ED8D95BC-C7C2218F</GUID>
 </available>
 <discoverprompt>
 <XY world="NO" X="596" Y="1697"/>
@@ -3519,7 +3700,7 @@
 </discoverprompt>
 </quest>
 
-<quest type="treasure" world="KM" level="21" id="241">
+<quest type="treasure" world="NO" level="21" id="241">
 <name>Scavenger Hunt: Wolf School Gear Upgrade Diagrams - Part 1</name>
 <GUID>2B4D53F2-4D13E107-B76B1BBE-46F9BEE2</GUID>
 <available>
@@ -3531,7 +3712,7 @@
 </discoverprompt>
 </quest>
 
-<quest type="treasure" world="KM" level="21" id="242">
+<quest type="treasure" world="VE" level="21" id="242">
 <name>Scavenger Hunt: Wolf School Gear Upgrade Diagrams - Part 2</name>
 <GUID>65F92ED7-46364BBF-274F688B-2B9B242B</GUID>
 <available>
@@ -3543,7 +3724,7 @@
 </discoverprompt>
 </quest>
 
-<quest type="treasure" world="KM" level="29" id="294">
+<quest type="treasure" world="VE" level="29" id="294">
 <name>Scavenger Hunt: Wolf School Gear Upgrade Diagrams - Part 3</name>
 <GUID>0ACA2DC7-441F17F1-629E568D-1DDC8373</GUID>
 <available>
@@ -3556,7 +3737,7 @@
 </discoverprompt>
 </quest>
 
-<quest type="treasure" world="KM" level="29" id="295">
+<quest type="treasure" world="VE" level="29" id="295">
 <name>Scavenger Hunt: Wolf School Gear Upgrade Diagrams - Part 4</name>
 <GUID>B5A3EBF1-48584027-035CBD88-C65AE7D1</GUID>
 <available>
@@ -3597,10 +3778,12 @@
 
 <quest type="event" world="KM" level="12" id="149">
 <name>Trail of Echoes</name>
+<GUID>580B8C82-FAA7-4186-B39A-F6EF62CA7276</GUID>
 <available>
 <GUID state="JS_Success">9C69ECD5-44A14450-ED8D95BC-C7C2218F</GUID>
 </available>
 <discoverprompt>
+<info>Enter the cave</info>
 <XY world="KM" X="-323" Y="177"/>
 </discoverprompt>
 </quest>
@@ -3612,6 +3795,7 @@
 <GUID state="JS_Success">9C69ECD5-44A14450-ED8D95BC-C7C2218F</GUID>
 </available>
 <discoverprompt>
+<info>Enter the bastion</info>
 <XY world="KM" X="-321" Y="-13"/>
 </discoverprompt>
 </quest>
@@ -3623,6 +3807,7 @@
 <GUID state="JS_Success">9C69ECD5-44A14450-ED8D95BC-C7C2218F</GUID>
 </available>
 <discoverprompt>
+<info>Find a dead drowner next to a hut</info>
 <XY world="KM" X="94" Y="407"/>
 </discoverprompt>
 <reward XP="120"/>
@@ -3647,6 +3832,7 @@
 <GUID state="JS_Success">9C69ECD5-44A14450-ED8D95BC-C7C2218F</GUID>
 </available>
 <discoverprompt>
+<info>Strange weather</info>
 <XY world="KM" X="201" Y="-378"/>
 </discoverprompt>
 <reward XP="100"/>
@@ -3660,7 +3846,7 @@
 </available>
 <discoverprompt>
 <XY world="KM" X="59" Y="22"/>
-<info>Get Monstrum papers from a dresser a the bottom of a tower near a chest</info>
+<info>Get Monstrum papers from a dresser at the bottom of a tower near a chest</info>
 </discoverprompt>
 </quest>
 
@@ -3668,7 +3854,7 @@
 <name>Ugly Baby</name>
 <GUID>CA9F7D30-404727DE-FA4173B3-C7766A6A</GUID>
 <available>
-<GUID state="JS_Success">9C69ECD5-44A14450-ED8D95BC-C7C2218F</GUID>
+<GUID state="JS_Success">5C6A7440-4323E4F5-9BAF8D90-D64FD1E2</GUID>
 </available>
 <reward XP="125"/>
 
@@ -3995,7 +4181,7 @@
 <!-- Toussaint after Envoys Wineboys but technically only after Beast of Touissant
 (11D55E15-434FE711-E89E10B8-17BB09E2) -->
 
-<quest type="main" world="TO" level="35" id="333">
+<quest type="dlcmain" world="TO" level="35" id="333">
 <name>The Beast of Toussaint</name>
 <GUID>11D55E15-434FE711-E89E10B8-17BB09E2</GUID>
 <available>
@@ -4004,7 +4190,7 @@
 <reward XP="3250"/>
 </quest>
 
-<quest type="main" world="TO" level="36" id="336">
+<quest type="dlcmain" world="TO" level="36" id="336">
 <name>Blood Run</name>
 <GUID>1939E60D-401CDF59-6F4765BB-25BCEEC8</GUID>
 <available>
@@ -4013,7 +4199,7 @@
 <reward XP="1000"/>
 </quest>
 
-<quest type="main" world="TO" level="39" id="366">
+<quest type="dlcmain" world="TO" level="39" id="366">
 <name>La Cage au Fou</name>
 <GUID>CE23E598-4D3B3C3B-2778AD92-095146A9</GUID>
 <available>
@@ -4021,7 +4207,7 @@
 </available>
 </quest>
 
-<quest type="main" world="TO" level="42" id="387">
+<quest type="dlcmain" world="TO" level="42" id="387">
 <name>Where Children Toil, Toys Waste Away</name>
 <GUID>B4D11A9C-4DDEB849-23845981-1887E867</GUID>
 <available>
@@ -4030,7 +4216,7 @@
 <reward XP="1600"/>
 </quest>
 
-<quest type="main" world="TO" level="42" id="388">
+<quest type="dlcmain" world="TO" level="42" id="388">
 <name>Wine is Sacred</name>
 <GUID>C9D7BC04-43B303DD-7ED3AAA9-9A7378BD</GUID>
 <available>
@@ -4039,7 +4225,7 @@
 <reward XP="2550"/>
 </quest>
 
-<quest type="main" world="TO" level="43" id="392">
+<quest type="dlcmain" world="TO" level="43" id="392">
 <name>The Man from Cintra</name>
 <GUID>6C2340E8-4E58E618-BF93D5A9-E8E5CB29</GUID>
 <available>
@@ -4049,6 +4235,7 @@
 
 <subquests>
 	<quest type="event" world="TO" level="0" id="432">
+	<GUID>FF7FC6F0-9E35-4F23-A41E-1DFEA179CADB</GUID>
 	<name>Contract on a Witcher</name>
 	<available>
 	<GUID state="JS_Active">6C2340E8-4E58E618-BF93D5A9-E8E5CB29</GUID>
@@ -4057,7 +4244,7 @@
 </subquests>
 </quest>
 
-<quest type="main" world="TO" level="47" id="403">
+<quest type="dlcmain" world="TO" level="47" id="403">
 <name>Capture the Castle</name>
 <GUID>B0E13120-43A56E44-83D0F5A0-EE26759E</GUID>
 <available>
@@ -4065,7 +4252,7 @@
 </available>
 </quest>
 
-<quest type="main" world="TO" level="47" id="405">
+<quest type="dlcmain" world="TO" level="47" id="405">
 <name>The Night of Long Fangs</name>
 <GUID>FF48073D-4F6969E5-F79CD7BE-E217B3AD</GUID>
 <available>
@@ -4073,7 +4260,7 @@
 </available>
 </quest>
 
-<quest type="main" world="TO" level="47" id="404">
+<quest type="dlcmain" world="TO" level="47" id="404">
 <name>Blood Simple</name>
 <GUID>41C2C88E-465E617E-E504A28D-B7557E96</GUID>
 <available>
@@ -4084,7 +4271,7 @@
 </hideif>
 </quest>
 
-<quest type="main" world="TO" level="47" id="406">
+<quest type="dlcmain" world="TO" level="47" id="406">
 <name>What Lies Unseen</name>
 <GUID>E2F4AA1D-4BDD183B-9DDFD89D-009B34B7</GUID>
 <available>
@@ -4098,7 +4285,7 @@
 </hideif>
 </quest>
 
-<quest type="main" world="TO" level="47" id="407">
+<quest type="dlcmain" world="TO" level="47" id="407">
 <name>Beyond Hill and Dale...</name>
 <GUID>E458AAC7-4C80112B-0C1E6694-113E60B1</GUID>
 <available>
@@ -4109,7 +4296,7 @@
 </discoverprompt>
 </quest>
 
-<quest type="main" world="TO" level="49" id="415">
+<quest type="dlcmain" world="TO" level="49" id="415">
 <name>Tesham Mutna</name>
 <GUID>BE9868E4-427C64C0-FEC15FAB-C7077CC2</GUID>
 <available>
@@ -4118,7 +4305,7 @@
 </available>
 </quest>
 
-<quest type="main" world="TO" level="49" id="416">
+<quest type="dlcmain" world="TO" level="49" id="416">
 <name>Pomp and Strange Circumstance</name>
 <GUID>75B389CC-4F5043B3-9CC508A2-88F82183</GUID>
 <available>
@@ -4129,21 +4316,24 @@
 </discoverprompt>
 </quest>
 
-<quest type="main" world="TO" level="49" id="417">
+<quest type="dlcmain" world="TO" level="49" id="417">
 <name>Be It Ever So Humble</name>
 <GUID>C9F4557A-4660507F-1FE53F9D-B6C060BE</GUID>
-<available>
+<oneofabsolutelyrequired>
 <GUID state="JS_Success">8F17E40A-4942D119-96BC5A99-28A6F4D9</GUID>
 <GUID state="JS_Success">E8D3E37E-443DA208-F6407683-AA607416</GUID>
 <GUID state="JS_Success">053B2B41-41E1DB6D-D6F4ECA6-94443258</GUID>
-</available>
+</oneofabsolutelyrequired>
 <available>
 <GUID state="JS_Success">75B389CC-4F5043B3-9CC508A2-88F82183</GUID>
 <GUID state="JS_Success">FD761CAC-44DF7883-8A45C9AF-50163CDF</GUID>
 </available>
+<discoverprompt>
+<info>Go to Corvo Bianco</info>
+</discoverprompt>
 </quest>
 
-<quest type="main" world="TO" level="49" id="418">
+<quest type="dlcmain" world="TO" level="49" id="418">
 <name>Burlap is the New Stripe</name>
 <GUID>FD761CAC-44DF7883-8A45C9AF-50163CDF</GUID>
 <available>
@@ -4200,19 +4390,22 @@
 </discoverprompt>
 </quest>
 
-<quest type="main" world="TO" level="0" id="1">
+<quest type="side" world="TO" level="0" id="1">
 <name>No Place Like Home</name>
 <GUID>35E4C812-422459EF-1F816FAC-7E53B70E</GUID>
 <available>
-<GUID state="JS_Success">11D55E15-434FE711-E89E10B8-17BB09E2</GUID>
+<GUID state="JS_Success">11D55E15-434FE711-E89E10B8-17BB09E2</GUID> <!--The Beast of Toussaint-->
 </available>
+<discoverprompt>
+<info>Given automatically during Beast of Beauclaire</info>
+</discoverprompt>
 </quest>
 
 <quest type="side" world="TO" level="35" id="334">
 <name>Turn and Face the Strange</name>
 <GUID>A644CC5F-41D19717-CE2A4398-34879DFB</GUID>
 <available>
-<GUID state="JS_Success">11D55E15-434FE711-E89E10B8-17BB09E2</GUID>
+<GUID state="JS_Success">11D55E15-434FE711-E89E10B8-17BB09E2</GUID> <!--The Beast of Toussaint-->
 </available>
 <discoverprompt>
 <XY world="TO" X="-599" Y="-1372"/>
@@ -4225,7 +4418,7 @@
 <name>The Warble of a Smitten Knight</name>
 <GUID>AD9E547A-40323AEB-87AD21AE-8AE49F72</GUID>
 <available>
-<GUID state="JS_Success">11D55E15-434FE711-E89E10B8-17BB09E2</GUID>
+<GUID state="JS_Success">11D55E15-434FE711-E89E10B8-17BB09E2</GUID> <!--The Beast of Toussaint-->
 </available>
 <discoverprompt>
 <XY world="TO" X="-419" Y="-959"/>
@@ -4236,8 +4429,9 @@
 
 <quest type="event" world="TO" level="0" id="429">
 <name>Naughty Feathers</name>
+<GUID>91D57451-409E-4EAC-8165-BA079B40C9B7</GUID>
 <available>
-<GUID state="JS_Success">AD9E547A-40323AEB-87AD21AE-8AE49F72</GUID>
+<GUID state="JS_Success">C9F4557A-4660507F-1FE53F9D-B6C060BE</GUID>
 </available>
 <discoverprompt>
 <info>Talk to Guillame after Warble of a Smitten Knight</info>
@@ -4261,7 +4455,7 @@
 <name>Fists of Fury: Toussaint</name>
 <GUID>AF499A50-4016055D-97A4A787-06336148</GUID>
 <available>
-<GUID state="JS_Success">11D55E15-434FE711-E89E10B8-17BB09E2</GUID>
+<GUID state="JS_Success">11D55E15-434FE711-E89E10B8-17BB09E2</GUID> <!--The Beast of Toussaint-->
 </available>
 <discoverprompt>
 <XY world="TO" X="-504" Y="-1344"/>
@@ -4275,17 +4469,20 @@
 <available>
 <GUID state="JS_Success">AF499A50-4016055D-97A4A787-06336148</GUID>
 </available>
+<discoverprompt>
+<info>Given by Fists of Fury</info>
+</discoverprompt>
 </quest>
 
 <quest type="side" world="TO" level="36" id="338">
 <name>Till Death Do You Part</name>
 <GUID>6791BAC0-4EAC8D29-8900EA8D-62CF8490</GUID>
 <available>
-<GUID state="JS_Success">11D55E15-434FE711-E89E10B8-17BB09E2</GUID>
+<GUID state="JS_Success">11D55E15-434FE711-E89E10B8-17BB09E2</GUID> <!--The Beast of Toussaint-->
 </available>
 <discoverprompt>
 <XY world="TO" X="-504" Y="-1344"/>
-<info>Notice board</info>
+<info>Notice board (Quarreling at the cemetery)</info>
 </discoverprompt>
 </quest>
 
@@ -4295,7 +4492,7 @@
 <name>Paperchase</name>
 <GUID>E1815592-4F7DF37A-F3593B9B-52E1F152</GUID>
 <available>
-<GUID state="JS_Success">11D55E15-434FE711-E89E10B8-17BB09E2</GUID>
+<GUID state="JS_Success">11D55E15-434FE711-E89E10B8-17BB09E2</GUID> <!--The Beast of Toussaint-->
 </available>
 <discoverprompt>
 <XY world="TO" X="-503" Y="-1420"/>
@@ -4307,7 +4504,7 @@
 <name>Gwent: Never Fear, Skellige's Here</name>
 <GUID>10792209-4257AE39-5B821199-2FFB20EC</GUID>
 <available>
-<GUID state="JS_Success">11D55E15-434FE711-E89E10B8-17BB09E2</GUID>
+<GUID state="JS_Success">11D55E15-434FE711-E89E10B8-17BB09E2</GUID> <!--The Beast of Toussaint-->
 </available>
 <discoverprompt>
 <XY world="TO" X="-479" Y="-959"/>
@@ -4331,7 +4528,7 @@
 <name>Goodness, Gracious, Great Balls of Granite!</name>
 <GUID>3C3DC52F-445095B5-89C66893-79E185A1</GUID>
 <available>
-<GUID state="JS_Success">11D55E15-434FE711-E89E10B8-17BB09E2</GUID>
+<GUID state="JS_Success">11D55E15-434FE711-E89E10B8-17BB09E2</GUID> <!--The Beast of Toussaint-->
 </available>
 <discoverprompt>
 <XY world="TO" X="-504" Y="-1344"/>
@@ -4344,11 +4541,11 @@
 <name>Father Knows Worst</name>
 <GUID>E0EB6BB5-492FD420-5E53F4B9-6CC58BB7</GUID>
 <available>
-<GUID state="JS_Success">11D55E15-434FE711-E89E10B8-17BB09E2</GUID>
+<GUID state="JS_Success">11D55E15-434FE711-E89E10B8-17BB09E2</GUID> <!--The Beast of Toussaint-->
 </available>
 <discoverprompt>
 <XY world="TO" X="-504" Y="-1344"/>
-<info>Notice board</info>
+<info>Notice board (Armed Escort Wanted)</info>
 </discoverprompt>
 <reward XP="300"/>
 </quest>
@@ -4357,11 +4554,11 @@
 <name>Bovine Blues</name>
 <GUID>2633D68E-4C40FA82-D17A2A88-0A46D256</GUID>
 <available>
-<GUID state="JS_Success">11D55E15-434FE711-E89E10B8-17BB09E2</GUID>
+<GUID state="JS_Success">11D55E15-434FE711-E89E10B8-17BB09E2</GUID> <!--The Beast of Toussaint-->
 </available>
 <discoverprompt>
 <XY world="TO" X="288" Y="-996"/>
-<info>Notice board</info>
+<info>Notice board (Mysteriously plummeting cattle)</info>
 </discoverprompt>
 <reward XP="600"/>
 </quest>
@@ -4372,6 +4569,9 @@
 <available>
 <GUID state="JS_Success">2633D68E-4C40FA82-D17A2A88-0A46D256</GUID>
 </available>
+<discoverprompt>
+<info>Given after Bovine Blues</info>
+</discoverprompt>
 
 <subquests>
 	<quest type="side" world="TO" level="37" id="346">
@@ -4435,7 +4635,7 @@
 <name>Big Game Hunter</name>
 <GUID>39087354-4BBDC2C0-3D0942B3-0230FD61</GUID>
 <available>
-<GUID state="JS_Success">11D55E15-434FE711-E89E10B8-17BB09E2</GUID>
+<GUID state="JS_Success">11D55E15-434FE711-E89E10B8-17BB09E2</GUID> <!--The Beast of Toussaint-->
 </available>
 <discoverprompt>
 <XY world="TO" X="-159" Y="-656"/>
@@ -4447,7 +4647,7 @@
 <name>Vintner's Contract: Rivecalme Storehouse</name>
 <GUID>367672BA-41E9AB7F-F339428C-D5D493C0</GUID>
 <available>
-<GUID state="JS_Success">11D55E15-434FE711-E89E10B8-17BB09E2</GUID>
+<GUID state="JS_Success">11D55E15-434FE711-E89E10B8-17BB09E2</GUID> <!--The Beast of Toussaint-->
 </available>
 <discoverprompt>
 <XY world="TO" X="-223" Y="-312"/>
@@ -4463,45 +4663,52 @@
 </available>
 <discoverprompt>
 <XY world="TO" X="-159" Y="-656"/>
-<info>Notice board</info>
+<info>Notice board (Office of Internal Revenue)</info>
 </discoverprompt>
-</quest>
-
-<quest type="side" world="TO" level="37" id="353">
-<name>Wine Wars: Coronata</name>
-<GUID>E0AD810B-4517493B-1D1AD1B3-6B79080F</GUID>
-<available>
-<GUID state="JS_Success">642890AD-4F8ECBE6-2756EFA2-F755509A</GUID>
-</available>
-</quest>
-
-<quest type="side" world="TO" level="37" id="354">
-<name>Wine Wars: Vermentino</name>
-<GUID>7A0007EE-4B89DAF9-50D65893-42FE261B</GUID>
-<available>
-<GUID state="JS_Success">642890AD-4F8ECBE6-2756EFA2-F755509A</GUID>
-</available>
-</quest>
-
-<quest type="side" world="TO" level="42" id="390">
-<name>Wine Wars: The Deus in the Machina</name>
-<GUID>060EE78A-4B7A92A4-B4DF28A4-63E01A87</GUID>
-<available>
-<GUID state="JS_Active">E0AD810B-4517493B-1D1AD1B3-6B79080F</GUID>
-<GUID state="JS_Active">7A0007EE-4B89DAF9-50D65893-42FE261B</GUID>
-</available>
-<discoverprompt>
-<XY world="TO" X="-23" Y="99"/>
-</discoverprompt>
-</quest>
-
-<quest type="side" world="TO" level="39" id="368">
-<name>Wine Wars: Belgaard</name>
-<GUID>642890AD-4F8ECBE6-2756EFA2-F755509A</GUID>
-<available>
-<GUID state="JS_Success">060EE78A-4B7A92A4-B4DF28A4-63E01A87</GUID>
-</available>
 <subquests>
+	<quest type="side" world="TO" level="37" id="353">
+	<name>Wine Wars: Coronata</name>
+	<GUID>E0AD810B-4517493B-1D1AD1B3-6B79080F</GUID>
+	<available>
+	<GUID state="JS_Success">642890AD-4F8ECBE6-2756EFA2-F755509A</GUID>
+	</available>
+	</quest>
+	
+	<quest type="side" world="TO" level="37" id="354">
+	<name>Wine Wars: Vermentino</name>
+	<GUID>7A0007EE-4B89DAF9-50D65893-42FE261B</GUID>
+	<available>
+	<GUID state="JS_Success">642890AD-4F8ECBE6-2756EFA2-F755509A</GUID>
+	</available>
+	</quest>
+	
+	<quest type="side" world="TO" level="42" id="390">
+	<name>Wine Wars: The Deus in the Machina</name>
+	<GUID>060EE78A-4B7A92A4-B4DF28A4-63E01A87</GUID>
+	<available>
+	<GUID state="JS_Active">E0AD810B-4517493B-1D1AD1B3-6B79080F</GUID>
+	<GUID state="JS_Active">7A0007EE-4B89DAF9-50D65893-42FE261B</GUID>
+	</available>
+	<discoverprompt>
+	<XY world="TO" X="-23" Y="99"/>
+	</discoverprompt>
+	</quest>
+	
+	<quest type="side" world="TO" level="39" id="368">
+	<name>Wine Wars: Belgaard</name>
+	<!--<GUID>642890AD-4F8ECBE6-2756EFA2-F755509A</GUID>
+	63BCE128-4AF8CF79-857E498C-1E71FA77
+	81301669-408BEDE7-DA45F285-CA63334C
+	42327C9F-4AE2BDB8-51AF5B85-7B598CFE
+	B68762B6-475FAF21-2AF5DE9B-C3094F75
+	D53DFE3E-4D1BE314-EF5C0A92-A220C5A2
+	-->
+	<GUID>63BCE128-4AF8CF79-857E498C-1E71FA77</GUID>
+	<available>
+	<!--<GUID state="JS_Success">060EE78A-4B7A92A4-B4DF28A4-63E01A87</GUID>-->
+	<GUID state="JS_Success">11D55E15-434FE711-E89E10B8-17BB09E2</GUID>
+	</available>
+	</quest>
 
 	<quest type="side" world="TO" level="40" id="378">
 	<name>Wine Wars: Consorting</name>
@@ -4577,7 +4784,7 @@
 </available>
 <discoverprompt>
 <XY world="TO" X="-159" Y="-656"/>
-<info>Notice board</info>
+<info>Notice board (Notice from the Ducal Camerlengo)</info>
 </discoverprompt>
 </quest>
 
@@ -4640,7 +4847,7 @@
 </available>
 <discoverprompt>
 <XY world="TO" X="-774" Y="-373"/>
-<info>Notice board</info>
+<info>Notice board (Needed: Master Magicker)</info>
 </discoverprompt>
 </quest>
 
@@ -4951,7 +5158,7 @@
 </available>
 <discoverprompt>
 <XY world="TO" X="-504" Y="-1344"/>
-<info>Notice board</info>
+<info>Notice board (Test Yourself with the Trials...)</info>
 </discoverprompt>
 <reward XP="300"/>
 </quest>

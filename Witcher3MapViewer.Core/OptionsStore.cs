@@ -4,9 +4,10 @@ namespace Witcher3MapViewer.Core
 {
     public class OptionsStore
     {
-        private readonly Options options;
+        private Options options;
         private readonly IQuestAvailabilityProvider _availabilityProvider;
 
+        public Options Options { get { return options; } set { options = value; } }
 
         public OptionsStore(Options options, IQuestAvailabilityProvider availabilityProvider)
         {

@@ -19,69 +19,84 @@ namespace Witcher3MapViewer.WPF
 
         public App()
         {
-            XMLMapSettingsProvider mapSettingsProvider = XMLMapSettingsProvider.FromFile(SettingsXMLPath);
-            XMLMarkerProvider markerProvider = XMLMarkerProvider.FromFile(MapPinsXMLPath, mapSettingsProvider);
-            MainWindow mainWindow = new MainWindow();
-            string largeIconPath = mapSettingsProvider.GetIconSettings().LargeIconPath;
-            MapsUIMap mapsUIMap = new MapsUIMap(mainWindow.MapControl, Path.Combine(largeIconPath, CirclePNGPath));
-            mainWindow.Show();
-
-            Options options;
-            if (!File.Exists(OptionsPath))
+            ShutdownMode = ShutdownMode.OnExplicitShutdown;
+            bool canExit = false;
+            while (!canExit)
             {
-                options = Options.Default();
-                OptionsWPFDialogWindow optionsWPFDialogWindow = new OptionsWPFDialogWindow(options);
-                var accepted = optionsWPFDialogWindow.ShowDialog();
-                if (!accepted)
+                XMLMapSettingsProvider mapSettingsProvider = XMLMapSettingsProvider.FromFile(SettingsXMLPath);
+                XMLMarkerProvider markerProvider = XMLMarkerProvider.FromFile(MapPinsXMLPath, mapSettingsProvider);
+                MainWindow mainWindow = new MainWindow();
+                string largeIconPath = mapSettingsProvider.GetIconSettings().LargeIconPath;
+                MapsUIMap mapsUIMap = new MapsUIMap(mainWindow.MapControl, Path.Combine(largeIconPath, CirclePNGPath));
+
+
+                Options options;
+                if (!File.Exists(OptionsPath))
                 {
-                    mainWindow.Close();
-                    return;
-                };
-                options = optionsWPFDialogWindow.GetNewOptions();
-                options.Save(OptionsJSONPath);
-            }
-            else
-            {
-                options = Options.FromFile(OptionsPath);
-            }
+                    options = Options.Default();
+                    OptionsWPFDialogWindow optionsWPFDialogWindow = new OptionsWPFDialogWindow(options);
+                    var accepted = optionsWPFDialogWindow.ShowDialog();
+                    if (!accepted)
+                    {
+                        mainWindow.Close();
+                        return;
+                    };
+                    options = optionsWPFDialogWindow.GetNewOptions();
+                    options.Save(OptionsJSONPath);
+                }
+                else
+                {
+                    options = Options.FromFile(OptionsPath);
+                }
 
 
-            XMLQuestListProvider questListProvider = XMLQuestListProvider.FromFile(QuestsXMLPath);
+                XMLQuestListProvider questListProvider = XMLQuestListProvider.FromFile(QuestsXMLPath);
+                XMLGwentCardProvider gwentCardProvider = XMLGwentCardProvider.FromFile(GwentXMLPath);
+                GwentTrackerWPFWindow gwentTrackerWPFWindow = new GwentTrackerWPFWindow();
 
-            IQuestAvailabilityProvider availabilityProvider;
-            ILevelProvider levelProvider;
-            IGwentStatusProvider gwentStatusProvider;
-            if (options.TrackingMode == TrackingMode.Automatic)
-            {
-                SaveFileAvailabilityProvider saveFileAvailabilityProvider = new SaveFileAvailabilityProvider(
-                                        options.SaveFilePath, QuestStatusJsonPath, Path.GetTempPath()
-                                    );
-                availabilityProvider = saveFileAvailabilityProvider;
-                levelProvider = new SaveFileLevelProvider(saveFileAvailabilityProvider);
-                gwentStatusProvider = new SaveFileGwentStatusProvider(saveFileAvailabilityProvider);
-            }
-            else
-            {
-                availabilityProvider = new JsonManualQuestAvailabilityProvider(QuestStatusJsonPath);
-                levelProvider = new ManualLevelProvider(ManualLevelJsonPath);
-                gwentStatusProvider = new ManualGwentProvider(ManualGwentJsonPath);
-            }
-            OptionsStore optionsStore = new OptionsStore(options, availabilityProvider);
-            XMLGwentCardProvider gwentCardProvider = XMLGwentCardProvider.FromFile(GwentXMLPath);
-            GwentTrackerWPFWindow gwentTrackerWPFWindow = new GwentTrackerWPFWindow();
 
-            mainWindow.DataContext = new MainWindowViewModel(
-                mapsUIMap,
-                markerProvider,
-                mapSettingsProvider,
-                questListProvider,
-                availabilityProvider,
-                gwentCardProvider,
-                levelProvider,
-                gwentStatusProvider,
-                gwentTrackerWPFWindow,
-                new OptionsWPFDialogWindow(options),
-                optionsStore);
+
+
+                IQuestAvailabilityProvider availabilityProvider;
+                ILevelProvider levelProvider;
+                IGwentStatusProvider gwentStatusProvider;
+                if (options.TrackingMode == TrackingMode.Automatic)
+                {
+                    SaveFileAvailabilityProvider saveFileAvailabilityProvider = new SaveFileAvailabilityProvider(
+                                            options.SaveFilePath, QuestStatusJsonPath, Path.GetTempPath()
+                                        );
+                    availabilityProvider = saveFileAvailabilityProvider;
+                    levelProvider = new SaveFileLevelProvider(saveFileAvailabilityProvider);
+                    gwentStatusProvider = new SaveFileGwentStatusProvider(saveFileAvailabilityProvider);
+                }
+                else
+                {
+                    availabilityProvider = new JsonManualQuestAvailabilityProvider(QuestStatusJsonPath);
+                    levelProvider = new ManualLevelProvider(ManualLevelJsonPath);
+                    gwentStatusProvider = new ManualGwentProvider(ManualGwentJsonPath);
+                }
+                OptionsStore optionsStore = new OptionsStore(options, availabilityProvider);
+
+
+                MainWindowViewModel mainWindowViewModel = new MainWindowViewModel(
+                                mapsUIMap,
+                                markerProvider,
+                                mapSettingsProvider,
+                                questListProvider,
+                                availabilityProvider,
+                                gwentCardProvider,
+                                levelProvider,
+                                gwentStatusProvider,
+                                gwentTrackerWPFWindow,
+                                new OptionsWPFDialogWindow(options),
+                                optionsStore,
+                                new MainWPFWindow(mainWindow));
+                mainWindow.DataContext = mainWindowViewModel;
+
+                mainWindow.ShowDialog();
+                canExit = !mainWindowViewModel.ShouldRestart;
+            }
+            Application.Current.Shutdown();
         }
     }
 }

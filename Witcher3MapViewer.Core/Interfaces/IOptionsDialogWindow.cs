@@ -5,5 +5,7 @@
     {
         bool ShowDialog();
         bool ResetWasRequested();
+        bool ModeChanged();
+        Options GetNewOptions();
     }
 }

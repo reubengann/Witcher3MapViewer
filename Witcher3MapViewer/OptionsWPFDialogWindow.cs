@@ -7,6 +7,7 @@ namespace Witcher3MapViewer.WPF
     {
         Options options;
         bool ResetRequested = false;
+        bool ChangedTrackingMode = false;
 
         public OptionsWPFDialogWindow(Options options)
         {
@@ -16,6 +17,11 @@ namespace Witcher3MapViewer.WPF
         public Options GetNewOptions()
         {
             return options;
+        }
+
+        public bool ModeChanged()
+        {
+            return ChangedTrackingMode;
         }
 
         public bool ResetWasRequested()
@@ -33,6 +39,10 @@ namespace Witcher3MapViewer.WPF
             if (result == true)
             {
                 ResetRequested = optionsWindowViewModel.RequestedResetOfQuests;
+                if (options.TrackingMode != optionsWindowViewModel.NewOptions.TrackingMode)
+                {
+                    ChangedTrackingMode = true;
+                }
                 options = optionsWindowViewModel.NewOptions;
             }
             return result ?? false;

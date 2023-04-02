@@ -4,7 +4,10 @@ namespace Witcher3MapViewer.Test
 {
     class FakeManualQuestAvailabilityProvider : ManualQuestAvailabilityProvider
     {
-
+        public override void ResetManualStates()
+        {
+            throw new NotImplementedException();
+        }
     }
 
     public class QuestAvailabilityProviderTest

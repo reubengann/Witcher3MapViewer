@@ -16,6 +16,10 @@ namespace Witcher3MapViewer.Core
         public Options NewOptions => options;
         public bool ShowOnlyAvailable { get => options.ShowOnlyAvailable; set => options.ShowOnlyAvailable = value; }
         public bool ShowComplete { get => options.ShowComplete; set => options.ShowComplete = value; }
+        public bool ShowTreasure { get => options.ShowTreasure; set => options.ShowTreasure = value; }
+        public bool ShowEvents { get => options.ShowEvents; set => options.ShowEvents = value; }
+        public bool ShowRaces { get => options.ShowRaces; set => options.ShowRaces = value; }
+
         public bool IsManualModeChecked
         {
             get => options.TrackingMode == TrackingMode.Manual;

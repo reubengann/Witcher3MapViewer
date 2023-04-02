@@ -28,10 +28,13 @@ namespace Witcher3MapViewer.Core
             _cards = new ObservableCollection<GwentCardViewModel>();
             foreach (var card in BaseGameCards)
             {
-                _cards.Add(new GwentCardViewModel(card, gwentStatusProvider));
+                GwentCardViewModel item = new GwentCardViewModel(card, gwentStatusProvider);
+                item.StatusChanged += GwentStatusProvider_StatusUpdated;
+                _cards.Add(item);
             }
             gwentStatusProvider.StatusUpdated += GwentStatusProvider_StatusUpdated;
         }
+
 
         private void GwentStatusProvider_StatusUpdated()
         {
@@ -43,12 +46,14 @@ namespace Witcher3MapViewer.Core
     {
         private readonly GwentCard thecard;
         private readonly IGwentStatusProvider gwentStatusProvider;
+        public event Action StatusChanged;
 
         public GwentCardViewModel(GwentCard thecard, IGwentStatusProvider gwentStatusProvider)
         {
             this.thecard = thecard;
             this.gwentStatusProvider = gwentStatusProvider;
             gwentStatusProvider.StatusUpdated += GwentStatusProvider_StatusUpdated;
+            _isChecked = gwentStatusProvider.GetCount(thecard.cardIndex) > 0;
         }
 
         private void GwentStatusProvider_StatusUpdated()
@@ -60,8 +65,14 @@ namespace Witcher3MapViewer.Core
 
         public bool IsChecked
         {
-            get { return gwentStatusProvider.GetCount(thecard.cardIndex) > 0; }
-            set { _isChecked = value; }
+            get { return _isChecked; }
+            set
+            {
+                _isChecked = value;
+                gwentStatusProvider.SetCount(thecard.cardIndex, value == true ? 1 : 0);
+                OnPropertyChanged(nameof(IsChecked));
+                StatusChanged?.Invoke();
+            }
         }
 
 

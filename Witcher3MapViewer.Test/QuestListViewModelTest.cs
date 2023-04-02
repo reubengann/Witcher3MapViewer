@@ -17,7 +17,7 @@ namespace Witcher3MapViewer.Test
                 GUID = Guid.NewGuid().ToString(),
             };
         }
-        Options o = new Options(true, false, TrackingMode.Manual, "");
+        Options o = new Options(true, false, TrackingMode.Manual, "", true, true, true);
 
         [Test]
         public void Test_When_No_Requirement_SelectBest_Sets_SideQuest_as_Best()

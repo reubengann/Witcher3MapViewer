@@ -32,6 +32,9 @@ namespace Witcher3MapViewer.Core
                     if (_availabilityProvider.GetState(c) >= QuestStatusState.Active) return false;
                 }
             }
+            if (q.QuestType == QuestType.Race && !options.ShowRaces) return false;
+            if (q.QuestType == QuestType.Treasure && !options.ShowTreasure) return false;
+            if (q.QuestType == QuestType.Event && !options.ShowEvents) return false;
             return true;
         }
 
@@ -47,15 +50,21 @@ namespace Witcher3MapViewer.Core
     {
         public bool ShowOnlyAvailable { get; set; }
         public bool ShowComplete { get; set; }
+        public bool ShowRaces { get; set; }
+        public bool ShowEvents { get; set; }
+        public bool ShowTreasure { get; set; }
         public TrackingMode TrackingMode { get; set; }
         public string SaveFilePath { get; set; }
 
-        public Options(bool showOnlyAvailable, bool showComplete, TrackingMode trackingMode, string saveFilePath)
+        public Options(bool showOnlyAvailable, bool showComplete, TrackingMode trackingMode, string saveFilePath, bool showRaces, bool showEvents, bool showTreasure)
         {
             ShowOnlyAvailable = showOnlyAvailable;
             ShowComplete = showComplete;
             TrackingMode = trackingMode;
             SaveFilePath = saveFilePath;
+            ShowRaces = showRaces;
+            ShowEvents = showEvents;
+            ShowTreasure = showTreasure;
         }
 
         public void Save(string path)
@@ -65,14 +74,17 @@ namespace Witcher3MapViewer.Core
                 ShowOnlyAvailable = ShowOnlyAvailable,
                 ShowComplete = ShowComplete,
                 TrackingMode = TrackingMode == TrackingMode.Automatic ? "Automatic" : "Manual",
-                SaveFilePath = SaveFilePath
+                SaveFilePath = SaveFilePath,
+                ShowRaces = ShowRaces,
+                ShowEvents = ShowEvents,
+                ShowTreasure = ShowTreasure
             };
             File.WriteAllText(path, JsonSerializer.Serialize(file, new JsonSerializerOptions { WriteIndented = true }));
         }
 
         public Options Copy()
         {
-            return new Options(ShowOnlyAvailable, ShowComplete, TrackingMode, SaveFilePath);
+            return new Options(ShowOnlyAvailable, ShowComplete, TrackingMode, SaveFilePath, ShowRaces, ShowEvents, ShowTreasure);
         }
 
         public static Options FromFile(string path)
@@ -88,12 +100,12 @@ namespace Witcher3MapViewer.Core
             if (file.TrackingMode == "Manual") trackingMode = TrackingMode.Manual;
             else if (file.TrackingMode == "Automatic") trackingMode = TrackingMode.Automatic;
             else { throw new Exception("Unknown tracking mode in file"); }
-            return new Options(file.ShowOnlyAvailable, file.ShowComplete, trackingMode, file.SaveFilePath);
+            return new Options(file.ShowOnlyAvailable, file.ShowComplete, trackingMode, file.SaveFilePath, file.ShowRaces, file.ShowEvents, file.ShowTreasure);
         }
 
         public static Options Default()
         {
-            return new Options(true, false, TrackingMode.Manual, "");
+            return new Options(true, false, TrackingMode.Manual, "", true, true, true);
         }
     }
 
@@ -101,6 +113,10 @@ namespace Witcher3MapViewer.Core
     {
         public bool ShowOnlyAvailable { get; set; } = true;
         public bool ShowComplete { get; set; } = false;
+        public bool ShowRaces { get; set; } = true;
+        public bool ShowEvents { get; set; } = true;
+        public bool ShowTreasure { get; set; } = true;
+
         public string TrackingMode { get; set; } = "Manual";
         public string SaveFilePath { get; set; } = "";
     }

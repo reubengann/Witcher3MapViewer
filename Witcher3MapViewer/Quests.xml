@@ -18,6 +18,10 @@
 <name>Ask travelers about Yennefer</name>
 <GUID>42CE0F47-454E0055-8AC991AD-A09CAFB3</GUID>
 </objective>
+<objective id="439">
+<name>Ask the herbalist about buckthorn</name>
+<GUID>50E659DB-44831AA8-31BA8EA6-8EB62F91</GUID>
+</objective>
 </objectives>
 <subquests>
 <quest type="main" level="3" world = "WO" id="44">
@@ -26,12 +30,6 @@
 <available>
 <GUID>42CE0F47-454E0055-8AC991AD-A09CAFB3</GUID>
 </available>
-<objectives>
-<objective id="439">
-<name>Ask the herbalist about buckthorn</name>
-<GUID>50E659DB-44831AA8-31BA8EA6-8EB62F91</GUID>
-</objective>
-</objectives>
 <reward XP="500"/>
 </quest>
 <quest type="main" level="2" world = "WO" id="39">

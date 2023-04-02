@@ -106,9 +106,7 @@ namespace Witcher3MapViewer.Core
             get
             {
                 if (_parent != null)
-                    //return _questAvailabilityProvider.IsQuestAvailable(_parent._quest);
                     return _showPolicy(_parent._quest);
-                //return _questAvailabilityProvider.IsQuestAvailable(_quest);
                 return _showPolicy(_quest);
             }
         }
@@ -180,26 +178,13 @@ namespace Witcher3MapViewer.Core
             }
         }
 
-        //private bool? _isDeferred = false;
-        //public bool? IsDeferred
-        //{
-        //    get { return _isDeferred; }
-        //    set
-        //    {
-        //        _isDeferred = value;
-        //        if (_isDeferred != null)
-        //        {
-        //            _quest.Deferred = (bool)_isDeferred;
-        //            OnPropertyChanged("Name");
-        //        }
-        //    }
-        //}
+
 
 
         void SetIsChecked(bool? value, bool updateChildren, bool updateParent)
         {
             if (updateChildren && value.HasValue)
-                Children.ForEach(c => c.SetIsChecked(value, true, false));
+                Children.ForEach(c => c.IsChecked = value);
 
             //if (updateParent && _parent != null)
             //    _parent.VerifyCheckState();
@@ -207,74 +192,6 @@ namespace Witcher3MapViewer.Core
             OnPropertyChanged(nameof(IsChecked));
         }
 
-        //void VerifyCheckState()
-        //{
-        //    bool? state = null;
-        //    for (int i = 0; i < Children.Count; ++i)
-        //    {
-        //        bool? current = Children[i].IsChecked;
-        //        if (i == 0)
-        //        {
-        //            state = current;
-        //        }
-        //        else if (state != current)
-        //        {
-        //            state = null;
-        //            break;
-        //        }
-        //    }
-        //    SetIsChecked(state, false, true);
-        //}
 
-        //public void Recheck()
-        //{
-        //    //if(IsChecked == false && correspondingQuest.Status > QuestStatusState.Active)
-
-        //    //if (IsChecked == true && !correspondingQuest.Done)
-        //    //    IsChecked = false;
-        //    //else if (IsChecked == false && correspondingQuest.Done)
-        //    //    IsChecked = true;
-        //    IsChecked = _quest.Done;
-        //    _quest.Forced = false;
-        //    foreach (QuestViewModel child in Children)
-        //        child.Recheck();
-        //}
-
-
-        //public static ObservableCollection<QuestViewModel> CreateChooser(Witcher3ProgressStatus progressStatus, bool availableonly)
-        //{
-        //    if (DesignerProperties.GetIsInDesignMode(new System.Windows.DependencyObject()))
-        //        return new ObservableCollection<QuestViewModel>();
-
-        //    ObservableCollection<QuestViewModel> items = new ObservableCollection<QuestViewModel>();
-
-        //    List<Quest> TheList;
-        //    if (availableonly)
-        //        TheList = progressStatus.AvailableQuests;
-        //    else TheList = progressStatus.Quests;
-
-        //    foreach (Quest q in TheList)
-        //    {
-        //        QuestViewModel root = new QuestViewModel(q);
-        //        items.Add(root);
-        //    }
-
-
-        //    return items;
-        //}
-
-        //public int CompareTo(object o)
-        //{
-        //    QuestViewModel a = this;
-        //    QuestViewModel b = (QuestViewModel)o;
-        //    int ret = a._quest.Done.CompareTo(b._quest.Done);
-        //    if (ret != 0) return -ret;
-        //    ret = a._quest.Deferred.CompareTo(b._quest.Deferred);
-        //    if (ret != 0) return -ret;
-        //    ret = a._quest.LevelRequirement.CompareTo(b._quest.LevelRequirement);
-        //    if (ret != 0) return ret;
-        //    return a._quest.UniqueID.CompareTo(b._quest.UniqueID);
-
-        //}
     }
 }

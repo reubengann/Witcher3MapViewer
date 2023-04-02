@@ -7,6 +7,12 @@
         public SaveFileLevelProvider(SaveFileAvailabilityProvider save)
         {
             _save = save;
+            _save.AvailabilityChanged += _save_AvailabilityChanged;
+        }
+
+        private void _save_AvailabilityChanged()
+        {
+            LevelChanged?.Invoke();
         }
 
         public event Action LevelChanged;

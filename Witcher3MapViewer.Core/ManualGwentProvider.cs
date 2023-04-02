@@ -18,7 +18,9 @@ namespace Witcher3MapViewer.Core
             }
             else
             {
-                Statuses = new Dictionary<int, int>();
+                var file = JsonSerializer.Deserialize<GwentStatusJsonFile>(File.ReadAllText("auto_gwent_statuses.json"));
+                if (file == null) { throw new Exception("Could not find auto_gwent_statuses.json"); }
+                Statuses = file.Statuses;
                 File.WriteAllText(filename, JsonSerializer.Serialize(new GwentStatusJsonFile { Statuses = Statuses }));
             }
 
@@ -35,7 +37,8 @@ namespace Witcher3MapViewer.Core
         public void SetCount(int id, int count)
         {
             Statuses[id] = count;
-            File.WriteAllText(filename, JsonSerializer.Serialize(new GwentStatusJsonFile { Statuses = Statuses }));
+            string txt = JsonSerializer.Serialize(new GwentStatusJsonFile { Statuses = Statuses });
+            File.WriteAllText(filename, txt);
         }
     }
 

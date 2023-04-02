@@ -18,7 +18,14 @@
         </StackPanel>
         <DataGrid Grid.Row="1" AutoGenerateColumns="False" ItemsSource="{Binding Cards}" HorizontalScrollBarVisibility="Disabled">
             <DataGrid.Columns>
-                <DataGridCheckBoxColumn Binding="{Binding IsChecked}" Header=""/>
+                <!--<DataGridCheckBoxColumn Binding="{Binding IsChecked, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Header=""/>-->
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <CheckBox IsChecked="{Binding IsChecked, UpdateSourceTrigger=PropertyChanged}"></CheckBox>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
                 <DataGridTextColumn Binding="{Binding Name}" Header="Name" Width="135">
                     <DataGridTextColumn.ElementStyle>
                         <Style>

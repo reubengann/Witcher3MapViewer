@@ -34,6 +34,15 @@
             <CheckBox Content="Show complete quests" 
                       HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" 
                       IsChecked="{Binding ShowComplete}" />
+            <CheckBox Content="Show races" 
+                      HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" 
+                      IsChecked="{Binding ShowRaces}" />
+            <CheckBox Content="Show untracked events" 
+                      HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" 
+                      IsChecked="{Binding ShowEvents}" />
+            <CheckBox Content="Show treasure hunts" 
+                      HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" 
+                      IsChecked="{Binding ShowTreasure}" />
             <Button Command="{Binding RequestResetCommand}" Margin="10,10,10,10">Reset quest statuses</Button>
         </StackPanel>
         <StackPanel VerticalAlignment="Bottom" Grid.Row="2"  Orientation="Horizontal" Margin="0 0 0 10">

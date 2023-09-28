@@ -59,8 +59,8 @@ Parser.Default.ParseArguments<ParseOptions, CompareOptions>(args)
 [Verb("parse", HelpText = "Parse a save file")]
 class ParseOptions
 {
-    [Value(0)]
-    public string verb { get; set; }
+    //[Value(0)]
+    //public string verb { get; set; }
 
     [Value(0)]
     public string filename { get; set; }

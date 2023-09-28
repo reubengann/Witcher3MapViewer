@@ -2,7 +2,7 @@
   "profiles": {
     "SaveTools": {
       "commandName": "Project",
-      "commandLineArgs": "compare ManualSave_1266d8_7e716c00_5048320.sav ManualSave_11b6cd_7e716c00_505e1b1.sav"
+      "commandLineArgs": "parse C:\\Users\\reube\\Downloads\\ManualSave_55607_7e746800_10bd9aa.sav"
     }
   }
 }

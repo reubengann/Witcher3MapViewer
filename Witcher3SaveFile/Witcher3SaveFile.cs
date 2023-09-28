@@ -24,7 +24,7 @@ namespace SaveFile
         List<string> SimplePorpHandleTypes = new List<string> {"W3LevelManager", "W3EffectManager", "CEncounterDataManager",
                           "CCharacterStats", "W3AbilityManager", "CBaseGameplayEffect",
                           "CPlayerInput", "WeaponHolster", "W3FactionReputationPoints",
-                          "W3Reputation", "ISpawnTreeSpawnMonitorInitializer", "CSSPPL", "CInGameConfigWrapper" };
+                          "W3Reputation", "ISpawnTreeSpawnMonitorInitializer", "CSSPPL", "CInGameConfigWrapper", "SetSkillPointsPerLevelManager"};
         List<string> SimpleSetTypes = new List<string> { "STutorialHighlight", "SUITutorial", "STutorialMessage" };
         List<string> SimpleSetsWithSizes = new List<string> { "ErrandDetailsList", "GameTime", "SMonsterNestUpdateDefinition",
             "SAbilityAttributeValue", "SBuffImmunity", "SItemUniqueId", "SGlossaryImageOverride",

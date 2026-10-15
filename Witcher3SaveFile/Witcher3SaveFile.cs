@@ -8,7 +8,7 @@ namespace SaveFile
         public Witcher3GwentManager GwentManager;
         public int CharacterLevel, CharacterFreeXP;
 
-        static List<int> validFileVersions = new List<int> { 18, 19, 23, 24, 25 };
+        static List<int> validFileVersions = new List<int> { 18, 19, 23, 24, 25, 29 };
 
         int VariableTableOffset;
         int StringTableFooterOffset;
@@ -1485,7 +1485,7 @@ namespace SaveFile
 
         void VerifyTypecodes(BinaryReader f)
         {
-            if (f.ReadInt32() != 64)
+            if (f.ReadInt32() != 67)
             {
                 throw new InvalidDataException("Typecode failure");
             }
@@ -1495,7 +1495,7 @@ namespace SaveFile
                 //throw new InvalidDataException("Typecode failure");
                 //meh
             }
-            if (f.ReadInt32() != 163)
+            if (f.ReadInt32() != 164)
             {
                 throw new InvalidDataException("Typecode failure");
             }
